@@ -13,9 +13,9 @@
 
 <body>
     <header class="header">
-        <?php include '../snippets/header.php'; ?>
+        <?php include '../../snippets/header.php'; ?>
         <nav>
-            <?php include '../snippets/nav.php'; ?>
+            <?php include '../../snippets/nav.php'; ?>
         </nav>
     </header>
     <div class="page-title">
@@ -46,7 +46,7 @@
     </main>
     <footer>
         <div class"footer">
-        <?php include '../snippets/footer.php'; ?>
+        <?php include '../../snippets/footer.php'; ?>
         </div>
 
 </body>
