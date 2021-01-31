@@ -26,7 +26,7 @@
       <ul>
         <li><a href='/web/week_3/index.php'>Home</a></li>
         <li><a href='/web/week_3/index.php?action=viewCart'>View Cart</a></li>
-        <li><a href='/web/week_3/index.php?action=clearCart&clear=1'>Clear Cart</a></li>
+        <li><a href='..//index.php?action=clearCart&clear=1'>Clear Cart</a></li>
         <input type="hidden" name="clear" value="1">
         <ul>
     </nav>
@@ -69,7 +69,7 @@ if(isset($title)){
 
       </table>
       <div class="checkout">
-        <a href='/web/week_3/index.php?action=checkout'>Check Out</a>
+        <a href='../../week_3/index.php'>Check Out</a>
       </div>
   </main>
   <footer>

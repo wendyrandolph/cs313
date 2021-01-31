@@ -14,9 +14,9 @@
 <body>
     <header class="header">
         <?php include '../snippets/header.php';
-        echo "Hello";  ?>
+        ?>
         <nav>
-            <?php include '../snippets/nav.php';  echo "Hello"; ?>
+            <?php include '../snippets/nav.php';  ?>
         </nav>
     </header>
     <div class="page-title">
@@ -24,7 +24,7 @@
         <nav class="cart"> 
         <ul>
             <li><a href='/web/week_3/index.php'>Home</a></li>
-            <li><a href='/web/week_3/index.php?action=viewCart'>View Cart</a></li>
+            <li><a href='../index.php?action=viewCart'>View Cart</a></li>
             <ul>
                 </nav>
     </div>
