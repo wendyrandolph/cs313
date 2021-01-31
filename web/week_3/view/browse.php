@@ -13,9 +13,9 @@
 
 <body>
     <header class="header">
-        <?php require '../../snippets/header.php'; ?>
+        <?php include '../../snippets/header.php'; ?>
         <nav>
-            <?php require '../../snippets/nav.php'; ?>
+            <?php include '../../snippets/nav.php'; ?>
         </nav>
     </header>
     <div class="page-title">
@@ -46,7 +46,7 @@
     </main>
     <footer>
         <div class"footer">
-        <?php require '../../snippets/footer.php'; ?>
+        <?php include '../../snippets/footer.php'; ?>
         </div>
 
 </body>
