@@ -29,9 +29,9 @@
     </div>
     <div> 
 
-            <h4> <?php if(isset($_SESSION['message'])){ 
-                echo $_SESSION['message']; 
-            } ?> 
+            <h4> <?php //if(isset($_SESSION['message'])){ 
+               // echo $_SESSION['message']; 
+            //} ?> 
             </h4> 
 
         </div>
@@ -50,7 +50,7 @@
     </main>
     <footer>
         <div class"footer">
-        <?php require $_SERVER['DOCUMENT_ROOT'] . './web/snippets/footer.php'; ?>
+        <?php //require $_SERVER['DOCUMENT_ROOT'] . './web/snippets/footer.php'; ?>
         </div>
 
 </body>
