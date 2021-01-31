@@ -30,7 +30,7 @@ function generateView($results, $images)
         //$view .= "<button type='button' id='minus'><i class='far fa-minus-square'></i></button>";
         $view .= '</div>';
         $view .= '<div id="addto">';
-        $view .= "<button 'type='submit' id=addme value='Add To Cart'> Add to Cart </button>";
+        $view .= "<input type='submit' id=addme value='Add To Cart'> ";
         $view .= '</div>';
         $view .= "<div class=total-price>$item[price]</div>";
         $view .= "<input type='hidden' name='price' value=$item[price]>";
