@@ -74,7 +74,7 @@ if(isset($title)){
   </main>
   <footer>
     <div class="footer">
-      <?php require $_SERVER['DOCUMENT_ROOT'] . '/web/snippets/footer.php'; ?>
+      <?php include '../snippets/footer.php'; ?>
     </div>
   </footer>
 
