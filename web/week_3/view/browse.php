@@ -23,8 +23,8 @@
         <h2> BROWSE PRODUCTS </h2>
         <nav class="cart"> 
         <ul>
-            <li><a href='/web/week_3/index.php'>Home</a></li>
-            <li><a href='../index.php?action=viewCart'>View Cart</a></li>
+            <li><a href='/../../week_3/index.php'>Home</a></li>
+            <li><a href='../../week_3/index.php?action=viewCart'>View Cart</a></li>
             <ul>
                 </nav>
     </div>
