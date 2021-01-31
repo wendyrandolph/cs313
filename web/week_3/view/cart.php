@@ -15,9 +15,9 @@
 <body>
 
   <header class="header">
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '../../cs313-php/web/snippets/header.php'; ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '../../snippets/header.php'; ?>
     <nav>
-      <?php require $_SERVER['DOCUMENT_ROOT'] . '../../web/snippets/nav.php'; ?>
+      <?php require $_SERVER['DOCUMENT_ROOT'] . '../../snippets/nav.php'; ?>
     </nav>
   </header>
   <div class="page-title">
