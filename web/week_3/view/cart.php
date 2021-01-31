@@ -17,16 +17,16 @@
   <header class="header">
     <?php require $_SERVER['DOCUMENT_ROOT'] . '../../cs313-php/web/snippets/header.php'; ?>
     <nav>
-      <?php require $_SERVER['DOCUMENT_ROOT'] . '/web/snippets/nav.php'; ?>
+      <?php require $_SERVER['DOCUMENT_ROOT'] . '../../web/snippets/nav.php'; ?>
     </nav>
   </header>
   <div class="page-title">
     <h2> Shopping Cart </h2>
     <nav class="cart">
       <ul>
-        <li><a href='/web/week_3/index.php'>Home</a></li>
-        <li><a href='/web/week_3/index.php?action=viewCart'>View Cart</a></li>
-        <li><a href='..//index.php?action=clearCart&clear=1'>Clear Cart</a></li>
+        <li><a href='../../week_3/index.php'>Home</a></li>
+        <li><a href='../../week_3/index.php?action=viewCart'>View Cart</a></li>
+        <li><a href='../../week_3/index.php?action=clearCart&clear=1'>Clear Cart</a></li>
         <input type="hidden" name="clear" value="1">
         <ul>
     </nav>
