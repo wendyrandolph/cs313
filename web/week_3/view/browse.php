@@ -13,9 +13,9 @@
 
 <body>
     <header class="header">
-        <?php //require $_SERVER['DOCUMENT_ROOT'] . './web/snippets/header.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . ' snippets/header.php'; ?>
         <nav>
-            <?php //require $_SERVER['DOCUMENT_ROOT'] . './web/snippets/nav.php'; ?>
+            <?php require $_SERVER['DOCUMENT_ROOT'] . ' snippets/nav.php'; ?>
         </nav>
     </header>
     <div class="page-title">
@@ -29,9 +29,9 @@
     </div>
     <div> 
 
-            <h4> <?php //if(isset($_SESSION['message'])){ 
-               // echo $_SESSION['message']; 
-            //} ?> 
+            <h4> <?php if(isset($_SESSION['message'])){ 
+               echo $_SESSION['message']; 
+            } ?> 
             </h4> 
 
         </div>
@@ -46,7 +46,7 @@
     </main>
     <footer>
         <div class"footer">
-        <?php //require $_SERVER['DOCUMENT_ROOT'] . './web/snippets/footer.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . ' snippets/footer.php'; ?>
         </div>
 
 </body>
