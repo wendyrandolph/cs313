@@ -6,16 +6,16 @@
     <title>Shopping Cart</title>
     <script src="https://kit.fontawesome.com/0e472b3e20.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="/web/css/styles.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/web/css/nav.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/web/css/week_3.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/nav.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/week_3.css" media="screen" />
 </head>
 
 <body>
     <header class="header">
-        <?php include '../../snippets/header.php'; ?>
+        <?php require '../../snippets/header.php'; ?>
         <nav>
-            <?php include '../../snippets/nav.php'; ?>
+            <?php require '../../snippets/nav.php'; ?>
         </nav>
     </header>
     <div class="page-title">
@@ -46,7 +46,7 @@
     </main>
     <footer>
         <div class"footer">
-        <?php include '../../snippets/footer.php'; ?>
+        <?php require '../../snippets/footer.php'; ?>
         </div>
 
 </body>
