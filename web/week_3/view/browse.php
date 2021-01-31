@@ -13,10 +13,10 @@
 
 <body>
     <header class="header">
-        <?php include '../../snippets/header.php';
+        <?php include '../snippets/header.php';
         echo "Hello";  ?>
         <nav>
-            <?php include '../../snippets/nav.php';  echo "Hello"; ?>
+            <?php include '../snippets/nav.php';  echo "Hello"; ?>
         </nav>
     </header>
     <div class="page-title">
@@ -47,7 +47,7 @@
     </main>
     <footer>
         <div class"footer">
-        <?php include '../../snippets/footer.php'; ?>
+        <?php include '../snippets/footer.php'; ?>
         </div>
 
 </body>
