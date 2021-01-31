@@ -16,17 +16,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CheckOut</title>
-  <link rel="stylesheet" type="text/css" href="../css/styles.css" media="screen"  >
-  <link rel="stylesheet" type="text/css" href="../css/nav.css" media="screen"  >
-  <link rel="stylesheet" type="text/css" href="../css/week_3.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" media="screen"  >
+  <link rel="stylesheet" type="text/css" href="../../css/nav.css" media="screen"  >
+  <link rel="stylesheet" type="text/css" href="../../css/week_3.css" media="screen" />
 </head>
 </head>
 
 <body>
 <header class="header">
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/web/snippets/header.php'; ?>
+    <?php include  '../snippets/header.php'; ?>
     <nav>
-      <?php require $_SERVER['DOCUMENT_ROOT'] . '/web/snippets/nav.php'; ?>
+      <?php include '../snippets/nav.php'; ?>
     </nav>
   </header>
 
@@ -52,7 +52,7 @@
 </main> 
   <footer> 
   <div class="footer"> 
-  <?php require $_SERVER['DOCUMENT_ROOT'] . '/web/snippets/footer.php'; ?>
+  <?php require $_SERVER['DOCUMENT_ROOT'] . '../snippets/footer.php'; ?>
 </div> 
   </footer>
 </body>
