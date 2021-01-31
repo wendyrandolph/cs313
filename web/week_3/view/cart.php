@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>View Cart</title>
 
-  <link rel="stylesheet" type="text/css" href="/web/css/styles.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="/web/css/nav.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="/web/css/week_3.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../../css/nav.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../../css/week_3.css" media="screen" />
 
 </head>
 
 <body>
 
   <header class="header">
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/web/snippets/header.php'; ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '../../cs313-php/web/snippets/header.php'; ?>
     <nav>
       <?php require $_SERVER['DOCUMENT_ROOT'] . '/web/snippets/nav.php'; ?>
     </nav>
