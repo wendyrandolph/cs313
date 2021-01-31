@@ -317,3 +317,4 @@ var_dump ($new_results);
         include '../week_3/view/browse.php';
         break;
 }
+?>
