@@ -254,7 +254,7 @@ var_dump ($new_results);
 
 
         }
-        include '../week_3/view/cart.php';
+        include 'view/cart.php';
         break;
         //******************************************************************
         //                       Clear Cart Scenario                      *
@@ -267,7 +267,7 @@ var_dump ($new_results);
 
             $_SESSION['message_clear'] = "Your cart has been emptied.";
         }
-        header('location: /web/week_3/view/cart.php');
+        header('location: view/cart.php');
         break;
 
 
