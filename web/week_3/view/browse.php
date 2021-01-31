@@ -6,9 +6,9 @@
     <title>Shopping Cart</title>
     <script src="https://kit.fontawesome.com/0e472b3e20.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="../week_3/css/styles.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../week_3/css/nav.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../week_3/css/week_3.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../css/week_3.css" media="screen" />
 </head>
 
 <body>
