@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@300&family=Roboto&display=swap');
+
+//Variables for color 
+
+$primary_color: #2A3166;
+$secondary_color: #EE7879;
+$accent_color: #F4ABAA;
+$accent_color_2: #CAE7DF;
+$accent_color_3: #44BAAA;
+
+//Variables for font 
+
+$font_family_1: 'Oswald',
+sans-serif;
+$font_family_2: 'Lato',
+sans-serif;
+$padding: 10px;
+$margin-left: 10px;
+$margin: 0; //navigation styling 
+
+header {
+    margin-top: 0;
+    background: $primary_color;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: $padding;
+    font-family: $font_family_2;
+}
+
+h1#header {
+    text-transform: uppercase;
+}
+
+nav {
+    ul.nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a,
+    .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ul.nav,
+    a {
+        background: $accent_color_3;
+    }
+
+    a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: $secondary_color;
+    }
+
+    li.dropbtn {
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        display: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        width: auto;  
+    }
+
+    .dropdown-content :hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        
+    }
+}
+
+
+
+@media only screen and (min-width: 900px) {
+    header {
+
+        margin-top: 0;
+        background: $primary_color;
+        padding: 30px;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    h1#header {
+        grid-column: 1/4;
+        color: $secondary_color;
+        text-align: left;
+        font-size: 45px;
+
+    }
+
+    footer {
+        padding: 10px;
+        background: $primary_color;
+        color: $accent_color_2;
+    }
+
+    footer {
+        padding: 3px;
+        margin-right: 0;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        justify-content: center;
+        align-items: center;
+
+
+        div.footer {
+            grid-column: 2/5;
+            width: 100%;
+        }
+
+        div.footer {
+            border: none;
+            padding: 0;
+            grid-column: 1/4;
+            margin: 2px;
+            margin-left: 50px;
+            align-items: center;
+        }
+    }
+
+    /*
+   
+*/
+}

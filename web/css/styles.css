@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@300&family=Roboto&display=swap");
+html {
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin: 0;
+}
+
+main {
+  display: block;
+  background: #44BAAA;
+  padding: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  color: #EE7879;
+  font-size: 25px;
+  text-align: center;
+}
+
+h2,
+h3 {
+  margin-left: 10px;
+  font-weight: lighter;
+}
+
+p {
+  margin-left: 10px;
+}
+
+li.skills {
+  display: list-item;
+}
+
+img.about {
+  margin: 0 auto;
+  border: 5px double #CAE7DF;
+  filter: drop-shadow(10px 5px 15px black);
+}
+
+img.images {
+  filter: none;
+}
+
+a#credit {
+  font-size: 12px;
+}
+
+#aboutme {
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
+/* This is for large screen view */
+@media only screen and (min-width: 900px) {
+  html {
+    margin: 0 auto;
+  }
+
+  main {
+    background: none;
+    padding: 0;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  nav {
+    grid-column: 4/6;
+  }
+
+  img.about {
+    border: 5px double #CAE7DF;
+    filter: drop-shadow(10px 5px 15px black);
+  }
+
+  div .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+  }
+
+  div#details {
+    grid-column: 3/5;
+    margin-left: 30px;
+    background-blend-mode: lighten;
+  }
+
+  img {
+    grid-column: 2/3;
+  }
+
+  .wrapper {
+    grid-column: 1/6;
+    padding: 0;
+    color: #CAE7DF;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #EE7879, #2A3166, #44BAAA);
+    background-size: 400% 400%;
+    -webkit-animation: gradientBG 10s ease infinite;
+    animation: gradientBG 10s ease infinite;
+  }
+
+  @-webkit-keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

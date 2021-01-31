@@ -1,0 +1,64 @@
+div {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.main {
+  width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  box-sizing: border-box;
+  justify-items: center;
+}
+
+.div_1 {
+  grid-column: 1/2;
+  font-size: 20px;
+  background: #8080ff;
+}
+
+.div_1:hover {
+  font-weight: bold;
+}
+
+.div_2 {
+  grid-column: 2/3;
+  background: #01ff01;
+}
+
+.div_2:hover {
+  font-weight: bold;
+}
+
+.div_3 {
+  grid-column: 3/4;
+  background: #ffd280;
+}
+
+.div_3:hover {
+  font-weight: bold;
+}
+
+#click {
+  background: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+}
+
+#color_input, #color_input_2, #color_button, #color_button_2, #fade, p {
+  margin-left: 10px;
+}
+
+p {
+  text-justify: center;
+}
+
+.not_bold {
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=week_2.css.map */

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@300&family=Roboto&display=swap");
+header {
+  margin-top: 0;
+  background: #2A3166;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+h1#header {
+  text-transform: uppercase;
+}
+
+nav ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+nav li {
+  float: left;
+}
+nav li a,
+nav .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav ul.nav,
+nav a {
+  background: #44BAAA;
+}
+nav a:hover,
+nav .dropdown:hover .dropbtn {
+  background-color: #EE7879;
+}
+nav li.dropbtn {
+  display: inline-block;
+}
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+nav .dropdown-content a {
+  display: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  width: auto;
+}
+nav .dropdown-content :hover {
+  background-color: #f1f1f1;
+}
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media only screen and (min-width: 900px) {
+  header {
+    margin-top: 0;
+    background: #2A3166;
+    padding: 30px;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  h1#header {
+    grid-column: 1/4;
+    color: #EE7879;
+    text-align: left;
+    font-size: 45px;
+  }
+
+  footer {
+    padding: 10px;
+    background: #2A3166;
+    color: #CAE7DF;
+  }
+
+  footer {
+    padding: 3px;
+    margin-right: 0;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  footer div.footer {
+    grid-column: 2/5;
+    width: 100%;
+  }
+  footer div.footer {
+    border: none;
+    padding: 0;
+    grid-column: 1/4;
+    margin: 2px;
+    margin-left: 50px;
+    align-items: center;
+  }
+
+  /*
+
+  */
+}
+
+/*# sourceMappingURL=nav.css.map */
