@@ -63,17 +63,17 @@
 if (isset($_SESSION['cart'])){ 
   
   foreach($_SESSION['cart'] as $items_p){ 
-
-    echo " 
-    <tr><td>'$items_p[title]' . '$items_p[image]' </td> </ tr>   
+?>
+   
+    <tr><td> <?php echo $items_p[title]  ?> </td> </tr>   
     
-    "; 
+    
 
   }
 
-}
 
-?>  
+
+<?php 'endforeach }'  ?>  
 
 
 
