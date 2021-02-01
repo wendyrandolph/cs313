@@ -203,7 +203,7 @@ switch ($action) {
         $_SESSION['cart'] = $buy_results;
 
 
-        include '../week_3/view/view.php';
+        include '../view/cart.php';
         break;
 
         //******************************************************************
