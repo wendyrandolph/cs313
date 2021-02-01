@@ -24,7 +24,7 @@
         <nav class="cart"> 
         <ul>
             <li><a href='/../../week_3/index.php'>Home</a></li>
-            <li><a href='../week_3/view/cart.php'>View Cart</a></li>
+            <li><a href='../view/cart.php'>View Cart</a></li>
             <ul>
                 </nav>
     </div>
