@@ -252,7 +252,7 @@ switch ($action) {
 
 
         }
-        include 'view/cart.php';
+        include '../week_3/view/cart.php'
         break;
         //******************************************************************
         //                       Clear Cart Scenario                      *
@@ -286,7 +286,7 @@ switch ($action) {
             $message = '<p>Please provide information for all empty form fields.</p>';
         }
 
-        include '../week_3/view/checkout.php';
+        include 'view/checkout.php';
         break;
 
 
@@ -298,7 +298,7 @@ switch ($action) {
         if (isset($_SESSION['confirm'])) {
             $_SESSION['mess_confirm'] = "Your order has been submitted";
         }
-        include '/web/week_3/view/confirm.php';
+        include 'view/confirm.php';
 
 
         //******************************************************************
