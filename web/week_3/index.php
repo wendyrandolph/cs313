@@ -252,7 +252,7 @@ switch ($action) {
 
 
         }
-        include '../week_3/view/cart.php'; 
+        include 'view/cart.php'; 
         break;
         //******************************************************************
         //                       Clear Cart Scenario                      *
