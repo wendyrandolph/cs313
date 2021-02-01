@@ -312,7 +312,7 @@ switch ($action) {
 
 
 
-        include 'view/browse.php';
+        include 'view/cart.php';
         break;
 }
 ?>
