@@ -159,7 +159,7 @@ switch ($action) {
         $new_results = array();
         $new_results = ["pId" =>  $_SESSION['pId'], "title" => $_SESSION["title"], "quan" => $_SESSION["quan"], "price" =>  $_SESSION['price'], "desc" => $_SESSION["desc"]];
 
-var_dump ($new_results); 
+//var_dump ($new_results); 
 
 
         //$_SESSION['quan'] = $quan;

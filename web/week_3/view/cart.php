@@ -60,8 +60,8 @@
 <?php
 
 
-if (isset($_POST['submit'])){ 
-  $_SESSION['cart'] = $_POST['pId']; 
+if (isset($_SESSION['cart'])){ 
+  
   foreach($_SESSION['cart'] as $items_p){ 
 
     echo " 
