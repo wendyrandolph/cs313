@@ -203,8 +203,6 @@ switch ($action) {
         $_SESSION['cart'] = $buy_results;
 
 
-        var_dump($_SESSION['cart']); 
-        unset($_SESSION['cart']); 
         include 'view/browse.php';
         break;
 
@@ -213,7 +211,7 @@ switch ($action) {
         //******************************************************************
 
     case 'viewCart':
-        $buy_results = $_SESSION['cart'];
+        
 
         //get & filter the info from the form 
         if (isset($buy_results['pId'])) {
@@ -246,10 +244,10 @@ switch ($action) {
 
 
 
-            $title = getTitle($buy_results); 
+           // $title = getTitle($buy_results); 
            
 
-            $_SESSION['cart'] = $buy_results;
+            //$_SESSION['cart'] = $buy_results;
             // $view_cart = buildCart(); 
 
 
