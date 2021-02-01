@@ -58,10 +58,20 @@
 
 
 <?php
-if(isset($title)){
-   echo $title; 
- 
-} 
+
+
+if (isset($_POST['submit'])){ 
+  $_SESSION['cart'] = $_POST['pId']; 
+  foreach($_SESSION['cart'] as $items_p){ 
+
+    echo " 
+    <tr><td>'$items_p[title]' . '$items_p[image]' </td> </ tr>   
+    
+    "; 
+
+  }
+
+}
 
 ?>  
 
@@ -69,7 +79,7 @@ if(isset($title)){
 
       </table>
       <div class="checkout">
-        <a href='../../week_3/index.php'>Check Out</a>
+        <a href='../../week_3/index.php?action=checkout'>Check Out</a>
       </div>
   </main>
   <footer>

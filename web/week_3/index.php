@@ -205,7 +205,7 @@ var_dump ($new_results);
 
         var_dump($_SESSION['cart']); 
         unset($_SESSION['cart']); 
-        include '../week_3/view/browse.php';
+        include 'view/browse.php';
         break;
 
         //******************************************************************
