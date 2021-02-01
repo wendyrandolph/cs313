@@ -5,7 +5,7 @@ session_start();
 
 //Create the cart with the start of the session if it's not already created. 
 if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array("Cart");
+    $_SESSION['cart'] = array();
 } //WORKS CORRECTLY 
 
 
