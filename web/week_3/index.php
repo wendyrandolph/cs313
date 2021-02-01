@@ -252,7 +252,7 @@ switch ($action) {
 
 
         }
-        include 'view/cart.php'; 
+        include 'cart.php'; 
         break;
         //******************************************************************
         //                       Clear Cart Scenario                      *
