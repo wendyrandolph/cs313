@@ -203,7 +203,7 @@ switch ($action) {
         $_SESSION['cart'] = $buy_results;
 
 
-        include 'view/browse.php';
+        include '../week_3/view/browse.php';
         break;
 
         //******************************************************************
@@ -252,7 +252,7 @@ switch ($action) {
 
 
         }
-        include '../week_3/view/cart.php'
+        include '../week_3/view/cart.php'; 
         break;
         //******************************************************************
         //                       Clear Cart Scenario                      *
