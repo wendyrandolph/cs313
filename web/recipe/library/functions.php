@@ -5,7 +5,7 @@ function navigation($categories)
 {
     // Get the array of classifications
     $categories = getCategories();
-    var_dump($categories);
+   
     //exit;
 
     // Build a navigation bar using the $classifications array

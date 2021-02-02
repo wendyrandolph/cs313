@@ -51,9 +51,20 @@ catch (PDOException $ex)
         <?php 
 if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
 {
-   foreach($db->query('SELECT category_name, category_id FROM category') AS $row)
+   foreach($db->query('SELECT category_name, category_id FROM category') AS $navList)
   {
-    echo '<b>'.$row['category_name'].' '.$row['id']. '</b>';
+
+    $navList = '<ul>';
+    $navList .= "<li><a href='index.php' title='View the Recipes Home Page'>Home</a></li>";
+    foreach ($categories as $classification) {
+        $navList .= "<li><a href='../index.php?action=categories&category_name=" . urlencode($classification['category_name']) . "' title='View our $classification[category_name] product line'>$classification[category_name]</a></li>"; 
+        }
+    $navList .= '</ul>';
+    return $navList;
+    echo $navList;
+
+
+    //echo '<b>'.$row['category_name'].' '.$row['id']. '</b>' ;
   }
 } 
     
