@@ -70,9 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   foreach($rows AS $row)
   {
-    echo '<a href="details.php?><b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b></a>' - 
-    '<input type="hidden" name="id" value="' . $row['id'] . '"> <br><br>';  }
-
+    echo '<b><a href=details.php&id=$row[id]>'.' '.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</a></b> - '; 
+   
+    
 }
 
   ?>
