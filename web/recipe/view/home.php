@@ -41,16 +41,13 @@ try {
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 $navList = '<ul>';
-               // $navList .= "<li><a href='../view/home.php' title='View the Recipes home page'>Home</a></li>";
+                $navList .= "<li><a href='../view/home.php' title='View the Recipes home page'>Home</a></li>";
                 foreach ($db->query('SELECT category_name FROM category') as $row) {
                     $navList .= '<li>'.'<b>' . $row['category_name'] . ' '.'</b>' . '</li>'.'<br><br>';
-                    echo $navList;
-                   
-
-                    //echo '<b>' . $row['categpry_name'] . ' ' . $row['id'] . '</b>' . '<br><br>';
-                }
-                $navList = '</ul>';
-          
+                     }
+                $navList .= '</ul>';
+                     return $navList; 
+                     echo $navList; 
             } ?>
         </nav>
 
