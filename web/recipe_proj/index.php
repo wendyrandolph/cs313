@@ -12,7 +12,7 @@ if ($action == NULL) {
   include '../recipe_proj/models/main_model.php'; 
 
 // Get the array of classifications
-$classifications = getCategories();
+$categories = getCategories();
 //Get the navigation 
 $getnavigation = navigation($categories);
 
