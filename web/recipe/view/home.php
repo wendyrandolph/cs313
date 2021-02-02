@@ -35,7 +35,7 @@ try {
     <header>
 
 
-        <h1> THIS IS THE BEGINNING </h1>
+        <h1> Family Recipes </h1>
         <nav id="page_nav">
 
             <?php
