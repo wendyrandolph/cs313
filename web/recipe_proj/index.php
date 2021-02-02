@@ -23,7 +23,7 @@ switch ($action) {
       break;
   
  default: 
-   include '../home.php';
+   include 'home.php';
       break;
 }
 
