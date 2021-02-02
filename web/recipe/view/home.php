@@ -36,7 +36,7 @@ try {
 
 
         <h1> THIS IS THE BEGINNING </h1>
-        <nav class="nav">
+        <nav id="page_nav">
 
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET") {
