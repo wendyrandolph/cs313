@@ -7,15 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECIPE PROJECT</title>
 </head>
-<?php
-require '../library/connections.php'; 
-require '../library/functions.php'; 
-require '../models/main_model.php'; 
-// Get the array of classifications
-$categories = getCategories();
-//Get the navigation 
-$getnavigation = navigation($categories);
-?>
+
 <body>
     <header>
         <nav>
