@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<?php 
+session_start(); 
+
+  
+    $action = filter_input(INPUT_POST, 'action');
+if ($action == NULL) {
+    $action = filter_input(INPUT_GET, 'action');
+}
+
+  // Get the database connection file
+  require_once 'library/connections.php';
+  require 'models/main_model.php'; 
+
+// Get the array of classifications
+$classifications = getCategories();
+//Get the navigation 
+$getnavigation = navigation($categories);
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
