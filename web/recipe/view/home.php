@@ -1,3 +1,25 @@
+<?php
+
+try {
+    $dbUrl = getenv('DATABASE_URL');
+
+    $dbOpts = parse_url($dbUrl);
+
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"], '/');
+
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $ex) {
+    echo 'Error!: ' . $ex->getMessage();
+    die();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,19 +33,20 @@
 
 <body>
     <header>
-        
 
-            <h1> THIS IS THE BEGINNING </h1>
-            <nav class="nav">
-           
-<?php 
-            if ($_SERVER["REQUEST_METHOD"] == "GET" )
-    {
-       foreach($db->query('SELECT category_name FROM category') AS $row)
-      {
-        echo '<b>'.$row['categpry_name'].' '.$row['id'].'</b>'. '<br><br>';
-      }
-    } ?>
+
+        <h1> THIS IS THE BEGINNING </h1>
+        <nav class="nav">
+
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                $navList = '<ul>';
+                $navList .= "<li><a href='../recipe/home.php' title='View the Recipes home page'>Home</a></li>";
+                foreach ($db->query('SELECT category_name FROM category') as $row) {
+                    $navList .= "<li><a href='../recipe/details.php?action=categories&category_name=" . urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
+                    echo '<b>' . $row['categpry_name'] . ' ' . $row['id'] . '</b>' . '<br><br>';
+                }
+            } ?>
         </nav>
 
     </header>
