@@ -30,13 +30,6 @@ function myDbConnect()
     }
 
 
-    foreach ($db->query('SELECT username, password FROM note_user') as $row)
-    {
-      echo 'user: ' . $row['username'];
-      echo ' password: ' . $row['password'];
-      echo '<br/>';
-    }
-
     // The next line gets the data from the database and 
     // stores it as an array in the $classifications variable 
     //$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);

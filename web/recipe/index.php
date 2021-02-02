@@ -2,7 +2,7 @@
 // This is my main controller 
   session_start(); 
 
-  
+
     $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
@@ -18,7 +18,7 @@ include ' ../../models/main_model.php';
 
 
 // Get the array of classifications
-//$categories = getCategories();
+$categories = getCategories();
 
 
 //Get the navigation 

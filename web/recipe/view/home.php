@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <?php $categories;  ?>
+            <?php echo $categories;  ?>
         </nav>
         <h1> THIS IS THE BEGINNING </h1>
     </header>
