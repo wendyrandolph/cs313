@@ -26,3 +26,4 @@ function myDbConnect(){
   exit;
 }
 }myDbConnect(); 
+?>
