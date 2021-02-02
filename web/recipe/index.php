@@ -18,11 +18,11 @@ include ' ../../models/main_model.php';
 
 
 // Get the array of classifications
-//$categories = getCategories();
-//$_SESSION['categories'] = $categories; 
+$categories = getCategories();
+
 
 //Get the navigation 
-//$getnavigation = navigation($categories);
+$getnavigation = navigation($categories);
 
 
 
@@ -33,10 +33,6 @@ switch ($action) {
  default: 
 
 
-
-
-
- echo "This is the default case statement"; 
    include ' ../../view/home.php';
       break;
 }

@@ -9,7 +9,7 @@ function getCategories()
     $db = myDbConnect();
     // The next line creates the prepared statement using the phpmotors connection      
 
-    $stmt = $db->prepare('SELECT * FROM category');
+    $stmt = $db->query('SELECT category_name FROM category');
     //$stmt->execute(array(':category_name' => $category_name));
     $stmt->execute();
     $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
