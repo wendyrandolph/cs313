@@ -70,9 +70,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   foreach($rows AS $row)
   {
-      
-    echo '<b>'.'<a href="../week_5/details.php?id=$row[id]">' .$row['book'].' '.$row['chapter'].':'.$row['verse']. '</a>'. '</b> - 
+      '<form action="../week_5/details.php?id=$row[id] method="POST" >';  
+    echo '<b>'.'<a href="../week_5/details.php">' .$row['book'].' '.$row['chapter'].':'.$row['verse']. '</a>'. '</b> - 
     <input type="hidden" name="id" value="' . $row['id'] . '">'; 
+    ' </form>'; 
 }}
 
   ?>
