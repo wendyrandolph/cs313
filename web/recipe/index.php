@@ -1,6 +1,6 @@
 <?php 
 
-
+session_start(); 
   
     $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -9,15 +9,15 @@ if ($action == NULL) {
 
 //grab php functions as needed *****************************************************
 
-include '../library/connections.php'; 
-include '../library/functions.php'; 
-include '../models/main_model.php'; 
+require '../library/connections.php'; 
+//include '../library/functions.php'; 
+//include '../models/main_model.php'; 
 
 
 // Get the array of classifications
-$categories = getCategories($category_name);
+//$categories = getCategories($category_name);
 //Get the navigation 
-$getnavigation = navigation($categories);
+//$getnavigation = navigation($categories);
 
 
 
@@ -31,5 +31,3 @@ switch ($action) {
    include ' ../recipe/view/home.php';
       break;
 }
-
-?>
