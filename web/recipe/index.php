@@ -10,15 +10,15 @@ if ($action == NULL) {
 
 //grab php functions as needed *****************************************************
 
-include ' library/connections.php'; 
-include ' library/functions.php'; 
-include ' models/main_model.php'; 
+include ' ../../library/connections.php'; 
+include ' ../../library/functions.php'; 
+include ' ../../models/main_model.php'; 
 
 
 // Get the array of classifications
 $categories = getCategories();
 //Get the navigation 
-$getnavigation = navigation($categories);
+//$getnavigation = navigation($categories);
 
 
 
