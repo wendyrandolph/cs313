@@ -8,7 +8,7 @@ function getCategories()
     $db = myDbConnect();
     // The SQL statement to be used with the database 
    
-    $sql = 'SELECT category_name  FROM category ORDER BY category_name ASC';
+    $sql = $db -> query('SELECT category_name  FROM category ORDER BY category_name ASC');
     // The next line creates the prepared statement using the phpmotors connection      
     $stmt = $db->prepare($sql);
     // The next line runs the prepared statement 
