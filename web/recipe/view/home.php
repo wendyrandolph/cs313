@@ -1,4 +1,12 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECIPE PROJECT</title>
+</head>
 <?php
 require '../library/connections.php'; 
 require '../library/functions.php'; 
@@ -7,15 +15,7 @@ require '../models/main_model.php';
 $categories = getCategories();
 //Get the navigation 
 $getnavigation = navigation($categories);
-?><!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECIPE PROJECT</title>
-</head>
-
+?>
 <body>
     <header>
         <nav>
