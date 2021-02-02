@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
     echo '<b>'.'<a href=../week_5/details.php'.' '.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</a></b> - '; 
      "<form action='../week_5/details.php' method=POST>";  
     "<input type=hidden name=id value='$row[id]'>";  
+    "<input type=submit>"; 
     "</form>"; 
 }}
 
