@@ -4,7 +4,7 @@ function myDbConnect()
 {
 
 
-
+  try {
   $dbUrl = getenv('DATABASE_URL');
 
   $dbOpts = parse_url($dbUrl);
@@ -15,7 +15,7 @@ function myDbConnect()
   $dbPassword = $dbOpts["pass"];
   $dbName = ltrim($dbOpts["path"], '/');
 
-  try {
+ 
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     
     $result = $db->query('SELECT category_name FROM category ORDER BY category_name ASC');

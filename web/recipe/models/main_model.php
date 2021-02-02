@@ -11,7 +11,7 @@ function getCategories()
     
     $stmt = $db->prepare('SELECT * FROM category');
 //$stmt->execute(array(':name' => $name, ':id' => $id));
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // The next line closes the interaction with the database 
     $stmt->closeCursor();
     // The next line sends the array of data back to where the function 
@@ -20,6 +20,6 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
  
 
 
-    return  $rows; 
+    return  $categories; 
     
 }
