@@ -8,10 +8,7 @@ function getCategories($category_name)
     $db = myDbConnect();
     // The SQL statement to be used with the database 
 
-    $sql = $db->query('SELECT category_name  FROM category ORDER BY category_name ASC');
-    // The next line creates the prepared statement using the phpmotors connection      
-    $stmt = $db->prepare($sql);
-    $stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+    $stmt = $db->prepare('SELECT category_name  FROM category ORDER BY category_name ASC');
     $stmt->bindValue(':category_name', $category_name, PDO::PARAM_INT);
 
     $stmt->execute();
