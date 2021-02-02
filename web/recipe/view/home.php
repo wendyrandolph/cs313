@@ -12,8 +12,8 @@
     <header>
         <nav>
 
-            <?php if(isset($categories)) { 
-                echo $categories; };  ?>
+            <?php if(isset($_SESSION['categories'])) { 
+                echo $_SESSION['categories']; };  ?>
         </nav>
         <h1> THIS IS THE BEGINNING </h1>
     </header>
