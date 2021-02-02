@@ -23,6 +23,8 @@ switch ($action) {
       break;
   
  default: 
+
+ echo "This is the default case statement"; 
    include 'recipe_proj/home.php';
       break;
 }
