@@ -5,7 +5,7 @@
 function getCategories($category_name)
 {
     // Create a connection object from the phpmotors connection function
-    $db = myDbConnect();
+    
     // The SQL statement to be used with the database 
 
     $stmt = $db->prepare('SELECT category_name  FROM category ORDER BY category_name ASC');
