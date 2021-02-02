@@ -41,7 +41,7 @@ try {
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 $navList = '<ul>';
-                $navList .= "<li><a href='../recipe/home.php' title='View the Recipes home page'>Home</a></li>";
+                $navList .= "<li><a href='../home.php' title='View the Recipes home page'>Home</a></li>";
                 foreach ($db->query('SELECT category_name FROM category') as $row) {
                     $navList .= "<li><a href='../recipe/details.php?action=categories&category_name=" . urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
                     echo '<b>' . $row['categpry_name'] . ' ' . $row['id'] . '</b>' . '<br><br>';
