@@ -28,7 +28,7 @@ switch ($action) {
   
  default: 
 
- echo "This is the default case statement"; 
+ //echo "This is the default case statement"; 
    include ' view/home.php';
       break;
 }
