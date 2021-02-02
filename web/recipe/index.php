@@ -1,5 +1,7 @@
 <?php 
 // This is my main controller 
+  session_start(); 
+
   
     $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {

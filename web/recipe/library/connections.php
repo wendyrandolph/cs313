@@ -1,6 +1,7 @@
-<?php 
+<?php
 
-function myDbConnect(){ 
+function myDbConnect()
+{
 
 
 
@@ -12,23 +13,31 @@ function myDbConnect(){
   $dbPort = $dbOpts["port"];
   $dbUser = $dbOpts["user"];
   $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
+  $dbName = ltrim($dbOpts["path"], '/');
 
-  try { 
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $stmt = $db->prepare('SELECT category_name FROM category ORDER BY category_name ASC'); 
+  try {
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+    $sql = 'SELECT category_name FROM category ORDER BY category_name ASC';
+    $result = $db->query($sql);
     // The next line runs the prepared statement 
-    $stmt->execute();
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetchAll()) {
+        echo "category name: " . $row["category_name"] . "<br>";
+      }
+    } else {
+      echo "0 results";
+    }
     // The next line gets the data from the database and 
     // stores it as an array in the $classifications variable 
-    $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $categories; 
-  //if (is_object($db)) {
-      //  echo 'It worked!';
- //}
-}catch (PDOException $ex){
-  echo 'Error!: ' . $ex->getMessage();
-  exit;
+    //$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //return $categories;
+    //if (is_object($db)) {
+    //  echo 'It worked!';
+    //}
+  } catch (PDOException $ex) {
+    echo 'Error!: ' . $ex->getMessage();
+    exit;
+  }
 }
-}myDbConnect();
+myDbConnect();
