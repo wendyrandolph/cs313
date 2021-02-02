@@ -43,8 +43,9 @@ try {
                 $navList = '<ul>';
                 $navList .= "<li><a href='../view/home.php' title='View the Recipes home page'>Home</a></li>";
                 foreach ($db->query('SELECT category_name FROM category') as $row) {
-                    $navList .= '<li><a href="../view/display.php?action=$row[category_name]" . ' . $row['category_name'] . ' ' . '</li>'.'<br><br>';
-                     }
+                    $navList .= '<li>'.'<a href="../view/display.php?action=category&category_id=$row[category_id]">'.' '.$row['category_name'] . ' ' .'</a>'. '</li>'.'<br><br>';
+                    $navList .= '<input type="hidden" name="category_id" value="' . $row['category_id'] . '" '; 
+                }
                 $navList .= '</ul>';
                     
                      echo $navList; 
@@ -59,3 +60,9 @@ try {
 </body>
 
 </html>
+
+
+'<form action="../recipe/view/display.php?id=$row[category_id] method="POST" >';  
+echo '<b>'.'<a href="">' .$row['category_name']. '</a>'. '</b> - 
+<input type="hidden" name="id" value="' . $row['id'] . '">'; 
+' </form>'; 
