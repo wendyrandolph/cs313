@@ -8,8 +8,8 @@ session_start();
 //}
 
 // Get the database connection file
-include 'library/connections.php';
-include 'models/main_model.php';
+include '../library/connections.php';
+include '../models/main_model.php';
 
 // Get the array of classifications
 $classifications = getCategories();
