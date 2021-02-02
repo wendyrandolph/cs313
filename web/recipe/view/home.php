@@ -16,10 +16,14 @@
             <h1> THIS IS THE BEGINNING </h1>
             <nav class="nav">
            
-
-            <?php echo $getNavigation; ?> 
-            
-
+<?php 
+            if ($_SERVER["REQUEST_METHOD"] == "GET" )
+    {
+       foreach($db->query('SELECT category_name FROM category') AS $row)
+      {
+        echo '<b>'.$row['categpry_name'].' '.$row['id'].'"<br><br>';
+      }
+    } ?>
         </nav>
 
     </header>
