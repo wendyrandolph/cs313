@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
     echo '<b>'.'<a href=details.php&id=$row[id]>'.' '.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</a></b> - '; 
    
     
-}
+}}
 
   ?>
 </body>
