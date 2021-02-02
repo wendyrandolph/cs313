@@ -7,9 +7,12 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-  // Get the database connection file
-  include '../library/connections.php';
-  include '../models/main_model.php'; 
+//grab php functions as needed *****************************************************
+
+require '../recipe_proj/library/connections.php'; 
+require '../recipe_proj/library/functions.php'; 
+require '../recipe_proj/models/main_model.php'; 
+
 
 // Get the array of classifications
 $categories = getCategories();
