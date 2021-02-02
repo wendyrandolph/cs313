@@ -10,11 +10,11 @@ function getCategories()
     // The next line creates the prepared statement using the phpmotors connection      
 
     $stmt = $db->prepare('SELECT * FROM category');
-    //$stmt->execute(array(':category_name' => $category_name ));
+    //$stmt->execute(array(':category_name' => $category_name));
     $stmt->execute();
     $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // The next line closes the interaction with the database 
-   
+    $stmt->closeCursor();
     // The next line sends the array of data back to where the function 
     // was called (this should be the controller) 
 
@@ -23,3 +23,4 @@ function getCategories()
 
     return  $categories;
 }
+?>
