@@ -46,7 +46,7 @@ try {
                     $navList .= '<li>'.'<b>' . $row['category_name'] . ' '.'</b>' . '</li>'.'<br><br>';
                      }
                 $navList .= '</ul>';
-                     return $navList; 
+                    
                      echo $navList; 
             } ?>
         </nav>
