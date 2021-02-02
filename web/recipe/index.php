@@ -28,6 +28,6 @@ switch ($action) {
  default: 
 
  echo "This is the default case statement"; 
-   include ' ../recipe/view/home.php';
+   include ' view/home.php';
       break;
 }
