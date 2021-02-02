@@ -1,7 +1,7 @@
 <?php 
 
 
-function myDbConnect(){ 
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -24,5 +24,5 @@ try
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-}
+
 ?>
