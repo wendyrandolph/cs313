@@ -21,7 +21,7 @@
     {
        foreach($db->query('SELECT category_name FROM category') AS $row)
       {
-        echo '<b>'.$row['categpry_name'].' '.$row['id'].'"<br><br>';
+        echo '<b>'.$row['categpry_name'].' '.$row['id'].'</b>'. '<br><br>';
       }
     } ?>
         </nav>
