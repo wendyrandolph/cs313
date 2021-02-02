@@ -23,6 +23,6 @@ switch ($action) {
       break;
   
  default: 
-   include '/home.php';
+   include 'recipe_proj/home.php';
       break;
 }
