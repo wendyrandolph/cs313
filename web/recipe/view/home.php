@@ -1,5 +1,15 @@
 
-<!DOCTYPE html>
+<?php
+include '../library/connections.php'; 
+include '../library/functions.php'; 
+include '../models/main_model.php'; 
+
+
+// Get the array of classifications
+$categories = getCategories();
+//Get the navigation 
+$getnavigation = navigation($categories);
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
