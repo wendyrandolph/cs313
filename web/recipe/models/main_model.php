@@ -7,7 +7,7 @@ function getCategories($category_name)
     // Create a connection object from the phpmotors connection function
  
     // The SQL statement to be used with the database 
-    $db =   include '../library/connections.php'; 
+    $db =   myDbConnect();  
     $stmt = $db->prepare('SELECT category_name  FROM category; ');
     
 
