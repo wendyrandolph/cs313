@@ -28,3 +28,5 @@ switch ($action) {
    include ' /home.php';
       break;
 }
+
+?>
