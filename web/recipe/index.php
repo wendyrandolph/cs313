@@ -21,12 +21,21 @@ $categories = getCategories();
 //$getnavigation = navigation($categories);
 
 
+foreach ($db->query('SELECT category_name FROM category') as $row)
+{
+  echo $row; 
+}
+
 
 switch ($action) {
   case ' ':
       break;
   
  default: 
+
+
+
+
 
  //echo "This is the default case statement"; 
    include ' ../../view/home.php';
