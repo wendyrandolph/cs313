@@ -17,12 +17,12 @@ function myDbConnect()
 
   try {
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    $sql = 'SELECT category_name FROM category ORDER BY category_name ASC';
-    $result = $db->query($sql);
+    
+    $result = $db->query('SELECT category_name FROM category ORDER BY category_name ASC');
     // The next line runs the prepared statement 
     if ($result->num_rows > 0) {
       // output data of each row
-      while($row = $result->fetchAll()) {
+      while($row = $result->fetchAll(PDO::FETCH_ASSOC)) {
         echo "category name: " . $row["category_name"] . "<br>";
       }
     } else {
