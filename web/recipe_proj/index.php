@@ -9,9 +9,9 @@ if ($action == NULL) {
 
 //grab php functions as needed *****************************************************
 
-require '../recipe_proj/library/connections.php'; 
-require '../recipe_proj/library/functions.php'; 
-require '../recipe_proj/models/main_model.php'; 
+include '../library/connections.php'; 
+include '../library/functions.php'; 
+include '../models/main_model.php'; 
 
 
 // Get the array of classifications
