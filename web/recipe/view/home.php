@@ -61,12 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
         }
     $navList .= '</ul>';
     return $navList;
+  }
     echo $navList;
 
 
     //echo '<b>'.$row['category_name'].' '.$row['id']. '</b>' ;
   }
-} 
+
     
 
   ?>
