@@ -7,11 +7,6 @@ function getCategories()
     
     // Create a connection object from the phpmotors connection function
     $db = myDbConnect();
-    
-  if (is_object($db)) {
-       echo 'It worked!';
- }
- exit; 
     // The next line creates the prepared statement using the phpmotors connection      
     $stmt = $db->prepare('SELECT category_name FROM category ORDER BY category_name ASC'); 
     // The next line runs the prepared statement 
