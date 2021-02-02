@@ -9,10 +9,9 @@ function getCategories()
     $db = myDbConnect();
     // The next line creates the prepared statement using the phpmotors connection      
     
-    $stmt = $db->query('SELECT category_name FROM category');
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
+    $stmt = $db->prepare('SELECT * FROM category');
+//$stmt->execute(array(':name' => $name, ':id' => $id));
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // The next line closes the interaction with the database 
     $stmt->closeCursor();
     // The next line sends the array of data back to where the function 
@@ -21,7 +20,6 @@ function getCategories()
  
 
 
-    return  $results; 
+    return  $rows; 
     
 }
-?>
