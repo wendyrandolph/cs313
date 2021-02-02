@@ -17,12 +17,10 @@ try
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  if (is_object($db)) {
-         echo 'It worked!';
-  }
-}
-catch (PDOException $ex)
-{
+  //if (is_object($db)) {
+    //     echo 'It worked!';
+  //}
+}catch (PDOException $ex){
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
