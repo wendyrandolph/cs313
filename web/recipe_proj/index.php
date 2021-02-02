@@ -8,8 +8,8 @@ if ($action == NULL) {
 }
 
   // Get the database connection file
-  include '../recipe_proj/library/connections.php';
-  include '../recipe_proj/models/main_model.php'; 
+  include '../library/connections.php';
+  include '../models/main_model.php'; 
 
 // Get the array of classifications
 $categories = getCategories();
@@ -25,7 +25,7 @@ switch ($action) {
  default: 
 
  echo "This is the default case statement"; 
-   include ' ../recipe_proj/home.php';
+   include '../recipe_proj/index.php';
       break;
 }
 
