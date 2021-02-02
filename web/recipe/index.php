@@ -1,5 +1,5 @@
 <?php 
-
+// This is my main controller 
   
     $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {

@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <?php $getnavigation;  ?>
+            <?php $categories;  ?>
         </nav>
         <h1> THIS IS THE BEGINNING </h1>
     </header>

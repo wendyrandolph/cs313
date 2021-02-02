@@ -17,7 +17,13 @@ function myDbConnect(){
   try { 
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-  
+  $stmt = $db->prepare('SELECT category_name FROM category ORDER BY category_name ASC'); 
+    // The next line runs the prepared statement 
+    $stmt->execute();
+    // The next line gets the data from the database and 
+    // stores it as an array in the $classifications variable 
+    $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $categories; 
   //if (is_object($db)) {
       //  echo 'It worked!';
  //}
