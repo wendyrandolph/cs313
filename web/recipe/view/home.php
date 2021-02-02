@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECIPE PROJECT</title>
 </head>
+<?php 
+
+foreach ($db->query('SELECT username, password FROM author') as $row)
+{
+  echo 'user: ' . $row['username'];
+  echo ' password: ' . $row['password'];
+  echo '<br/>';
+}
+?>
 
 <body>
     <header>
