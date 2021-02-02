@@ -2,7 +2,7 @@
 
 //THIS IS THE MAIN MODEL 
 
-function getCategories($category_name)
+function getCategories()
 {
     // Create a connection object from the phpmotors connection function
  

@@ -16,7 +16,7 @@ include ' models/main_model.php';
 
 
 // Get the array of classifications
-$categories = getCategories($category_name);
+$categories = getCategories();
 //Get the navigation 
 $getnavigation = navigation($categories);
 
