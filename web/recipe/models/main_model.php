@@ -11,21 +11,24 @@ function getCategories()
     $sql = $db -> query('SELECT category_name  FROM category ORDER BY category_name ASC');
     // The next line creates the prepared statement using the phpmotors connection      
     $stmt = $db->prepare($sql);
+    $stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+$stmt->bindValue(':id', $category_name, PDO::PARAM_INT);
+
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // The next line runs the prepared statement 
     $stmt->execute();
     // The next line gets the data from the database and 
     // stores it as an array in the $classifications variable 
-    $categories = $stmt->fetchAll();
+    //$categories = $stmt->fetchAll();
     // The next line closes the interaction with the database 
-    $stmt->closeCursor();
+    //$stmt->closeCursor();
     // The next line sends the array of data back to where the function 
     // was called (this should be the controller) 
     
  
 
 
-    return  $categories; 
+    return  $rows; 
     
 }
-
-?> 
