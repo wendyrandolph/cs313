@@ -1,0 +1,18 @@
+//variables for color 
+
+$primary: #32021F; 
+$secondary: #6F7D8C; 
+
+
+header { 
+    width: 800px; 
+    background: $primary; 
+    color: $secondary; 
+}
+
+nav { 
+    display: inline-flex; 
+    background: red; 
+    
+
+}

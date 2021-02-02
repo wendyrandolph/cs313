@@ -44,7 +44,7 @@ catch (PDOException $ex)
 
 <body>
     <header>
-        <nav>
+        <nav class="nav">
 
         <?php 
 if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")

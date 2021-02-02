@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
   foreach($rows AS $row)
   {
       '<form action="../week_5/details.php?id=$row[id] method="POST" >';  
-    echo '<b>' .$row['book'].' '.$row['chapter'].':'.$row['verse']. '</b> - 
+    echo '<b>'.'<a href="">' .$row['book'].' '.$row['chapter'].':'.$row['verse']. '</a>'. '</b> - 
     <input type="hidden" name="id" value="' . $row['id'] . '">'; 
     ' </form>'; 
 }}
