@@ -1,8 +1,8 @@
 
 <?php
-require_once '../library/connections.php'; 
-include '../library/functions.php'; 
-include '../models/main_model.php'; 
+require '../library/connections.php'; 
+require '../library/functions.php'; 
+require '../models/main_model.php'; 
 // Get the array of classifications
 $categories = getCategories();
 //Get the navigation 
