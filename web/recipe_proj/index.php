@@ -16,4 +16,16 @@ $classifications = getCategories();
 $getnavigation = navigation($categories);
 
 
+
+switch ($action) {
+  case ' ':
+      break;
+  
+ default: 
+   include '../recipe_proj/home.php';
+      break;
+}
+
+
+
 ?> 
