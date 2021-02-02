@@ -28,7 +28,7 @@ switch ($action) {
  default: 
 
  echo "This is the default case statement"; 
-   include '../index.php';
+   include 'index.php';
       break;
 }
 
