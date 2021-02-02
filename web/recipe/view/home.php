@@ -43,7 +43,7 @@ try {
                 $navList = '<ul>';
                 $navList .= "<li><a href='../view/home.php' title='View the Recipes home page'>Home</a></li>";
                 foreach ($db->query('SELECT category_name FROM category') as $row) {
-                    $navList .= '<li>'.'<b>' . $row['category_name'] . ' '.'</b>' . '</li>'.'<br><br>';
+                    $navList .= '<li><a href="../view/display.php?action=$row[category_name]" . ' . $row['category_name'] . ' ' . '</li>'.'<br><br>';
                      }
                 $navList .= '</ul>';
                     
