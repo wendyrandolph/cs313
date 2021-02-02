@@ -46,6 +46,8 @@ catch (PDOException $ex)
     <header>
         <nav class="nav">
 
+        <h1> THIS IS THE BEGINNING </h1>
+
         <?php 
 if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
 {
@@ -59,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
   ?>
 
         </nav>
-        <h1> THIS IS THE BEGINNING </h1>
+       
     </header>
     <main>
 
