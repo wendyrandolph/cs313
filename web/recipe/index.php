@@ -16,15 +16,10 @@ include ' ../../models/main_model.php';
 
 
 // Get the array of classifications
-//$categories = getCategories();
+$categories = getCategories();
 //Get the navigation 
 //$getnavigation = navigation($categories);
 
-
-foreach ($db->query('SELECT category_name FROM category') as $row)
-{
-  echo $row; 
-}
 
 
 switch ($action) {

@@ -8,12 +8,12 @@ function getCategories()
     $db = myDbConnect();
    
     // The next line creates the prepared statement using the phpmotors connection      
-    $stmt = $db->prepare('SELECT category_name FROM category'); 
+    $stmt = $db->prepare('SELECT category_name FROM category ORDER BY category_name ASC'); 
     // The next line runs the prepared statement 
     $stmt->execute();
     // The next line gets the data from the database and 
     // stores it as an array in the $classifications variable 
-    $categories = $stmt->fetchAll();
+    $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // The next line closes the interaction with the database 
     $stmt->closeCursor();
     // The next line sends the array of data back to where the function 
