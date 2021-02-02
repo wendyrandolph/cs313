@@ -2,33 +2,29 @@
 
 $text = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-  $text = $_POST['text'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $text = $_POST['text'];
 }
 
 
 
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
+try {
+    $dbUrl = getenv('DATABASE_URL');
 
-  $dbOpts = parse_url($dbUrl);
+    $dbOpts = parse_url($dbUrl);
 
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"], '/');
 
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $ex) {
+    echo 'Error!: ' . $ex->getMessage();
+    die();
 }
 ?>
 
@@ -46,34 +42,32 @@ catch (PDOException $ex)
     <header>
         <nav class="nav">
 
-        <h1> THIS IS THE BEGINNING </h1>
+            <h1> THIS IS THE BEGINNING </h1>
 
-        <?php 
-if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
-{
-   foreach($db->query('SELECT category_name, category_id FROM category') AS $navList)
-  {
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+                foreach ($db->query('SELECT category_name, category_id FROM category') as $navList) {
 
-    $navList = '<ul>';
-    $navList .= "<li><a href='index.php' title='View the Recipes Home Page'>Home</a></li>";
-    foreach ($categories as $classification) {
-        $navList .= "<li><a href='../index.php?action=categories&category_name=" . urlencode($classification['category_name']) . "' title='View our $classification[category_name] product line'>$classification[category_name]</a></li>"; 
-        }
-    $navList .= '</ul>';
-    return $navList;
-  }
-    echo $navList;
+                    $navList = '<ul>';
+                    $navList .= "<li><a href='index.php' title='View the Recipes Home Page'>Home</a></li>";
+
+                    $navList .= "<li><a href='../index.php?action=categories&category_name=" . urlencode($navList['category_name']) . "' title='View our $navList[category_name] product line'>$navList[category_name]</a></li>";
+
+                    $navList .= '</ul>';
+                    return $navList;
+                }
+                echo $navList;
 
 
-    //echo '<b>'.$row['category_name'].' '.$row['id']. '</b>' ;
-  }
+                //echo '<b>'.$row['category_name'].' '.$row['id']. '</b>' ;
+            }
 
-    
 
-  ?>
+
+            ?>
 
         </nav>
-       
+
     </header>
     <main>
 
