@@ -12,9 +12,10 @@ if ($action == NULL) {
 
 //grab php functions as needed *****************************************************
 
-include ' ../../library/connections.php'; 
-include ' ../../library/functions.php'; 
-include ' ../../models/main_model.php'; 
+require ' ../../library/connections.php'; 
+ 
+require ' ../../models/main_model.php'; 
+require ' ../../library/functions.php';
 
 
 // Get the array of classifications
