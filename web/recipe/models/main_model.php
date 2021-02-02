@@ -4,6 +4,7 @@
 
 function getCategories()
 {
+    echo "you made it to the getCategories()"; 
     // Create a connection object from the phpmotors connection function
     $db = myDbConnect();
    
