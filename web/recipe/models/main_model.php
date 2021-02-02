@@ -9,18 +9,16 @@ function getCategories()
     $db = myDbConnect();
     // The next line creates the prepared statement using the phpmotors connection      
 
-    $stmt = $db->query('SELECT category_name FROM category');
-    //$stmt->execute(array(':category_name' => $category_name));
-    $stmt->execute();
-    $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // The next line closes the interaction with the database 
-    $stmt->closeCursor();
-    // The next line sends the array of data back to where the function 
-    // was called (this should be the controller) 
+    if ($_SERVER["REQUEST_METHOD"] == "GET" )
+    {
+       foreach($db->query('SELECT category_name FROM category') AS $row)
+      {
+        echo '<b>'.$row['categpry_name'].' '.$row['id'].'"<br><br>';
+      }
+    }
 
 
 
-
-    return  $categories;
+    return  $row; 
 }
 ?>
