@@ -28,3 +28,4 @@ function getCategories($category_name)
 
     return  $rows;
 }
+?>
