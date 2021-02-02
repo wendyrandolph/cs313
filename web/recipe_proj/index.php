@@ -8,8 +8,8 @@ if ($action == NULL) {
 }
 
   // Get the database connection file
-  require_once 'library/connections.php';
-  require 'models/main_model.php'; 
+  include '../recipe_proj/library/connections.php';
+  include '../recipe_proj/models/main_model.php'; 
 
 // Get the array of classifications
 $classifications = getCategories();
