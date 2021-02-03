@@ -61,8 +61,3 @@ try {
 
 </html>
 
-
-'<form action="../recipe/view/display.php?id=$row[category_id] method="POST" >';  
-echo '<b>'.'<a href="">' .$row['category_name']. '</a>'. '</b> - 
-<input type="hidden" name="id" value="' . $row['id'] . '">'; 
-' </form>'; 
