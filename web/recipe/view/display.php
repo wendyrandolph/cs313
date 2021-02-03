@@ -60,7 +60,7 @@ details($id, $db);
 
 function details($id, $db)
 {
-$stmt = $db->prepare('SELECT recipe_name, recipe_id, FROM ingredients  WHERE category_id=:id');
+$stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients  WHERE category_id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
