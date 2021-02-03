@@ -20,7 +20,7 @@ require ('../recipe/library/functions.php');
 require ('../recipe/model/main_model.php');
 
 $db = myDbConnect(); 
-$categories = getList($db); 
+//$categories = getList($db); 
 
 $navList = getNavigation($categories); 
 
