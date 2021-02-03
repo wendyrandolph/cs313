@@ -52,11 +52,11 @@ try {
         foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
             echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
         }
-    } else {
-        if (isset($text)) {
+    } elseif(isset($text)) {
+       
             searchBook($text, $db);
         }
-    }
+    
 
     function searchBook($text, $db)
     {
