@@ -49,7 +49,7 @@ try {
                 
                 foreach ($db->query('SELECT * FROM category') as $row) {
 
-                    $navList .= "<li><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" .urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";                   
+                    $navList .= "<li><a href='/recipe/?action=default&category_id=$row[category_id]&category_name=" .urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";                   
                     
                     $navList .= '</ul>'; 
                    
@@ -61,17 +61,10 @@ try {
     <main>
 
     <?php
-            if (isset($id)) {
-                $catList = '<ul>'; 
-                
-                foreach ($db->query('SELECT recipe_name, recipe_id, category_id FROM ingredients') as $row) {
+      
 
-                    $catList .= "<li><a href='/recipe/?action=view_recipe&category_id=$row[category_id]&recipe_name=". $row['recipe_name'] . "'</a></li>";                   
-                    
-                    $catList .= '</ul>'; 
-                   
-                } echo $catList;  
-            } ?>
+
+            ?>
 
 
     </main>

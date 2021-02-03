@@ -26,18 +26,19 @@ switch($action){
 
 
 case 'display': 
-    
-    include '../recipe/view/display.php';     
-break; 
-
-
-case 'default': 
-
     $category_Id = filter_input(INPUT_GET, 'category_Id', FILTER_SANITIZE_NUMBER_INT);
 
     $inventoryArray = getCategoryList($category_Id);
 
      echo json_encode($inventoryArray); 
+
+    include '../recipe/view/home.php';     
+break; 
+
+
+case 'default': 
+
+   
  
 
     include '../recipe/view/home.php'; 
