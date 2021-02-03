@@ -19,7 +19,8 @@ require ('../recipe/library/connections.php');
 require ('../recipe/library/functions.php');
 require ('../recipe/model/main_model.php');
 
-$categories = getList(); 
+$db = myDbConnect(); 
+$categories = getList($db); 
 
 $navList = getNavigation($categories); 
 
