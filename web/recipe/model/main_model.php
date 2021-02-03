@@ -11,5 +11,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 }
                 $navList .= '</ul>';
             } 
-        } 
+        } return $navList; 
  ?> 
