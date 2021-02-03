@@ -20,14 +20,14 @@
             <?php
             
                     
-                     echo $navList; 
+                     echo $buildNav; 
              ?>
         </nav>
 
     </header>
     <main>
 
-                
+
 
 
     </main>
