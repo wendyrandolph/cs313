@@ -252,7 +252,7 @@ switch ($action) {
 
 
         }
-        include 'view/cart.php'; 
+        include '../week_3/view/cart.php'; 
         break;
         //******************************************************************
         //                       Clear Cart Scenario                      *
@@ -265,7 +265,7 @@ switch ($action) {
 
             $_SESSION['message_clear'] = "Your cart has been emptied.";
         }
-        header('location: view/cart.php');
+        header('location: ../week_3/view/cart.php');
         break;
 
 
