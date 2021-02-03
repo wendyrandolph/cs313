@@ -41,7 +41,7 @@ try {
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 $navList = '<ul>';
-                $navList .= "<li><a href='../view/home.php' title='View the Recipes home page'>Home</a></li>";
+                $navList .= "<li><a href='../view/home.php' title='View the Recipes home page'>Home</a></li><br>";
                 foreach ($db->query('SELECT category_name FROM category') as $row) {
                     $navList .= '<li>'.'<a href="../view/display.php?action=category&category_id=$row[category_id]">'.' '.$row['category_name'] . ' ' .'</a>'. '</li>'.'<br><br>';
                     $navList .= '<input type="hidden" name="category_id" value="' . $row['category_id'] . '" '; 
