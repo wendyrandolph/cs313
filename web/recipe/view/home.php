@@ -28,7 +28,6 @@ try {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,24 +45,21 @@ try {
 
         <h1> Family Recipes </h1>
         <nav id="page_nav">
-
             <?php
-             $navList = '<ul>';
-             $navList .= "<li><a href='../recipe/index.php' title='View the Recipes home page'>Home</a></li><br><br>";
-             foreach ($db->query('SELECT category_name, category_id FROM category') as $row) {
-                 $navList .= '<li>' . '<a href="../view/display.php?category_id=$row[category_id]">' . ' ' . $row['category_name'] . ' ' . '</a>' . '</li>' . '<br><br> ;
-                             $navList .=  <input type="hidden" name="category_id" value="' . $row['category_id'] . '"' > '';
-             }
-             $navList .= '</ul>';
-             echo $navList;
-                    
-             ?>
+            if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+                foreach ($db->query('SELECT * FROM category') as $row) {
+                    echo '<b>' . $row['category_name'] . ' </b> - <br><br>';
+                }
+            } ?>
         </nav>
 
     </header>
     <main>
 
-
+    <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
+        <label for="text">Search: </label>
+        <input type="text" id="text" name="text">
+    </form>
 
 
     </main>
@@ -71,4 +67,3 @@ try {
 </body>
 
 </html>
-
