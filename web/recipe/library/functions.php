@@ -21,4 +21,5 @@ function getList()
 
 
     return $categories;
+    var_dump ($categories);  
 }

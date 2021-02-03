@@ -18,9 +18,9 @@ function myDbConnect()
 
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-        if (is_object($db)) {
-            echo 'It worked!';
-        }
+       // if (is_object($db)) {
+          //  echo 'It worked!';
+       // }
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $ex) {
         echo 'Error!: ' . $ex->getMessage();
