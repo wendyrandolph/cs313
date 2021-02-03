@@ -10,9 +10,9 @@ if ($action == NULL) {
 }
 
 //grab php functions as needed *****************************************************
-//require ('../recipe/library/connections.php');
+require ('../recipe/library/connections.php');
 //require ('../recipe/library/functions.php');
-//require ('../recipe/library/main_model.php');
+require ('../recipe/library/main_model.php');
 
 
 //$rows = getList($db); 
@@ -26,13 +26,17 @@ switch($action){
 
 
 case 'display': 
+    $category_Id = filter_input(INPUT_GET, 'category_Id', FILTER_SANITIZE_NUMBER_INT);
 
+    $inventoryArray = getCategoryList($category_Id);
+
+     echo json_encode($inventoryArray); 
     include '../recipe/view/display.php';     
 break; 
 
 
 case 'default': 
-echo "THis is the default case statement"; 
+echo "This is the default case statement"; 
 
     include '../recipe/view/home.php'; 
     break; 
