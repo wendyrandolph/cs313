@@ -27,7 +27,7 @@ switch($action){
 
 case 'display': 
 
-    include '../view/display.php';     
+    include '../recipe/view/display.php';     
 break; 
 
 
