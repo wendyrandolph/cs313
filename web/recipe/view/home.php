@@ -20,7 +20,7 @@
             <?php
             
                     
-                     echo $buildNav; 
+                    
              ?>
         </nav>
 
