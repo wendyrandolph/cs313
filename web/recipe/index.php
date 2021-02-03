@@ -32,7 +32,7 @@ break;
 
 
 case 'default': 
-
+echo "THis is the default case statement"; 
 
     include '../recipe/view/home.php'; 
     break; 
