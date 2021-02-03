@@ -10,7 +10,7 @@ if ($action == NULL) {
 }
 
 //grab php functions as needed *****************************************************
-require ('../recipe/library/connections.php');
+//require ('../recipe/library/connections.php');
 //require ('../recipe/library/functions.php');
 //require ('../recipe/library/main_model.php');
 
@@ -27,7 +27,7 @@ switch($action){
 
 case 'display': 
 
-    include '../recipe/view/display.php';     
+    include '../view/display.php';     
 break; 
 
 
