@@ -1,7 +1,7 @@
 <?php 
 
 function getCategories($db){ 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
     $db = myDbConnect(); 
                 $navList = '<ul>';
                 $navList .= "<li><a href='../recipe/index.php' title='View the Recipes home page'>Home</a></li><br><br>";
@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     $navList .=  <input type="hidden" name="category_id" value="' .$row['category_id']. '"'> ''; 
                 }
                 $navList .= '</ul>';
-            } return $navList; 
-        } 
+                return $navList; 
+        
+            }
+        
  ?> 
