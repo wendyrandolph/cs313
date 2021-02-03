@@ -48,15 +48,12 @@ try {
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-
         foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
             echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
         }
-    } elseif(isset($text)) {
-       
-            searchBook($text, $db);
-        }
-    
+    } else {
+        searchBook($text, $db);
+    }
 
     function searchBook($text, $db)
     {
@@ -64,13 +61,12 @@ try {
         $stmt->bindValue(':text', $text, PDO::PARAM_STR);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
         foreach ($rows as $row) {
-            //'<form action="../week_5/details.php" method="POST" >';
-            echo '<b>' . '<a href="">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a>' . '</b> - 
-            <input type="hidden" name="id" value="' . $row['id'] . '">';
-            //' </form>';
+
+            echo '<b>' . '<a href="../week_5/index.php?action=display&id=$row[id]>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - 
+    
+    
+    <br><br>';
         }
     }
 
