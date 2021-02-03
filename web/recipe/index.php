@@ -1,6 +1,6 @@
 <?php
 // Create or access a Session
-session_start();
+//session_start();
 
 
 

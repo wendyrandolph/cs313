@@ -1,12 +1,8 @@
 <?php
-
-$text = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $text = $_POST['text'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+  $id = $_POST['id'];
 }
-
-
 
 try {
     $dbUrl = getenv('DATABASE_URL');
@@ -56,13 +52,24 @@ try {
     </header>
     <main>
 
-        <h2 class="class_name"> <?php echo $row['category_name'] ?> Vehicles</h2>
-        <!--Vehicle Display if any vehicles exist -->
-        <?php if (isset($)) {
-            echo $vehicleDisplay;
-        } ?>
+    <?php 
+
+details($id, $db);
 
 
+function details($id, $db)
+{
+$stmt = $db->prepare('SELECT recipe_name  FROM ingredients  WHERE id=:id');
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach($rows AS $row)
+{
+  echo '<b>'.$row['recipe_name'].' "<br><br>';
+}
+
+}
+?>
 
     </main>
 

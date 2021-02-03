@@ -48,7 +48,7 @@ catch (PDOException $ex)
 
  function details($id, $db)
 {
-  $stmt = $db->prepare('SELECT book, chapter, verse, content FROM Scriptures WHERE id=:id');
+ $stmt = $db->prepare('SELECT book, chapter, verse, content FROM Scriptures WHERE id=:id');
  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
  $stmt->execute();
  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

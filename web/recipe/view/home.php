@@ -61,7 +61,7 @@ try {
     </header>
     <main>
 
-    <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
+    <form method='post' action= '../view/display.php'>
         <label for="text">Search: </label>
         <input type="text" id="text" name="text">
     </form>
