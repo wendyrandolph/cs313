@@ -1,6 +1,6 @@
 <?php 
 
-function getCategories(){ 
+function getCategories($db){ 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 $navList = '<ul>';
                 $navList .= "<li><a href='../recipe/index.php' title='View the Recipes home page'>Home</a></li><br><br>";
