@@ -62,7 +62,7 @@ try {
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {
-            '<form action="../week_5/details.php?id=$row[id] method="POST" >';
+            '<form action="../week_5/details.php" method="POST" >';
             echo '<b>' . '<a href="">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a>' . '</b> - 
             <input type="hidden" name="id" value="' . $row['id'] . '">';
             ' </form>';
