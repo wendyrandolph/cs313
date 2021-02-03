@@ -62,10 +62,18 @@ try {
     </header>
     <main>
 
-    <form method='post' action= '../recipe/?action=display'>
-        <label for="text">Search: </label>
-        <input type="text" id="text" name="text">
-    </form>
+    <?php
+            if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+                $catList = '<ul>'; 
+                
+                foreach ($db->query('SELECT recipe_name, recipe_id, category_id FROM ingredients') as $row) {
+
+                    $catList .= "<li><a href='/recipe/?action=view_recipe&category_id=$row[category_id]&recipe_name=". $row['recipe_name'] . "'</a></li>";                   
+                    
+                    $catList .= '</ul>'; 
+                   
+                } echo $catList;  
+            } ?>
 
 
     </main>
