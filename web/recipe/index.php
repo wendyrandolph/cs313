@@ -19,10 +19,10 @@ require ('../recipe/library/connections.php');
 require ('../recipe/library/functions.php');
 require ('../recipe/model/main_model.php');
 
-$db = myDbConnect(); 
-//$categories = getList($db); 
+//$db = myDbConnect(); 
+//$rows = getList($db); 
 
-$navList = getNavigation($categories); 
+$navList = getNavigation(); 
 
 
 
