@@ -62,7 +62,7 @@ try {
     </header>
     <main>
 
-    <form method='post' action= '../recipe/view/display.php'>
+    <form method='post' action= '../recipe/?action=display'>
         <label for="text">Search: </label>
         <input type="text" id="text" name="text">
     </form>
