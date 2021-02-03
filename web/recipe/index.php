@@ -38,7 +38,7 @@ break;
 case 'default': 
 
 
-    include '../view/home.php'; 
+    include '../recipe/view/home.php'; 
     break; 
 }
 ?>
