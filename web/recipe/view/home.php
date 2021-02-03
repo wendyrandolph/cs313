@@ -31,7 +31,7 @@ $db = myDbConnect();
                              $navList .=  <input type="hidden" name="category_id" value="' . $row['category_id'] . '"' > '';
              }
              $navList .= '</ul>';
-             return $navList;
+             echo $navList;
                     
              ?>
         </nav>
