@@ -10,7 +10,7 @@ function getList()
     // The SQL sttaement to be used with the database
     $sql = 'SELECT category_name, category_id FROM category';
     // The next line creates the prepared statement using the phpmotors connection      
-    $stmt = $db->prepare($sql);
+    $stmt = $db->query($sql);
     // The next line runs the prepared statement 
     $stmt->execute();
     // The next line gets the data from the database and 
