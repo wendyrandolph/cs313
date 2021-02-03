@@ -1,3 +1,9 @@
+<?php  
+
+$db = myDbConnect(); 
+
+?> 
+
 
 <!DOCTYPE html>
 <html lang="en">

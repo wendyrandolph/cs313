@@ -17,7 +17,7 @@ require ('../recipe/library/main_model.php');
 
 //$rows = getList($db); 
 
-$navList = getNavigation(); 
+//$navList = getNavigation(); 
 
 
 
