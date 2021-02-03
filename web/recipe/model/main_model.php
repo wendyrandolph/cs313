@@ -10,6 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     $navList .=  <input type="hidden" name="category_id" value="' .$row['category_id']. '"'> ''; 
                 }
                 $navList .= '</ul>';
-            } 
-        } return $navList; 
+            } return $navList; 
+        } 
  ?> 
