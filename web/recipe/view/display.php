@@ -41,19 +41,13 @@ try {
 
 <body>
     <header>
-        
 
-            <h1> THIS IS THE BEGINNING </h1>
-            <nav class="nav">
+
+        <h1> THIS IS THE BEGINNING </h1>
+        <nav class="nav">
             <?php
-          
-                echo $navList;
 
-
-                //echo '<b>'.$row['category_name'].' '.$row['id']. '</b>' ;
-            }
-
-
+            echo $navList;
 
             ?>
 
@@ -62,13 +56,13 @@ try {
     </header>
     <main>
 
-    <h2 class="class_name"> <?php echo $row['category_name'] ?> Vehicles</h2>
+        <h2 class="class_name"> <?php echo $row['category_name'] ?> Vehicles</h2>
         <!--Vehicle Display if any vehicles exist -->
-        <?php if (isset($vehicleDisplay)) {
+        <?php if (isset($)) {
             echo $vehicleDisplay;
         } ?>
 
-            
+
 
     </main>
 

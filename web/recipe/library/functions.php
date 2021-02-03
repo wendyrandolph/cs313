@@ -1,7 +1,7 @@
 <?php 
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-                
+function getList(){ 
+                $db = myDbConnect(); 
 
                 $navList = '<ul>';
                 $navList .= "<li><a href='../recipe/home.php' title='View the Recipes Home Page'>Home</a></li>";
@@ -11,21 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
                 $navList .= '</ul>';
                 
             }
+        } return $navList; 
 
-
-            $md = '<div id="v-display" >';
-            foreach ($db->query('SELECT recipe_name, recipe_id') as $recipe) {
-               // $md = "<img class='img' src='$carsInfo[imgPath]'  alt='Image of $carsInfo[invMake] $carsInfo[invModel] on phpmotors.com'>";
-                $invPrice = number_format($carsInfo['invPrice'], 2);
-                $md .= '<ul class="display">';
-                $md .= '<li>';
-                $md .= "<h2 id='make'>$recipe[recipe_name] </h2><br>";
-                $md .= "<h2 class='price '> Price: </h2>";
-             
-                $md .= '</div>';
-                $md .= '</li>';
-            }
-            $md .= '</ul>';
-            $md .= '</div>';
-        
-            ?> 
+    
+?>
