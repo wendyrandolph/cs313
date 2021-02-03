@@ -48,7 +48,7 @@ try {
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-        if (!isset($text)) {
+        if (isset($text)) {
             foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
                 echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
             }
