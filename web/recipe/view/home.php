@@ -61,7 +61,7 @@ try {
     <main>
 
     <?php
-            if ($_SERVER["REQUEST_METHOD"] == "GET" and $id == "") {
+            if (isset($id)) {
                 $catList = '<ul>'; 
                 
                 foreach ($db->query('SELECT recipe_name, recipe_id, category_id FROM ingredients') as $row) {
