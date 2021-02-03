@@ -34,7 +34,7 @@ break;
 case 'default': 
 echo "THis is the default case statement"; 
 
-    include '/view/home.php'; 
+    include '../recipe/view/home.php'; 
     break; 
 }
 ?>
