@@ -54,8 +54,8 @@ try {
                     $navList .= "<li><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" .urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";                   
                     
                     $navList .= '</ul>'; 
-                    echo $navList;  
-                }
+                   
+                } echo $navList;  
             } ?>
         </nav>
 
