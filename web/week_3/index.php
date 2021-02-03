@@ -312,7 +312,7 @@ switch ($action) {
 
 
 
-        include 'view/cart.php';
+        include '../week_3/view/cart.php';
         break;
 }
 ?>
