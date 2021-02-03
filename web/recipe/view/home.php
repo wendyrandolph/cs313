@@ -1,10 +1,8 @@
 <?php
 
-$text = "";
+$id = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $text = $_POST['text'];
-}
+
 
 
 
@@ -63,7 +61,7 @@ try {
     <main>
 
     <?php
-            if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+            if ($_SERVER["REQUEST_METHOD"] == "GET" and $id == "") {
                 $catList = '<ul>'; 
                 
                 foreach ($db->query('SELECT recipe_name, recipe_id, category_id FROM ingredients') as $row) {
