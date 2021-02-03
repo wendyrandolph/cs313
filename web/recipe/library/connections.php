@@ -27,5 +27,5 @@ function myDbConnect()
         die();
     }
 }
-
+myDbConnect(); 
 ?>
