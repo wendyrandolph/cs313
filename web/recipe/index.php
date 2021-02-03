@@ -19,9 +19,11 @@ require ('../recipe/library/connections.php');
 require ('../recipe/library/functions.php');
 require ('../recipe/model/main_model.php');
 
-$navList = getCategories(); 
+$categories = getList(); 
 
-$buildNav = getList($navList); 
+$navList = getNavigation($categories); 
+
+
 
 
 switch($action){ 

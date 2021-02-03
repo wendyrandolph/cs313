@@ -19,7 +19,7 @@
 
             <?php
             
-                    
+                  echo "$navList"  
                     
              ?>
         </nav>
