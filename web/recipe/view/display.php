@@ -1,7 +1,7 @@
 <?php
 
-$index_id = " ";
-
+$index_id = $_POST['index_id']; 
+$recipe_name = $_POST['recipe_name']; 
 
 try {
     $dbUrl = getenv('DATABASE_URL');
@@ -54,20 +54,22 @@ return $db;
         <?php
 
         if ($index_id and $db) {
-            $stmt = $db->prepare('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:id');
+            $stmt = $db->prepare('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:id AND recipe_name=:recipe_name');
             $stmt->bindValue(':id', $index_id, PDO::PARAM_INT);
+            $stmt->bindValue(':id', $recipe_name, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $results = '<div class=recipe>';
             foreach ($rows as $row) {
-                $results .= '<div class=recipe>'; 
+                $results .= '<div class=recipe>';
                 $results .= "<h3> $row[recipe_name] </h3>";
-                $results .= "$row[recipe]"; 
-                $results .= "<div class=directions>"; 
-                $results .= "$row[directions]";  
-            }   $results .= '</div>'; 
+                $results .= "$row[recipe]";
+                $results .= "<div class=directions>";
+                $results .= "$row[directions]";
+            }
             $results .= '</div>';
+
             echo $results;
         }
         ?>
