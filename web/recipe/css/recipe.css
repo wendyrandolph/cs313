@@ -9,7 +9,8 @@ body {
   border: 5px solid #4c96d7;
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
-  max-width: 50%;
+  max-width: 80%;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -22,7 +23,6 @@ header {
 nav#page_nav {
   background-color: #3a3a3a;
   padding: 8px;
-  width: 100%;
 }
 
 nav ul {
