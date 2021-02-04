@@ -28,9 +28,10 @@ switch($action){
 case 'display': 
     $category_Id = filter_input(INPUT_GET, 'category_Id', FILTER_SANITIZE_NUMBER_INT);
 
-    $inventoryArray = getCategoryList($category_Id);
+    $_SESSION['id'] = $category_Id; 
+    //$inventoryArray = getCategoryList($category_Id);
 
-     echo json_encode($inventoryArray); 
+     //echo json_encode($inventoryArray); 
 
     include '../recipe/view/home.php';     
 break; 
@@ -38,7 +39,7 @@ break;
 
 case 'default': 
 
-   
+    
  
 
     include '../recipe/view/home.php'; 
