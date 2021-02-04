@@ -68,11 +68,18 @@ try {
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-             
-             
+            foreach ($rows as $row) {
+                $row['recipe_name'] . '<br><br>';
 
-                    if($rows)
-                    echo  json_encode($row['recipe_name']);
+                    $results =  json_encode($row['recipe_name']); 
+                    $list =  '<ul>';
+                    $list .= "<li> $row[recipe_name] </li> . <br><br> ";
+                    $list .= '</ul>';
+                    return $list;
+            }    
+
+                    if($list)
+                    echo $list;
                 } else {
                     echo "There weren't any recipes that matched that category";
                 }
