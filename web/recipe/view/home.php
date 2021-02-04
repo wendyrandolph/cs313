@@ -73,9 +73,15 @@ try {
          {
         $row['recipe_name'] . '<br><br>';
             
-       }
+      
        $results =  json_encode( $row['recipe_name']); 
-       echo $results; 
+         }
+       if($results){ 
+        echo $results; 
+       }else{ 
+           echo "There weren't any recipes that matched that category"; 
+       }
+      
         
        
        }
