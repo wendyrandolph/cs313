@@ -45,9 +45,7 @@ try {
         <h1> Family Recipes </h1>
         <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
             <div class="container-fluid">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
+            
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
                     $navList = '<ulclass="navbar-nav">';
