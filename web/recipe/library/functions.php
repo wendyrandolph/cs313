@@ -5,7 +5,7 @@
 function getNavigation()
 {
     $db = myDbConnect();
-    if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+    
         $navList = '<ul>';
 
         foreach ($db->query('SELECT * FROM category') as $row) {
@@ -14,4 +14,4 @@ function getNavigation()
         }
         $navList .= '</ul>';
     } return $navList; 
-}
+
