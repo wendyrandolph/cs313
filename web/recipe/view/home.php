@@ -3,7 +3,7 @@
 $id = "";
 $text = "";
 
-$recipe_index_id = $_POST['recipe_index_id'];
+
 
 
 try {
@@ -53,8 +53,8 @@ try {
         <?php
 
         if ($recipe_index_id and $db) {
-            $stmt = $db->prepare('SELECT * FROM recipe_index WHERE recipe_index_id=:recipe_index_id');
-            $stmt->bindValue(':recipe_index_id', $recipe_index_id, PDO::PARAM_INT);
+            $stmt = $db->prepare('SELECT * FROM category WHERE category_id=:category_id');
+            $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
