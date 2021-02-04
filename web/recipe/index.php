@@ -40,8 +40,10 @@ case 'viewRecipe':
 
 $index_id = filter_input(INPUT_GET, 'index_id', FILTER_SANITIZE_NUMBER_INT);
 $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING); 
+$recipe = filter_input(INPUT_GET, 'recipe', FILTER_SANITIZE_STRING ); 
+$directions = filter_input(INPUT_GET, 'directions', FILTER_SANITIZE_STRING ); 
 
-echo $recipe_name; 
+echo $recipe; 
 
     include '../recipe/view/display.php'; 
     break; 
