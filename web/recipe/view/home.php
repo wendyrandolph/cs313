@@ -43,7 +43,10 @@ try {
 
 
         <h1> Family Recipes </h1>
-        <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
+        
+
+    </header>
+    <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
             <div class="container-fluid">
             
                 <?php
@@ -68,8 +71,6 @@ try {
                 </div>
             </div>
         </nav>
-
-    </header>
     <main>
 
         <?php
