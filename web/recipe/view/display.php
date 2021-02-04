@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-  $id = $_POST['id'];
+  $index_id = $_POST['index_id'];
 }
 ?>
 
