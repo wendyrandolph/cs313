@@ -23,7 +23,6 @@ try {
 }
 return $db;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
