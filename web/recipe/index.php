@@ -39,7 +39,9 @@ case 'viewRecipe':
 
 
 $index_id = filter_input(INPUT_GET, 'index_id', FILTER_SANITIZE_NUMBER_INT);
-echo $index_id; 
+$recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING); 
+
+echo $recipe_name; 
 
     include '../recipe/view/display.php'; 
     break; 
