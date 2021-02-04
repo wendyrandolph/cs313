@@ -71,6 +71,8 @@ try {
       $stmt->bindValue(':id', $id, PDO::PARAM_INT);
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      var_dump($rows); 
        foreach($rows AS $row)
        {
          echo $row['recipe_name'] . '<br><br>';
