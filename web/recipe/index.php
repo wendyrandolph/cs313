@@ -28,7 +28,7 @@ switch($action){
 case 'display': 
 //echo "This is the display case statement"; 
 
-    $category_id = filter_input(INPUT_GET, 'category_Id', FILTER_SANITIZE_NUMBER_INT);
+    $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         echo $category_id; 
    
     function details($category_id, $db)
