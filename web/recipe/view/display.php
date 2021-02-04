@@ -51,8 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row) {
-                echo '<b>' . $row['recipe'] . ' ' . $row['recipe'] . ':' . $row['directions'] . '</b> - <br><br>';
-            }
+                $buildView = '<div>'; 
+                $buildView .= "<h3> $row[recipe_name] </h3>"; 
+                $buildView .=  $row['recipe'] ;  
+                $buildView .= '<div class=directions>' ;
+                $buildView .=  $row['directions']; 
+                $buildView .= '</div>';
+            } echo $buildView; 
         }
 
         ?>
