@@ -64,18 +64,21 @@ try {
        
        if ($category_id and $db)
        {
-        $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
+        $stmt = $db->prepare('SELECT * FROM ingredients WHERE category_id=:id');
         $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   
+        
+        return $rows; 
+       } 
          foreach($rows AS $row)
          {
         $row['recipe_name'] . '<br><br>';
             
-      
        $results =  json_encode( $row['recipe_name']); 
          }
+
+
        if($results){ 
         echo $results; 
        }else{ 
@@ -84,7 +87,7 @@ try {
       
         
        
-       }
+       
             ?>
 
 

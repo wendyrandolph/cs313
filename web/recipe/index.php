@@ -30,11 +30,6 @@ case 'display':
 
     $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         //echo $category_id; 
-   
-    
-
-
-    
 
     include '../recipe/view/home.php';     
 break; 
