@@ -1,3 +1,9 @@
+<?php 
+
+$index_id = ""; 
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
