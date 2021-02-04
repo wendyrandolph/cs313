@@ -59,7 +59,7 @@ try {
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $results = '<ul>';
-            $results = "<h4> These are the $rows[category_name] recipes </h4>"; 
+            $results = "<h4> These are the" .$rows['category_name']." recipes </h4>"; 
             foreach ($rows as $row) {
                 $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&category_id=$row[category_id]&recipe_name=$row[recipe_name]'> $row[recipe_name]</a></li>";
             }
