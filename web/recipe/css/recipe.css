@@ -51,4 +51,8 @@ nav a:hover {
   background-color: #32021F;
 }
 
+form-control {
+  width: 30%;
+}
+
 /*# sourceMappingURL=recipe.css.map */
