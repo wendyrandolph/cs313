@@ -4,7 +4,12 @@
 $primary: #32021F; 
 $secondary: #6F7D8C; 
 
+html {
+    //background-image: url("/phpmotors/images/site/checkerboard.jpg");
+    background-size: contain;
+    box-sizing: border-box;
 
+}
 body {
     background-color: $secondary;
     border: 5px solid #4c96d7;

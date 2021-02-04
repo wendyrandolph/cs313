@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html {
+  background-size: contain;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #6F7D8C;
   border: 5px solid #4c96d7;
