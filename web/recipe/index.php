@@ -31,24 +31,23 @@ case 'display':
     $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         //echo $category_id; 
    
-    $results = details($category_id, $db); 
+    
 
 
-    function details($category_id, $db)
+    if (isset($category_id))
     {
      $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
      $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
      $stmt->execute();
      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-     var_dump($rows); 
       foreach($rows AS $row)
       {
      $row['recipe_name'] . '<br><br>';
-        var_dump($row); 
+         
     }
-      $list = $row['recipe_name']; 
-        return $list; 
+      
+    echo $row; 
     
     }
 
