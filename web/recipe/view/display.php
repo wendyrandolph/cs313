@@ -51,17 +51,16 @@ return $db;
     </header>
     <main>
         <?php
-            $index_id = ""; 
+
         if ($index_id and $db) {
             $stmt = $db->prepare('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:id AND recipe_name=:recipe_name');
             $stmt->bindValue(':id', $index_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            foreach($rows AS $row)
-            {
-              echo '<h3>'.$row['recipe_name']. '</h3>' ; 
-                         }
-      
+            foreach ($rows as $row) {
+                echo '<h3>' . $row['recipe_name'] . '</h3>';
+            }
+        }
         ?>
 
     </main>
