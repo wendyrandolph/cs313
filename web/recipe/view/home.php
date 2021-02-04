@@ -61,9 +61,9 @@ try {
     <main>
 
     <?php
-      if(isset($_SESSION['id'])){ 
+       
       details($id, $db);
-      } 
+      
 
       function details($id, $db)
      {
