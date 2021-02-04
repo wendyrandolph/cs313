@@ -31,15 +31,25 @@ $index_id = "";
 
     </header>
     <main>
-        <?php
+    <?php 
 
-        if ($index_id and $db) {
-            foreach ($db->query('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:id') as $rows){ 
-        
-                echo '<h3>' . $row['recipe_name'] . '</h3>';
-            }
-        }
-        ?>
+details($index_id, $db);
+
+
+function details($index_id, $db)
+{
+$stmt = $db->prepare('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:index_id');
+$stmt->bindValue(':index_id', $index_id, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach($rows AS $row)
+{
+  echo '<b>'.$row['recipe_name'].' '.$row['recipe'].':'.$row['directions'].'</b> - <br><br>';
+}
+
+}
+
+?>
 
     </main>
 
