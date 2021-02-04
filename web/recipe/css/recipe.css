@@ -20,36 +20,4 @@ header {
   color: #6F7D8C;
 }
 
-nav#page_nav {
-  background-color: #3a3a3a;
-  padding: 8px;
-}
-
-nav ul {
-  padding-left: 5px;
-  margin: 0;
-  list-style: none;
-  display: inline;
-}
-
-nav li {
-  list-style: none;
-  float: left;
-  color: #ffffff;
-}
-
-nav a {
-  color: #32021F;
-  text-decoration: none;
-  padding-right: 8px;
-  text-align: center;
-  justify-items: center;
-  margin: 0 auto;
-}
-
-nav a:hover {
-  background-color: #4c96d7;
-  padding: 8px;
-}
-
 /*# sourceMappingURL=recipe.css.map */
