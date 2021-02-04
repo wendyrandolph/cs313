@@ -43,28 +43,32 @@ try {
 
 
         <h1> Family Recipes </h1>
-        <nav id="page_nav">
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-                $navList = '<ul>';
+        <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
+            <div class="container-fluid">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <?php
+                if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+                    $navList = '<ulclass="navbar-nav">';
 
-                foreach ($db->query('SELECT * FROM category') as $row) {
+                    foreach ($db->query('SELECT * FROM category') as $row) {
 
-                    $navList .= "<li><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" . urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
+                        $navList .= "<li class='nav-item'><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" . urlencode($row['category_name']) . "' class='nav-link' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
+                    }
+                    $navList .= '</ul>';
                 }
-                $navList .= '</ul>';
-            }
-            echo $navList;
-            ?>
+                echo $navList;
+                ?>
 
-            <nav class="navbar navbar-light bg-light">
+
                 <div class="container-fluid">
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
-            </nav>
+            </div>
         </nav>
 
     </header>
