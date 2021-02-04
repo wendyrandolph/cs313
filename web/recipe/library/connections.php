@@ -1,10 +1,5 @@
 <?php
 
-function myDbConnect()
-{
-
-
-
     try {
         $dbUrl = getenv('DATABASE_URL');
 
@@ -25,7 +20,7 @@ function myDbConnect()
     } catch (PDOException $ex) {
         echo 'Error!: ' . $ex->getMessage();
         die();
-    }
-}
-myDbConnect(); 
+    } return $db; 
+
+
 ?>
