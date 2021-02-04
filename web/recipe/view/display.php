@@ -66,6 +66,7 @@ return $db;
                 $results .= "$row[recipe]";
                 $results .= "<div class=directions>";
                 $results .= "$row[directions]";
+                $results .= '</div>'; 
             }
             $results .= '</div>';
 
