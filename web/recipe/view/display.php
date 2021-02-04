@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             foreach ($rows as $row) {
                 $buildView = '<div>'; 
                 $buildView .= "<h3> $row[recipe_name] </h3>"; 
-                $buildView .=  $row['recipe'] ;  
+                $buildView .=  $row['recipe'] .'<br><br>';  
                 $buildView .= '<div class=directions>' ;
                 $buildView .=  $row['directions']; 
                 $buildView .= '</div>';
