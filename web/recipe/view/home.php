@@ -62,7 +62,7 @@ try {
 
     <?php
        
-   echo $list; 
+   echo $results;  
 
 
             ?>

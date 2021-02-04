@@ -29,8 +29,11 @@ case 'display':
 //echo "This is the display case statement"; 
 
     $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
-        echo $category_id; 
+        //echo $category_id; 
    
+    $results = details($category_id, $db); 
+
+
     function details($category_id, $db)
     {
      $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
