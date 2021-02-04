@@ -23,7 +23,7 @@ switch ($action) {
         $index_id = filter_input(INPUT_GET, 'index_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
 
-        include '../view/display.php';
+        include '../display.php';
         break;
 
 
