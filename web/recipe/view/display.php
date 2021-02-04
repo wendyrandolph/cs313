@@ -1,6 +1,6 @@
 <?php
 
-  $index_id = $_POST['index_id']; 
+$index_id = $_POST['index_id'];
 
 
 try {
@@ -21,7 +21,7 @@ try {
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
-return $db; 
+return $db;
 ?>
 
 <!DOCTYPE html>
@@ -51,22 +51,26 @@ return $db;
 
     </header>
     <main>
-    <?php
+        <?php
 
-if ($index_id and $db) {
-    $stmt = $db->prepare('SELECT index_id, recipe_name, recipe, directions FROM ingredients WHERE index_id=:id');
-    $stmt->bindValue(':id', $index_id, PDO::PARAM_INT);
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($index_id and $db) {
+            $stmt = $db->prepare('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:id');
+            $stmt->bindValue(':id', $index_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $results = '<div class=recipe>';
-    foreach ($rows as $row) {
-        $results .= '<h2 class=title>'  .$row['recipe_name']. '</h2>'; 
-    }
-    $results .= '</div>';
-    echo $results; 
-}
-?>
+            $results = '<div class=recipe>';
+            foreach ($rows as $row) {
+                $results .= '<div class=recipe>'; 
+                $results .= "<h3> $row[recipe_name] </h3>";
+                $results .= "$row[recipe]"; 
+                $results .= "<div class=directions>"; 
+                $results .= "$row[directions]";  
+            }   $results .= '</div>'; 
+            $results .= '</div>';
+            echo $results;
+        }
+        ?>
 
     </main>
 
