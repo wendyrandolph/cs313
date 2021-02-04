@@ -3,7 +3,7 @@
 $id = "";
 $text = "";
 
-$index_id = $_POST['recipe_index_id'];
+$recipe_index_id = $_POST['recipe_index_id'];
 
 
 try {
