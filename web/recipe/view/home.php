@@ -68,14 +68,12 @@ try {
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+            $results = '<ul>';
             foreach ($rows as $row) {
-                $row['recipe_name'] . '<br><br>';
-
-
-            $results =  json_encode($row['recipe_name']);
-               
-            }
-            echo $results; 
+                $results .= '<li>' . $row['recipe_name'] . '</li>';
+                $results .= '</ul>';
+                //$results =  json_encode($row['recipe_name']);
+            }echo $results; 
         }
 
 
