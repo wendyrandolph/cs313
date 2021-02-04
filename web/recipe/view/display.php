@@ -1,8 +1,7 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-  $id = $_POST['id'];
-}
+
+  $id = " "; 
+
 
 try {
     $dbUrl = getenv('DATABASE_URL');
