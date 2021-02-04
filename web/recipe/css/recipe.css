@@ -32,12 +32,6 @@ nav ul {
   display: inline;
 }
 
-nav li {
-  list-style: none;
-  float: left;
-  color: #ffffff;
-}
-
 nav a {
   color: #32021F;
   text-decoration: none;
