@@ -74,8 +74,9 @@ try {
         $row['recipe_name'] . '<br><br>';
             
        }
-         
-       echo $row; 
+       $results =  json_encode( $row['recipe_name']); 
+       echo $results; 
+        
        
        }
             ?>
