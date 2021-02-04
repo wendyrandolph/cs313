@@ -1,6 +1,6 @@
 <?php
 
-  $id = " "; 
+  $recipe = " "; 
 
 
 try {
@@ -51,22 +51,21 @@ return $db;
 
     </header>
     <main>
+    <?php
 
-    <?php 
- 
- if ($category_id and $db)
- {
-  $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
-  $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
-  $stmt->execute();
-  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if ($index_id and $db) {
+    $stmt = $db->prepare('SELECT index_id, recipe_name, recipe, directions FROM ingredients WHERE index_id=:id');
+    $stmt->bindValue(':id', $index_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   foreach($rows AS $row)
-   {
-  $row['recipe_name'] . '<br><br>';
-      
-
- $results =  json_encode( $row['recipe_name']); 
+    $results = '<div class=recipe>';
+    foreach ($rows as $row) {
+        $results .= '<h2 class=title>'  .$row['recipe_name']. '</h2>'; 
+    }
+    $results .= '</div>';
+    echo $results; 
+}
 ?>
 
     </main>
