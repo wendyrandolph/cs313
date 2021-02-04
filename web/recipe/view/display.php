@@ -1,7 +1,7 @@
 <?php
 
-$index_id = $_POST['index_id']; 
-$recipe_name = $_POST['recipe_name']; 
+//$index_id = $_POST['index_id']; 
+//$recipe_name = $_POST['recipe_name']; 
 
 try {
     $dbUrl = getenv('DATABASE_URL');
