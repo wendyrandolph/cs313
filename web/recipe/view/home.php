@@ -72,10 +72,13 @@ try {
                 $row['recipe_name'] . '<br><br>';
 
 
-            echo  json_encode($row['recipe_name']);
+            $results =  json_encode($row['recipe_name']);
                
             }
+            echo $results; 
         }
+
+
         ?>
 
 
