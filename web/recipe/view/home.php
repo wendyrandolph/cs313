@@ -63,7 +63,7 @@ try {
         <?php
 
         if ($category_id and $db) {
-            $stmt = $db->prepare('SELECT recipe_name, category_id FROM index WHERE category_id=:id');
+            $stmt = $db->prepare('SELECT index_id, recipe_name, category_id FROM index WHERE category_id=:id');
             $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -71,8 +71,6 @@ try {
             $results = '<ul>';
             foreach ($rows as $row) {
                 $results .= '<li>' . $row['recipe_name'] . '</li>';
-                
-                //$results =  json_encode($row['recipe_name']);
             }
             $results .= '</ul>';
             echo $results; 
