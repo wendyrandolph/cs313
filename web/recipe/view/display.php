@@ -27,12 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
             <?php include '../recipe/snippets/nav.php';
             ?>
-        </nav>
-
-
-        ?>
-
-        </nav>
+              </nav>
 
     </header>
     <main>
