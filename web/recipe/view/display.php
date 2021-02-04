@@ -20,21 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
 
 
-        <h1> THIS IS THE BEGINNING </h1>
-        <nav class="nav">
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-                $navList = '<ul>';
+        <?php include '../recipe/snippets/header.php';
+        ?>
 
-                foreach ($db->query('SELECT * FROM category') as $row) {
 
-                    $navList .= "<li><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" . urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
-                }
-                $navList .= '</ul>';
-            }
-            echo $navList;
-
+        <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
+            <?php include '../recipe/snippets/nav.php';
             ?>
+        </nav>
+
+
+        ?>
 
         </nav>
 
@@ -61,8 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindValue(':recipe_index_id', $index_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-                var_dump($rows); 
+
+            var_dump($rows);
         }
 
         ?>

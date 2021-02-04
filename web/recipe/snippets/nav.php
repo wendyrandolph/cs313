@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
+
             <div class="container-fluid p-2">
             
                 <?php
@@ -22,4 +22,3 @@
                     </form>
                
             </div>
-        </nav>
