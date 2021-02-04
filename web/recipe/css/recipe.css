@@ -29,7 +29,7 @@ nav ul {
   padding-left: 5px;
   margin: 0;
   list-style: none;
-  display: inline;
+  display: inline-block;
 }
 
 nav a {
