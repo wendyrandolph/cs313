@@ -72,22 +72,9 @@ try {
                 $row['recipe_name'] . '<br><br>';
 
 
-               // $results =  json_encode($row['recipe_name']);
+            echo  json_encode($row['recipe_name']);
                
 
-                if ($results) {
-                    $results =  json_encode($row['recipe_name']); 
-                    $list =  '<ul>';
-                    $list .= '<li> $results[recipe_name] </li>';
-                    $list .= '</ul>';
-
-
-
-                    echo $results;
-                } else {
-                    echo "There weren't any recipes that matched that category";
-                }
-            }
         }
         ?>
 
