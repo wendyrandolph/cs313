@@ -1,8 +1,9 @@
-<?php 
-
-$index_id = ""; 
-?> 
-
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+  $id = $_POST['id'];
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,7 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach($rows AS $row)
 {
-  echo '<b>'.$row['recipe_name'].' '.$row['recipe'].':'.$row['directions'].'</b> - <br><br>';
+  echo '<b>'.$row['recipe'].' '.$row['recipe'].':'.$row['directions'].'</b> - <br><br>';
 }
 
 }
