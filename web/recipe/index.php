@@ -26,12 +26,27 @@ switch($action){
 
 
 case 'display': 
+
     $category_Id = filter_input(INPUT_GET, 'category_Id', FILTER_SANITIZE_NUMBER_INT);
 
-    $_SESSION['id'] = $category_Id; 
-    //$inventoryArray = getCategoryList($category_Id);
+   
+    function details($category_id, $db)
+    {
+     $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
+     $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
+     $stmt->execute();
+     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-     //echo json_encode($inventoryArray); 
+     var_dump($rows); 
+      foreach($rows AS $row)
+      {
+     $row['recipe_name'] . '<br><br>';
+        var_dump($row); 
+    }
+      $list = $row['recipe_name']; 
+        return $list; 
+    
+    }
 
     include '../recipe/view/home.php';     
 break; 

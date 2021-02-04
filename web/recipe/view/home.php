@@ -49,7 +49,7 @@ try {
                 
                 foreach ($db->query('SELECT * FROM category') as $row) {
 
-                    $navList .= "<li><a href='/recipe/?action=default&category_id=$row[category_id]&category_name=" .urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";                   
+                    $navList .= "<li><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" .urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";                   
                 } 
                     $navList .= '</ul>'; 
                    
@@ -62,23 +62,8 @@ try {
 
     <?php
        
-      details($id, $db);
-      
+   echo $list; 
 
-      function details($id, $db)
-     {
-      $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      var_dump($rows); 
-       foreach($rows AS $row)
-       {
-         echo $row['recipe_name'] . '<br><br>';
-       }
-     
-     }
 
             ?>
 
