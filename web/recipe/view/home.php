@@ -53,7 +53,7 @@ try {
         <?php
 
         if ($category_id and $db) {
-            $stmt = $db->prepare('SELECT recipe_name FROM recipe_index WHERE category_id=:category_id');
+            $stmt = $db->prepare('SELECT ri.recipe_name, c.category_name FROM recipe_index ri INNER JOIN category c ON ri.category_id = c.category_id WHERE c.category_id = :category_id');
             $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -61,7 +61,7 @@ try {
             $results = '<ul>';
             
             foreach ($rows as $row) {
-                $results = "<h4> These are the '$row[category_name]' recipes .</h4>"; 
+                $results = "<h4> These are the '$row[category_name]' recipes.</h4>"; 
                 $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&category_id=$row[category_id]&recipe_name=$row[recipe_name]'> $row[recipe_name]</a></li>";
             }
             $results .= '</ul>';
