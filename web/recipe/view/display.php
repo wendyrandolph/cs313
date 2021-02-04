@@ -34,7 +34,7 @@ $index_id = "";
         <?php
 
         if ($index_id and $db) {
-            foreach ($db->query('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:id AND recipe_name=:recipe_name') as $rows){ 
+            foreach ($db->query('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:id') as $rows){ 
         
                 echo '<h3>' . $row['recipe_name'] . '</h3>';
             }
