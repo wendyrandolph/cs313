@@ -54,6 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ON rs.amount_id = ra.amount_id 
             INNER JOIN ingredients i
             ON rs.ingredients_id = i.ingredients_id
+            INNER JOIN recipe_index ri 
+            ON r.recipe_id = ri.recipe_id
              WHERE recipe_index_id =:recipe_index_id');
             $stmt->bindValue(':recipe_index_id', $index_id, PDO::PARAM_INT);
             $stmt->execute();
