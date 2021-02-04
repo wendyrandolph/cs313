@@ -53,22 +53,20 @@ return $db;
     <main>
 
     <?php 
+ 
+ if ($category_id and $db)
+ {
+  $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
+  $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
+  $stmt->execute();
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-details($id, $db);
+   foreach($rows AS $row)
+   {
+  $row['recipe_name'] . '<br><br>';
+      
 
-
-function details($id, $db)
-{
-$stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients  WHERE category_id=:id');
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-foreach($rows AS $row)
-{
-  echo '<b>'.$row['recipe_name'].' "<br><br>';
-}
-
-}
+ $results =  json_encode( $row['recipe_name']); 
 ?>
 
     </main>
