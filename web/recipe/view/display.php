@@ -1,6 +1,6 @@
 <?php
 
-  $index_id = " "; 
+  $index_id = $_POST['index_id']; 
 
 
 try {
