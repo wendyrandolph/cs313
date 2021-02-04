@@ -2,25 +2,16 @@
 
 //Where to keep the query functions 
 
-
-function getList($db)
+function getNavigation()
 {
-    //make a connection to the database
-    //$db = myDbConnect();
-    // The SQL sttaement to be used with the database
-   // $sql = 'SELECT category_name, category_id FROM category';
-    // The next line creates the prepared statement using the phpmotors connection      
-    $stmt = $db->query('SELECT category_name, category_id FROM category');
-    // The next line runs the prepared statement 
-    $stmt->execute();
-    // The next line gets the data from the database and 
-    // stores it as an array in the $classifications variable 
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // The next line sends the array of data back to where the function 
-    // was called (this should be the controller) 
+    $db = myDbConnect();
+    if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+        $navList = '<ul>';
 
+        foreach ($db->query('SELECT * FROM category') as $row) {
 
-    return $rows;
-    //var_dump ($categories);  
+            $navList .= "<li><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" . urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
+        }
+        $navList .= '</ul>';
+    } return $navList; 
 }
-?>
