@@ -75,6 +75,7 @@ try {
                     $list =  '<ul>';
                     $list .= "<li> $row[recipe_name] </li> . <br><br> ";
                     $list .= '</ul>';
+                    return $list; 
             }    
 
                     if($list)
