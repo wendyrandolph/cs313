@@ -1,7 +1,7 @@
 <?php
 
 $id = "";
-$text = ""; 
+$text = "";
 
 $index_id = $_POST['recipe_index_id'];
 
@@ -55,6 +55,15 @@ try {
             }
             echo $navList;
             ?>
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
         </nav>
 
     </header>
@@ -73,7 +82,7 @@ try {
                 $results .= "<li><a href='/recipe/?action=viewRecipe&recipe_index_id=$row[recipe_index_id]&recipe_name=$row[recipe_name]'> $row[recipe_name]</a></li>";
             }
             $results .= '</ul>';
-            echo $results; 
+            echo $results;
         }
 
 
