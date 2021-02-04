@@ -35,7 +35,7 @@ case 'display':
 break; 
 
 case 'viewRecipe': 
-echo "This is the viewRecipe case statement"; 
+//echo "This is the viewRecipe case statement"; 
 
     include '../recipe/view/display.php'; 
     break; 
