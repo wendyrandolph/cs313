@@ -37,6 +37,10 @@ break;
 case 'viewRecipe': 
 //echo "This is the viewRecipe case statement"; 
 
+
+$index_id = filter_input(INPUT_GET, 'index_id', FILTER_SANITIZE_NUMBER_INT);
+echo $index_id; 
+
     include '../recipe/view/display.php'; 
     break; 
 
