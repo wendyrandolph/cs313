@@ -71,20 +71,24 @@ try {
             foreach ($rows as $row) {
                 $row['recipe_name'] . '<br><br>';
 
+
+               // $results =  json_encode($row['recipe_name']);
+               
+
+                if ($results) {
                     $results =  json_encode($row['recipe_name']); 
                     $list =  '<ul>';
-                    $list .= "<li> $row[recipe_name] </li> . <br><br> ";
+                    $list .= '<li> $results[recipe_name] </li>';
                     $list .= '</ul>';
-                    return $list;
-            }    
 
-                    if($list)
-                    echo $list;
+
+
+                    echo $results;
                 } else {
                     echo "There weren't any recipes that matched that category";
                 }
-            
-        
+            }
+        }
         ?>
 
 
