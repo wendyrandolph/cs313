@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $index_id = $_POST['index_id'];
+    $index_id = $_POST['recipe_index_id'];
 }
 ?>
 
@@ -46,18 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         function details($index_id, $db)
         {
-            $stmt = $db->prepare('SELECT recipe_name, recipe, directions FROM ingredients WHERE index_id=:index_id');
-            $stmt->bindValue(':index_id', $index_id, PDO::PARAM_INT);
+            $stmt = $db->prepare('SELECT r.recipe_id, r.recipe_name, ra.amount_required, i.ingredient_name, rs.instructions 
+            FROM recipes r
+            INNER JOIN recipe_steps rs
+            ON r.recipe_id = rs.recipe_id
+            INNER JOIN recipe_amounts ra
+            ON rs.amount_id = ra.amount_id 
+            INNER JOIN ingredients i
+            ON rs.ingredients_id = i.ingredients_id
+             WHERE recipe_index_id =:recipe_index_id');
+            $stmt->bindValue(':recipe_index_id', $index_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($rows as $row) {
-                $buildView = '<div>'; 
-                $buildView .= "<h3> $row[recipe_name] </h3>"; 
-                $buildView .=  $row['recipe'] .'<br><br>';  
-                $buildView .= '<div class=directions>' ;
-                $buildView .=  $row['directions']; 
-                $buildView .= '</div>';
-            } echo $buildView; 
+            
+                echo json_encode($rows); 
         }
 
         ?>

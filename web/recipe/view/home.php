@@ -70,7 +70,7 @@ try {
 
             $results = '<ul>';
             foreach ($rows as $row) {
-                $results .= "<li><a href='/recipe/?action=viewRecipe&index_id=$row[index_id]&recipe_name=$row[recipe_name]'> $row[recipe_name]</a></li>";
+                $results .= "<li><a href='/recipe/?action=viewRecipe&recipe_index_id=$row[recipe_index_id]&recipe_name=$row[recipe_name]'> $row[recipe_name]</a></li>";
             }
             $results .= '</ul>';
             echo $results; 
