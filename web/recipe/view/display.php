@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-                echo json_encode($rows); 
+                echo $rows; 
         }
 
         ?>
