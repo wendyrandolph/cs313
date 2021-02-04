@@ -44,6 +44,8 @@ try {
     <?php include '../recipe/snippets/header.php';
         ?>
        
+       <?php include '../recipe/snippets/nav.php';
+        ?>
     </header>
    
     <main>
