@@ -63,7 +63,7 @@ try {
         <?php
 
         if ($recipe_index_id and $db) {
-            $stmt = $db->prepare('SELECT * FROM recipes WHERE recipe_index_id=:recipe_index_id');
+            $stmt = $db->prepare('SELECT * FROM recipe_index WHERE recipe_index_id=:recipe_index_id');
             $stmt->bindValue(':recipe_index_id', $recipe_index_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
