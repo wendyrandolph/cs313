@@ -70,7 +70,7 @@ try {
 
             $results = '<ul>';
             foreach ($rows as $row) {
-                $results .= '<li>' . $row['recipe_name'] . '</li>';
+                $results .= "<li><a href='/recipe/?action=viewRecipe&index_id=$row[index_id]&recipe_name=" . urlencode($row['recipe_name']) . "' title='View the $row[recipe_name] recipe'>$row[recipe_name]</a></li>";
             }
             $results .= '</ul>';
             echo $results; 
