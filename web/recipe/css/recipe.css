@@ -34,6 +34,8 @@ nav ul {
 
 nav li {
   list-style: none;
+  float: left;
+  color: #ffffff;
 }
 
 nav a {

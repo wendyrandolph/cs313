@@ -48,7 +48,7 @@ try {
             
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-                    $navList = '<ulclass="navbar-nav">';
+                    $navList = '<ul class="navbar-nav">';
 
                     foreach ($db->query('SELECT * FROM category') as $row) {
 
