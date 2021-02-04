@@ -3,7 +3,7 @@
 $id = "";
 $text = ""; 
 
-
+$index_id = $_POST['recipe_id'];
 
 
 try {
@@ -62,15 +62,15 @@ try {
 
         <?php
 
-        if ($category_id and $db) {
-            $stmt = $db->prepare('SELECT * FROM recipe_index WHERE category_id=:id');
-            $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
+        if ($recipe_id and $db) {
+            $stmt = $db->prepare('SELECT * FROM recipes WHERE recipe_id=:recipe_id');
+            $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $results = '<ul>';
             foreach ($rows as $row) {
-                $results .= "<li><a href='/recipe/?action=viewRecipe&recipe_index_id=$row[recipe_index_id]&recipe_name=$row[recipe_name]'> $row[recipe_name]</a></li>";
+                $results .= "<li><a href='/recipe/?action=viewRecipe&recipe_id=$row[recipe_id]&recipe_name=$row[recipe_name]'> $row[recipe_name]</a></li>";
             }
             $results .= '</ul>';
             echo $results; 

@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $index_id = $_GET['recipe_index_id'];
+    $index_id = $_POST['recipe_index_id'];
 }
 ?>
 
