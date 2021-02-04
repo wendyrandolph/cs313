@@ -1,8 +1,3 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $index_id = $_POST['recipe_index_id'];
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main>
         <?php
 
-        details($index_id, $db);
+        details($recipe_index_id, $db);
 
 
-        function details($index_id, $db)
+        function details($recipe_index_id, $db)
         {
             $stmt = $db->prepare('SELECT r.recipe_id, r.recipe_name, ra.amount_required, i.ingredient_name, rs.instructions 
             FROM recipes r
@@ -49,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             INNER JOIN recipe_index ri 
             ON r.recipe_id = ri.recipe_id
              WHERE recipe_index_id =:recipe_index_id');
-            $stmt->bindValue(':recipe_index_id', $index_id, PDO::PARAM_INT);
+            $stmt->bindValue(':recipe_index_id', $recipe_index_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
