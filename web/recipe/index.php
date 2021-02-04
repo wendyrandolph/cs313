@@ -34,22 +34,7 @@ case 'display':
     
 
 
-    if (isset($category_id))
-    {
-     $stmt = $db->prepare('SELECT recipe_name, recipe_id, category_id FROM ingredients WHERE category_id=:id');
-     $stmt->bindValue(':id', $category_id, PDO::PARAM_INT);
-     $stmt->execute();
-     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      foreach($rows AS $row)
-      {
-     $row['recipe_name'] . '<br><br>';
-         
-    }
-      
-    echo $row; 
     
-    }
 
     include '../recipe/view/home.php';     
 break; 
