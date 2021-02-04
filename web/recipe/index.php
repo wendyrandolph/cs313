@@ -34,6 +34,11 @@ case 'display':
     include '../recipe/view/home.php';     
 break; 
 
+case 'viewRecipe': 
+echo "This is the viewRecipe case statement"; 
+
+    include '../recipe/view/display.php'; 
+    break; 
 
 case 'default': 
 
