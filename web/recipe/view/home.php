@@ -71,9 +71,11 @@ try {
             $results = '<ul>';
             foreach ($rows as $row) {
                 $results .= '<li>' . $row['recipe_name'] . '</li>';
-                $results .= '</ul>';
+                
                 //$results =  json_encode($row['recipe_name']);
-            }echo $results; 
+            }
+            $results .= '</ul>';
+            echo $results; 
         }
 
 
