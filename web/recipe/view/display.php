@@ -47,7 +47,8 @@
              $recipe .= "<h3> $row[recipe_name] </h3>"; 
             $recipe .= "<div class=directions>"; 
             $recipe .= "$row [instructions]"; 
-            
+            $recipe .= '</div>'; 
+            $recipe .= '</div>'; 
                  
              
         }
