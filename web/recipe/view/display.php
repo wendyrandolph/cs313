@@ -33,7 +33,7 @@
 
         function details($recipe_id, $db)
         {
-            $stmt = $db->prepare('SELECT r.recipe_id, r.recipe_name, rs.instructions 
+            $stmt = $db->prepare('SELECT  r.recipe_name, rs.instructions 
             FROM recipes r
             INNER JOIN recipe_steps rs
             ON r.recipe_id = rs.recipe_id
@@ -44,10 +44,15 @@
 
                 $recipe = '<div class=recipe>'; 
            foreach($rows as $row){ 
-              echo "<pre>"; 
-              print_r($row);
-              echo "<pre>"; 
-        }}
+             $recipe .= "<h3> $row[recipe_name] </h3>"; 
+            $recipe .= "<div class=directions>"; 
+            $recipe .= "$row [instructions]"; 
+            
+                 
+             
+        }
+    echo $recipe; 
+    }
 
         ?>
 
