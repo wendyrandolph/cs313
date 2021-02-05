@@ -39,16 +39,14 @@ function directions($recipe_id, $db)
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
      
-    $recipe = " "; 
+    $recipe = "<div>"; 
     foreach ($rows as $row) {
            
-        $recipe .= "<div class=directions>";
-        $recipe .= "<p> $row[preheat_temp]"; 
-        $recipe .= "<p> $row[cook_time]"; 
+        $recipe .= "<div class=directions>"; 
         $recipe .=  "$row[instructions]"; 
         $recipe .= '</div>';
     }
-    return $recipe;
+    echo $recipe;
 
 }
 ?> 
