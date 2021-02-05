@@ -12,6 +12,7 @@ function recipe($db, $recipe_id)
 
     foreach ($recipe as $row) {
         $name = "<h3> {$row['recipe_name']} </h3>";
+        $name .="{$row['preheat_temp']}"; 
     }
 
     return $name;
