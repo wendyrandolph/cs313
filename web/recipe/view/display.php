@@ -41,13 +41,13 @@
             $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+            $results = json_encode($rows['instructions']); 
                 $recipe = '<div class=recipe>'; 
                 $recipe .= "<h3> $rows[recipe_name] </h3>"; 
            foreach($rows as $row){ 
              
             $recipe .= "<div class=directions>"; 
-           $recipe .= "<p> json_encode($row[instructions])"; 
+           $recipe .= " $results"; 
             $recipe .= '</div>'; 
             $recipe .= '</div>'; 
                  
