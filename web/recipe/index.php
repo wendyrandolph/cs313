@@ -37,7 +37,7 @@ switch ($action) {
         //echo $category_id; 
 
         $_SESSION['name'] = $recipe_name; 
-
+            echo $_SESSION['name']; 
 
 
 
