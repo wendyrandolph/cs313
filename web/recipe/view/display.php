@@ -25,8 +25,10 @@
 
     </header>
     <main>
-    
-                  <h3> <?php $row['recipe_name'] ?></h3>
+            <h3> <?php if(isset($results)){ 
+                echo $results['recipe_name']; 
+            } ?>
+                </h3>   
         </div>
 
     </main>
