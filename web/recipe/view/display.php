@@ -44,7 +44,9 @@
 
                 $recipe = '<div class=recipe>'; 
            foreach($rows as $row){ 
-              echo json_encode($rows); 
+              echo "<pre>"; 
+              print_r($row);
+              echo "<pre>"; 
         }}
 
         ?>
