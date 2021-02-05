@@ -40,5 +40,5 @@ function getName($db, $recipe_id)
         $name .="Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes"; 
     }
 
-    echo $name;
+    return $name;
 }
