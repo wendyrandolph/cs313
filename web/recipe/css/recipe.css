@@ -47,4 +47,11 @@ form-control {
   width: 0;
 }
 
+div.steps {
+  background: #6F7D8C;
+  width: 200px;
+  height: auto;
+  border: 2px solid black;
+}
+
 /*# sourceMappingURL=recipe.css.map */

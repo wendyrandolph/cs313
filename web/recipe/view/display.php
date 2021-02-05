@@ -27,7 +27,7 @@
     <main>
 
         <div class="recipe">
-            <?php echo $name ?>
+            <?php echo $name ?><br><br>
             <div class="container">
 
                 <div class="amounts">
@@ -39,9 +39,9 @@
 
 
             </div>
-            <div class="steps"> 
+            <div class="steps">
                 <?php echo $recipe ?>
-</div> 
+            </div>
 
         </div>
 
