@@ -28,10 +28,10 @@
     <main>
         <?php
 
-        details($recipe_index_id, $db);
+        details($recipe_id, $db);
 
 
-        function details($recipe_index_id, $db)
+        function details($recipe_id, $db)
         {
             $stmt = $db->prepare('SELECT r.recipe_id, r.recipe_name, ra.amount_required, i.ingredient_name, rs.instructions 
             FROM recipes r
@@ -43,8 +43,8 @@
             ON rs.ingredients_id = i.ingredients_id
             INNER JOIN recipe_index ri 
             ON r.recipe_id = ri.recipe_id
-             WHERE recipe_id =:recipe_index_id');
-            $stmt->bindValue(':recipe_index_id', $recipe_index_id, PDO::PARAM_INT);
+             WHERE r.recipe_id =:recipe_id');
+            $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
