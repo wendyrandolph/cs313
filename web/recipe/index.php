@@ -24,7 +24,7 @@ switch ($action) {
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         
        
-        recipe($db, $recipe_id);
+        $name = recipe($db, $recipe_id);
         
 
 
