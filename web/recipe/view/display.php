@@ -25,40 +25,39 @@
 
     </header>
     <main>
-        <?php
+        <div class=recipe>
 
-        details($recipe_id, $db);
+            <h3><?php echo  $title ?></h3>
+            <?php
+
+            details($recipe_id, $db);
 
 
-        function details($recipe_id, $db)
-        {
-            $stmt = $db->prepare('SELECT  r.recipe_name, rs.instructions 
+            function details($recipe_id, $db)
+            {
+                $stmt = $db->prepare('SELECT  r.recipe_name, rs.instructions 
             FROM recipes r
             INNER JOIN recipe_steps rs
             ON r.recipe_id = rs.recipe_id
             WHERE r.recipe_id =:recipe_id');
-            $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
+                $stmt->execute();
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-           
-            $recipe = '<div class=recipe>';
-            
-            foreach ($rows as $row) {
-                $results = json_encode($row["instructions"]);
-                $title = json_encode($rows['recipe_name']);
-                $recipe .= '<h3>'. $title .'</h3>';
+                foreach ($rows as $row) {
+                    $results = json_encode($row["instructions"]);
 
-                $recipe .= "<div class=directions>";
-                $recipe .= " $results";
-                $recipe .= '</div>';
-                $recipe .= '</div>';
+
+                    $recipe = "<div class=directions>";
+                    $recipe .= " $results";
+                    $recipe .= '</div>';
+                }
+                echo $recipe;
             }
-            echo $recipe;
-        }
 
-        ?>
+            ?>
+        </div>
 
     </main>
 
