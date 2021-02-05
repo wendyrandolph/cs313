@@ -64,7 +64,7 @@ try {
             
             foreach ($rows as $row) {
                 $results = "<h4> These are the $row[category_name] recipes.</h4>"; 
-                $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_index_id=$row[recipe_index_id]&recipe_name=$row[recipe_name]&recipe_id=$row[recipe_id]'> $row[recipe_name]</a></li>";
+                $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_name=$row[recipe_name]&recipe_id=$row[recipe_id]'> $row[recipe_name]</a></li>";
             }
             $results .= '</ul>';
             echo $results;
