@@ -36,7 +36,7 @@ directions($recipe_id, $db);
                 FROM recipe_steps rs
                 INNER JOIN recipes r
                 ON rs.recipe_id = r.recipe_id 
-                WHERE rs.recipe_id = 2'); 
+                WHERE rs.recipe_id = :recipe_id'); 
                 $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
                 $stmt->execute();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
