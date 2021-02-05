@@ -27,13 +27,13 @@
     <main>
 
         <div class="recipe">
-           <h3 class="name"> <?php echo {$name['recipe_name']} ?></h3> 
+           <h3 class="name"> <?php echo "{$name['recipe_name']}" ?></h3> 
 
             <div class="container">
                 <table>
 
                     <tr>
-                        <td><?php echo "{$name[preheat_temp]}"?> </td> <td><?php echo "{$name[cook_time]}" ?> </td>
+                        <td><?php echo "{$name['preheat_temp']}"?> </td> <td><?php echo "{$name['cook_time']}" ?> </td>
                     </tr>
 
                 </table>
