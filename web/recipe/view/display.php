@@ -48,7 +48,7 @@
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            var_dump($rows);
+            print_r($rows);
         }
 
         ?>
