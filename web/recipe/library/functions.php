@@ -70,7 +70,7 @@ function getIngredients($db, $recipe_id)
         $amount .= "</table>";
     }
 
-    return $name;
+    return $amount;
 }
 
 
