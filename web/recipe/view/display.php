@@ -63,7 +63,7 @@ $stmt->execute();
 $recipe = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
    foreach($recipe as $row){ 
-       $name = "{$row['recipe_name']}"; 
+       $name = "<h3> {$row['recipe_name']} </h3>"; 
    }
 
    echo $name; 
