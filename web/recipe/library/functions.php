@@ -14,5 +14,5 @@ function recipe($db, $recipe_id)
         $name = "<h3> {$row['recipe_name']} </h3>";
     }
 
-    echo $name;
+    return $name;
 }
