@@ -47,12 +47,7 @@
            foreach($rows as $row){ 
              
             $recipe .= "<div class=directions>"; 
-            $recipe .= "$row [instructions][0]"; 
-            $recipe .= "$row [instructions][1]"; 
-            $recipe .= "$row [instructions][2]"; 
-            $recipe .= "$row [instructions][3]"; 
-            $recipe .= "$row [instructions][4]"; 
-            $recipe .= "$row [instructions][5]"; 
+           $recipe .= "<p> json_encode($row[instructions])"; 
             $recipe .= '</div>'; 
             $recipe .= '</div>'; 
                  
