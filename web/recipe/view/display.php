@@ -26,6 +26,10 @@
     </header>
     <main>
         <?php
+        
+        
+    recipe_name($db, $recipe_id);
+
     directions($recipe_id, $db); 
 
 function directions($recipe_id, $db)
@@ -49,7 +53,31 @@ function directions($recipe_id, $db)
     echo $recipe;
 
 }
+
+function recipe_name($db, $recipe_id){ 
+    $sql = 'SELECT * FROM recipes WHERE recipe_id=:recipe_id'; 
+
+$stmt = ($db->prepare($sql)); 
+$stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
+$stmt->execute(); 
+$recipe = $stmt->fetchAll(PDP::FETCH_ASSOC); 
+$stmt->closeCursor(); 
+    return $recipe;  
+}
+
+
+    
+
+
+            
+            
+echo $recipe; 
+
+
 ?> 
+
+
+
     </main>
 
 </body>
