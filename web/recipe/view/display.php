@@ -33,11 +33,11 @@
 
         function details($recipe_id, $db)
         {
-            $stmt = $db->prepare('SELECT ri.recipe_id, r.recipe_name, rs.instructions 
+            $stmt = $db->prepare('SELECT r.recipe_id, r.recipe_name, rs.instructions 
             FROM recipes r
             INNER JOIN recipe_steps rs
             ON r.recipe_id = rs.recipe_id
-            WHERE ri.recipe_id =:recipe_id');
+            WHERE r.recipe_id =:recipe_id');
             $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
