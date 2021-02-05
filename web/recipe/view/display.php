@@ -43,7 +43,7 @@ directions($recipe_id, $db);
                  
                 $recipe = " "; 
                 foreach ($rows as $row) {
-                    $recipe .= "<h3> $row[recipe_name] </h3>"; 
+                    
                     $recipe .= "<div class=directions>";
                     $recipe .= "<p> $row[preheat_temp]"; 
                     $recipe .= "<p> $row[cook_time]"; 
@@ -53,29 +53,9 @@ directions($recipe_id, $db);
                 echo $recipe;
             }
 
-
-            function details($recipe_id, $db)
-            {
-                $stmt = $db->prepare('SELECT  r.recipe_name,  
-            FROM recipes r
-            INNER JOIN recipe_steps rs
-            ON r.recipe_id = rs.recipe_id
-            WHERE r.recipe_id =:recipe_id');
-                $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
-                $stmt->execute();
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                 
-                $recipe = " "; 
-                foreach ($rows as $row) {
-                    $recipe .= "<div class=directions>";
-                
-                    $recipe .= '</div>';
-                }
-                echo $recipe;
-            }
-
-
             ?>
+
+                  <h3> <?php $row['recipe_name'] ?></h3>
         </div>
 
     </main>
