@@ -42,7 +42,16 @@
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            print_r($rows);
+                $recipe = '<div class=recipe>'; 
+           foreach($rows as $row){ 
+               $recipe .= "<h4>' $row[recipe_name] '</h4>"; 
+               $recipe .= '<div class=container>'; 
+               $recipe .= '<div class=amounts>'; 
+               $recipe .= $row['instructions'];
+               $recipe .= '</div>'; 
+               $recipe .= '</div>'; 
+               $recipe .= '</div>';  
+                      }
         }
 
         ?>
