@@ -31,7 +31,7 @@
             <div class="container">
 
                 <div class="amounts">
-                    <?php echo $amount ?> 
+                    <?php echo $amount['required_amount'] ?> 
                 </div>
                 <div class="ingredients">
 
