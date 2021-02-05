@@ -27,9 +27,7 @@
     <main>
 
         <div class="recipe">
-           <h3 class="name"> <?php if(isset($name)){ 
-               echo "{$name['recipe_name']}"; 
-           } ?> </h3> 
+           <h3 class="name"> <?php echo $name ?> </h3> 
             <div class="container">
                 <table>
 
