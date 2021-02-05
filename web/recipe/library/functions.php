@@ -36,15 +36,43 @@ function getName($db, $recipe_id)
     $name = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($name as $row) {
-        $name = "<table>"; 
+        $name = "<table>";
         $name = "<tr><th><td><h3> {$row['recipe_name']} </h3></td></th></tr>";
-        if(isset($row['preheat_temp'])){
-        $name .="<tr><td>Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes </td></tr>"; 
-        } 
-        $name .= "</table>"; 
-
-   
+        if (isset($row['preheat_temp'])) {
+            $name .= "<tr><td>Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes </td></tr>";
+        }
+        $name .= "</table>";
     }
 
     return $name;
 }
+
+
+function getIngredients($db, $recipe_id)
+{
+    $sql = ('SELECT  i.required_amount, i.ingredient_name,  r.recipe_name FROM ingredients i 
+    INNER JOIN recipe_ingredients ri
+    ON i.ingredients_id = ri.ingredients_id 
+    INNER JOIN recipes r
+    ON ri.recipe_id = r.recipe_id
+    WHERE r.recipe_id =:recipe_id');
+    $stmt = ($db->prepare($sql));
+    $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $name = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($name as $row) {
+        $amount = "<table>";
+        $amount = "<tr><th><td><h3> {$row['recipe_name']} </h3></td></th></tr>";
+        if (isset($row['ingredient_name'])) {
+            $amount .= "<tr><td>{$row['required_amount']}</td><td> {$row['ingredient_name']}</tr>";
+        }
+        $amount .= "</table>";
+    }
+
+    return $name;
+}
+
+
+
+
