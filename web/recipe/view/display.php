@@ -43,7 +43,10 @@ directions($recipe_id, $db);
                  
                 $recipe = " "; 
                 foreach ($rows as $row) {
+                    $recipe = "<h3> $row[recipe_name] </h3>"; 
                     $recipe .= "<div class=directions>";
+                    $recipe .= "<p> $row[preheat_temp]"; 
+                    $recipe .= "<p> $row[cook_time]"; 
                     $recipe .=  "$row[instructions]"; 
                     $recipe .= '</div>';
                 }
