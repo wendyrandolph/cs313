@@ -43,10 +43,16 @@
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 $recipe = '<div class=recipe>'; 
+                $recipe .= "<h3> $rows[recipe_name] </h3>"; 
            foreach($rows as $row){ 
-             $recipe .= "<h3> $row[recipe_name] </h3>"; 
+             
             $recipe .= "<div class=directions>"; 
-            $recipe .= "$row [instructions]"; 
+            $recipe .= "$row [instructions][0]"; 
+            $recipe .= "$row [instructions][1]"; 
+            $recipe .= "$row [instructions][2]"; 
+            $recipe .= "$row [instructions][3]"; 
+            $recipe .= "$row [instructions][4]"; 
+            $recipe .= "$row [instructions][5]"; 
             $recipe .= '</div>'; 
             $recipe .= '</div>'; 
                  
