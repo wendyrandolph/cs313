@@ -17,7 +17,7 @@ require('../recipe/library/connections.php');
 switch ($action) {
 
     case 'viewRecipe':
-        $recipe_index_id = filter_input(INPUT_GET, 'recipe_index_id', FILTER_SANITIZE_NUMBER_INT);
+        $recipe_id = filter_input(INPUT_GET, 'recipe_index_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         
         include '../recipe/view/display.php';
