@@ -41,7 +41,7 @@ function directions($recipe_id, $db)
      
     $recipe = " "; 
     foreach ($rows as $row) {
-            var_dump($row); 
+           
         $recipe .= "<div class=directions>";
         $recipe .= "<p> $row[preheat_temp]"; 
         $recipe .= "<p> $row[cook_time]"; 
