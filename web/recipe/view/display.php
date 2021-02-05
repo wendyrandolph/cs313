@@ -27,7 +27,7 @@
     </header>
     <main>
         <?php
-
+            $recipe_id = $_POST['recipe_id']; 
         details($recipe_id, $db);
 
 
