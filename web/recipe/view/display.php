@@ -27,15 +27,23 @@
     <main>
 
         <div class="recipe">
-           <h3 class="name"> <?php echo $name ?> </h3> 
+            <?php echo $name ?>
             <div class="container">
-              
 
+                <div class="amounts">
+
+                </div>
+                <div class="ingredients">
+
+                </div>
 
 
             </div>
+            <div class="steps"> 
+                <?php echo $recipe ?>
+</div> 
 
-</div>
+        </div>
 
 
 
