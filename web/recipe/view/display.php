@@ -44,7 +44,7 @@
             $recipe = '<div class=recipe>';
             $recipe .= '<h3>'. $rows['recipe_name'] .'</h3>';
             foreach ($rows as $row) {
-                $results = json_encode($row['instructions']);
+                $results = json_encode($row["instructions"]);
                 $recipe .= "<div class=directions>";
                 $recipe .= " $results";
                 $recipe .= '</div>';
