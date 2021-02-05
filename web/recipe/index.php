@@ -24,8 +24,8 @@ switch ($action) {
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         
        
-        $name = recipe($db, $recipe_id);
-        
+        $name = getName($db, $recipe_id);
+        $recipe = directions($recipe_id, $db);
 
 
         include '../recipe/view/display.php';
