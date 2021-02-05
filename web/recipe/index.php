@@ -25,7 +25,8 @@ switch ($action) {
         
        
         $name = getName($db, $recipe_id);
-        var_dump($name); 
+        echo $name['recipe_name']; 
+
         $recipe = directions($recipe_id, $db);
 
 
