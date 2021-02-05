@@ -60,7 +60,7 @@ function recipe_name($db, $recipe_id){
 $stmt = ($db->prepare($sql)); 
 $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
 $stmt->execute(); 
-$recipe = $stmt->fetchAll(PDP::FETCH_ASSOC); 
+$recipe = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 $stmt->closeCursor(); 
     return $recipe;  
 }
