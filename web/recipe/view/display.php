@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,12 +21,12 @@
         <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
             <?php include '../recipe/snippets/nav.php';
             ?>
-              </nav>
+        </nav>
 
     </header>
     <main>
         <?php
-         
+
         details($recipe_id, $db);
 
 
@@ -41,20 +40,18 @@
             $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          
-                $recipe = '<div class=recipe>'; 
-                $recipe .= "<h3> $rows[recipe_name] </h3>"; 
-           foreach($rows as $row){ 
-            $results = json_encode($row['instructions']); 
-            $recipe .= "<div class=directions>"; 
-           $recipe .= " $results"; 
-            $recipe .= '</div>'; 
-            $recipe .= '</div>'; 
-                 
-             
+
+            $recipe = '<div class=recipe>';
+            $recipe .= '<h3>'. $rows['recipe_name'] .'</h3>';
+            foreach ($rows as $row) {
+                $results = json_encode($row['instructions']);
+                $recipe .= "<div class=directions>";
+                $recipe .= " $results";
+                $recipe .= '</div>';
+                $recipe .= '</div>';
+            }
+            echo $recipe;
         }
-    echo $recipe; 
-    }
 
         ?>
 
