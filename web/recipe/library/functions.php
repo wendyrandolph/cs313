@@ -35,10 +35,10 @@ function getName($db, $recipe_id)
     $stmt->execute();
     $name = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   // foreach ($recipe as $row) {
-       // $name = "<h3> {$row['recipe_name']} </h3>";
-        //$name .="Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes"; 
-    //}
+    foreach ($name as $row) {
+        $name = "<h3> {$row['recipe_name']} </h3>";
+        $name .="Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes"; 
+    }
 
-    return $name;
+    echo $name;
 }
