@@ -26,7 +26,7 @@ switch ($action) {
 
     case 'display':
         //echo "This is the display case statement"; 
-
+        $recipe_id = filter_input(INPUT_GET, 'recipe_index_id', FILTER_SANITIZE_NUMBER_INT);
         $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         //echo $category_id; 
 
