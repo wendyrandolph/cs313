@@ -25,17 +25,31 @@
 
     </header>
     <main>
-        <div class=recipe>
+       <?php
 
-            <h3><?php echo  $title ?></h3>
-            <?php
+directions($recipe_id, $db); 
+            
 
-            details($recipe_id, $db);
+            function directions($recipe_id, $db)
+            {
+                $stmt = $db->query('SELECT instructions FROM recipe_steps WHERE recipe_id = 2'); 
+                $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
+                $stmt->execute();
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                 
+                $recipe = " "; 
+                foreach ($rows as $row) {
+                    $recipe .= "<div class=directions>";
+                    $recipe .=  $row[instructions]; 
+                    $recipe .= '</div>';
+                }
+                echo $recipe;
+            }
 
 
             function details($recipe_id, $db)
             {
-                $stmt = $db->prepare('SELECT  r.recipe_name, rs.instructions 
+                $stmt = $db->prepare('SELECT  r.recipe_name,  
             FROM recipes r
             INNER JOIN recipe_steps rs
             ON r.recipe_id = rs.recipe_id
@@ -43,18 +57,16 @@
                 $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
                 $stmt->execute();
                 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                $results = []; 
+                 
                 $recipe = " "; 
                 foreach ($rows as $row) {
-                    $results = array_push($row["instructions"]);
-                    
-
                     $recipe .= "<div class=directions>";
-                    $recipe .= " $results";
+                
                     $recipe .= '</div>';
                 }
                 echo $recipe;
             }
+
 
             ?>
         </div>
