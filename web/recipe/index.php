@@ -11,8 +11,11 @@ if ($action == NULL) {
 
 //grab php functions as needed *****************************************************
 require('../recipe/library/connections.php');
-//require ('../recipe/library/functions.php');
+require('../recipe/library/functions.php');
 //require ('../recipe/library/main_model.php');
+
+
+
 
 switch ($action) {
 
@@ -21,7 +24,7 @@ switch ($action) {
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         
        
-
+        recipe($db, $recipe_id);
         
 
 

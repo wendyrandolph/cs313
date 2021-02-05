@@ -1,17 +1,18 @@
 <?php
 
 //Where to keep the query functions 
-
-function getNavigation()
+function recipe($db, $recipe_id)
 {
-    $db = myDbConnect();
-    
-        $navList = '<ul>';
+    $sql = ('SELECT * FROM recipes WHERE recipe_id=:recipe_id');
 
-        foreach ($db->query('SELECT * FROM category') as $row) {
+    $stmt = ($db->prepare($sql));
+    $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $recipe = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $navList .= "<li><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" . urlencode($row['category_name']) . "' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
-        }
-        $navList .= '</ul>';
-    } return $navList; 
+    foreach ($recipe as $row) {
+        $name = "<h3> {$row['recipe_name']} </h3>";
+    }
 
+    echo $name;
+}

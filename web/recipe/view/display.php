@@ -25,60 +25,54 @@
 
     </header>
     <main>
+
+        <div class=recipe>
+            <?php echo $name ?>
+
+            <div class="container">
+                <table>
+
+                    <tr>
+                        <td><?php echo "$name[preheat_temp]" ?> </td> <td><?php echo "$name[cook_time]" ?> </td>
+                    </tr>
+
+                </table>
+
+
+
+            </div>
+
+        </div>
         <?php
-        
-        
-    recipe($db, $recipe_id);
 
-    directions($recipe_id, $db); 
 
-function directions($recipe_id, $db)
-{   
-    $stmt = $db->prepare('SELECT rs.instructions, r.recipe_name, r.preheat_temp, r.cook_time 
+
+
+        directions($recipe_id, $db);
+
+        function directions($recipe_id, $db)
+        {
+            $stmt = $db->prepare('SELECT rs.instructions, r.recipe_name, r.preheat_temp, r.cook_time 
     FROM recipe_steps rs
     INNER JOIN recipes r
     ON rs.recipe_id = r.recipe_id 
-    WHERE r.recipe_id = :recipe_id'); 
-    $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-     
-    $recipe = "<div>"; 
-    foreach ($rows as $row) {
-           
-        $recipe .= "<div class=directions>"; 
-        $recipe .=  "$row[instructions]"; 
-        $recipe .= '</div>';
-    }
-    echo $recipe;
+    WHERE r.recipe_id = :recipe_id');
+            $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-}
+            $recipe = "<div>";
+            foreach ($rows as $row) {
 
-function recipe($db, $recipe_id){ 
-    $sql = ('SELECT * FROM recipes WHERE recipe_id=:recipe_id'); 
-
-$stmt = ($db->prepare($sql)); 
-$stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
-$stmt->execute(); 
-$recipe = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-
-   foreach($recipe as $row){ 
-       $name = "<h3> {$row['recipe_name']} </h3>"; 
-   }
-
-   echo $name; 
-}
+                $recipe .= "<div class=directions>";
+                $recipe .=  "$row[instructions]";
+                $recipe .= '</div>';
+            }
+            echo $recipe;
+        }
 
 
-    
-
-
-            
-            
-echo $recipe; 
-
-
-?> 
+        ?>
 
 
 
