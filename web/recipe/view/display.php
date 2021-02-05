@@ -41,10 +41,13 @@
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+            $title = json_encode($rows['recipe_name']);
             $recipe = '<div class=recipe>';
-            $recipe .= '<h3>'. $rows['recipe_name'] .'</h3>';
+            $recipe .= '<h3>'. $title .'</h3>';
             foreach ($rows as $row) {
                 $results = json_encode($row["instructions"]);
+                
                 $recipe .= "<div class=directions>";
                 $recipe .= " $results";
                 $recipe .= '</div>';
