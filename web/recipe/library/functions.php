@@ -78,13 +78,13 @@ function displayCategory($db, $category_id)
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $results = '<ul>';
-        $results .= "<h5> These are the $rows[category_name] recipe(s).</h5>";
-        foreach($rows as $row) {
+         foreach($rows as $row) {
             
             $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_name=$row[recipe_name]&recipe_id=$row[recipe_id]'> 
                         {$row['recipe_name']}</a></li><br>";
         }
         $results .= '</ul>';
+        $_SESSION['category_name'] = $row['category_name']; 
         return $results;
     }
 }
