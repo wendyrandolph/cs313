@@ -57,6 +57,10 @@ h1 {
   color: White;
 }
 
+h3 {
+  text-align: center;
+}
+
 .card-body {
   margin-top: 10px;
   margin: 0 auto;
