@@ -32,21 +32,26 @@
 
         <div class="card">
             <div class="card-body">
-                <table> 
-                <?php echo $name ?>
-                <?php echo $amount ?>
+                <table>
+                    <?php echo $name ?>
+                    <?php echo $amount ?>
                 </table><br><br>
+
+
+                <table>
+                    <div class="instructions">
+                        <?php echo $recipe ?>
+                    </div>
+                </table>
+
+
             </div>
         </div>
 
 
 
 
-        <table>
-            <div class="instructions">
-                <?php echo $recipe ?>
-            </div>
-        </table>
+
 
 
 
