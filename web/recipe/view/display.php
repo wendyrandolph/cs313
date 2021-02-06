@@ -35,7 +35,7 @@
                 <table>
                     <?php echo $name ?>
                     <?php echo $amount ?>
-                </table><br><br>
+                </table>
 
 
                 <table>
