@@ -29,7 +29,7 @@
     <main>
 
 
-        <table>
+       
 
             <?php echo $name ?>
            
