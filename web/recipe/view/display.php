@@ -34,7 +34,7 @@
                 <?php echo $amount ?>
             
 
-           
+            <div class="instructions">
                 <?php echo $recipe ?>
             </div>
         </table>
