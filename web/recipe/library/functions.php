@@ -67,7 +67,7 @@ function getIngredients($db, $recipe_id)
         
 
 
-        $amount .= "<tr><td>{$row['required_amount']} - </td> <td> {$row['ingredient_name']}</tr>";
+        $amount .= "<tr><td>{$row['required_amount']} - </td> <td> {$row['ingredient_name']}</tr>\n";
 
         
     }
