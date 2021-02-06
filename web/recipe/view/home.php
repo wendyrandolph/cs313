@@ -28,11 +28,11 @@
     <div class="card">
             <div class="card-body">
                 <table>
-                    <?php if(isset($results)){ 
-                        echo $results ;
+                    <?php if(!isset($results)){ 
+                       echo "There aren't any recipes added here yet."; 
                     }else{
-                        echo "There aren't any recipes added here yet."; 
-                    
+                        
+                        echo $results ;
                     }?>
                 </table><br><br>
 
