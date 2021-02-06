@@ -61,6 +61,10 @@ h3 {
   text-align: center;
 }
 
+.amount {
+  margin-top: 100px;
+}
+
 .card-body {
   margin-top: 10px;
   margin: 0 auto;
