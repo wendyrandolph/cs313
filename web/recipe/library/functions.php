@@ -36,14 +36,14 @@ function getName($db, $recipe_id)
     $name = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($name as $row) {
-        $name = "<table>"; 
+        
         $name = "<h3> {$row['recipe_name']} </h3>";
         if (isset($row['preheat_temp'])) {
             $name .= "<tr><td>Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes </td></tr>";
         }
         
     }
-        
+
     return $name;
 }
 
