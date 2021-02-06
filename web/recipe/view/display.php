@@ -31,7 +31,7 @@
 
         <table>
 
-            <?php echo $name ?><br><br>
+            <?php echo $name ?>
             <div class="amounts">
                 <?php echo $amount ?>
         </table><br><br>
