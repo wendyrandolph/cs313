@@ -41,8 +41,7 @@ switch ($action) {
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING); 
         //echo $category_id; 
 
-        $_SESSION['name'] = $recipe_name; 
-            echo $_SESSION['name']; 
+        $results = displayCategory($db, $category_id); 
 
 
 
