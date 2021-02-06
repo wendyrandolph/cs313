@@ -24,7 +24,7 @@ body {
 header { 
     
     background: $primary; 
-    color: $secondary; 
+    
 }
 
 nav#page_nav {
@@ -68,6 +68,12 @@ form-control{
 
 td { 
     width: 50%; 
+}
+
+h1{ 
+    text-align: cetner;
+    text-transform: uppercase;
+    color: White; 
 }
 .card-body{ 
     margin-top: 10px; 
