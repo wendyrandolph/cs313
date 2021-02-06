@@ -37,7 +37,7 @@ function getName($db, $recipe_id)
 
     foreach ($name as $row) {
       
-        $name = "<th><td> {$row['recipe_name']} </td></th>";
+        $name = "<h3> {$row['recipe_name']} </h3>";
         if (isset($row['preheat_temp'])) {
             $name .= "<tr><td>Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes </td></tr>";
         }
