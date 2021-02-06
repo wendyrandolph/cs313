@@ -79,9 +79,9 @@ function displayCategory($db, $category_id)
 
         $results = '<ul>';
 
-        while($rows) {
-            $results = "<h5> These are the $rows[category_name] recipe(s).</h5>";
-            $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_name=$rows[recipe_name]&recipe_id=$row[recipe_id]'> {$row['recipe_name']}</a></li><br>";
+        foreach($rows as $row) {
+            $results = "<h5> These are the $row[category_name] recipe(s).</h5>";
+            $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_name=$row[recipe_name]&recipe_id=$row[recipe_id]'> {$row['recipe_name']}</a></li><br>";
         }
         $results .= '</ul>';
         return $results;
