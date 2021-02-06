@@ -81,7 +81,7 @@ function displayCategory($db, $category_id)
 
         foreach ($rows as $row) {
             $results = "<h5> These are the $row[category_name] recipe(s).</h5>";
-            $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_name=$row[recipe_name]&recipe_id=$row[recipe_id]'> $row[recipe_name]</a></li>";
+            $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_name=$row[recipe_name]&recipe_id=$row[recipe_id]'> {$row['recipe_name']}</a></li>";
         }
         $results .= '</ul>';
         return $results;
