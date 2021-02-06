@@ -26,21 +26,23 @@
     </header>
     <main>
 
-        <div class="recipe">
+
+        <table>
+
             <?php echo $name ?><br><br>
-            <div class="container">
+           
 
                 <div class="amounts">
                     <?php echo $amount ?>
                 </div>
 
 
-            </div>
+          
             <div class="steps">
                 <?php echo $recipe ?>
             </div>
 
-        </div>
+        </table>
 
 
 
