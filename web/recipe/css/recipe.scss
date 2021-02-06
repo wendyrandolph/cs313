@@ -66,9 +66,7 @@ form-control{
     width: 0; 
 }
 
-div.steps{ 
-    background: $secondary; 
-    width: 200px; 
-    height: auto; 
-    border: 2px solid black; 
+th { 
+    width: 50%; 
+    background: red; 
 }
