@@ -47,10 +47,8 @@ form-control {
   width: 0;
 }
 
-th {
+td {
   width: 50%;
-  background: red;
-  font-size: 25px;
 }
 
 /*# sourceMappingURL=recipe.css.map */
