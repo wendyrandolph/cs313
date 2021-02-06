@@ -32,9 +32,9 @@
             <?php echo $name ?><br><br>
             <div class="amounts">
                 <?php echo $amount ?>
-            </div>
+            
 
-            <div class="steps">
+           
                 <?php echo $recipe ?>
             </div>
         </table>
