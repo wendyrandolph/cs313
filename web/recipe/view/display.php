@@ -32,8 +32,8 @@
             <?php echo $name ?><br><br>
             <div class="amounts">
                 <?php echo $amount ?>
-            
-
+        </table>
+        <table>
             <div class="instructions">
                 <?php echo $recipe ?>
             </div>
