@@ -12,12 +12,12 @@ WHERE r.recipe_id = :recipe_id');
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $recipe = "<div>";
+    $recipe = " ";
     foreach ($rows as $row) {
 
         $recipe .= "<div class=directions>";
-        $recipe .=  "$row[instructions]";
-        $recipe .= '</div>';
+        $recipe .= "<tr><td>{$row['instructions']}</td></tr><br>";
+       
     }
     return $recipe;
 }
