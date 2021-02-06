@@ -31,7 +31,7 @@
                     <?php if(!isset($results)){ 
                        echo "There aren't any recipes added here yet."; 
                     }else{
-                       "<h5> These are the $_SESSION[category_name] recipe(s).</h5>";
+                       echo "<h5> These are the $_SESSION[category_name] recipe(s).</h5>";
                         echo $results ;
                     }?>
                 </table><br><br>
