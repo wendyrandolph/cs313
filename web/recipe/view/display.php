@@ -31,10 +31,7 @@
             <div class="container">
 
                 <div class="amounts">
-                    <?php echo $amount ?> 
-                </div>
-                <div class="ingredients">
-
+                    <?php echo $amount ?>
                 </div>
 
 
