@@ -28,17 +28,18 @@
     </header>
     <main>
 
-    <?php echo $name ?>
+    
        
 <div class="card"><div class="card-body"> 
+<?php echo $name ?>
 <?php echo $amount ?>
-
+</table><br><br>
 </div> 
 </div>
             
            
                
-        </table><br><br>
+      
         <table>
             <div class="instructions">
                 <?php echo $recipe ?>
