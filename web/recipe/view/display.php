@@ -32,7 +32,7 @@
         <table>
 
             <?php echo $name ?>
-            <div class="amounts">
+           
                 <?php echo $amount ?>
         </table><br><br>
         <table>
