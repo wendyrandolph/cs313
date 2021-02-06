@@ -2,6 +2,7 @@
 html {
   background-size: contain;
   box-sizing: border-box;
+  margin-top: 50px;
 }
 
 body {
