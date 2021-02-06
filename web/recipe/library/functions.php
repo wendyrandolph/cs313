@@ -61,13 +61,15 @@ function getIngredients($db, $recipe_id)
     $stmt->execute();
     $name = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+        $amount = " ";    
     while ($name) {
-        $amount = "<table>";
+        
 
 
         $amount .= "<tr><td>$name[required_amount] - </td> <td> $name[ingredient_name]</tr>";
 
-        $amount .= "</table>";
+        
     }
 
     return $amount;
