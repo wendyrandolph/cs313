@@ -31,6 +31,7 @@
         <div class="card">
             <div class="card-body">
 
+                <img src="../images/quote.jpg"> 
                 <?php
                 if (isset($results)) {
                   
