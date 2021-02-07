@@ -33,7 +33,7 @@
 
             <div class="display"> 
 
-<img src='../images/quote.jpg'>  
+<img src='../images/naan pizza.jpg'>  
 </div> 
                 <table>
                     <?php if(!isset($results)){ 
