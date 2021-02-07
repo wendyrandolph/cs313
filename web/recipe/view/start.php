@@ -24,10 +24,10 @@
 
 
 <main> 
+<div class="card"> 
+<h3> Click on a category above <br>to view the available recipes. </h3> 
 
-<h3> Click on a category above to view the available recipes. </h3> 
-
-
+</div> 
 
 </main> 
 
