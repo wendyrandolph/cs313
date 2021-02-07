@@ -26,25 +26,20 @@
     <main>
 
 
-    
 
-    <div class="card">
+
+        <div class="card">
             <div class="card-body">
 
-    
-             
-                    <?php if(isset($results)){ 
-                       echo " <h5> These are the $_SESSION[category_name] recipe(s).</h5>";
-                      
-                        echo $results ;
-                        
-                    }else{ 
+                <?php
+                if (isset($results)) {
+                    echo " <h5> These are the $_SESSION[category_name] recipes.</h5>";
 
-                        echo "There aren't any recipes in this category yet."; 
+                    echo $results;
+                } else {
 
-                    }
-                    ?>
-            
+                    echo "There aren't any recipes in this category yet.";
+                } ?>
 
             </div>
         </div>
