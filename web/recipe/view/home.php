@@ -32,15 +32,12 @@
             <div class="card-body">
 
                 <?php
-                if (isset($results)) {
+                if (!isset($results)) {
+                   echo "There aren't any recipes listed yet."; 
+                } else { 
                     echo " <h5> These are the $_SESSION[category_name] recipes.</h5>";
-
                     echo $results;
-                } else {
-
-                    echo "There aren't any recipes in this category yet.";
-                } ?>
-
+                }?> 
             </div>
         </div>
 
