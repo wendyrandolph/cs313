@@ -32,12 +32,14 @@
             <div class="card-body">
 
     
-                <table>
+             
                     <?php if(isset($results)){ 
-                       echo "<h5> These are the $_SESSION[category_name] recipe(s).</h5>";
+                       echo " These are the $_SESSION[category_name] recipe(s).</h5>";
+                       '<table>'; 
                         echo $results ;
+                        '</table>'; 
                     }?>
-                </table><br><br>
+            
 
             </div>
         </div>
