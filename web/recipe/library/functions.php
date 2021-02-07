@@ -82,6 +82,7 @@ function displayCategory($db, $category_id)
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $results = '<ul>';
+         $results .= "<h5> These are the $_SESSION[category_name] recipes.</h5>";
          foreach($rows as $row) {
             
             $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_id=$row[recipe_id]'> 
