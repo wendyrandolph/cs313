@@ -26,13 +26,15 @@
     <main>
 
 
-    <div class="display"> 
-
-<img src='../images/quote.jpg'>  
-</div> 
+    
 
     <div class="card">
             <div class="card-body">
+
+            <div class="display"> 
+
+<img src='../images/quote.jpg'>  
+</div> 
                 <table>
                     <?php if(!isset($results)){ 
                        echo "<h5> These are the $_SESSION[category_name] recipe(s).</h5>";
