@@ -53,7 +53,7 @@ switch ($action) {
 
 
 
-        include '../recipe/view/home.php';
+        include '../recipe/view/start.php';
         break;
 }
 ?>
