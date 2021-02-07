@@ -25,7 +25,7 @@
 
 <main> 
 
-<img src='../images/salsa.jpg'> 
+<img src='/images/salsa.jpg'> 
 </main> 
 
 
