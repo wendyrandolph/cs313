@@ -80,8 +80,8 @@ function displayCategory($db, $category_id)
         $results = '<ul>';
          foreach($rows as $row) {
             
-            $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_name=$row[recipe_name]&recipe_id=$row[recipe_id]'> 
-                        {$row['recipe_name']}</a></li><br>";
+            $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_id=$row[recipe_id]'> 
+                        {$row['recipe_name']}</a></li>";
         }
         $results .= '</ul>';
         $_SESSION['category_name'] = $row['category_name']; 

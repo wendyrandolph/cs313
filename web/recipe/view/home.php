@@ -34,7 +34,7 @@
     
              
                     <?php if(isset($results)){ 
-                       echo " These are the $_SESSION[category_name] recipe(s).</h5>";
+                       echo " <h5> These are the $_SESSION[category_name] recipe(s).</h5>";
                        '<table>'; 
                         echo $results ;
                         '</table>'; 
