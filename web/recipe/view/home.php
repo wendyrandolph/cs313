@@ -25,12 +25,16 @@
 
     <main>
 
+
+    <div class="display"> 
+
+<img src='../images/quote.jpg'>  
+</div> 
+
     <div class="card">
             <div class="card-body">
                 <table>
                     <?php if(!isset($results)){ 
-                       echo "There aren't any recipes added here yet."; 
-                    }else{
                        echo "<h5> These are the $_SESSION[category_name] recipe(s).</h5>";
                         echo $results ;
                     }?>
