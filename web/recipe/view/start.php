@@ -25,7 +25,7 @@
 
 <main> 
 
-<img src="../images/idaho_burrito.jpg"> 
+<img src="../images/recipe.jpg"> 
 </main> 
 
 
