@@ -38,7 +38,12 @@
                       
                         echo $results ;
                         
-                    }?>
+                    }else{ 
+
+                        echo "There aren't any recipes in this category yet."; 
+
+                    }
+                    ?>
             
 
             </div>
