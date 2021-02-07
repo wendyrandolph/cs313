@@ -33,7 +33,7 @@
 
     
                 <table>
-                    <?php if(!isset($results)){ 
+                    <?php if(isset($results)){ 
                        echo "<h5> These are the $_SESSION[category_name] recipe(s).</h5>";
                         echo $results ;
                     }?>
