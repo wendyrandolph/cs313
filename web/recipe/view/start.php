@@ -25,7 +25,10 @@
 
 <main> 
 
-<img src='/images/salsa.jpg'> 
+<h3> Click on a category above to view the available recipes. </h3> 
+
+
+
 </main> 
 
 
