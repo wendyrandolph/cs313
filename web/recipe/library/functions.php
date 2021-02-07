@@ -18,6 +18,7 @@ WHERE r.recipe_id = :recipe_id');
         $recipe .= "<div class=directions>";
         $recipe .= "<tr><td>{$row['instructions']}</td></tr>";
     }
+        $recipe .= "</div>"; 
     return $recipe;
 }
 
