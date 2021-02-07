@@ -13,9 +13,10 @@ WHERE r.recipe_id = :recipe_id');
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $recipe = " ";
+    $recipe .= "<div class=directions>";
     foreach ($rows as $row) {
 
-        $recipe .= "<div class=directions>";
+     
         $recipe .= "<tr><td>{$row['instructions']}</td></tr>";
     }
         $recipe .= "</div>"; 
