@@ -32,10 +32,10 @@
 
         <div class="card">
             <div class="card-body">
-                <table>
+               
                     <?php echo $name ?>
                     <?php echo $amount ?>
-                </table>
+                
 
 
                 <table>
