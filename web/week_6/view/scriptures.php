@@ -29,11 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php
 
 
-    $scripture_list = listScriptures($db);
+    
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-        echo $scripture_list;
-    } else {
+       
+        $scripture_list = " ";
+        foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row) {
+            $scripture_list .= '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
+        }
+     } else {
         echo $list;
     }
 
