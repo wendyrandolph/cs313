@@ -13,7 +13,7 @@
                 echo $_SESSION['message']; 
             } ?> 
 <fieldset>
-        <form method=POST action='../week_6/index.php/?action=update'>
+        <form method=POST action='../week_6/index.php/?action=insert'>
 
             <label for="book" required>Book</label>
             <input type="text" name="book" id="book"><br>
