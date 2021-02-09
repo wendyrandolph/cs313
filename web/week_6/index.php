@@ -17,9 +17,6 @@ switch ($action) {
 
     case 'details':
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $id = $_POST['id'];
-        }
 
         $results = details($id, $db);
 
