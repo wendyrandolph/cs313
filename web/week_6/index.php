@@ -35,6 +35,6 @@ switch ($action) {
 
         $list = searchBook($text, $db);
 
-        include '../week_6/scriptures.php';
+        include '../scriptures.php';
         break;
 }
