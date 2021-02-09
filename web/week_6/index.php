@@ -38,3 +38,4 @@ switch ($action) {
         include '/week_6/scriptures.php';
         break;
 }
+?>
