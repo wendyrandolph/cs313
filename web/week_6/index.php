@@ -31,7 +31,7 @@ switch ($action) {
         } 
     } else {
        $details = searchBook($text, $db);
-    
+    }
 
        
 
