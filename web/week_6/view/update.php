@@ -25,7 +25,7 @@
 
             <label for="topics">Topic</label><br>
 
-            <?php echo $results[0] ?>  <input type="checkbox" name="topic" value="<?php echo $results[0] ?>"><br>
+            <?php echo $results['id'][1] ?>  <input type="checkbox" name="topic" value="<?php echo $results[0] ?>"><br>
             <?php echo $results[1] ?><input type="checkbox" name="topic" value="<?php echo $results[1] ?>"><br>
             <?php echo $results[2] ?><input type="checkbox" name="topic" value="<?php echo $results[2] ?>"><br>
             <input type="submit" name="submit" />
