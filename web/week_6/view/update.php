@@ -24,7 +24,7 @@
     <label for="topics">Topic</label>
     
     <?php echo $list ?> <input type="checkbox" name="topic" value="<?php echo $list ?>"><br> 
-    <?php } ?> 
+   
     <input type="submit" name="submit" />
 
 </body>
