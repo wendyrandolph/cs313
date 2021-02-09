@@ -8,7 +8,7 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-require('../week_6/functions.php'); 
+require('../week_6/functions.php');
 
 $list = searchBook($text, $db);
 
@@ -19,18 +19,17 @@ switch ($action) {
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id = $_POST['id'];
-        } 
+        }
 
 
-        include '../week_6/details.php'; 
+        include '../week_6/details.php';
         break;
 
-default:
-echo "this is the default case statement"; 
+    default:
+        echo "this is the default case statement";
 
-       
+
 
         include '../week_6/scriptures.php';
         break;
 }
-?>
