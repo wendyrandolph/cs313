@@ -41,7 +41,7 @@ function checkboxes($db){
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $results = " ";
     foreach ($rows as $row) {
-       $results .=  '{$row[name]} . <input type="checkbox" name="topic" value="<?php echo $row[name] ?>">'; 
+       $results .=  ' "{$row[name]}" . <input type="checkbox" name="topic" value="<?php echo $row[name] ?>">'; 
     }return $results; 
 }
 
