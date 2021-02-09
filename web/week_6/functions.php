@@ -28,7 +28,7 @@ function dbConnect()
 
 function searchBook($text, $db)
 {
-    $stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:text');
+    $stmt = $db->prepare('SELECT * FROM scriptures WHERE book=:text');
     $stmt->bindValue(':text', $text, PDO::PARAM_STR);
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -61,7 +61,7 @@ function details($id, $db)
 function listScriptures($db)
 {
     $scripture_list = " ";
-    foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
+    foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row) {
         $scripture_list .= '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
     }
     return $scripture_list;
