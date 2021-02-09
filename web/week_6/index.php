@@ -16,6 +16,7 @@ if ($action == NULL) {
 
 require ('../week_6/functions.php'); 
 
+$list = searchBook($text, $db);
 
 
 switch ($action) {
@@ -33,7 +34,7 @@ switch ($action) {
     case 'default':
 
 
-        $list = searchBook($text, $db);
+       
 
         include '../week_6/scriptures.php';
         break;
