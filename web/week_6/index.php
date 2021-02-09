@@ -22,7 +22,7 @@ switch ($action) {
         }
 
 
-        include '../week_6/details.php';
+        include '../week_6/view/details.php';
         break;
 
     default:
@@ -30,7 +30,7 @@ switch ($action) {
 
 
 
-        include '../week_6/scriptures.php';
+        include '../week_6/view/scriptures.php';
         break;
 }
 
