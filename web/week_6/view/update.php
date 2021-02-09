@@ -9,7 +9,7 @@
 
 <body>
     <fieldset>
-        <form method=POST action='../index.php/?action=update'>
+        <form method=POST action='../week_6/index.php/?action=update'>
 
             <label for="name">Book</label>
             <input type="text" name="book" id="book"><br>
