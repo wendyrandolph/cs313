@@ -1,29 +1,6 @@
 <?php
 
 
-function dbConnect()
-{
-
-    try {
-        $dbUrl = getenv('DATABASE_URL');
-
-        $dbOpts = parse_url($dbUrl);
-
-        $dbHost = $dbOpts["host"];
-        $dbPort = $dbOpts["port"];
-        $dbUser = $dbOpts["user"];
-        $dbPassword = $dbOpts["pass"];
-        $dbName = ltrim($dbOpts["path"], '/');
-
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $ex) {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-    }
-    return $db;
-}
 
 
 function searchBook($text, $db)
@@ -64,7 +41,7 @@ function listScriptures($db)
     foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row) {
         $scripture_list .= '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
     }
-    return $scripture_list;
-}
+    
+}return $scripture_list;
 
 ?>
