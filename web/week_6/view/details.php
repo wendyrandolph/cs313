@@ -15,7 +15,7 @@
 
     <?php
 
-    details($id, $db);
+    echo $results; 
 
     ?>
 </body>

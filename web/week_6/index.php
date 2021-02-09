@@ -21,6 +21,7 @@ switch ($action) {
             $id = $_POST['id'];
         }
 
+        $results = details($id, $db);
 
         include '../week_6/view/details.php';
         break;
