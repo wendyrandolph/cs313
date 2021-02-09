@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h1>Scripture Resources</h1>
 
-    <form method='post' action='../week_6/index.php/?action=details&id=$id' ?> 
+    <form method='post' action='../week_6/index.php/?action=details' ?> 
         <label for="text">Search: </label>
-        <input type="text" id="text" name="text">
+        <input type="text" id="text" name="text" value="id">
     </form>
 
 
