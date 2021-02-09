@@ -32,7 +32,7 @@ switch ($action) {
         break;
 
     case 'default':
-
+echo "this is the default case statement"; 
 
        
 
