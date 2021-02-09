@@ -30,7 +30,7 @@ switch ($action) {
 
 
 
-        include '../week_6/view/scriptures.php';
+        include '../view/scriptures.php';
         break;
 }
 
