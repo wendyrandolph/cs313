@@ -12,7 +12,7 @@ function searchBook($text, $db)
     $details = " ";
     foreach ($rows as $row) {
 
-        $details .= '<b>' . '<a href="../week_6/?action=display&id=$row[id]>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - 
+        $details .= '<b>' . '<a href="../week_6/?action=details&id=$row[id]>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - 
     
     
     <br><br>';
