@@ -38,7 +38,7 @@ switch ($action) {
         $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_STRING);
         $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
         $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
-        $topic = filter_input(INPUT_POST, 'topic', FILTER_SANITIZE_STRING);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 
         //check for empty fields

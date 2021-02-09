@@ -31,7 +31,7 @@
                 <?php if(isset($results)){ 
                     echo $results; 
                 } ?> 
-
+            <input type="hidden" name="id" value="$results['id']";
             <input type="submit" name="Add Scripture" />
             <input type = "hidden" name="action" value="insert"> 
             <input type="hidden" name="id" value="$id">
