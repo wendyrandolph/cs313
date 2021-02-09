@@ -22,7 +22,7 @@
     <input type="textarea" name="content" id="content"><br><br><br>
 
     <label for="topics">Topic</label>
-    <?php foreach($results as $list){ ?>
+    
     <?php echo $list ?> <input type="checkbox" name="topic" value="<?php echo $list ?>"><br> 
     <?php } ?> 
     <input type="submit" name="submit" />
