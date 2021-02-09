@@ -47,7 +47,7 @@ function checkboxes($db)
     return $results;
 }
 
-function addScripture($db, $book, $chapter, $verse, $content, $topic, $id)
+function addScripture($db, $book, $chapter, $verse, $content, $name, $id)
 {
 
     $sql = 'UPDATE scriptures 
@@ -64,7 +64,7 @@ WHERE id = :id;  ';
     $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
     $stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
     $stmt->bindValue(':content', $content, PDO::PARAM_STR);
-    $stmt->bindValue(':topic', $topic, PDO::PARAM_STR);
+    $stmt->bindValue(':name', $name, PDO::PARAM_STR);
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
     //Insert the data

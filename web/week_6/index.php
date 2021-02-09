@@ -46,7 +46,7 @@ switch ($action) {
             $message = "<p class='notice'>Please provide information for all empty form fields.</p>";
         }
          //Send the data to the model 
-        $insertScripture = addScripture($db, $book, $chapter, $verse, $content, $topic, $id); 
+        $insertScripture = addScripture($db, $book, $chapter, $verse, $content, $name, $id); 
 
         if ($insertScripture) {
             if ($insertScripture) {
