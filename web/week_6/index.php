@@ -16,7 +16,7 @@ $list = searchBook($text, $db);
 switch ($action) {
 
     case 'details':
-echo "this is the details case statement"; 
+
 
         $results = details($id, $db);
 
