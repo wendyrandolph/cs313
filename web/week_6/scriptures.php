@@ -10,7 +10,7 @@
 <body>
     <h1>Scripture Resources</h1>
 
-    <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
+    <form method='post' action='../week_6/?action=details' ?> ">
         <label for="text">Search: </label>
         <input type="text" id="text" name="text">
     </form>
