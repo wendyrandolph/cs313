@@ -11,13 +11,13 @@
     <fieldset>
         <form method=POST action='../week_6/index.php/?action=update'>
 
-            <label for="name" required>Book</label>
+            <label for="book" required>Book</label>
             <input type="text" name="book" id="book"><br>
 
-            <label for="email" required>Chapter</label>
+            <label for="chapter" required>Chapter</label>
             <input type="text" name="chapter" id="chapter"><br><br><br>
 
-            <label for="name" required>Verse</label>
+            <label for="verse" required>Verse</label>
             <input type="text" name="verse" id="verse"><br>
 
             <label for="content" required>Content</label>
