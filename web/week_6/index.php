@@ -1,6 +1,6 @@
 <?php
 // This is the controller 
-
+session_start(); 
 
 //know which case statement to access 
 $action = filter_input(INPUT_POST, 'action');
@@ -42,24 +42,23 @@ switch ($action) {
         //check for empty fields
         if (empty($book) || empty($chapter) || empty($verse) || empty($content) || empty($topic) || empty($invStock) || empty($invPrice) || empty($invColor) || empty($classificationId)) {
             $message = "<p class='notice'>Please provide information for all empty form fields.</p>";
-         
-         //Send the data to the model 
-        $insertScripture = addScripture($book, $chapter, $verse, $content, $topic, $id); 
-
-        
-         
-         
-         
-         
-            include '../week_6/view/update.php';
-            break;
         }
+         //Send the data to the model 
+        $insertScripture = addScripture($db, $book, $chapter, $verse, $content, $topic, $id); 
 
-
-
-        include '../week_6/view/update.php';
-        break;
-
+        if ($insertScripture) {
+            if ($insertScripture) {
+                $message = "<p class='notify'>Congratulations, $book $chapter $verse was successfully updated.</p>";
+                $_SESSION['message'] = $message;
+                header('location ../week_6/view/update.php');
+                exit;
+            }
+        } else {
+            $message = "<p class='notice'>Error. the $invMake $invModel was not updated.</p>";
+            include '../week_6/view/update.php';
+            exit;
+        }
+   
     default:
 
         if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {

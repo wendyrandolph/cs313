@@ -8,7 +8,11 @@
 </head>
 
 <body>
-    <fieldset>
+  
+            <?php if(isset($SESSION['message'])){ 
+                echo $_SESSION['message']; 
+            } ?> 
+<fieldset>
         <form method=POST action='../week_6/index.php/?action=update'>
 
             <label for="book" required>Book</label>
