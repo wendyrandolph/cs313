@@ -35,13 +35,42 @@ function details($id, $db)
     return $results;
 }
 
-function checkboxes($db){ 
-    $stmt = $db->prepare('SELECT * FROM TOPIC' );
+function checkboxes($db)
+{
+    $stmt = $db->prepare('SELECT * FROM TOPIC');
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $results = " ";
     foreach ($rows as $row) {
-       $results .=  " {$row['name']}  <input type='checkbox' name='topic' value='<?php echo $row[name] ?>'><br>"; 
-    }return $results; 
+        $results .=  " {$row['name']}  <input type='checkbox' name='topic' value='<?php echo $row[name] ?>'><br>";
+    }
+    return $results;
 }
 
+function addScripture($db, $book, $chapter, $verse, $content, $topic, $id)
+{
+
+    $sql = 'UPDATE scriptures 
+SET book = :book
+, chapter = :chapter
+, verse = :verse 
+, content = :content 
+, topic = :topic 
+WHERE id = :id;  ';
+
+    $stmt = $db->prepare($sql);
+    //Next six lines replace the placeholders with the values from the form 
+    $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+    $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
+    $stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
+    $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+    $stmt->bindValue(':topic', $topic, PDO::PARAM_STR);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+    //Insert the data
+    $stmt->execute();
+    //Ask how many rows changed asa result of our insert
+    $rowsChanged = $stmt->rowCount();
+
+    return $rowsChanged;
+}
