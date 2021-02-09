@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 $text = "";
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h1>Scripture Resources</h1>
 
-    <form method='post' action='../week_6/?action=details' ?> ">
+    <form method='post' action='../week_6/index.php/?action=details' ?> ">
         <label for="text">Search: </label>
         <input type="text" id="text" name="text">
     </form>
@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-        listScriptures($db); 
-        echo $scripture_list; 
+        listScriptures($db);
+        echo $scripture_list;
     } else {
         echo $list;
     }
