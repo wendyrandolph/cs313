@@ -2,12 +2,6 @@
 // This is the controller 
 
 
-$text = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $text = $_POST['text'];
-}
-
 //know which case statement to access 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -31,7 +25,7 @@ switch ($action) {
         include '../week_6/details.php'; 
         break;
 
-    case 'default':
+default:
 echo "this is the default case statement"; 
 
        
