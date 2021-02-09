@@ -66,3 +66,5 @@ function listScriptures($db)
     }
     return $scripture_list;
 }
+
+?>
