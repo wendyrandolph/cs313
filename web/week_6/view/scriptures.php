@@ -31,12 +31,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
 
-    if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-       echo $display; 
+    
+     
 
-     } else {
-            $details; 
-    }
+      
+          if(isset($details)){ 
+              echo $details; 
+          } 
+    
 
 
 

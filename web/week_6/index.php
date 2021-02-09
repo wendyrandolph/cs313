@@ -27,11 +27,11 @@ switch ($action) {
        
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
         foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
-            $display = '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
-        } return $display; 
+            echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
+        } 
     } else {
        $details = searchBook($text, $db);
-    }
+    
 
        
 
