@@ -15,7 +15,7 @@
             <input type="text" name="book" id="book"><br>
 
             <label for="email" required>Chapter</label>
-            <input type="email" name="chapter" id="chapter"><br><br><br>
+            <input type="text" name="chapter" id="chapter"><br><br><br>
 
             <label for="name" required>Verse</label>
             <input type="text" name="verse" id="verse"><br>
