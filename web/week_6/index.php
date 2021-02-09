@@ -26,13 +26,13 @@ switch ($action) {
         break;
 
     default:
-        echo "this is the default case statement";
+       
         
         if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
             $scripture_list = listScriptures($db);
         } 
 
-        include '../view/scriptures.php';
+        include '../week_6/view/scriptures.php';
         break;
 }
 
