@@ -32,6 +32,6 @@ function details($id, $db)
     foreach ($rows as $row) {
         $results .= '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
     }
-    
-}return $results;
+    return $results;
+}
 

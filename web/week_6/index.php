@@ -26,7 +26,7 @@ switch ($action) {
     default:
        
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-        foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
+        foreach ($db->query('SELECT id, book, chapter, verse, content FROM Scriptures') as $row) {
             echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
         } 
     } else {
