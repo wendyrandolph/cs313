@@ -14,7 +14,7 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-require ('../week_6/functions.php'); 
+require('../week_6/functions.php'); 
 
 $list = searchBook($text, $db);
 
