@@ -35,3 +35,13 @@ function details($id, $db)
     return $results;
 }
 
+function checkboxes($db){ 
+    $stmt = $db->prepare('SELECT * FROM TOPIC' );
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $results = " ";
+    foreach ($rows as $row) {
+        $results .= '<b>' . $row['name'] . '</b>'; 
+    }return $results; 
+}
+

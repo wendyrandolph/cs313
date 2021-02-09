@@ -23,6 +23,15 @@ switch ($action) {
         include '../week_6/view/details.php';
         break;
 
+        case 'update': 
+
+           $results =  checkboxes($db); 
+
+
+            include '../week_6/view/update.php'; 
+            break; 
+
+
     default:
        
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
