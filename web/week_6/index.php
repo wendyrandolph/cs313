@@ -33,8 +33,7 @@ switch ($action) {
 
     case 'insert':
 
-        echo "this is the insert case statement"; 
-            exit; 
+       
         $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
         $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_STRING);
         $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
