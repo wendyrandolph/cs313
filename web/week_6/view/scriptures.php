@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
        
-        $scripture_list = " ";
+    
         foreach ($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row) {
-            $scripture_list .= '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
+            echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
         }
      } else {
-        echo $list;
+            $details; 
     }
 
 

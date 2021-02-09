@@ -35,10 +35,3 @@ function details($id, $db)
     return $results;
 }
 
-function listScriptures($db)
-{
-    
-    
-}return $scripture_list;
-
-?>
