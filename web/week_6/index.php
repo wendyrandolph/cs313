@@ -28,9 +28,7 @@ switch ($action) {
     default:
        
         
-        if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-            $scripture_list = listScriptures($db);
-        } 
+       
 
         include '../week_6/view/scriptures.php';
         break;
