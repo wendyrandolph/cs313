@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
-        echo $scripture_list;
+        listScriptures($db); 
+        echo $scripture_list; 
     } else {
         echo $list;
     }
