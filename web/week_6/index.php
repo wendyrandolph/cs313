@@ -25,7 +25,14 @@ switch ($action) {
 
     default:
        
-        
+    if ($_SERVER["REQUEST_METHOD"] == "GET" and $text == "") {
+        foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row) {
+            $display = '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
+        } return $display; 
+    } else {
+       $details = searchBook($text, $db);
+    }
+
        
 
         include '../week_6/view/scriptures.php';
