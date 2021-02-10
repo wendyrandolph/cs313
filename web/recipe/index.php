@@ -38,7 +38,7 @@ switch ($action) {
         $emailMatch = checkExistingEmail($db, $member_email);
         if ($emailMatch === 1) {
             $message = "<p>This email is already registered, login to your account.</p>";
-            include '../view/login.php';
+            include '../recipe/view/login.php';
             break;
         }
         $member_email = checkEmail($member_email);
@@ -49,7 +49,7 @@ switch ($action) {
         // Check for missing data
         if (empty($member_first_name) || empty($member_last_name) || empty($member_email) || empty($checkPassword)) {
             $message = '<p>Please provide information for all empty form fields.</p>';
-            include '../view/registration.php';
+            include '../recipe/view/registration.php';
             break;
         }
         // Send the data to the model
@@ -63,11 +63,11 @@ switch ($action) {
             setcookie('firstname', $member_first_name, strtotime('+1 year'), "/");
 
             $_SESSION['message'] = "<p>Thanks for registering $member_first_name. Please use your email and password to login.</p>";
-            header('Location: /recipe/accounts/?action=login');
+            header('Location: /recipe/?action=login');
             exit;
         } else {
             $message = "<p>Sorry $member_first_name, but the registration failed. Please try again.</p>";
-            include '../view/registration.php';
+            include '../recipe/view/registration.php';
             exit;
         }
 
