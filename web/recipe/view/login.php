@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../recipe/css/recipe.css" media="screen" />
+
+
 </head>
+
 <body>
-    
-    
-<header>
 
-<?php include '../recipe/snippets/header.php';
-?>
 
-<nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
-    <?php include '../recipe/snippets/nav.php';
-    ?>
-</nav>
-</header>
+    <header>
 
-<main>
-<div class="card"> 
-<h3> Click on a category above <br>to view the available recipes. </h3> 
+        <?php include '../recipe/snippets/header.php';
+        ?>
 
-<form action="/recipe/accounts/index.php" method="post">
+        <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
+            <?php include '../recipe/snippets/nav.php';
+            ?>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h3> Click on a category above <br>to view the available recipes. </h3>
+
+            <form action="/recipe/accounts/index.php" method="post">
                 <legend>
                     <h2 id="login_1">Login to your account</h2>
                 </legend>
@@ -45,11 +52,12 @@
             </form>
 
 
-</div>
+        </div>
 
-</main>
+    </main>
 
 
 
 </body>
+
 </html>
