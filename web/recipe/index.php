@@ -23,8 +23,8 @@ switch ($action) {
 
     case 'register':
         //Test if I'm getting to the register case. 
-        // echo " This is the register case";
-        // exit;
+        echo " This is the register case";
+        exit;
 
         // Filter and store the data
         $member_first_name = filter_input(INPUT_POST, 'member_first_name', FILTER_SANITIZE_STRING);
