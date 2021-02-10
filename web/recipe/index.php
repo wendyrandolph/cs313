@@ -61,8 +61,7 @@ switch ($action) {
 
 
         case 'registration':
-            echo "this is the registration case statement"; 
-            exit; 
+        
 
            include '../view/registration.php'; 
            break;  
