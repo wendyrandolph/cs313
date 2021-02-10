@@ -39,7 +39,7 @@
             }
             ?>
 
-            <form  method="post" >
+            <form action="/recipe/"  method="post" >
                 <label >First Name:</label><br>
                 <input  type="text" name="member_first_name"  class="input" id="member_first_name" <?php if(isset($member_first_name)){echo "value='$member_first_name'";}  ?> required><br><br>
                 <label >Last name:</label><br>
