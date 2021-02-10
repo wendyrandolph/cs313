@@ -48,6 +48,14 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
 
+        case 'add_recipe':
+            
+
+
+
+            include '../recipe/view/add_recipe.php';
+            break; 
+
     case 'default':
 
 
@@ -56,4 +64,3 @@ switch ($action) {
         include '../recipe/view/start.php';
         break;
 }
-?>

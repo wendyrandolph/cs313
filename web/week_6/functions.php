@@ -42,7 +42,7 @@ function checkboxes($db)
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $results = " ";
     foreach ($rows as $row) {
-        $results .=  " {$row['name']}  <input type='checkbox' name='name' value='<?php echo $row[name] ?>'><br>";
+        $results .=  " {$row['name']}  <input type='checkbox' id={$row['id']} name='name' value='<?php echo $row[name] ?>'><br>";
     }
     return $results;
 }
@@ -51,12 +51,12 @@ function addScripture($db, $book, $chapter, $verse, $content, $name, $id)
 {
 
     $sql = 'UPDATE scriptures 
-SET book = :book
-, chapter = :chapter
-, verse = :verse 
-, content = :content 
-, topic = :topic 
-WHERE id = :id;  ';
+SET $book => :book
+, chapter => :chapter
+, verse => :verse 
+, content => :content 
+, topic => :topic 
+WHERE id => :id;  ';
 
     $stmt = $db->prepare($sql);
     //Next six lines replace the placeholders with the values from the form 

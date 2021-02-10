@@ -1,6 +1,24 @@
 <?php
 
 
+function checkEmail($member_email)
+{
+    $valEmail = filter_var($member_email, FILTER_VALIDATE_EMAIL);
+    return $valEmail;
+}
+
+//Check password for a minimum of 8 characters
+//At least 1 capital letter, at least 1 number and
+//at least 1 special character
+function checkPassword($member_password)
+{
+    $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
+    return preg_match($pattern, $member_password);
+}
+
+
+
+
 function directions($recipe_id, $db)
 {
     $stmt = $db->prepare('SELECT rs.instructions, r.recipe_name, r.preheat_temp, r.cook_time 
