@@ -238,7 +238,7 @@
 
             //display the registration page from the login page
         case 'registration':
-            include '../view/registration.php';
+            include '../recipe/view/registration.php';
             break;
 
         default:
@@ -246,8 +246,3 @@
             include '../view/admin.php';
             break;
     }
-
-
-
-
-    ?> 
