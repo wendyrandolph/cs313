@@ -237,9 +237,7 @@
             break;
 
             //display the registration page from the login page
-        case 'registration':
-            echo "this is the registration case statement"; 
-            exit; 
+      
 
 
             include '/recipe/view/registration.php';

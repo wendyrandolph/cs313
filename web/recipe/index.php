@@ -59,6 +59,13 @@ switch ($action) {
         include '../recipe/view/add_recipe.php';
         break;
 
+
+        case 'registration':
+            echo "this is the registration case statement"; 
+            exit; 
+
+           include '../view/registration.php'; 
+           break;  
     default:
 
         include '../recipe/view/login.php';
