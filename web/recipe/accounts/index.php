@@ -5,11 +5,11 @@
     session_start();
     
     //establish the database connection 
-    require('../recipe/library/connections.php');
+    require('../library/functions.php');
     //access functions to display recipes as needed 
-    require('../recipe/library/functions.php');
+    require('../library/functions.php');
     //handle the registration and login processes
-    require('../recipe/model/accounts_model.php'); 
+    require('../model/accounts_model.php'); 
 
 
     $action = filter_input(INPUT_POST, 'action');
