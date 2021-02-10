@@ -29,7 +29,7 @@
         <div class="card">
             <h3> Click on a category above <br>to view the available recipes. </h3>
 
-            <form action="/recipe/accounts/" method="post">
+            <form action="/recipe/" method="post">
                 <legend>
                     <h2 id="login_1">Login to your account</h2>
                 </legend>
