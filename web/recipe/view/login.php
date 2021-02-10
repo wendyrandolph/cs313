@@ -46,7 +46,7 @@
                     <input type="hidden" name="action" value="Login">
                     <br>
                     <p class="create"> If this is your first time visiting, please create a new account. </p>
-                    <a class="register" href="../recipe/accounts/?action=registration"> Register </a>
+                    <a class="register" href="../accounts/?action=registration"> Register </a>
                 </fieldset>
             </form>
 

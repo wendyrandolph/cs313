@@ -1,4 +1,6 @@
 <?php
+//This is the main controller 
+
 // Create or access a Session
 session_start();
 
