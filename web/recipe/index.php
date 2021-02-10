@@ -14,8 +14,7 @@ if ($action == NULL) {
 //grab php functions as needed *****************************************************
 require('../recipe/library/connections.php');
 require('../recipe/library/functions.php');
-//require('../recipe/accounts/index.php'); 
-//require ('../recipe/library/main_model.php');
+require('../recipe/library/accounts_model.php');
 
 
 
