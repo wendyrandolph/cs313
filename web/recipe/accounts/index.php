@@ -235,6 +235,8 @@
 
             include '../view/login.php';
             break;
+
+            //display the registration page from the login page
         case 'registration':
             include '../view/registration.php';
             break;
