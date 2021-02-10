@@ -33,7 +33,7 @@
 
 
             //Checking for an existing email address in the table
-            $emailMatch = checkExistingEmail($member_email);
+            $emailMatch = checkExistingEmail($db, $member_email);
             if ($emailMatch === 1) {
                 $message = "<p>This email is already registered, login to your account.</p>";
                 include '../view/login.php';
