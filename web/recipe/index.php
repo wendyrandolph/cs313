@@ -63,7 +63,7 @@ switch ($action) {
         case 'registration':
         
 
-           include '../view/registration.php'; 
+           include '../recipe/view/registration.php'; 
            break;  
     default:
 
