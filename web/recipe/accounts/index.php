@@ -9,7 +9,7 @@
     //access functions to display recipes as needed 
     require('../library/functions.php');
     //handle the registration and login processes
-    require('../model/accounts_model.php'); 
+    require('../library/accounts_model.php'); 
 
 
     $action = filter_input(INPUT_POST, 'action');
