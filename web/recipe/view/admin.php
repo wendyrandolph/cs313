@@ -68,17 +68,10 @@
             if ($_SESSION['loggedin'] == TRUE) {
 
                 echo '<p class="vehicles">Use this link to manage your account information.</p>';
-                echo '<p class="vehicles"><a  href="/phpmotors/accounts/?action=update" class="vehicles">Update Account</a></p>';
+                echo '<p class="vehicles"><a  href="/recipe/accounts/?action=update" class="vehicles">Update Account</a></p>';
             }
             ?>
-            <?php
-
-            if ($_SESSION['clientData']['clientLevel'] > 1) {
-                echo '<h4> Inventory Management</h4>';
-                echo '<p class="vehicles">Use this link to manage the inventory.</p>';
-                echo '<p class="vehicles"><a class="vehicles" href="/phpmotors/vehicles/index.php"> Vehicle Management</a></p>';
-            }
-            ?>
+           
 
 
 
@@ -86,9 +79,7 @@
         </div>
 
     </main>
-    <footer id="page_footer">
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
-    </footer>
+
 </body>
 
 </html>
