@@ -36,16 +36,16 @@ switch ($action) {
         // exit; 
 
         //Checking for an existing email address in the table
-        $emailMatch = checkExistingEmail($db, $member_email);
-        if ($emailMatch === 1) {
-            $message = "<p>This email is already registered, login to your account.</p>";
-            include '../recipe/view/login.php';
-            break;
-        }
-        $member_email = checkEmail($member_email);
-        echo $member_email; 
-        exit; 
-        $checkPassword = checkPassword($member_password);
+        // $emailMatch = checkExistingEmail($db, $member_email);
+        // if ($emailMatch === 1) {
+        //     $message = "<p>This email is already registered, login to your account.</p>";
+        //     include '../recipe/view/login.php';
+        //     break;
+        // }
+        // $member_email = checkEmail($member_email);
+        // echo $member_email; 
+        // exit; 
+        // $checkPassword = checkPassword($member_password);
 
 
 

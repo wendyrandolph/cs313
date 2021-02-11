@@ -6,12 +6,12 @@
 
 
 //This function will handle site registrations 
-function regClient($db, $member_first_name, $member_last_name, $member_email, $password)
+function regClient($db, $member_first_name, $member_last_name, $member_email, $member_password)
 {
   
   // The SQL statement
-  $sql = 'INSERT INTO member (member_first_name, member_last_name, member_email, password)
-      VALUES ($member_first_name => :member_first_name, $member_last_name => :member_last_name, $member_email => :member_email, $password => :password)';
+  $sql = 'INSERT INTO member (member_first_name, member_last_name, member_email, member_password)
+      VALUES (:member_first_name => $member_first_name, $member_last_name => :member_last_name, $member_email => :member_email, $member_password => :member_password)';
   // Create the prepared statement using the phpmotors connection
   $stmt = $db->prepare($sql);
 
@@ -20,7 +20,7 @@ function regClient($db, $member_first_name, $member_last_name, $member_email, $p
   // Ask how many rows changed as a result of our insert
   $rowsChanged = $stmt->rowCount();
   // Close the database interaction
-  $stmt->closeCursor();
+
   // Return the indication of success (rows changed)
   return $rowsChanged;
 }
@@ -48,7 +48,7 @@ function checkExistingEmail($db, $member_email)
     return 1;
     //echo 'Match found';
   }
-  $stmt->closeCursor();
+
 }
 
 
