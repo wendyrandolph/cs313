@@ -16,7 +16,7 @@ require('../recipe/library/connections.php');
 require('../recipe/library/functions.php');
 require('../recipe/library/accounts_model.php');
 
-$results = displayCategory($db, $category_id);
+
 
 
 switch ($action) {
@@ -124,7 +124,7 @@ switch ($action) {
         $_SESSION['clientData'] = $clientData;
 
         
-
+        $results = displayCategory($db, $category_id);
 
         // Send them to the admin view
         include '../recipe/view/add_recipe.php'; 
@@ -154,17 +154,12 @@ switch ($action) {
         //echo $category_id; 
 
        
-
+        $results = displayCategory($db, $category_id);
 
 
         include '../recipe/view/home.php';
         break;
 
-    case 'add_recipe':
-
-
-        include '../recipe/view/add_recipe.php';
-        break;
         case 'login':
 
             include '../recipe/view/login.php';
