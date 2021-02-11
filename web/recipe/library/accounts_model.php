@@ -59,12 +59,12 @@ function checkExistingEmail($db, $member_email)
 
 
 // Get client data based on an email address
-function getClient($db, $clientEmail)
+function getClient($db, $member_email)
 {
   
   $sql = 'SELECT member_id, member_first_name, member_last_name, member_email, member_password FROM member WHERE member_email = :member_email';
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+  $stmt->bindValue(':member_email', $member_email, PDO::PARAM_STR);
   $stmt->execute();
   $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
   $stmt->closeCursor();

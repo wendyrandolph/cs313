@@ -123,8 +123,7 @@ switch ($action) {
 
         $_SESSION['clientData'] = $clientData;
 
-        $clientId = $_SESSION['clientData']['clientId'];
-
+        
 
 
         // Send them to the admin view
