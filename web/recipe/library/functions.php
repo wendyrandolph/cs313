@@ -1,5 +1,17 @@
 <?php
 
+function getNav($db)
+{
+    $navList = '<ul class="navbar-nav">';
+
+    foreach ($db->query('SELECT * FROM category') as $row) {
+
+        $navList .= "<li class='nav-item'><a href='/recipe/?action=display&category_id=$row[category_id]&category_name=" . urlencode($row['category_name']) . "' class='nav-link' title='View our $row[category_name] recipes'>$row[category_name]</a></li>";
+    }
+    $navList .= '</ul>';
+}return $navList; 
+
+
 
 function checkEmail($member_email)
 {
@@ -34,10 +46,10 @@ WHERE r.recipe_id = :recipe_id');
     $recipe .= "<div class=directions>";
     foreach ($rows as $row) {
 
-     
+
         $recipe .= "<tr><td>{$row['instructions']}</td></tr>";
     }
-        $recipe .= "</div>"; 
+    $recipe .= "</div>";
     return $recipe;
 }
 
@@ -57,11 +69,11 @@ function getName($db, $recipe_id)
     foreach ($name as $row) {
 
         $name = "<h3> {$row['recipe_name']} </h3>";
-        $name .= "<table>"; 
+        $name .= "<table>";
         if (isset($row['preheat_temp'])) {
             $name .= "<div class='temp'> Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes </div>";
         }
-        $name .= "</table>"; 
+        $name .= "</table>";
     }
 
     return $name;
@@ -100,13 +112,13 @@ function displayCategory($db, $category_id)
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $results = '<ul>';
-         foreach($rows as $row) {
-            
+        foreach ($rows as $row) {
+
             $results .= "<li class='nav-item'><a href='/recipe/?action=viewRecipe&recipe_id=$row[recipe_id]'> 
                         {$row['recipe_name']}</a></li>";
         }
         $results .= '</ul>';
-        $_SESSION['category_name'] = $row['category_name']; 
+        $_SESSION['category_name'] = $row['category_name'];
         return $results;
     }
 }
