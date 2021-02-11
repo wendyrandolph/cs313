@@ -45,16 +45,16 @@ switch ($action) {
         // $member_email = checkEmail($member_email);
         // echo $member_email; 
         // exit; 
-         $checkPassword = checkPassword($member_password);
+        //  $checkPassword = checkPassword($member_password);
 
 
 
-        // Check for missing data
-        if (empty($member_first_name) || empty($member_last_name) || empty($member_email) || empty($checkPassword)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
-            include '../recipe/view/registration.php';
-            break;
-        }
+        // // Check for missing data
+        // if (empty($member_first_name) || empty($member_last_name) || empty($member_email) || empty($checkPassword)) {
+        //     $message = '<p>Please provide information for all empty form fields.</p>';
+        //     include '../recipe/view/registration.php';
+        //     break;
+        // }
         // Send the data to the model
        // $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
         $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $member_password);
