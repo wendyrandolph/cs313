@@ -128,8 +128,7 @@ switch ($action) {
 
 
         // Send them to the admin view
-        header('location ../recipe/view/add_recipe.php');
-
+        include '../recipe/view/add_recipe.php'; 
         break;
 
 

@@ -31,7 +31,7 @@
                     echo $_SESSION['message']; 
                 }
 ?> 
-            <form action="/recipe/" method="post">
+            <form action="/recipe/?action=Login" method="post">
                 <legend>
                     <h2 id="login_1">Login to your account</h2>
                 </legend>
