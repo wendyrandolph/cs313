@@ -6,7 +6,7 @@
 
 
 //This function will handle site registrations 
-function regClient($db, $member_first_name, $member_last_name, $member_email, $member_password)
+function regClient($db, $member_first_name, $member_last_name, $member_email, $hashed_password)
 {
   
   // The SQL statement

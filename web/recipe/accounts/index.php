@@ -127,10 +127,7 @@
 
             include '../view/home.php';
             break;
-        case 'login':
-
-            include '../view/login.php';
-            break;
+      
 
             //display the registration page from the login page
       

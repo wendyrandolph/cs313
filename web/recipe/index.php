@@ -168,7 +168,10 @@ switch ($action) {
 
         include '../recipe/view/add_recipe.php';
         break;
+        case 'login':
 
+            include '../recipe/view/login.php';
+            break;
 
     case 'registration':
 
