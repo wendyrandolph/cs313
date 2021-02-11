@@ -8,7 +8,8 @@
 //This function will handle site registrations 
 function regClient($db, $member_first_name, $member_last_name, $member_email, $hashed_password)
 {
-  
+  echo "This is the regClient function"; 
+  exit; 
   // The SQL statement
   $sql = 'INSERT INTO member (member_first_name, member_last_name, member_email, member_password)
       VALUES (:member_first_name, :member_last_name,  :member_email,  :member_password)';
