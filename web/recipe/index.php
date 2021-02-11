@@ -111,7 +111,7 @@ switch ($action) {
 
         // A valid user exists, log them in
         $_SESSION['loggedin'] = TRUE;
-        setcookie("firstname", "", "time() -3600", "/");
+        //setcookie("firstname", "", "time() -3600", "/");
 
 
 
@@ -128,7 +128,7 @@ switch ($action) {
 
 
         // Send them to the admin view
-        include  '../recipe/view/add_recipe.php';
+        header('location ../recipe/view/add_recipe.php');
 
         break;
 
@@ -163,8 +163,6 @@ switch ($action) {
         break;
 
     case 'add_recipe':
-
-
 
 
         include '../recipe/view/add_recipe.php';
