@@ -3,7 +3,7 @@
             
                 <?php
             
-                 
+                 $navList = getNav($db); 
                 
                 echo $navList;
                 ?>
