@@ -39,7 +39,12 @@
                 if (isset($message)) {
                     echo $message;
                 }
+
+                if(isset($_SESSION['message'])){ 
+                    echo $_SESSION['message']; 
+                }
                 ?>
+
 
                 <form action="/recipe/" method="post">
                     <label>First Name:</label><br>
