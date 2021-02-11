@@ -26,9 +26,14 @@
 
     <main>
 
-        <form method="POST" action= "">
 
-    
+        <ul>
+            <li>First Name: <?php echo $_SESSION['clientData']['member_first_name'] ?></li>
+            <li>Last Name: <?php echo $_SESSION['clientData']['member_last_name'] ?></li>
+            <li>Email: <?php echo $_SESSION['clientData']['member_email'] ?></li>
+        </ul>
+
+
     </main>
 </body>
 

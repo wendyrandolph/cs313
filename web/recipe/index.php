@@ -77,8 +77,8 @@ switch ($action) {
 
     case 'Login':
 
-        echo "This is the Login case statement"; 
-        exit; 
+     //echo "This is the Login case statement"; 
+        //exit; 
         //filter and store email and password
         $member_email = filter_input(INPUT_POST, 'member_email', FILTER_SANITIZE_EMAIL);
         $member_email = checkEmail($member_email);
