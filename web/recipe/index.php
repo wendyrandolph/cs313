@@ -81,13 +81,13 @@ switch ($action) {
         //exit; 
         //filter and store email and password
         $member_email = filter_input(INPUT_POST, 'member_email', FILTER_SANITIZE_EMAIL);
-        $member_email = checkEmail($member_email);
+        //$member_email = checkEmail($member_email);
         $member_password = filter_input(INPUT_POST, 'member_password', FILTER_SANITIZE_STRING);
-        $checkPassword = checkPassword($member_password);
+       // $checkPassword = checkPassword($member_password);
         $member_first_name = filter_input(INPUT_POST, 'member_first_name', FILTER_SANITIZE_STRING);
 
         //Check for empty fields 
-        if (empty($member_email) || empty($checkPassword)) {
+        if (empty($member_email) || empty($member_password)) {
             $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
             include '../view/login.php';
             break;
