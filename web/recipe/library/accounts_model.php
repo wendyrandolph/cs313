@@ -6,18 +6,18 @@
 
 
 //This function will handle site registrations 
-function regClient($db, $member_first_name, $member_last_name, $member_email, $hashed_password)
+function regClient($db, $member_first_name, $member_last_name, $member_email, $member_password)
 {
 
   // The SQL statement
   $sql = 'INSERT INTO member (member_first_name, member_last_name, member_email, member_password)
-      VALUES (:member_first_name, :member_last_name,  :member_email,  :hashed_password)';
+      VALUES (:member_first_name, :member_last_name,  :member_email,  :member_password)';
   // Create the prepared statement using the phpmotors connection
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':member_first_name', $member_first_name, PDO::PARAM_STR);
   $stmt->bindValue(':member_last_name', $member_last_name, PDO::PARAM_STR);
   $stmt->bindValue(':member_email', $member_email, PDO::PARAM_STR);
-  $stmt->bindValue(':member_password', $hashed_password, PDO::PARAM_STR);
+  $stmt->bindValue(':member_password', $member_password, PDO::PARAM_STR);
 
   
   // Insert the data
