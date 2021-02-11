@@ -99,7 +99,7 @@
             $checkPassword = checkPassword($clientPassword);
 
             // Send the data to the model
-            $hashed_password = password_hash($clientPassword, PASSWORD_DEFAULT);
+            $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
             $passwordOutcome = passwordUpdate($db, $hashed_password, $clientId);
 
             // Check and report the result

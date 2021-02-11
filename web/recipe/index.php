@@ -56,13 +56,13 @@ switch ($action) {
             break;
         }
         // Send the data to the model
-        $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
-        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $hashed_password);
+       // $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
+        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $member_password);
 
 
         // Check and report the result
         if ($regOutcome === 1) {
-            setcookie('firstname', $member_first_name, strtotime('+1 year'), "/");
+            //setcookie('firstname', $member_first_name, strtotime('+1 year'), "/");
 
             $_SESSION['message'] = "<p>Thanks for registering $member_first_name. Please use your email and password to login.</p>";
             header('Location: /recipe/?action=login');
