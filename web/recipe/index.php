@@ -56,7 +56,7 @@ switch ($action) {
         //     break;
         // }
         // Send the data to the model
-       // $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
+        // $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
         $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $member_password);
 
 
@@ -77,19 +77,19 @@ switch ($action) {
 
     case 'Login':
 
-     //echo "This is the Login case statement"; 
+        //echo "This is the Login case statement"; 
         //exit; 
         //filter and store email and password
         $member_email = filter_input(INPUT_POST, 'member_email', FILTER_SANITIZE_EMAIL);
         //$member_email = checkEmail($member_email);
         $member_password = filter_input(INPUT_POST, 'member_password', FILTER_SANITIZE_STRING);
-       // $checkPassword = checkPassword($member_password);
+        // $checkPassword = checkPassword($member_password);
         $member_first_name = filter_input(INPUT_POST, 'member_first_name', FILTER_SANITIZE_STRING);
 
         //Check for empty fields 
         if (empty($member_email) || empty($member_password)) {
             $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
-            include '../view/login.php';
+            include '../recipe/view/login.php';
             break;
         }
 
@@ -123,11 +123,11 @@ switch ($action) {
 
         $_SESSION['clientData'] = $clientData;
 
-        
+
         $results = displayCategory($db, $category_id);
 
         // Send them to the admin view
-        include '../recipe/view/add_recipe.php'; 
+        include '../recipe/view/add_recipe.php';
         break;
 
 
@@ -153,18 +153,24 @@ switch ($action) {
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         //echo $category_id; 
 
-       
+
         $results = displayCategory($db, $category_id);
 
 
         include '../recipe/view/home.php';
         break;
 
-        case 'login':
+    case 'login':
 
-            include '../recipe/view/login.php';
-            break;
+        include '../recipe/view/login.php';
+        break;
 
+    case 'logout':
+        $_SESSION['loggedin'] = FALSE;
+        session_destroy();
+
+        include '../recipe/view/home.php';
+        break;
     case 'registration':
 
 
