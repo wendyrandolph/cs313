@@ -71,7 +71,7 @@
                 echo '<p class="vehicles"><a  href="/recipe/accounts/?action=update" class="vehicles">Update Account</a></p>';
             }
             ?>
-           
+
 
 
 

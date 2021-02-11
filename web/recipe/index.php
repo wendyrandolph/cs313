@@ -45,7 +45,7 @@ switch ($action) {
         // $member_email = checkEmail($member_email);
         // echo $member_email; 
         // exit; 
-        // $checkPassword = checkPassword($member_password);
+         $checkPassword = checkPassword($member_password);
 
 
 
