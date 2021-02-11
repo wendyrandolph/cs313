@@ -32,7 +32,7 @@ switch ($action) {
         $member_email = filter_input(INPUT_POST, 'member_email', FILTER_SANITIZE_EMAIL);
         $member_password = filter_input(INPUT_POST, 'member_password', FILTER_SANITIZE_STRING);
 
-        // echo $member_first_name, $member_last_name, $member_email, $member_password; 
+         echo $member_first_name, $member_last_name, $member_email, $member_password; 
         // exit; 
 
         //Checking for an existing email address in the table
