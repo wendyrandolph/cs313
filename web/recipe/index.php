@@ -16,7 +16,7 @@ require('../recipe/library/connections.php');
 require('../recipe/library/functions.php');
 require('../recipe/library/accounts_model.php');
 
-
+$results = displayCategory($db, $category_id);
 
 
 switch ($action) {
@@ -153,7 +153,7 @@ switch ($action) {
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         //echo $category_id; 
 
-        $results = displayCategory($db, $category_id);
+       
 
 
 
