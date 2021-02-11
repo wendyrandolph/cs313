@@ -16,7 +16,7 @@ require('../recipe/library/connections.php');
 require('../recipe/library/functions.php');
 require('../recipe/library/accounts_model.php');
 
-
+$results = displayCategory($db, $category_id);
 
 
 switch ($action) {
@@ -76,7 +76,7 @@ switch ($action) {
 
 
     case 'Login':
-
+        $results = displayCategory($db, $category_id);
         //echo "This is the Login case statement"; 
         //exit; 
         //filter and store email and password
@@ -124,7 +124,7 @@ switch ($action) {
         $_SESSION['clientData'] = $clientData;
 
 
-        $results = displayCategory($db, $category_id);
+       
 
         // Send them to the admin view
         include '../recipe/view/add_recipe.php';
