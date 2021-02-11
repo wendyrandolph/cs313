@@ -178,6 +178,6 @@ switch ($action) {
         break;
     default:
 
-        include '../recipe/view/login.php';
+        include '../recipe/view/home.php';
         break;
 }
