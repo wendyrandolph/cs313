@@ -27,8 +27,10 @@
 
     <main>
         <div class="card">
-            <h3> Click on a category above <br>to view the available recipes. </h3>
-
+        <?php if(isset($_SESSION['message'])){ 
+                    echo $_SESSION['message']; 
+                }
+?> 
             <form action="/recipe/" method="post">
                 <legend>
                     <h2 id="login_1">Login to your account</h2>
