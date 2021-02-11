@@ -33,7 +33,7 @@ function checkExistingEmail($db, $member_email)
   // Create a connection object using the phpmotors connection function
   // The SQL statement
 
-  $sql = "SELECT  clientEmail FROM clients WHERE clientEmail = '" . $_POST['clientEmail'] . "'";
+  $sql = "SELECT  member_email FROM member WHERE member_email = '" . $_POST['member_email'] . "'";
   // Create the prepared statement using the phpmotors connection
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':member_email', $member_email, PDO::PARAM_STR);
@@ -57,7 +57,7 @@ function checkExistingEmail($db, $member_email)
 function getClient($db, $clientEmail)
 {
   
-  $sql = 'SELECT clientId, member_first_name, member_last_name, member_email, member_level, member_password FROM member WHERE member_email = :member_email';
+  $sql = 'SELECT member_id, member_first_name, member_last_name, member_email, member_password FROM member WHERE member_email = :member_email';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
   $stmt->execute();
@@ -85,7 +85,7 @@ function updateClient($db, $member_id, $member_first_name, $member_last_name, $m
   // The next four lines replace the placeholders in the SQL
   // statement with the actual values in the variables
   // and tells the database the type of data it is
-  $stmt->bindValue(':member_first_name', $member_last_name, PDO::PARAM_STR);
+  $stmt->bindValue(':member_first_name', $member_first_name, PDO::PARAM_STR);
   $stmt->bindValue(':member_last_name', $member_last_name, PDO::PARAM_STR);
   $stmt->bindValue(':member_email', $member_email, PDO::PARAM_STR);
   $stmt->bindValue(':member_id', $member_id, PDO::PARAM_INT);
