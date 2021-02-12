@@ -16,6 +16,9 @@ require('../recipe/library/connections.php');
 require('../recipe/library/functions.php');
 require('../recipe/library/accounts_model.php');
 
+
+$getNavigation = getNav($db); 
+
 $results = displayCategory($db, $category_id);
 
 
