@@ -2,10 +2,10 @@
 
 function getCategories($db){ 
 
-        $list = " "; 
+        $list = "<ul>"; 
     foreach($db->query('SELECT * FROM category') as $rows); 
-        $list .= "<input type=checkbox name=$rows[category_name]> {$rows['category_name']}"; 
-
+        $list .= "<input type=checkbox  name=$rows[category_name]> {$rows['category_name']}"; 
+        $list .= "</ul>"; 
         return $list; 
     
 
