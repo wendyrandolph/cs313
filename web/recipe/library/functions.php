@@ -2,10 +2,14 @@
 
 function getCategories($db){ 
 
+   $stmt = $db->prepare('SELECT * FROM category'); 
+   $stmt->execute();
+   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $list = "<ul>"; 
-    foreach($db->query('SELECT * FROM category') as $rows); 
-        $list .= "<input type=checkbox  name=$rows[category_name]> {$rows['category_name']}"; 
+   foreach($rows as $row){
+        $list .= "<input type=checkbox  name=$row[category_name]> {$row['category_name']}"; 
         $list .= "</ul>"; 
+   }
         return $list; 
     
 
