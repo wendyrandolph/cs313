@@ -4,7 +4,7 @@ function getCategories($db){
 
         $list = " "; 
     foreach($db->query('SELECT * FROM category') as $rows); 
-        $list .= "<li><input type=checkbox name=$rows[category_name]> $rows[category_name] </li>"; 
+        $list .= "<input type=checkbox name=$rows[category_name]> {$rows['category_name']}"; 
 
         return $list; 
     
