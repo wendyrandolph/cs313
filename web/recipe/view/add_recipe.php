@@ -35,7 +35,7 @@
 
 
         <form action="/recipe/index.php" method="post">
-                <label>Which classification does it belong to : </label><br>
+                <label>Which category does your recipe belong to : </label><br>
                 <?php echo $list ?> 
                 <br>
                 <label>Recipe Name:</label><br>
