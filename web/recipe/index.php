@@ -129,7 +129,7 @@ switch ($action) {
         $_SESSION['clientData'] = $clientData;
 
 
-       
+       $list = getCategories($db); 
 
         // Send them to the admin view
         include '../recipe/view/add_recipe.php';
