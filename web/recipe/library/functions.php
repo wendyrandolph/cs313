@@ -5,10 +5,10 @@ function getCategories($db){
    $stmt = $db->prepare('SELECT * FROM category'); 
    $stmt->execute();
    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $list = "<ul>"; 
+        $list = " "; 
    foreach($rows as $row){
         $list .= "<input type=checkbox  name=$row[category_name]> {$row['category_name']}"; 
-        $list .= "</ul>"; 
+         
    }
         return $list; 
     
