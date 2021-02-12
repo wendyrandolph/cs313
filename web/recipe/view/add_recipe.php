@@ -38,10 +38,10 @@
                 <label>Which classification does it belong to : </label><br>
                 <?php echo $list ?> 
                 <br>
-                <label>Make:</label><br>
-                <input type="text" class="input" name="invMake" required <?php if (isset($invMake)) {
-                                                                                echo "value='$invMake'";
-                                                                            } elseif (isset($invInfo['invMake'])) {
+                <label>Recipe Name:</label><br>
+                <input type="text" class="input" name="recipe_name" required <?php if (isset($recipe_name)) {
+                                                                                echo "value='$recipe_name'";
+                                                                            } elseif (isset($invInfo['recipe_name'])) {
                                                                                 echo "value='$invInfo[invMake]'";
                                                                             } ?>> <br> <br>
                 <label>Model:</label><br>
