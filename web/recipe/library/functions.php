@@ -1,12 +1,13 @@
 <?php
 
-function getNav($db)
-{
-   
+function getCategories($db){ 
+
+    foreach($db->query('SELECT * FROM category') as $categories); 
+            echo "<input type=checkbox name=$categories[category_name]> {$categories['category_name']}"; 
 
     
-}
 
+}
 
 function checkEmail($member_email)
 {

@@ -36,7 +36,7 @@
 
         <form action="/recipe/index.php" method="post">
                 <label>Which classification does it belong to : </label><br>
-                <?php echo $navList ?>
+                <?php getCategories($db) ?> 
                 <br>
                 <label>Make:</label><br>
                 <input type="text" class="input" name="invMake" required <?php if (isset($invMake)) {
