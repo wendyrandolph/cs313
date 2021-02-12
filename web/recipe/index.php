@@ -182,7 +182,7 @@ switch ($action) {
         include '../recipe/view/registration.php';
         break;
     default:
-    $getNavigation = getNav($db); 
+    $navList = getNav($db); 
 
         include '../recipe/view/home.php';
         break;
