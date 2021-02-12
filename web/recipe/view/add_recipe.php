@@ -34,6 +34,74 @@
         </ul>
 
 
+        <form action="/recipe/index.php" method="post">
+                <label>Which classification does it belong to : </label><br>
+                <?php echo $navList ?>
+                <br>
+                <label>Make:</label><br>
+                <input type="text" class="input" name="invMake" required <?php if (isset($invMake)) {
+                                                                                echo "value='$invMake'";
+                                                                            } elseif (isset($invInfo['invMake'])) {
+                                                                                echo "value='$invInfo[invMake]'";
+                                                                            } ?>> <br> <br>
+                <label>Model:</label><br>
+                <input type="text" name="invModel" id="invModel" required <?php if (isset($invModel)) {
+                                                                                echo "value='$invModel'";
+                                                                            } elseif (isset($invInfo['invModel'])) {
+                                                                                echo "value='$invInfo[invModel]'";
+                                                                            } ?>> <br><br>
+                <label>Description:</label><br><br>
+                <textarea name="invDescription" id="invDescription" required> <?php if (isset($invDescription)) {
+                                                                                    echo $invDescription;
+                                                                                } elseif (isset($invInfo['invDescription'])) {
+                                                                                    echo $invInfo['invDescription'];
+                                                                                } ?></textarea><br><br>
+                <label>Image Path:</label><br>
+                <input type="text" class="input" name="invImage" required <?php if (isset($invImage)) {
+                                                                                echo "value='$invImage'";
+                                                                            } elseif (isset($invInfo['invImage'])) {
+                                                                                echo "value='$invInfo[invImage]'";
+                                                                            } ?>> <br> <br>
+                <label>Thumbnail Path:</label><br>
+                <input type="text" class="input" name="invThumbnail" required <?php if (isset($invThumbnail)) {
+                                                                                    echo "value='$invThumbnail'";
+                                                                                } elseif (isset($invInfo['invThumbnail'])) {
+                                                                                    echo "value='$invInfo[invThumbnail] '";
+                                                                                } ?>> <br> <br>
+                <label>Price:</label><br>
+                <input type="text" class="input" name="invPrice" required <?php if (isset($invPrice)) {
+                                                                                echo "value='$invPrice'";
+                                                                            } elseif (isset($invInfo['invPrice'])) {
+                                                                                echo "value='$invInfo[invPrice]'";
+                                                                            } ?>><br> <br>
+                <label>Stock:</label><br>
+                <input type="text" class="input" name="invStock" required <?php if (isset($invStock)) {
+                                                                                echo "value='$invStock'";
+                                                                            } elseif (isset($invInfo['invStock'])) {
+                                                                                echo "value='$invInfo[invStock]'";
+                                                                            } ?>>
+                <label>Color:</label><br>
+                <input type="text" class="input" name="invColor" required <?php if (isset($invColor)) {
+                                                                                echo "value='$invColor'";
+                                                                            } elseif (isset($invInfo['invColor'])) {
+                                                                                echo "value='$invInfo[invColor]'";
+                                                                            } ?>> <br> <br>
+                <input type="submit" value="Update Vehicle" class="add_vehicle"><br><br>
+                <!--Add the action name - value pair -->
+                <input type="hidden" name="action" value="updateVehicle">
+                <input type="hidden" name="invId" value="
+                <?php if (isset($invInfo['invId'])) {
+                    echo $invInfo['invId'];
+                } elseif (isset($invId)) {
+                    echo $invId;
+                } ?>">
+
+
+
+
+            </form>
+
+
     </main>
 </body>
 
