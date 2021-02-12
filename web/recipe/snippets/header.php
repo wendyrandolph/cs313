@@ -1,7 +1,3 @@
-<h1> Family Recipes </h1>
-    
-
-          
 <?php 
 
 
@@ -17,4 +13,10 @@ if ($_SESSION['loggedin'] === TRUE) {
     echo $loginMessage; 
 }
 ?>
+
+<h1> Family Recipes </h1>
+    
+
+          
+
   
