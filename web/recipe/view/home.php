@@ -18,7 +18,7 @@
         ?>
 
         <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
-            <?php include '../recipe/snippets/nav.php';
+            <?php echo $navList; 
             ?>
         </nav>
     </header>
