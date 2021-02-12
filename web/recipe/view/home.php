@@ -20,8 +20,8 @@
         
     </header>
     <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
-           <?php echo $getNavigation; 
-            ?>
+    <?php include '../recipe/snippets/nav.php';
+        ?>
         </nav>
 
     <main>
