@@ -1,4 +1,4 @@
-<!-- <?php 
+ <?php 
 
 
 if ($_SESSION['loggedin'] === TRUE) {
@@ -12,7 +12,7 @@ if ($_SESSION['loggedin'] === TRUE) {
     $loginMessage =   '<a id="my_account" href="/recipe/?action=login"> My Account </a>';
     echo $loginMessage; 
 }
-?> -->
+?> 
 
 <h1> Family Recipes </h1>
     
