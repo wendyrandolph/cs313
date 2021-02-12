@@ -17,7 +17,7 @@ require('../recipe/library/functions.php');
 require('../recipe/library/accounts_model.php');
 
 
-$getNavigation = getNav($db); 
+
 
 $results = displayCategory($db, $category_id);
 
@@ -28,6 +28,7 @@ switch ($action) {
         //Test if I'm getting to the register case. 
         //   echo " This is the register case";
         //     exit;
+        $getNavigation = getNav($db); 
 
         // Filter and store the data
         $member_first_name = filter_input(INPUT_POST, 'member_first_name', FILTER_SANITIZE_STRING);
@@ -79,6 +80,7 @@ switch ($action) {
 
 
     case 'Login':
+        $getNavigation = getNav($db); 
         $results = displayCategory($db, $category_id);
         //echo "This is the Login case statement"; 
         //exit; 
@@ -164,7 +166,7 @@ switch ($action) {
         break;
 
     case 'login':
-
+        $getNavigation = getNav($db); 
         include '../recipe/view/login.php';
         break;
 
@@ -175,11 +177,12 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'registration':
-
+        $getNavigation = getNav($db); 
 
         include '../recipe/view/registration.php';
         break;
     default:
+    $getNavigation = getNav($db); 
 
         include '../recipe/view/home.php';
         break;
