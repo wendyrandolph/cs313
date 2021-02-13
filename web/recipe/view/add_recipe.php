@@ -37,66 +37,27 @@
         <form action="/recipe/index.php" method="post">
                 <label>Which category does your recipe belong to : </label><br>
                 <?php echo $list ?> 
+                <input type="hidden" name="category_id" value=" <?php if (isset($list['category_id'])) {
+                    echo $list['category_id'];
+                }?> "> 
                 <br>
                 <label>Recipe Name:</label><br>
-                <input type="text" class="input" name="recipe_name" required <?php if (isset($recipe_name)) {
-                                                                                echo "value='$recipe_name'";
-                                                                            } elseif (isset($invInfo['recipe_name'])) {
-                                                                                echo "value='$invInfo[invMake]'";
-                                                                            } ?>> <br> <br>
-                <label>Model:</label><br>
-                <input type="text" name="invModel" id="invModel" required <?php if (isset($invModel)) {
-                                                                                echo "value='$invModel'";
-                                                                            } elseif (isset($invInfo['invModel'])) {
-                                                                                echo "value='$invInfo[invModel]'";
-                                                                            } ?>> <br><br>
-                <label>Description:</label><br><br>
-                <textarea name="invDescription" id="invDescription" required> <?php if (isset($invDescription)) {
-                                                                                    echo $invDescription;
-                                                                                } elseif (isset($invInfo['invDescription'])) {
-                                                                                    echo $invInfo['invDescription'];
-                                                                                } ?></textarea><br><br>
-                <label>Image Path:</label><br>
-                <input type="text" class="input" name="invImage" required <?php if (isset($invImage)) {
-                                                                                echo "value='$invImage'";
-                                                                            } elseif (isset($invInfo['invImage'])) {
-                                                                                echo "value='$invInfo[invImage]'";
-                                                                            } ?>> <br> <br>
-                <label>Thumbnail Path:</label><br>
-                <input type="text" class="input" name="invThumbnail" required <?php if (isset($invThumbnail)) {
-                                                                                    echo "value='$invThumbnail'";
-                                                                                } elseif (isset($invInfo['invThumbnail'])) {
-                                                                                    echo "value='$invInfo[invThumbnail] '";
-                                                                                } ?>> <br> <br>
-                <label>Price:</label><br>
-                <input type="text" class="input" name="invPrice" required <?php if (isset($invPrice)) {
-                                                                                echo "value='$invPrice'";
-                                                                            } elseif (isset($invInfo['invPrice'])) {
-                                                                                echo "value='$invInfo[invPrice]'";
-                                                                            } ?>><br> <br>
-                <label>Stock:</label><br>
-                <input type="text" class="input" name="invStock" required <?php if (isset($invStock)) {
-                                                                                echo "value='$invStock'";
-                                                                            } elseif (isset($invInfo['invStock'])) {
-                                                                                echo "value='$invInfo[invStock]'";
-                                                                            } ?>>
-                <label>Color:</label><br>
-                <input type="text" class="input" name="invColor" required <?php if (isset($invColor)) {
-                                                                                echo "value='$invColor'";
-                                                                            } elseif (isset($invInfo['invColor'])) {
-                                                                                echo "value='$invInfo[invColor]'";
-                                                                            } ?>> <br> <br>
+                <input type="text" class="input" name="recipe_name" required> <br> <br>
+                <label>Recipe Description:</label><br>
+                <textarea name="recipe_desc" id="recipe_desc" required > <br><br>
+                </textarea>
+                <label>Preheat Temp:</label><br><br>
+                <input type="text" name="preheat_temp" id="preheat_temp" required> 
+                <label>Cook Time: </label> <br><br>
+                <input type="text" name="cook_time" id="cook_time" required> 
                 <input type="submit" value="Update Vehicle" class="add_vehicle"><br><br>
                 <!--Add the action name - value pair -->
-                <input type="hidden" name="action" value="updateVehicle">
-                <input type="hidden" name="invId" value="
-                <?php if (isset($invInfo['invId'])) {
-                    echo $invInfo['invId'];
-                } elseif (isset($invId)) {
-                    echo $invId;
-                } ?>">
+                <input type="hidden" name="action" value="addRecipe">
+                <input type="hidden" name="invId" value=" ">
 
-
+                <label> Ingredients : </label> <br><br> 
+                <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Next Ingredient...
+                <input id="ingredient_name" name="ingredient_name" disabled="disabled" />
 
 
             </form>
