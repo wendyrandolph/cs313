@@ -167,7 +167,8 @@ switch ($action) {
         break;
     case 'addRecipe':
     
-        
+        $_SESSION['category_id'] = $row['category_id']; 
+        echo $_SESSION['category_id']; 
         
         $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_STRING);
