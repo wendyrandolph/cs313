@@ -26,15 +26,7 @@
 
     <main>
 
-
-        <ul>
-            <li>First Name: <?php echo $_SESSION['clientData']['member_first_name'] ?></li>
-            <li>Last Name: <?php echo $_SESSION['clientData']['member_last_name'] ?></li>
-            <li>Email: <?php echo $_SESSION['clientData']['member_email'] ?></li>
-        </ul>
-
-
-        <form action="/recipe/index.php" method="post">
+    <form action="/recipe/index.php" method="post">
             <label>Which category does your recipe belong to : </label><br>
             <?php echo $list ?> <br><br>
             <input type="hidden" name="category_id" value=" <?php if (isset($list['category_id'])) {
@@ -44,8 +36,7 @@
             <label>Recipe Name:</label><br>
             <input type="text" class="input" name="recipe_name" required> <br> <br>
             <label>Recipe Description:</label><br>
-            <textarea name="recipe_desc" id="recipe_desc" required>
-                </textarea> <br><br>
+            <input type="text" name="recipe_desc" id="recipe_desc" required> <br><br>
             <label>Preheat Temp:</label>
             <input type="text" name="preheat_temp" id="preheat_temp" > <br><br>
             <label>Cook Time: </label>
@@ -87,7 +78,8 @@
             <input id="ingredient_name_6" name="ingredient_name_6" disabled="disabled" placeholder="ingredient" />
             <input id="required_amount_6 name="required_amount_6" disabled="disabled" placeholder="required_amount" />
             
-           
+           <label> Instructions : </label>
+           <textarea 
 
 
 
