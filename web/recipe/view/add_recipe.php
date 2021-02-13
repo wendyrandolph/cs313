@@ -58,9 +58,9 @@
             <textarea name="recipe_desc" id="recipe_desc" required>
                 </textarea> <br><br>
             <label>Preheat Temp:</label>
-            <input type="text" name="preheat_temp" id="preheat_temp" required> <br><br>
+            <input type="text" name="preheat_temp" id="preheat_temp" > <br><br>
             <label>Cook Time: </label>
-            <input type="text" name="cook_time" id="cook_time" required>
+            <input type="text" name="cook_time" id="cook_time" >
 
             <input type="hidden" name="invId" value=" "><br><br>
 
