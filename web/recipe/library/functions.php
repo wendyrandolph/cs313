@@ -8,7 +8,8 @@ function getCategories($db)
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $list = " ";
     foreach ($rows as $row) {
-        $list .= "<input type=checkbox  name=$row[category_name]> {$row['category_name']} {$row['category_id]}   ";
+        $list .= "<input type=checkbox  name=$row[category_name]> {$row['category_name']} ";
+        $list .= "<input type=hidden name=$row[category_id] value=$row[category_id]>";  
     }
     return $list;
 }
