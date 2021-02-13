@@ -16,8 +16,8 @@
             amount.innerHTML = "type='text' id='new_required_amount' name='new_required_amount' placeholder='amount'/>"
 
 
-            document.body.appendChild(item);
-            document.body.appendChild(amount); 
+            document.main.appendChild(item);
+            document.main.appendChild(amount); 
         }
     </script>
     <title>Add a Recipe</title>
