@@ -79,7 +79,7 @@
             <input id="required_amount_6 name="required_amount_6" disabled="disabled" placeholder="required_amount" />
             
            <label> Instructions : </label>
-           <textarea 
+           <textarea></textarea>
 
 
 
