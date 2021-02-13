@@ -37,15 +37,14 @@
             <input type="text" class="input" name="recipe_name" required> <br> <br>
             <label>Recipe Description:</label><br>
             <input type="text" name="recipe_desc" id="recipe_desc" required> <br><br>
+            
+            <?php echo $contr_id ?> 
             <input type="hidden" name="<?php $row['contributor_name']?>" id="<?php $row['contributor_id']?>" > 
 
             <label>Preheat Temp:</label>
             <input type="text" name="preheat_temp" id="preheat_temp" > <br><br>
             <label>Cook Time: </label>
             <input type="text" name="cook_time" id="cook_time" >
-            <?php echo $contr_id ?>                                                        
-            <input type="hidden" name="contributor_id" value=" <?php $contr_id['contributor_id'] ?> "><br><br>
-           
             <label> Ingredients : </label> <br><br>
             <p> Please select each box needed to enter in each ingredient. </p> <br><br>
             <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
