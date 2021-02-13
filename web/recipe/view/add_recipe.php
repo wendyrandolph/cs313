@@ -51,14 +51,35 @@
             <label>Cook Time: </label>
             <input type="text" name="cook_time" id="cook_time" required>
          
-            <input type="hidden" name="invId" value=" ">
+            <input type="hidden" name="invId" value=" "><br><br>
 
             <label> Ingredients : </label> <br><br>
+            <p> Please select each box needed to enter in each ingredient.  
             <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
             <input id="ingredient_name" name="ingredient_name" disabled="disabled" />
 
             <input type="text" onclick="var input = document.getElementById('required_amount'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Required Amount...
             <input id="required_amount" name="required_amount" disabled="disabled" />
+            
+            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
+            <input id="ingredient_name" name="ingredient_name" disabled="disabled" />
+
+            <input type="text" onclick="var input = document.getElementById('required_amount'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Required Amount...
+            <input id="required_amount" name="required_amount" disabled="disabled" />
+
+            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
+            <input id="ingredient_name" name="ingredient_name" disabled="disabled" />
+
+            <input type="text" onclick="var input = document.getElementById('required_amount'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Required Amount...
+            <input id="required_amount" name="required_amount" disabled="disabled" />
+
+
+
+
+
+
+
+
             <input type="submit" value="Add Recipe" class="add_vehicle"><br><br>
             <!--Add the action name - value pair -->
             <input type="hidden" name="action" value="addRecipe">
