@@ -19,7 +19,7 @@ require('../recipe/library/accounts_model.php');
 
 
 
-$results = displayCategory($db, $category_id);
+//$results = displayCategory($db, $category_id);
 
 
 switch ($action) {
