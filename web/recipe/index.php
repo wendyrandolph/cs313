@@ -180,6 +180,7 @@ switch ($action) {
         $date_added = filter_input(INPUT_GET, 'date_added', FILTER_SANITIZE_STRING);
         $instructions = filter_input(INPUT_GET, 'instructions', FILTER_SANITIZE_STRING);
 
+        echo $recipe_name, $category_id; 
         // Send the data to the model
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions); 
 
