@@ -17,7 +17,7 @@
 
 
             document.body.appendChild(item);
-            documnet.body.appendChild(amount); 
+            document.body.appendChild(amount); 
         }
     </script>
     <title>Add a Recipe</title>
