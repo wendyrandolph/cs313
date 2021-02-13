@@ -82,6 +82,7 @@ switch ($action) {
     case 'Login':
 
         $results = displayCategory($db, $category_id);
+
         //echo "This is the Login case statement"; 
         //exit; 
         //filter and store email and password
@@ -130,7 +131,7 @@ switch ($action) {
 
 
         $list = getCategories($db);
-
+        $cont_id = getContributor($db);
         // Send them to the admin view
         include '../recipe/view/add_recipe.php';
         break;
@@ -165,10 +166,10 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
-        $cont_id = getContributor($db); 
 
 
-        $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $ingredient_name = $required_amount = " " ; 
+
+        $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $ingredient_name = $required_amount = " ";
         $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         $recipe_desc  = filter_input(INPUT_GET, 'recipe_desc', FILTER_SANITIZE_STRING);
