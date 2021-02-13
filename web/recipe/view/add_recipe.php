@@ -46,13 +46,11 @@
             <label>Recipe Description:</label><br>
             <textarea name="recipe_desc" id="recipe_desc" required>
                 </textarea> <br><br>
-            <label>Preheat Temp:</label><br><br>
+            <label>Preheat Temp:</label>
             <input type="text" name="preheat_temp" id="preheat_temp" required> <br><br>
-            <label>Cook Time: </label> <br><br>
+            <label>Cook Time: </label>
             <input type="text" name="cook_time" id="cook_time" required>
-            <input type="submit" value="Update Vehicle" class="add_vehicle"><br><br>
-            <!--Add the action name - value pair -->
-            <input type="hidden" name="action" value="addRecipe">
+         
             <input type="hidden" name="invId" value=" ">
 
             <label> Ingredients : </label> <br><br>
@@ -61,7 +59,9 @@
 
             <input type="text" onclick="var input = document.getElementById('required_amount'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Required Amount...
             <input id="required_amount" name="required_amount" disabled="disabled" />
-
+            <input type="submit" value="Add Recipe" class="add_vehicle"><br><br>
+            <!--Add the action name - value pair -->
+            <input type="hidden" name="action" value="addRecipe">
 
         </form>
 
