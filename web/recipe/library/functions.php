@@ -124,26 +124,29 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $ingredient_name, $required_amount, $instructions)
 {
-    $sql = 'INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, contributor_id, preheat_temp, cook_time)
-            VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :contributor_id, :preheat_temp, :cook_time)';
-
-    // Create the prepared statement using the phpmotors connection
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':recipe_name', $recipe_name, PDO::PARAM_STR);
-    $stmt->bindValue(':recipe_desc', $recipe_desc, PDO::PARAM_STR);
-    $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
-    $stmt->bindValue(':preheat_temp', $preheat_temp, PDO::PARAM_STR);
-    $stmt->bindValue(':cook_time', $cook_time, PDO::PARAM_STR);
+    //insert into recipes table 
+    $stmt = $db->prepare('INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time)
+            VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time)');
+    $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' =>$category_id, ':date_added' => CURRENT_DATE, ':preheat_temp' =>$preheat_temp, ':cook_time' => $cook_time)); 
+   
+   // Get last recipe id
+   $newrecipeID = $db->lastInsertId('recipe_id_seq');
 
 
-    // Insert the data
-    $stmt->execute();
-    // Ask how many rows changed as a result of our insert
-    $rowsChanged = $stmt->rowCount();
-    // Close the database interaction
+    // Insert into ingredients; 
+    $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
+    $stmt->execute(array(':ingredient_name' => $ingredient_name, ':required_amount' => $required_amount));
 
-    // Return the indication of success (rows changed)
-    return $rowsChanged;
+
+    //insert into recipe_steps 
+    $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
+    $stmt->execute(array(':ingredient_name' => $instructions, ':required_amount' => $newrecipeID));
+
+
+
+
 }
+
+
