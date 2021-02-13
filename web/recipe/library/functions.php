@@ -132,8 +132,8 @@ function getContributor($db)
 
     $cont_Id = " "; 
     foreach ($rows as $row) {
-        $cont_Id .= "<input type='checkbox' name={$row['first_name']} id= {$row['contributor_id']} />"; 
-    
+        $cont_Id .= "<input type=checkbox  name=$row[first_name]> {$row['first_name']}"  ; 
+        $cont_Id .= "<input type=hidden name=$row[contributor_id] id=$row[contributor_id]>"; 
     }return $cont_Id; 
     
 }
