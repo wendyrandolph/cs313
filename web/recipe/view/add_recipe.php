@@ -55,10 +55,8 @@
 
             <label> Ingredients : </label> <br><br>
             <p> Please select each box needed to enter in each ingredient. </p> <br><br>
-            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
-            <input id="ingredient_name" name="ingredient_name" disabled="disabled" />
-
-            <input type="checkbox" onclick="var input = document.getElementById('required_amount'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Required Amount...
+            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); var input= document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
+            <input id="ingredient_name" name="ingredient_name" disabled="disabled" /> 
             <input id="required_amount" name="required_amount" disabled="disabled" />
             
           
