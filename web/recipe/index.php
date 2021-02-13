@@ -169,7 +169,7 @@ switch ($action) {
 
 
 
-        $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $ingredient_name = $required_amount = " ";
+        $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
         $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         $recipe_desc  = filter_input(INPUT_GET, 'recipe_desc', FILTER_SANITIZE_STRING);
@@ -177,10 +177,11 @@ switch ($action) {
         $cook_time = filter_input(INPUT_GET, 'cook_time', FILTER_SANITIZE_STRING);
         $ingredient_name = filter_input(INPUT_GET, 'ingredient_name', FILTER_SANITIZE_STRING);
         $required_amount = filter_input(INPUT_GET, 'required_amount', FILTER_SANITIZE_STRING);
-
+        $date_added = filter_input(INPUT_GET, 'date_added', FILTER_SANITIZE_STRING);
+        $instructions = filter_input(INPUT_GET, 'instructions', FILTER_SANITIZE_STRING);
 
         // Send the data to the model
-        $updateResult = addRecipeName($recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time);
+        $updateResult = addRecipeName($recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $ingredient_name, $required_amount, $instructions, $date_added);
 
 
         include '../recipe/view/display_recipe.php';
