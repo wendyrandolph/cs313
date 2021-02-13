@@ -1,18 +1,16 @@
 <?php
 
-function getCategories($db){ 
+function getCategories($db)
+{
 
-   $stmt = $db->prepare('SELECT * FROM category'); 
-   $stmt->execute();
-   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $list = " "; 
-   foreach($rows as $row){
-        $list .= "<input type=checkbox  name=$row[category_name]> {$row['category_name']}   "; 
-         
-   }
-        return $list; 
-    
-
+    $stmt = $db->prepare('SELECT * FROM category');
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $list = " ";
+    foreach ($rows as $row) {
+        $list .= "<input type=checkbox  name=$row[category_name]> {$row['category_name']}   ";
+    }
+    return $list;
 }
 
 function checkEmail($member_email)
@@ -123,4 +121,43 @@ function displayCategory($db, $category_id)
         $_SESSION['category_name'] = $row['category_name'];
         return $results;
     }
+}
+function getContributor($db)
+{
+    $sql = 'SELECT * FROM contributor;';
+    // Create the prepared statement using the phpmotors connection
+    $stmt = $db->prepare($sql);
+    $stmt->exectute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $cont_Id = " "; 
+    foreach ($rows as $row) {
+        $cont_Id .= "{$row['contributor_name']}"; 
+    
+    }
+    
+}
+
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time)
+{
+    $sql = 'INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, contributor_id, preheat_temp, cook_time)
+            VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :contributor_id, :preheat_temp, :cook_time)';
+
+    // Create the prepared statement using the phpmotors connection
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':recipe_name', $recipe_name, PDO::PARAM_STR);
+    $stmt->bindValue(':recipe_desc', $recipe_desc, PDO::PARAM_STR);
+    $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
+    $stmt->bindValue(':preheat_temp', $preheat_temp, PDO::PARAM_STR);
+    $stmt->bindValue(':cook_time', $cook_time, PDO::PARAM_STR);
+
+
+    // Insert the data
+    $stmt->execute();
+    // Ask how many rows changed as a result of our insert
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
 }

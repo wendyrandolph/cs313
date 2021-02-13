@@ -165,15 +165,19 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
+
+        $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $ingredient_name = $required_amount = " " ; 
         $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
         $recipe_desc  = filter_input(INPUT_GET, 'recipe_desc', FILTER_SANITIZE_STRING);
         $preheat_temp = filter_input(INPUT_GET, 'preheat_temp', FILTER_SANITIZE_STRING);
         $cook_time = filter_input(INPUT_GET, 'cook_time', FILTER_SANITIZE_STRING);
+        $ingredient_name = filter_input(INPUT_GET, 'ingredient_name', FILTER_SANITIZE_STRING);
+        $required_amount = filter_input(INPUT_GET, 'required_amount', FILTER_SANITIZE_STRING);
 
 
-        $addRecipe = newRecipe();
-
+        // Send the data to the model
+        $updateResult = addRecipeName($recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time);
 
 
         include '../recipe/view/display_recipe.php';
