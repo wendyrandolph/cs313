@@ -168,15 +168,15 @@ switch ($action) {
     case 'addRecipe':
 
         $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
-        $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
-        $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
-        $recipe_desc  = filter_input(INPUT_GET, 'recipe_desc', FILTER_SANITIZE_STRING);
-        $preheat_temp = filter_input(INPUT_GET, 'preheat_temp', FILTER_SANITIZE_STRING);
-        $cook_time = filter_input(INPUT_GET, 'cook_time', FILTER_SANITIZE_STRING);
-        $ingredient_name = filter_input(INPUT_GET, 'ingredient_name', FILTER_SANITIZE_STRING);
-        $required_amount = filter_input(INPUT_GET, 'required_amount', FILTER_SANITIZE_STRING);
-        $date_added = filter_input(INPUT_GET, 'date_added', FILTER_SANITIZE_STRING);
-        $instructions = filter_input(INPUT_GET, 'instructions', FILTER_SANITIZE_STRING);
+        $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
+        $recipe_name = filter_input(INPUT_POST, 'recipe_name', FILTER_SANITIZE_STRING);
+        $recipe_desc  = filter_input(INPUT_POST, 'recipe_desc', FILTER_SANITIZE_STRING);
+        $preheat_temp = filter_input(INPUT_POST, 'preheat_temp', FILTER_SANITIZE_STRING);
+        $cook_time = filter_input(INPUT_POST, 'cook_time', FILTER_SANITIZE_STRING);
+        $ingredient_name = filter_input(INPUT_POST, 'ingredient_name', FILTER_SANITIZE_STRING);
+        $required_amount = filter_input(INPUT_POST, 'required_amount', FILTER_SANITIZE_STRING);
+        $date_added = filter_input(INPUT_POST, 'date_added', FILTER_SANITIZE_STRING);
+        $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
         echo $recipe_name, $category_id; 
         // Send the data to the model
