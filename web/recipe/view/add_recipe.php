@@ -36,7 +36,7 @@
 
         <form action="/recipe/index.php" method="post">
                 <label>Which category does your recipe belong to : </label><br>
-                <?php echo $list ?> 
+                <?php echo $list ?> <br><br>
                 <input type="hidden" name="category_id" value=" <?php if (isset($list['category_id'])) {
                     echo $list['category_id'];
                 }?> "> 
@@ -44,10 +44,10 @@
                 <label>Recipe Name:</label><br>
                 <input type="text" class="input" name="recipe_name" required> <br> <br>
                 <label>Recipe Description:</label><br>
-                <textarea name="recipe_desc" id="recipe_desc" required > <br><br>
-                </textarea>
+                <textarea name="recipe_desc" id="recipe_desc" required >
+                </textarea> <br><br> 
                 <label>Preheat Temp:</label><br><br>
-                <input type="text" name="preheat_temp" id="preheat_temp" required> 
+                <input type="text" name="preheat_temp" id="preheat_temp" required> <br><br>
                 <label>Cook Time: </label> <br><br>
                 <input type="text" name="cook_time" id="cook_time" required> 
                 <input type="submit" value="Update Vehicle" class="add_vehicle"><br><br>
@@ -56,9 +56,12 @@
                 <input type="hidden" name="invId" value=" ">
 
                 <label> Ingredients : </label> <br><br> 
-                <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Next Ingredient...
+                <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
                 <input id="ingredient_name" name="ingredient_name" disabled="disabled" />
-
+                
+                <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Required Amount...
+               <input id="required_amount" name="required_amount" disabled="disabled" />
+            
 
             </form>
 
