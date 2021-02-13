@@ -131,7 +131,7 @@ switch ($action) {
 
 
         $list = getCategories($db);
-        $cont_Id = getContributor($db);
+      
         // Send them to the admin view
         include '../recipe/view/add_recipe.php';
         break;

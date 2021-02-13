@@ -122,21 +122,7 @@ function displayCategory($db, $category_id)
         return $results;
     }
 }
-function getContributor($db)
-{
-    $sql = 'SELECT * FROM contributor;';
-    // Create the prepared statement using the phpmotors connection
-    $stmt = $db->prepare($sql);
-    $stmt->exectute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $cont_Id = " "; 
-    foreach ($rows as $row) {
-        $cont_Id .= "<input type=checkbox  name=$row[first_name]> {$row['first_name']}"  ; 
-        $cont_Id .= "<input type=hidden name=$row[contributor_id] id=$row[contributor_id]>"; 
-    }return $cont_Id; 
-    
-}
 
 function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time)
 {

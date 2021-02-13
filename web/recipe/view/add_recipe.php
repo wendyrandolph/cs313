@@ -37,8 +37,7 @@
             <input type="text" class="input" name="recipe_name" required> <br> <br>
             <label>Recipe Description:</label><br>
             <input type="text" name="recipe_desc" id="recipe_desc" required> <br><br>
-            <label> Who deserves credit for this recipe </label> 
-            <?php echo $cont_Id ?> <br><br>
+         
             
             <label>Preheat Temp:</label>
             <input type="text" name="preheat_temp" id="preheat_temp" > <br><br>
