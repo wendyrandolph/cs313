@@ -181,7 +181,7 @@ switch ($action) {
         $instructions = filter_input(INPUT_GET, 'instructions', FILTER_SANITIZE_STRING);
 
         // Send the data to the model
-        $updateResult = addRecipeName($recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $ingredient_name, $required_amount, $instructions, $date_added);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions); 
 
 
         include '../recipe/view/display_recipe.php';
