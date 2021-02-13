@@ -38,7 +38,7 @@
             <label>Recipe Description:</label><br>
             <input type="text" name="recipe_desc" id="recipe_desc" required> <br><br>
             
-            <?php echo $contr_id ?> 
+            <?php echo $cont_id ?> 
             <input type="hidden" name="<?php $row['contributor_name']?>" id="<?php $row['contributor_id']?>" > 
 
             <label>Preheat Temp:</label>
