@@ -12,11 +12,12 @@
         function myFunction() {
             var item = document.createElement("input");
             var amount = document.createElement("input");
-            item.innerHTML = "type='text' id='ingredient_name' name='ingredient_name'/>"
-            amount.innerHTML = "type='text' id='required_amount' name='required_amount'/>"
+            item.innerHTML = "type=text id=ingredient_name name=ingredient_name placeholder='ingredient'/>"
+            amount.innerHTML = "type='text' id='required_amount' name='required_amount' placeholder='amount'/>"
 
 
             document.body.appendChild(item);
+            documnet.body.appendChild(amount); 
         }
     </script>
     <title>Add a Recipe</title>
