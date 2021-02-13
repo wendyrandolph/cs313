@@ -8,7 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="../recipe/css/recipe.css" media="screen" />
+<script> 
+function myFunction() {
+  var item = document.createElement("input");
+  item.innerHTML = "type=checkbox onclick='var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}";
+  document.body.appendChild(item);
+}
 
+</script> 
     <title>Add a Recipe</title>
 </head>
 
@@ -56,10 +63,10 @@
             <label> Ingredients : </label> <br><br>
             <p> Please select each box needed to enter in each ingredient. </p> <br><br>
             <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
-                                            var input_1= document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
+                                            var input = document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
             <input id="ingredient_name" name="ingredient_name" disabled="disabled" /> 
             <input id="required_amount" name="required_amount" disabled="disabled" />
-            
+            <button onclick="myFunction()">Add Another Ingredient</button>
           
 
 
