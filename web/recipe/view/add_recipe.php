@@ -12,8 +12,8 @@
         function myFunction() {
             var item = document.createElement("input");
             var amount = document.createElement("input");
-            item.innerHTML = "type=text id=ingredient_name name=ingredient_name placeholder='ingredient'/>"
-            amount.innerHTML = "type='text' id='required_amount' name='required_amount' placeholder='amount'/>"
+            item.innerHTML = "type=text id=new_ingredient_name name=new_ingredient_name placeholder='ingredient'/>"
+            amount.innerHTML = "type='text' id='new_required_amount' name='new_required_amount' placeholder='amount'/>"
 
 
             document.body.appendChild(item);
