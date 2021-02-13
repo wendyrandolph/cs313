@@ -184,7 +184,7 @@ switch ($action) {
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions); 
 
 
-        include '../recipe/view/display_recipe.php';
+        include '../recipe/view/home.php';
         break;
     case 'login':
 
