@@ -28,7 +28,7 @@ switch ($action) {
         //Test if I'm getting to the register case. 
         //   echo " This is the register case";
         //     exit;
-      
+
 
         // Filter and store the data
         $member_first_name = filter_input(INPUT_POST, 'member_first_name', FILTER_SANITIZE_STRING);
@@ -80,7 +80,7 @@ switch ($action) {
 
 
     case 'Login':
-       
+
         $results = displayCategory($db, $category_id);
         //echo "This is the Login case statement"; 
         //exit; 
@@ -129,7 +129,7 @@ switch ($action) {
         $_SESSION['clientData'] = $clientData;
 
 
-       $list = getCategories($db); 
+        $list = getCategories($db);
 
         // Send them to the admin view
         include '../recipe/view/add_recipe.php';
@@ -164,9 +164,22 @@ switch ($action) {
 
         include '../recipe/view/home.php';
         break;
+    case 'addRecipe':
+        $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
+        $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
+        $recipe_desc  = filter_input(INPUT_GET, 'recipe_desc', FILTER_SANITIZE_STRING);
+        $preheat_temp = filter_input(INPUT_GET, 'preheat_temp', FILTER_SANITIZE_STRING);
+        $cook_time = filter_input(INPUT_GET, 'cook_time', FILTER_SANITIZE_STRING);
 
+
+        $addRecipe = newRecipe();
+
+
+
+        include '../recipe/view/display_recipe.php';
+        break;
     case 'login':
-        
+
         include '../recipe/view/login.php';
         break;
 
@@ -177,12 +190,12 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'registration':
-        
+
 
         include '../recipe/view/registration.php';
         break;
     default:
-   
+
 
         include '../recipe/view/home.php';
         break;
