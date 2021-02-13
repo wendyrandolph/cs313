@@ -43,8 +43,8 @@
             <input type="text" name="preheat_temp" id="preheat_temp" > <br><br>
             <label>Cook Time: </label>
             <input type="text" name="cook_time" id="cook_time" >
-
-            <input type="hidden" name="invId" value=" "><br><br>
+            <?php echo $contr_id ?>                                                        
+            <input type="hidden" name="contributor_id" value=" <?php $contr_id['contributor_id'] ?> "><br><br>
            
             <label> Ingredients : </label> <br><br>
             <p> Please select each box needed to enter in each ingredient. </p> <br><br>
@@ -79,9 +79,9 @@
                                             var input = document.getElementById('required_amount_6');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
             <input id="ingredient_name_6" name="ingredient_name_6" disabled="disabled" placeholder="ingredient" />
             <input id="required_amount_6 name="required_amount_6" disabled="disabled" placeholder="required_amount" />
-            
+            <br><br>
            <label> Instructions : </label>
-           <textarea></textarea>
+           <textarea name=""></textarea>
 
 
 

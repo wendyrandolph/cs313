@@ -134,7 +134,7 @@ function getContributor($db)
     foreach ($rows as $row) {
         $cont_Id .= "{$row['contributor_name']}"; 
     
-    }
+    }return $cont_Id; 
     
 }
 

@@ -165,6 +165,8 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
+        $cont_id = getContributor($db); 
+
 
         $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $ingredient_name = $required_amount = " " ; 
         $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
