@@ -167,9 +167,6 @@ switch ($action) {
         break;
     case 'addRecipe':
 
-echo "This is the addRecipe case statement"; 
-exit; 
-
         $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
         $category_id = filter_input(INPUT_GET, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_GET, 'recipe_name', FILTER_SANITIZE_STRING);
