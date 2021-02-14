@@ -167,7 +167,7 @@ switch ($action) {
         break;
     case 'addRecipe':
     
-
+        $category_id = !empty($_POST['category']) ? $_POST['category_id'] : array();
 
         $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
         
