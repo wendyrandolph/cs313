@@ -6,10 +6,10 @@ function getCategories($db)
     $list = " ";
     foreach( $db->query('SELECT * FROM category')as $rows){
      
-        $list .= "<input type=radio name='$rows[category_id]' value='$rows[category_id]'>  $rows[category_name] </option> " ; 
-         
+        //$list .= "<input type=radio name='$rows[category_id]' value='$rows[category_id]'>  $rows[category_name] " ; 
+        $list .= "<input type=radio id=' $rows[category_id]' name='category_id[]'   value='$rows[category_id]' ><br>" ;
+    
     }
-  
     return $list;
 }
 

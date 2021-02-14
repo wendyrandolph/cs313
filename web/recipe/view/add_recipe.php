@@ -26,7 +26,7 @@
 
     <main>
 
-    <form action="/recipe/?action=addRecipe&category_id=$row[category_id]$recipe_name=$" method="POST">
+    <form action="/recipe/?action=addRecipe" method="POST">
             <label>Which category does your recipe belong to : </label><br>
             <?php echo $list ?> <br><br>
             <label>Recipe Name:</label><br>
