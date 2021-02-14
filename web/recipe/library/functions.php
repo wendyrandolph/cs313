@@ -3,14 +3,15 @@
 function getCategories($db)
 {
 
-    $stmt = $db->query('SELECT * FROM category WHERE category_id = :category_id') as $rows);
+    $stmt = $db->prepare('SELECT * FROM category WHERE category_id = :category_id');
     $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT); 
     $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $list = " ";
-    
+    foreach($rows as $row)
         $list .= "<select name='category'> ";
-        $list .= "<option value = $rows[category_id]> $rows[category_name] </option> " ; 
+        $list .= "<option value = $row[category_id]> $row[category_name] </option> " ; 
         $list .= "</select>";  
     }
   
