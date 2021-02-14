@@ -3,8 +3,7 @@
 function getCategories($db)
 {
 
-    $stmt = $db->prepare('SELECT * FROM category WHERE category_id = :category_id');
-    $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT); 
+    $stmt = $db->prepare('SELECT * FROM category');
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
