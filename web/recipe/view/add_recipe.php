@@ -30,7 +30,7 @@
             <label>Which category does your recipe belong to : </label><br>
             <?php echo $list ?> <br><br>
             <label>Recipe Name:</label><br>
-            <input type="text" class="input" name="$recipe_name" required> <br> <br>
+            <input type="text" class="input" name="recipe_name" required> <br> <br>
             <label>Recipe Description:</label><br>
             <input type="text" name="recipe_desc" id="recipe_desc" required> <br><br>
             <label>Today's Date </label><br>
