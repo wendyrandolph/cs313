@@ -28,11 +28,7 @@
 
     <form action="/recipe/?action=addRecipe" method="POST">
             <label>Which category does your recipe belong to : </label><br>
-            <?php
-            if(isset($list['category_name'])){ 
-        $category_id = $list['category_id'];  
-    }
-            echo $list ?> <br><br>
+            <?php echo $list ?> <br><br>
             <label>Recipe Name:</label><br>
             <input type="text" class="input" name="recipe_name" required> <br> <br>
             <label>Recipe Description:</label><br>
