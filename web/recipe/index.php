@@ -167,9 +167,9 @@ switch ($action) {
         break;
     case 'addRecipe':
     
-        $category_id = !empty($_POST['category_id']) ? $_POST['category_id'] : array();
+        $category_id = $POST['category_id']; 
 
-        $category_id = $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
+         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
         
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
     
