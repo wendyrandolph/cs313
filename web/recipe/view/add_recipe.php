@@ -26,9 +26,18 @@
 
     <main>
 
-    <form action="/recipe/?action=addRecipe" method="POST">
+        <form action="/recipe/?action=addRecipe" method="POST">
             <label>Which category does your recipe belong to : </label><br>
-            <?php echo $list ?> <br><br>
+            <?php
+            foreach ($db->query('SELECT * FROM category') as $rows) {
+
+                //$list .= "<input type=radio name='$rows[category_id]' value='$rows[category_id]'>  $rows[category_name] " ; 
+                echo  "<input type=radio id=' category_$rows[category_id]' name='category[]'   value='$rows[category_id]' > ";
+                echo "<label for='category_$rows[category_id]'> $rows[category_name] </label><br>";
+            }
+            ?>
+
+
             <label>Recipe Name:</label><br>
             <input type="text" class="input" name="recipe_name" required> <br> <br>
             <label>Recipe Description:</label><br>
@@ -36,9 +45,9 @@
             <label>Today's Date </label><br>
             <input type="date" name="date_added" id="date_added" required><br><br>
             <label>Preheat Temp:</label>
-            <input type="text" name="preheat_temp" id="preheat_temp" > <br><br>
+            <input type="text" name="preheat_temp" id="preheat_temp"> <br><br>
             <label>Cook Time: </label>
-            <input type="text" name="cook_time" id="cook_time" >
+            <input type="text" name="cook_time" id="cook_time">
             <!-- <label> Ingredients : </label> <br><br>
             <p> Please select each box needed to enter in each ingredient. </p> <br><br>
             <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
@@ -73,8 +82,8 @@
             <input id="ingredient_name_6" name="ingredient_name_6" disabled="disabled" placeholder="ingredient" />
             <input id="required_amount_6" name="required_amount_6" disabled="disabled" placeholder="required_amount" />
             <br><br> -->
-           <label> Instructions : </label>
-           <textarea name="instructions"></textarea>
+            <label> Instructions : </label>
+            <textarea name="instructions"></textarea>
 
 
 

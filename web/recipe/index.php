@@ -130,7 +130,7 @@ switch ($action) {
         $_SESSION['clientData'] = $clientData;
 
 
-        $list = getCategories($db);
+        //$list = getCategories($db);
       
         // Send them to the admin view
         include '../recipe/view/add_recipe.php';
@@ -169,7 +169,7 @@ switch ($action) {
     
         $category_id = $POST['category_id']; 
 
-         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
+        $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
         
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
     
