@@ -9,7 +9,7 @@ function getCategories($db)
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $list = " ";
-    foreach($rows as $row)
+    foreach($rows as $row){
         $list .= "<select name='category'> ";
         $list .= "<option value = $row[category_id]> $row[category_name] </option> " ; 
         $list .= "</select>";  
