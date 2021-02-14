@@ -3,10 +3,10 @@
 function getCategories($db)
 {
 
-    $stmt = $db->query('SELECT * FROM category WHERE category_id = :category_id') as $row);
+    $stmt = $db->query('SELECT * FROM category WHERE category_id = :category_id') as $rows);
     $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT); 
     $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     $list = " ";
     
         $list .= "<select name='category'> ";
