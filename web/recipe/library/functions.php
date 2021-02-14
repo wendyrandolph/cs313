@@ -7,8 +7,8 @@ function getCategories($db)
     foreach( $db->query('SELECT * FROM category')as $rows){
      
         //$list .= "<input type=radio name='$rows[category_id]' value='$rows[category_id]'>  $rows[category_name] " ; 
-        $list .= "<input type=radio id=' $rows[category_id]' name='category_id'   value='$rows[category_id]' > $rows[category_name] <br>" ;
-    
+        $list .= "<input type=radio id=' category$rows[category_id]' name='category[]'   value='$rows[category_id]' > " ;
+        $list .= "<label for='category$rows[category_id]'> $rows[category_name] </label><br>"; 
     }
     return $list;
 }
