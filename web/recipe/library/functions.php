@@ -9,7 +9,7 @@ function getCategories($db)
     $list = " ";
     foreach ($rows as $row) {
         $list .= "<input type=select  name=$row[category_name]> {$row['category_name']} ";
-        $list .= "<input type=hidden name=$row[category_id] id='$row[category_id]' for='$row[category_name]'>";  
+        $list .= "<input type=hidden name=$row[category_id] id='$row[category_id]'>";  
     }
   
     return $list;
