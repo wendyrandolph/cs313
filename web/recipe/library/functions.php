@@ -3,19 +3,17 @@
 function getCategories($db)
 {
 
-    $stmt = $db->prepare('SELECT * FROM category');
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     $list = " ";
-    foreach($rows as $row){
-       
-        $list .= "<input type=radio name='$row[category_name]' value='$row[category_id]'>  $row[category_name] </option> " ; 
-        $list .= "<input type=hidden name='$row[category_id]'>";   
+    foreach( $db->query('SELECT * FROM category')as $rows){
+     
+        $list .= "<input type=radio name='$row[category_id]' value='$row[category_id]'>  $row[category_name] </option> " ; 
+         
     }
   
     return $list;
 }
+
+
 
 function checkEmail($member_email)
 {
