@@ -10,7 +10,8 @@ function getCategories($db)
     $list = "<select name='category'> ";
     foreach($rows as $row){
        
-        $list .= "<option value = $row[category_id]> {$row['category_name']} </option> " ; 
+        $list .= "<option value='$row[category_id]'> {$row['category_name']} </option> " ; 
+        $list .= "<option value='$row[category_id]'> {$row['category_name']} </option>";  
         $list .= "</select>";  
     }
   
