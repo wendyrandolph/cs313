@@ -7,11 +7,11 @@ function getCategories($db)
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $list = "<select name='category'> ";
+    $list = " ";
     foreach($rows as $row){
        
-        $list .= "<option value='$row[category_id]'>  $row[category_name] </option> " ; 
-        $list .= "</select>";  
+        $list .= "<input type=radio name='$row[category_name]' value='$row[category_id]'>  $row[category_name] </option> " ; 
+        $list .= "<input type=hidden name='$row[category_id]'>";   
     }
   
     return $list;
