@@ -26,8 +26,8 @@ switch ($action) {
 
     case 'register':
         //Test if I'm getting to the register case. 
-          echo " This is the register case";
-            exit;
+        //   echo " This is the register case";
+        //     exit;
 
 
         // Filter and store the data
@@ -36,8 +36,8 @@ switch ($action) {
         $member_email = filter_input(INPUT_POST, 'member_email', FILTER_SANITIZE_EMAIL);
         $member_password = filter_input(INPUT_POST, 'member_password', FILTER_SANITIZE_STRING);
 
-        // echo $member_first_name, $member_last_name, $member_email, $member_password; 
-        // exit; 
+        echo $member_first_name, $member_last_name, $member_email, $member_password; 
+        exit; 
 
 
 
