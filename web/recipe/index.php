@@ -39,7 +39,7 @@ switch ($action) {
         // echo $member_first_name, $member_last_name, $member_email, $member_password; 
         // exit; 
 
-        $member_email = checkEmail($member_email);
+        //$member_email = checkEmail($member_email);
 
         // echo $member_email; 
         // exit; 
