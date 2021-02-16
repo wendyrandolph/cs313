@@ -1,20 +1,16 @@
 <?php
 
-function getCategories($db, $category_id)
+function getCategories($db)
 {
 
-    $list = " ";
-    $stmt =  $db->prepare('SELECT * FROM category WHERE category_id = :category_id'); 
+    
+    $stmt =  $db->query('SELECT * FROM category'); 
      
-        $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
+       
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach($rows as $row){ 
-        //$list .= "<input type=radio name='$rows[category_id]' value='$rows[category_id]'>  $rows[category_name] " ; 
-        $list .= "<input type=radio id=' category_$row[category_id]' name='category[]'   value='$row[category_id]' > " ;
-        $list .= "<label for='category_$row[category_id]'> $row[category_name] </label><br>"; 
-        } 
-    return $list;
+      
+    return $rows; 
 }
 
 
