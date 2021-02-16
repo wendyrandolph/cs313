@@ -38,7 +38,7 @@ function checkExistingEmail($db, $member_email)
   // Create a connection object using the phpmotors connection function
   // The SQL statement
 
-  $sql = "SELECT  member_email FROM member WHERE member_email = '" . $_POST['member_email'] . "'";
+  $sql = "SELECT  member_email FROM member WHERE member_email = :member_email;
   // Create the prepared statement using the phpmotors connection
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':member_email', $member_email, PDO::PARAM_STR);
