@@ -29,12 +29,7 @@
         <form action="/recipe/?action=addRecipe" method="POST">
             <label>Which category does your recipe belong to : </label><br>
             <?php
-            foreach ($db->query('SELECT * FROM category') as $rows) {
-
-                //$list .= "<input type=radio name='$rows[category_id]' value='$rows[category_id]'>  $rows[category_name] " ; 
-                echo  "<input type=radio id=' category_$rows[category_id]' name='category[]'   value='$rows[category_id]' > ";
-                echo "<label for='category_$rows[category_id]'> $rows[category_name] </label><br>";
-            }
+           echo $list; 
             ?>
 
 

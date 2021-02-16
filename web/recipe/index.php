@@ -161,7 +161,7 @@ switch ($action) {
         break;
     case 'addRecipe':
 
-        
+        $list = getCategories($db, $category_id); 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
 
