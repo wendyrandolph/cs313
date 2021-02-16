@@ -39,7 +39,7 @@ switch ($action) {
         // echo $member_first_name, $member_last_name, $member_email, $member_password; 
         // exit; 
 
-
+        $member_email = checkEmail($member_email);
 
         //Checking for an existing email address in the table
          $emailMatch = checkExistingEmail($db, $member_email);
@@ -48,7 +48,7 @@ switch ($action) {
             include '../recipe/view/login.php';
             break;
         }
-        $member_email = checkEmail($member_email);
+        
         // echo $member_email; 
         // exit; 
        $checkPassword = checkPassword($member_password);
