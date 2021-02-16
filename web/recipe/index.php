@@ -41,8 +41,8 @@ switch ($action) {
 
         $member_email = checkEmail($member_email);
 
-        echo $member_email; 
-        exit; 
+        // echo $member_email; 
+        // exit; 
 
 
         //Checking for an existing email address in the table
