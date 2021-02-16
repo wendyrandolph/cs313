@@ -82,7 +82,7 @@
                                             var input = document.getElementById('required_amount_6');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
             <input id="ingredient_name_6" name="ingredient_name[]" disabled="disabled" placeholder="ingredient" />
             <input id="required_amount_6" name="required_amount[]" disabled="disabled" placeholder="required_amount" />
-            <br><br> -->
+            <br><br> 
             <label> Instructions : </label>
             <textarea name="instructions"></textarea>
 
