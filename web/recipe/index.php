@@ -108,14 +108,14 @@ switch ($action) {
 
         // Compare the password just submitted against
         // the hashed password for the matching client
-        //$hashCheck = password_verify($member_password, $clientData['member_password']);
+        $hashCheck = password_verify($member_password, $clientData['member_password']);
         // If the hashes don't match create an error
         // and return to the login view
-    //      if (!$hashCheck) {
-    //         $message = '<p class="notice">Please check your password and try again.</p>';
-    //        include '../view/login.php';
-    //         break;
-    //  }
+         if (!$hashCheck) {
+            $message = '<p class="notice">Please check your password and try again.</p>';
+           include '../view/login.php';
+            break;
+     }
 
 
         // A valid user exists, log them in
