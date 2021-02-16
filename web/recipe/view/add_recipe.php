@@ -29,7 +29,11 @@
         <form action="/recipe/?action=addRecipe" method="POST">
             <label>Which category does your recipe belong to : </label><br>
             <?php
-           getCategories($db, $category_id); 
+            $list = " "; 
+           foreach($data as $rows){ 
+               $list = "<input type=radio class='input' name=category_name required> $rows[category_name] " ; 
+               $list.= "<input type=hidden name=$rows[category_id] value=$rows[category_id]>"; 
+           }
            echo $list; 
             ?>
 

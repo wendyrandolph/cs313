@@ -2,15 +2,11 @@
 
 function getCategories($db)
 {
+    $stmt =  $db->query('SELECT * FROM category');
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    
-    $stmt =  $db->query('SELECT * FROM category'); 
-     
-       
-        $stmt->execute();
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      
-    return $rows; 
+    return $data;
 }
 
 
