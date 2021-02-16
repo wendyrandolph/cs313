@@ -161,7 +161,7 @@ switch ($action) {
         break;
     case 'addRecipe':
 
-
+        
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
 
@@ -177,13 +177,14 @@ switch ($action) {
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
         
-        $ingredients_name = array_push($ingredient_name, $required_amount); 
+        $ingredient_name[] = array_push($ingredient_name); 
+        $required_amount[] = array_push($required_amount);
 
-        $ingredient_name = $ingredients_name['ingredient_name']; 
-        $required_amount = $ingredients_name['required_amount']; 
+        $newIngredient = $ingredient_name[0]; 
+        $newIngredientAmount = $required_amount[0];  
 
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newIngredient, $newIngredientAmount);
 
         if ($updateResult = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
