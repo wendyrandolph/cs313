@@ -134,10 +134,12 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
     // Insert into ingredients; 
-foreach($newIngredient as $ingredient)
+    $ingredient = []; 
+foreach($newIngredient as $ingredient){ 
+
     $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
     $stmt->execute(array(':ingredient_name' => $ingredient[0], ':required_amount' => $ingredient[1]));
-
+} 
     $newingredientId = $db->lastInsertId(' ingredients_ingredients_id_seq');
 
 
