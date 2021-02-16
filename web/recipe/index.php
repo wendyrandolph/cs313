@@ -182,8 +182,8 @@ switch ($action) {
 
       
 
-        $newIngredient = $ingredient_name[0]; 
-        $newIngredientAmount = $required_amount[0];  
+        $newIngredient = $ingredients_name[0]; 
+        $newIngredientAmount = $required_amounts[0];  
 
         // Send the data to the model
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newIngredient, $newIngredientAmount);
