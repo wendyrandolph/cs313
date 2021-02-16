@@ -138,7 +138,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     $stmt->execute(array(':ingredient_name' => $ingredient_name, ':required_amount' => $required_amount));
 
     $newingredientId = $db->lastInsertId('ingredient_id_seq');
-    }
+
 
 
     //insert into recipe_steps 
