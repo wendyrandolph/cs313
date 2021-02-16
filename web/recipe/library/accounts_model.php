@@ -17,7 +17,7 @@ function regClient($db, $member_first_name, $member_last_name, $member_email, $p
   $stmt->bindValue(':member_first_name', $member_first_name, PDO::PARAM_STR);
   $stmt->bindValue(':member_last_name', $member_last_name, PDO::PARAM_STR);
   $stmt->bindValue(':member_email', $member_email, PDO::PARAM_STR);
-  $stmt->bindValue(':member_password', $password, PDO::PARAM_STR);
+  $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 
   
   // Insert the data
