@@ -30,7 +30,7 @@
     echo $_SESSION['message']; 
 }
 
-if(isset())
+
 
 
 
