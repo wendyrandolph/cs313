@@ -122,7 +122,7 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredients_name, $required_amounts)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount)
 {
     //insert into recipes table 
     $stmt = $db->prepare('INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time)
@@ -134,9 +134,9 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
     // Insert into ingredients; 
-    if($ingredients_name and $required_amounts)
+    if($ingredient_name and $required_amount)
     $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
-    $stmt->execute(array(':ingredient_name' => $ingredients_name, ':required_amount' => $required_amounts));
+    $stmt->execute(array(':ingredient_name' => $ingredient_name, ':required_amount' => $required_amount));
 
     $newingredientId = $db->lastInsertId(' ingredients_ingredients_id_seq');
 
