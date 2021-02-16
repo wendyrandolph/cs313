@@ -62,7 +62,7 @@ function checkExistingEmail($db, $member_email)
 function getClient($db, $member_email)
 {
   
-  $sql = 'SELECT member_id, member_first_name, member_last_name, member_email, member_password FROM member WHERE member_email = :member_email';
+  $sql = 'SELECT member_id, member_first_name, member_last_name, member_email, password FROM member WHERE member_email = :member_email';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':member_email', $member_email, PDO::PARAM_STR);
   $stmt->execute();
