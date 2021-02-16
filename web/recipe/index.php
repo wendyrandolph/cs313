@@ -25,11 +25,6 @@ require('../recipe/library/accounts_model.php');
 switch ($action) {
 
     case 'register':
-        //Test if I'm getting to the register case. 
-        //   echo " This is the register case";
-        //     exit;
-
-
         // Filter and store the data
         $member_first_name = filter_input(INPUT_POST, 'member_first_name', FILTER_SANITIZE_STRING);
         $member_last_name = filter_input(INPUT_POST, 'member_last_name', FILTER_SANITIZE_STRING);
@@ -40,12 +35,12 @@ switch ($action) {
         // exit; 
 
         //Checking for an existing email address in the table
-        //  $emailMatch = checkExistingEmail($db, $member_email);
-        // if ($emailMatch === 1) {
-        //     $message = "<p>This email is already registered, login to your account.</p>";
-        //     include '../recipe/view/login.php';
-        //     break;
-        // }
+        $emailMatch = checkExistingEmail($db, $member_email);
+        if ($emailMatch === 1) {
+            $message = "<p>This email is already registered, login to your account.</p>";
+            include '../recipe/view/login.php';
+            break;
+        }
         
        //$clientEmail = checkEmail($clientEmail);
        $checkPassword = checkPassword($member_password);
