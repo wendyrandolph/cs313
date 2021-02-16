@@ -179,8 +179,11 @@ switch ($action) {
         
         $ingredients_name = array_push($ingredient_name, $required_amount); 
 
+        $ingredient_name = $ingredients_name['ingredient_name']; 
+        $required_amount = $ingredients_name['required_amount']; 
+
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredients_name);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
 
         if ($updateResult = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
