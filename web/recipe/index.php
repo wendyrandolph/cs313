@@ -178,7 +178,11 @@ switch ($action) {
 
         
      
+        if(isset($ingredient_name)){ 
 
+            echo $ingredient_name; 
+
+        }
       
 
         $newIngredient = $ingredients_name[0]; 
