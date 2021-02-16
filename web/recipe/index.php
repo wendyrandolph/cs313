@@ -42,7 +42,7 @@ switch ($action) {
 
 
         //Checking for an existing email address in the table
-         $emailMatch = checkExistingEmail($db, $member_email);
+        $emailMatch = checkExistingEmail($db, $member_email);
         if ($emailMatch === 1) {
             $message = "<p>This email is already registered, login to your account.</p>";
             include '../recipe/view/login.php';
@@ -51,7 +51,7 @@ switch ($action) {
         $member_email = checkEmail($member_email);
         // echo $member_email; 
         // exit; 
-         $checkPassword = checkPassword($member_password);
+        $checkPassword = checkPassword($member_password);
 
 
 
@@ -62,8 +62,8 @@ switch ($action) {
             break;
         }
         // Send the data to the model
-         $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
-        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $hashed_password);
+       // $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
+        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $member_password);
 
 
         // Check and report the result
@@ -79,7 +79,7 @@ switch ($action) {
             exit;
         }
 
-       // /^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/
+        // /^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/
 
 
     case 'Login':
@@ -108,14 +108,14 @@ switch ($action) {
 
         // Compare the password just submitted against
         // the hashed password for the matching client
-        $hashCheck = password_verify($member_password, $clientData['member_password']);
+        //$hashCheck = password_verify($member_password, $clientData['member_password']);
         // If the hashes don't match create an error
         // and return to the login view
-         if (!$hashCheck) {
-            $message = '<p class="notice">Please check your password and try again.</p>';
-           include '../recipe/view/login.php';
-            break;
-     }
+        // if (!$hashCheck) {
+        //     $message = '<p class="notice">Please check your password and try again.</p>';
+        //     include '../recipe/view/login.php';
+        //     break;
+        // }
 
 
         // A valid user exists, log them in
@@ -134,7 +134,7 @@ switch ($action) {
 
 
         //$list = getCategories($db);
-      
+
         // Send them to the admin view
         include '../recipe/view/add_recipe.php';
         break;
@@ -169,13 +169,13 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
-    
-        $category_id = $POST['category_id']; 
+
+        $category_id = $POST['category_id'];
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
-        
+
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
-    
+
         $recipe_name = filter_input(INPUT_POST, 'recipe_name', FILTER_SANITIZE_STRING);
         $recipe_desc  = filter_input(INPUT_POST, 'recipe_desc', FILTER_SANITIZE_STRING);
         $preheat_temp = filter_input(INPUT_POST, 'preheat_temp', FILTER_SANITIZE_STRING);
@@ -185,10 +185,10 @@ switch ($action) {
         $date_added = filter_input(INPUT_POST, 'date_added', FILTER_SANITIZE_STRING);
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
-        
-       
+
+
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions); 
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions);
 
 
         include '../recipe/view/home.php';
