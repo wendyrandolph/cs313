@@ -177,8 +177,7 @@ switch ($action) {
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
         
-        $ingredients_name = array_push($ingredient_name); 
-        $required_amounts = array_push($required_amount); 
+     
 
       
 
