@@ -48,7 +48,7 @@ switch ($action) {
         // }
         
        //$clientEmail = checkEmail($clientEmail);
-      // $checkPassword = checkPassword($member_password);
+       $checkPassword = checkPassword($member_password);
 
 
         // // Check for missing data
