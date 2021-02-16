@@ -177,10 +177,10 @@ switch ($action) {
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
         
-        $ingredient_name[] = array_push($ingredient_name); 
-        $required_amount[] = array_push($required_amount);
+        $ingredient_name = array_push($ingredient_name); 
+        $required_amount = array_push($required_amount); 
 
-        var_dump ($ingredient_name . $required_amount); 
+      
 
         $newIngredient = $ingredient_name[0]; 
         $newIngredientAmount = $required_amount[0];  
