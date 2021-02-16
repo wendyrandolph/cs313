@@ -40,12 +40,12 @@ switch ($action) {
         // exit; 
 
         //Checking for an existing email address in the table
-         $emailMatch = checkExistingEmail($db, $member_email);
-        if ($emailMatch === 1) {
-            $message = "<p>This email is already registered, login to your account.</p>";
-            include '../recipe/view/login.php';
-            break;
-        }
+        //  $emailMatch = checkExistingEmail($db, $member_email);
+        // if ($emailMatch === 1) {
+        //     $message = "<p>This email is already registered, login to your account.</p>";
+        //     include '../recipe/view/login.php';
+        //     break;
+        // }
         
        $clientEmail = checkEmail($clientEmail);
        $checkPassword = checkPassword($member_assword);
