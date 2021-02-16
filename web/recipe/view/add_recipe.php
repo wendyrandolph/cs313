@@ -49,7 +49,7 @@
             <input type="text" name="preheat_temp" id="preheat_temp"> <br><br>
             <label>Cook Time: </label>
             <input type="text" name="cook_time" id="cook_time">
-            <!-- <label> Ingredients : </label> <br><br>
+            <label> Ingredients : </label> <br><br>
             <p> Please select each box needed to enter in each ingredient. </p> <br><br>
             <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
                                             var input = document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
