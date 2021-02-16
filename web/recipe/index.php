@@ -29,7 +29,7 @@ switch ($action) {
         $member_first_name = filter_input(INPUT_POST, 'member_first_name', FILTER_SANITIZE_STRING);
         $member_last_name = filter_input(INPUT_POST, 'member_last_name', FILTER_SANITIZE_STRING);
         $member_email = filter_input(INPUT_POST, 'member_email', FILTER_SANITIZE_EMAIL);
-        $member_password = filter_input(INPUT_POST, 'member_password', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
         // echo $member_first_name, $member_last_name, $member_email, $member_password; 
         // exit; 
@@ -43,7 +43,7 @@ switch ($action) {
         // }
         
        //$clientEmail = checkEmail($clientEmail);
-       $checkPassword = checkPassword($member_password);
+       $checkPassword = checkPassword($password);
 
 
         // // Check for missing data
@@ -54,7 +54,7 @@ switch ($action) {
         // }
         // Send the data to the model
        // $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
-        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $member_password);
+        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $password);
 
 
         // Check and report the result
