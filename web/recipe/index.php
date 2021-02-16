@@ -36,18 +36,18 @@ switch ($action) {
         $member_email = filter_input(INPUT_POST, 'member_email', FILTER_SANITIZE_EMAIL);
         $member_password = filter_input(INPUT_POST, 'member_password', FILTER_SANITIZE_STRING);
 
-        echo $member_first_name, $member_last_name, $member_email, $member_password; 
-        exit; 
+        // echo $member_first_name, $member_last_name, $member_email, $member_password; 
+        // exit; 
 
 
 
         //Checking for an existing email address in the table
-        // $emailMatch = checkExistingEmail($db, $member_email);
-        // if ($emailMatch === 1) {
-        //     $message = "<p>This email is already registered, login to your account.</p>";
-        //     include '../recipe/view/login.php';
-        //     break;
-        // }
+         $emailMatch = checkExistingEmail($db, $member_email);
+        if ($emailMatch === 1) {
+            $message = "<p>This email is already registered, login to your account.</p>";
+            include '../recipe/view/login.php';
+            break;
+        }
         $member_email = checkEmail($member_email);
         // echo $member_email; 
         // exit; 
