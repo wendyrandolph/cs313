@@ -26,8 +26,8 @@ switch ($action) {
 
     case 'register':
         //Test if I'm getting to the register case. 
-        //   echo " This is the register case";
-        //     exit;
+          echo " This is the register case";
+            exit;
 
 
         // Filter and store the data
