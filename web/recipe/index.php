@@ -113,7 +113,7 @@ switch ($action) {
         // and return to the login view
          if (!$hashCheck) {
             $message = '<p class="notice">Please check your password and try again.</p>';
-           include '../view/login.php';
+           include '../recipe/view/login.php';
             break;
      }
 
