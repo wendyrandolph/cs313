@@ -180,6 +180,8 @@ switch ($action) {
         $ingredient_name[] = array_push($ingredient_name); 
         $required_amount[] = array_push($required_amount);
 
+        echo $ingredient_name . $required_amount; 
+
         $newIngredient = $ingredient_name[0]; 
         $newIngredientAmount = $required_amount[0];  
 
