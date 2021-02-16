@@ -130,7 +130,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
 
     //Get last recipe id
-    $newrecipeID = $db->lastInsertId('recipe_id_seq');
+    $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
 
     // Insert into ingredients; 
