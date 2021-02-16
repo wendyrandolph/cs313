@@ -1,0 +1,28 @@
+{
+  "name": "cs313",
+  "version": "1.0.0",
+  "description": "CS 313 PHP Base Code",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "git": "^0.1.5",
+    "heroku": "^7.47.12",
+    "jquery": "^3.5.1",
+    "json": "^10.0.0",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wendyrandolph/cs313.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wendyrandolph/cs313/issues"
+  },
+  "homepage": "https://github.com/wendyrandolph/cs313#readme"
+}
