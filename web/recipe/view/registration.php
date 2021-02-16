@@ -59,7 +59,7 @@
                                                                             } ?> required><br><br>
                     <span> The password needs to be 8 characters long, contain at least 1 uppercase character, 1 number and 1 special character</span> <br>
                     <label>Password:</label><br>
-                    <input type="password" class="input" name="member_password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br><br>
+                    <input type="password" class="input" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br><br>
                     <input type="submit" value="Register" class="register"><br><br>
                     <!--Add the action name - value pair -->
                     <input type="hidden" name="action" value="register">
