@@ -29,6 +29,7 @@
         <form action="/recipe/?action=addRecipe" method="POST">
             <label>Which category does your recipe belong to : </label><br>
             <?php
+           getCategories($db, $category_id); 
            echo $list; 
             ?>
 
