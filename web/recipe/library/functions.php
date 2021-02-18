@@ -128,7 +128,8 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time)');
     $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
 
-  
+    $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
+    $_SESSION['newRecipeID'] = $newrecipeID; 
 }
 
 
@@ -139,7 +140,7 @@ function addIngredients($db, $ingredient_name, $required_amount, $category_id)
 
     
     //Get last recipe id
-    $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
+    $newrecipeID = $_SESSION['newRecipeID']; 
     $ingredients = array($ingredient_name, $required_amount);
     foreach ($ingredients as $row) {
 
@@ -156,8 +157,10 @@ function addIngredients($db, $ingredient_name, $required_amount, $category_id)
 }
 
 
-function addRecipeSteps($db, $instructions, $category_id, $recipe_name, $newrecipeID)
+function addRecipeSteps($db, $instructions, $category_id, $recipe_name)
 {
+
+    $newrecipeID = $_SESSION['newRecipeID'];
     //insert into recipe_steps 
     $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
     $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));
