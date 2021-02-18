@@ -161,11 +161,17 @@ switch ($action) {
         break;
     case 'addRecipe':
 
-        foreach($ingredient_name as $rows){ 
         $ingredient_name = $_POST['ingredient_name'];
+
+        $required_amount = $_POST['required_amount'];
+
+
+        foreach($ingredient_name as $rows){ 
+        $ingredient_name = $rows['ingredient_name']; 
+        echo $ingredient_name; 
         }
 
-        
+
         $required_amount = $_POST['required_amount'];
 
     
