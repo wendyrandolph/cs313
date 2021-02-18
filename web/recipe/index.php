@@ -166,9 +166,9 @@ switch ($action) {
         $required_amount = $_POST['required_amount'];
 
 
-        while ($ingredient_name) { 
+       foreach ($ingredient_name as $row) { 
             $ingredient_name = $_POST['ingredient_name'];
-        echo $ingredient_name; 
+       
         }
 
 
