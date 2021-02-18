@@ -18,7 +18,7 @@ require('../recipe/library/accounts_model.php');
 
 
 
-
+$category_id = " "; 
 $results = displayCategory($db, $category_id);
 
 
