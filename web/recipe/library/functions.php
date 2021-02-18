@@ -41,7 +41,14 @@ WHERE r.recipe_id = :recipe_id');
 }
 
 
+function getCategories($db){ 
+    $sql = ('SELECT * FROM category'); 
+    $stmt = ($db->prepare($sql)); 
+    $stmt ->execute(); 
+    $category = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
+    return $category; 
+}
 
 
 function getName($db, $recipe_id)
@@ -53,12 +60,15 @@ function getName($db, $recipe_id)
     $stmt->execute();
     $name = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
     foreach ($name as $row) {
 
         $name = "<h3> {$row['recipe_name']} </h3>";
         $name .= "<table>";
         if (isset($row['preheat_temp'])) {
             $name .= "<div class='temp'> Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes </div>";
+        } else { 
+            $name .= " "; 
         }
         $name .= "</table>";
     }
