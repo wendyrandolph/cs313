@@ -1,16 +1,5 @@
 <?php
 
-function getCategories($db)
-{
-    $stmt =  $db->query('SELECT * FROM category');
-    $stmt->execute();
-    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    return $data;
-}
-
-
-
 function checkEmail($member_email)
 {
     $valEmail = filter_var($member_email, FILTER_VALIDATE_EMAIL);
