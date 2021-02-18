@@ -115,7 +115,7 @@ function displayCategory($db, $category_id)
                         {$row['recipe_name']}</a></li>";
         }
         $results .= '</ul>';
-        $_SESSION['category_name'] = $row['category_name'];
+        $_SESSION['category_name'] = $rows['category_name'];
         return $results;
     }
 }
