@@ -32,7 +32,7 @@
             $data = getCategories($db); 
             $list = " "; 
            foreach($data as $rows){ 
-               $list .= "<input type=radio class='input' name=category_name required> $rows[category_name] " ; 
+               $list .= "<input type=radio class='input' name=category_id required> $rows[category_name] " ; 
                $list.= "<input type=hidden name=category_id value='$rows[category_id]'>"; 
            }
            echo $list; 
