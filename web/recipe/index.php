@@ -165,13 +165,14 @@ switch ($action) {
         $required_amount = $_POST['required_amount'];
 
         foreach ($ingredient_name as $rows) {
-            $ingredient_name = "$rows[ingredient_name]";
-            echo $ingredient_name; 
+            
+        $rows = $_POST['ingredient_name'];
+            echo $rows; 
         }
 
-        foreach ($required_amount as $rows) {
-            $required_amount = "$rows[required_amount]";
-            echo $required_amount; 
+        foreach ($required_amount as $row) {
+            $row = $_POST['required_amount'];
+            echo $row; 
         }
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
