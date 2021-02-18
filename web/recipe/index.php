@@ -161,16 +161,16 @@ switch ($action) {
         break;
     case 'addRecipe':
 
-        $ingredient_name = $_POST['ingredient_name']; 
-        $required_amount = $_POST['required_amount']; 
-       
-      foreach($ingredient_name as $rows){
-        $ingredient_name = $rows['ingredient_name']; 
-      } 
-         
-      foreach($required_amount as $rows){
-        $required_amount = $rows['required_amount']; 
-      } 
+        $ingredient_name = $_POST['ingredient_name'];
+        $required_amount = $_POST['required_amount'];
+
+        foreach ($ingredient_name as $rows) {
+            $ingredient_name = $rows['ingredient_name'];
+        }
+
+        foreach ($required_amount as $rows) {
+            $required_amount = $rows['required_amount'];
+        }
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
@@ -185,16 +185,21 @@ switch ($action) {
         $date_added = filter_input(INPUT_POST, 'date_added', FILTER_SANITIZE_STRING);
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
-        
-     
-      
 
- 
+
+
+
+
 
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added);
+        //Update the ingredients table 
+        $addIngredient =  addIngredients($db, $ingredient_name, $required_amount, $category_id);
+        //update the recipe_steps table 
+        $addSteps = addRecipeSteps($db, $instructions, $category_id, $recipe_name, $newrecipeID);
 
-        if ($updateResult = 1) {
+
+        if ($addSteps = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
             include '../recipe/view/display_recipe.php';
             break;
@@ -203,7 +208,7 @@ switch ($action) {
             include '../recipe/view/add_recipe.php';
         }
 
-       
+
     case 'login':
 
         include '../recipe/view/login.php';

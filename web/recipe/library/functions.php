@@ -122,34 +122,41 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added)
 {
     //insert into recipes table 
     $stmt = $db->prepare('INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time)
             VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time)');
     $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
 
+  
+}
+
+
+
+// Insert into ingredients; 
+function addIngredients($db, $ingredient_name, $required_amount, $category_id)
+{
     //Get last recipe id
     $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
+    $ingredients = array($ingredient_name, $required_amount);
+    foreach ($ingredients as $row) {
 
-     $ingredients = array($ingredient_name, $required_amount); 
+        $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
+        $stmt->execute(array(':ingredient_name' => "$row[ingredient_name]", ':required_amount' => "$row[required_amount]"));
 
-    // Insert into ingredients; 
-    
-foreach($ingredients as $row){ 
-
-    $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
-    $stmt->execute(array(':ingredient_name' => "$row[ingredient_name]", ':required_amount' => "$row[required_amount]"));
-
-    $newingredientId = $db->lastInsertId(' ingredients_ingredients_id_seq');
-}
+        $newingredientId = $db->lastInsertId(' ingredients_ingredients_id_seq');
+    }
 
 
     //insert into recipe_ingredients 
     $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)');
     $stmt->execute(array(':ingredient_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
+}
 
 
+function addRecipeSteps($db, $instructions, $category_id, $recipe_name, $newrecipeID)
+{
     //insert into recipe_steps 
     $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
     $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));
@@ -157,9 +164,4 @@ foreach($ingredients as $row){
     //insert into the index 
     $stmt = $db->prepare('INSERT INTO recipe_index (recipe_id, recipe_name, category_id) VALUES ( :recipe_id, :recipe_name, :category_id)');
     $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
-}
-
-
-function addIngredients($db, $ingredients_name, $required_amounts, $newingredientId, $newrecipeID, $category_id)
-{
 }
