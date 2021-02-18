@@ -141,7 +141,7 @@ function addIngredients($db, $ingredient_name, $required_amount, $category_id)
     
     //Get last recipe id
     $newrecipeID = $_SESSION['newRecipeID']; 
-    $ingredients = array($ingredient_name, $required_amount);
+    $ingredients = array(':ingredient_name' => $ingredient_name, ':required_amount' => $required_amount);
     foreach ($ingredients as $row) {
 
         $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
