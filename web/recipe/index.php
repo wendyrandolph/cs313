@@ -168,7 +168,7 @@ switch ($action) {
 
        foreach ($ingredient_name as $row) { 
             $ingredients_name = $row['ingredient_name'];
-       
+       var_dump($ingredient_name); 
         }
 
 
