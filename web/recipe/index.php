@@ -166,11 +166,6 @@ switch ($action) {
         $required_amount = $_POST['required_amount'];
 
 
-       foreach ($ingredient_name as $row) { 
-            $ingredients_name = $row['ingredient_name'];
-       var_dump($ingredient_name); 
-        }
-
 
         $required_amount = $_POST['required_amount'];
 
