@@ -161,20 +161,14 @@ switch ($action) {
         break;
     case 'addRecipe':
 
+        foreach($ingredient_name as $rows){ 
         $ingredient_name = $_POST['ingredient_name'];
+        }
+
+        
         $required_amount = $_POST['required_amount'];
 
-        foreach ($ingredient_name as $rows) {
-            
-        $rows = $_POST['ingredient_name'];
-            echo $rows; 
-        }
-
-        foreach ($required_amount as $row) {
-            $row = $_POST['required_amount'];
-            echo $row; 
-        }
-
+    
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
