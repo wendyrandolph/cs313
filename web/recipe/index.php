@@ -167,7 +167,7 @@ switch ($action) {
 
 
        foreach ($ingredient_name as $row) { 
-            $ingredient_name = $_POST['ingredient_name'];
+            $ingredients_name = $row['ingredient_name'];
        
         }
 
