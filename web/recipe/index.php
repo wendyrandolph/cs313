@@ -165,6 +165,8 @@ switch ($action) {
         $ingredients_name= array($row['ingredient_name'] => $_POST['ingredient_name'], $row['required_amount'] => $_POST['required_amount']); 
         }
 
+        var_dump($ingredient_name); 
+        
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredient_name = $required_amount = " ";
 
