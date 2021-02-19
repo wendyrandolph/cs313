@@ -122,65 +122,61 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredients, $amounts)
 {
 
-    try{ 
-    //insert into recipes table 
-    $stmt = $db->prepare('INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time)
+    try {
+        //insert into recipes table 
+        $stmt = $db->prepare('INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time)
             VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time)');
-    $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
+        $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
 
-    //Get last recipe id
-    $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
-
-
-    if (is_array($ingredient_name)) {
+        //Get last recipe id
+        $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
 
-        foreach ($ingredient_name as $key => $value) {
-            $ingredient_name = $key[$value][0]; 
-            
+        if (is_array($ingredients)) {
 
-        } 
 
-        if(is_array($required_amount)){ 
+            foreach ($ingredients as $key => $value) {
+                $ingredient_name = $key[$value];
+            }
 
-            foreach ($required_amount as $key => $value) {
-            $required_amount = $key[$value][0]; 
+            if (is_array($amounts)) {
 
-        }
-    }
+                foreach ($amounts as $key => $value) {
+                    $required_amount = $key[$value];
+                }
+            }
 
             //var_dump($ingredient_name, $required_amount);
-$newArray = array($ingredient_name, $required_amount); 
-foreach($newArray as $row){ 
-            $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
-           
-            $stmt = $db->prepare($sql);
+            $newArray = array($ingredient_name, $required_amount);
+            foreach ($newArray as $row) {
+                $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
 
-            $stmt->execute(array(':ingredient_name' => $ingredient_name, ':required_amount' => $required_amount));
+                $stmt = $db->prepare($sql);
+
+                $stmt->execute(array(':ingredient_name' => $row[$ingredient_name], ':required_amount' => $row[$required_amount]));
+            }
+
+            $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
         }
 
-        $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-    }
-
-    //insert into recipe_ingredients 
-    $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)');
-    $stmt->execute(array(':ingredient_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
+        //insert into recipe_ingredients 
+        $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)');
+        $stmt->execute(array(':ingredient_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
 
 
 
 
-    //insert into recipe_steps 
-    $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
-    $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));
+        //insert into recipe_steps 
+        $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
+        $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));
 
-    //insert into the index 
-    $stmt = $db->prepare('INSERT INTO recipe_index (recipe_id, recipe_name, category_id) VALUES ( :recipe_id, :recipe_name, :category_id)');
-    $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
-
-}catch(PDOException $e) {
+        //insert into the index 
+        $stmt = $db->prepare('INSERT INTO recipe_index (recipe_id, recipe_name, category_id) VALUES ( :recipe_id, :recipe_name, :category_id)');
+        $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
+    } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
-}
+    }
 }
