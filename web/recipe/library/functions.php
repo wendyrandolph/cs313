@@ -139,15 +139,20 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
     if (is_array($newArray)) {
-$ingredient_name = []; 
-$required_amount = []; 
+
 
         foreach ($newArray as $row) {
+            $ingredient_name = $row[0]; 
+            $required_amount = $row[1]; 
+
+            var_dump($ingredient_name, $required_amount); 
+
+            
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
             $sql = json_encode($newArray); 
             $stmt = $db->prepare($sql);
 
-            $stmt->execute(array(':ingredient_name' => $row['ingredient_name'], ':required_amount' => $row['required_amount']));
+            $stmt->execute(array(':ingredient_name' => "$ingredient_name", ':required_amount' => "$required_amount"));
         }
     }
 
