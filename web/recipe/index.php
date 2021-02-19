@@ -164,13 +164,10 @@ switch ($action) {
         $ingredient_name = $_POST['ingredient_name'];
 
         $required_amount = $_POST['required_amount'];
-
-
-       
-
-      
+        $newArray = [$ingredient_name, $required_amount];
         foreach ($newArray as $row) {
-            $newArray = [$ingredient_name, $required_amount]; 
+            $row = array($ingredient_name, $required_amount); 
+            echo "{$row}"; 
         }
 
 
@@ -198,7 +195,7 @@ switch ($action) {
 
         // Send the data to the model
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $row);
-    
+
 
         if ($addSteps = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
