@@ -168,7 +168,6 @@ switch ($action) {
         $preheat_temp = filter_input(INPUT_POST, 'preheat_temp', FILTER_SANITIZE_STRING);
         $cook_time = filter_input(INPUT_POST, 'cook_time', FILTER_SANITIZE_STRING);
         $ingredients = filter_input(INPUT_POST, 'ingredients', FILTER_SANITIZE_STRING);
-        $date_added = filter_input(INPUT_POST, 'date_added', FILTER_SANITIZE_STRING);
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
 
