@@ -173,7 +173,7 @@ switch ($action) {
             
             $row = array(':ingredient_amount' => $ingredient_name, ':required_amount' => $required_amount);
             echo "<pre>";
-            print_r("{$row[$ingredient_name][$required_amount]}");
+            print_r($row[$ingredient_name][$required_amount]);
             echo "<pre>";
         }
 
