@@ -71,6 +71,10 @@ function getName($db, $recipe_id)
         } else {
             $name .= " ";
         }
+        $name .= "<ul>"; 
+        $name .= "<li> explode(',', $row[ingredients])</li>"; 
+
+        $name .= "</ul>"; 
         $name .= "</table>";
     }
 
