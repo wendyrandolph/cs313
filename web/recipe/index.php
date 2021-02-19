@@ -170,8 +170,7 @@ switch ($action) {
      
         $newArray = array($ingredient_name, $required_amount);
 
-        var_dump($newArray); 
-        exit; 
+      
 
         foreach ($newArray as $rows) {
             $ingredients = $rows;
