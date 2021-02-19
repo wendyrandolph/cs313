@@ -171,9 +171,8 @@ switch ($action) {
             }
         }
 
-        var_dump($ingredient_name[0] . $required_amount[0]); 
-        var_dump($ingredient_name[1] . $required_amount[1]); 
-        exit; 
+        var_dump($row); 
+               exit; 
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
