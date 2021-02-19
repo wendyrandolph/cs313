@@ -142,7 +142,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             $stmt = $db->prepare($sql);
             foreach($newArray as $array){ 
             $stmt->execute(array(':ingredient_name' => $newArray['ingredient_name'], ':required_amount' => $newArray['required_amount']));
-
+            }
             $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
 
             //insert into recipe_ingredients 
@@ -150,7 +150,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             $stmt = $db->prepare($sql);
             $stmt->execute(array(':ingredient_id' =>" $newingredientId ", ':recipe_id' => "$newrecipeID", ':category_id' => $category_id));
         
-      }
+      
         //insert into recipe_steps 
         $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
         $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));
