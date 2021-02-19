@@ -153,13 +153,13 @@ function addIngredients($db, $ingredient_name, $required_amount)
                 $stmt->execute(array(':ingredient_name' => $array['ingredient_name'], ':required_amount' => $array['required_amount']));
 
                 $results =  $stmt->rowCount();
-            }
+            }  
         }
-        return $results;
+      
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
         die();
-    }
+    }return $results;
 }
 
 
