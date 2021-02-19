@@ -138,7 +138,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 function addIngredients($db, $newArray, $required_amount, $category_id) 
 {
 
-    $newingredientId = ""; 
+    
     //Get last recipe id
     $newrecipeID = $_SESSION['newRecipeID']; 
     
