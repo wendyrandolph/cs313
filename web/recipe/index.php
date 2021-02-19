@@ -187,7 +187,7 @@ switch ($action) {
         $results = addIngredients($db, $ingredient_name, $required_amount); 
 
         //Insert into the recipes_steps, index, recipe_ingredients 
-        $steps = addInstructions($db, $instructions, $newrecipeID, $category_id); 
+        $steps = addInstructions($db, $instructions, $newrecipeID, $category_id, $recipe_name); 
     
     
 
