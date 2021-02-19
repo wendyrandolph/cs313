@@ -173,7 +173,8 @@ switch ($action) {
       
 
         foreach ($newArray as $rows) {
-            $ingredients = ($rows[$ingredient_name] [$required_amount]);
+            $ingredients = ($rows[$ingredient_name]);
+            $amounts = ($rows[$required_amount]); 
              echo $ingredients[0]; 
         }
        
