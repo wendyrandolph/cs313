@@ -161,25 +161,11 @@ switch ($action) {
         break;
     case 'addRecipe':
 
+        $ingredient_name = $_POST['ingredient_name'];
+        $required_amount = $_POST['required_amount']; 
 
 
-
-        if (is_array($ingredient_name)) {
-            foreach ($ingredient_name as $rows) {
-                $ingredient_name = $_POST['ingredient_name'];
-            }
-        }
-var_dump($ingredient_name); 
-
-        if (is_array($required_amount)) {
-            foreach ($required_amount as $rows) {
-                $required_amount = $_POST['required_amount']; 
-            }
-        }
-var_dump($required_amount); 
-
-
-        $newArray = [$ingredient_name, $required_amount];
+        $newArray = array($ingredient_name, $required_amount);
         foreach ($newArray as $row) {
             $row = array(':ingredient_amount' => $ingredient_name, ':required_amount' => $required_amount);
         }
