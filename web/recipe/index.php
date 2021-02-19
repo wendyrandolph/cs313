@@ -160,7 +160,9 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
-        if ($_POST) {
+        
+        
+        if ($_POST['submit']) {
             $ingredient_name = $_POST['ingredient_name'];
             $required_amount = $_POST['required_amount'];
 
@@ -172,7 +174,7 @@ switch ($action) {
             foreach ($required_amount as $amount) {
                 $amount = $required_amount;
             }
-        }
+        
          
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
@@ -195,7 +197,7 @@ switch ($action) {
 
         // Send the data to the model
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
-
+        }
 
         if ($addSteps = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
