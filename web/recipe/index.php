@@ -165,13 +165,12 @@ switch ($action) {
 
         $required_amount = $_POST['required_amount'];
 
-       $newArray = [$ingredient_name, $required_amount]; 
+
+       
 
       
         foreach ($newArray as $row) {
-            $row = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount);
-           var_dump($row); 
-           exit; 
+            $newArray = [$ingredient_name, $required_amount]; 
         }
 
 
