@@ -164,8 +164,8 @@ switch ($action) {
         $ingredient_name = $_POST['ingredient_name'];
         $required_amount = $_POST['required_amount']; 
 
-        echo $ingredient_name; 
-        echo $required_amount; 
+        var_dump($ingredient_name); 
+        var_dump($required_amount); 
         exit; 
 
         $newArray = [$ingredient_name, $required_amount];
@@ -181,8 +181,8 @@ switch ($action) {
         $recipe_desc  = filter_input(INPUT_POST, 'recipe_desc', FILTER_SANITIZE_STRING);
         $preheat_temp = filter_input(INPUT_POST, 'preheat_temp', FILTER_SANITIZE_STRING);
         $cook_time = filter_input(INPUT_POST, 'cook_time', FILTER_SANITIZE_STRING);
-        $ingredient_name = filter_input(INPUT_POST, 'ingredient_name', FILTER_SANITIZE_STRING);
-        $required_amount = filter_input(INPUT_POST, 'required_amount', FILTER_SANITIZE_STRING);
+        //$ingredient_name = filter_input(INPUT_POST, 'ingredient_name', FILTER_SANITIZE_STRING);
+        //$required_amount = filter_input(INPUT_POST, 'required_amount', FILTER_SANITIZE_STRING);
         $date_added = filter_input(INPUT_POST, 'date_added', FILTER_SANITIZE_STRING);
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
