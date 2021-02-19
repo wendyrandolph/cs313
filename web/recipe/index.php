@@ -167,6 +167,8 @@ switch ($action) {
 
             foreach($ingredient_name as $name){
                 $name = $ingredient_name; 
+                $newArray = array($name); 
+                echo $newArray; 
             }
 
             $newArray = ['ingredient_name' => $name, 'required_amount' => $required_amount];
