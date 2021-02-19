@@ -147,16 +147,18 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             foreach ($required_amount as $amount) {
                 $amount = $required_amount;
             }
+        }
+            $length = mysqli_fetch_lengths($row); 
             $newArray = ['ingredient_name' => $name, 'required_amount' => $amount];
-            foreach ($newArray as $row) {
-
+            
+                while($newArray){ 
                 $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
 
                 $stmt = $db->prepare($sql);
 
                 $stmt->execute(array(':ingredient_name' => $name , ':required_amount' => $amount));
                 $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-            }
+            }} 
 
             //insert into recipe_ingredients 
             $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredients_id, :recipe_id, :category_id)');
