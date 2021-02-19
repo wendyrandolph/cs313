@@ -188,7 +188,7 @@ switch ($action) {
 
         $newRecipeID = $newingredientId = " ";
 
-        echo $recipe_name . $name . $amount;
+        echo $newArray;
         exit;
 
         // Send the data to the model
