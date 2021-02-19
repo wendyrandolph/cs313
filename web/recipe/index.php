@@ -160,8 +160,8 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
-        $ingredient_name = [$_POST['ingredient_name']];
-        $required_amount = [$_POST['ingredient_name']];
+        $ingredient_name = $_POST['ingredient_name'];
+        $required_amount = $_POST['ingredient_name'];
 
         var_dump ($ingredient_name[0] . $required_amount[0]); 
         exit; 
