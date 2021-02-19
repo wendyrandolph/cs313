@@ -133,7 +133,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
         $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
        
-       
+        $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
     
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
@@ -170,10 +170,10 @@ function addIngredients($db, $ingredient_name, $required_amount)
 
         
 
-function addInstructions($db, $instructions, $category_id, $recipe_name)
+function addInstructions($db, $instructions, $category_id, $recipe_name, $newrecipeID)
 {
     $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-    $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
+   
     try {
         //Get last recipe id
         $_SESSION['newrecipeID'] = $newrecipeID; 

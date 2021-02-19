@@ -176,7 +176,7 @@ switch ($action) {
 
 
         
-
+        $newRecipeID = $newingredientId = " "; 
 
 
 
@@ -189,7 +189,7 @@ switch ($action) {
         
 
         //Insert into the recipes_steps, index, recipe_ingredients 
-        $steps = addInstructions($db, $instructions, $category_id, $recipe_name); 
+        $steps = addInstructions($db, $instructions, $category_id, $recipe_name, $newRecipeID); 
     
     
 
