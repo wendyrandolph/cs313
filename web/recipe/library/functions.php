@@ -142,9 +142,9 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             $stmt = $db->prepare($sql);
             foreach($array_serialized as $array){ 
             $stmt->execute(array(':ingredient_name' => $array['ingredient_name'], ':required_amount' => $array['required_amount']));
-            }
+            
             $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-
+            }
             //insert into recipe_ingredients 
             $sql = 'INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)';
             $stmt = $db->prepare($sql);
