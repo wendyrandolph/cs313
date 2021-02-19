@@ -146,7 +146,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             $ingredient_name = $newArray[0];
             $required_amount = $newArray[0];
 
-            var_dump($ingredient_name, $required_amount);
+            //var_dump($ingredient_name, $required_amount);
 
 
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
