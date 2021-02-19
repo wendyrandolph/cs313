@@ -147,19 +147,20 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             foreach($ingredient_name as $name){
                 $name = $ingredient_name; 
                 
-                print_r ($name); 
+            
             }
 
 
             foreach($required_amount as $amount){ 
                 $amount = $required_amount; 
 
-                print_r($amount); 
+                 
             }
-            $newArray = ['ingredient_name' => $name, 'required_amount' => $required_amount];
+            $newArray = ['ingredient_name' => $name, 'required_amount' => $amount];
             foreach ($newArray as $row) {
                 $row = array($name,  $required_amount);
             }
+            print_r($row); 
         }
 
        
@@ -168,7 +169,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
             $stmt = $db->prepare($sql);
 
-            $stmt->execute(array(':ingredient_name' => $newArray['ingredient_name'][0], ':required_amount' => $newArray['required_amount'][0]));
+            $stmt->execute(array(':ingredient_name' => $row['ingredient_name'][0], ':required_amount' => $row['required_amount'][0]));
             $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
         }
 
