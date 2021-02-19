@@ -122,7 +122,7 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $newArray, $instructions)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $array_serialized, $instructions)
 {
 
     try {
@@ -140,7 +140,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
 
             $stmt = $db->prepare($sql);
-            foreach($newArray as $array){ 
+            foreach($array_serialized as $array){ 
             $stmt->execute(array(':ingredient_name' => $array['ingredient_name'], ':required_amount' => $array['required_amount']));
             }
             $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');

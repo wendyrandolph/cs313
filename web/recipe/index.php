@@ -164,7 +164,7 @@ switch ($action) {
 
      
         $newArray = array('ingredient_name' => $_POST['ingredient_name'], 'required_amount' => $_POST['required_amount']); 
-
+        $array_serialized = serialize($newArray); 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
@@ -183,7 +183,7 @@ switch ($action) {
         
 
         // Send the data to the model
-        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $newArray, $instructions);
+        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $array_serialized, $instructions);
 
 
         if ($updateResult = 1) {
