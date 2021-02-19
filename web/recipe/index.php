@@ -160,11 +160,20 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
+        if ($_POST) {
+            $ingredient_name = $_POST['ingredient_name'];
+            $required_amount = $_POST['required_amount'];
 
-      
-     
+            foreach ($ingredient_name as $name) {
+                $name = $ingredient_name;
+            }
 
 
+            foreach ($required_amount as $amount) {
+                $amount = $required_amount;
+            }
+        }
+         
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
