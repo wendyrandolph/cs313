@@ -164,7 +164,8 @@ switch ($action) {
         $required_amount = [$_POST['ingredient_name']];
 
         echo $ingredient_name[0] . $required_amount[0]; 
-
+        exit; 
+        
         foreach ($ingredient_name as $rows) {
             $ingredients = $rows;
         }
