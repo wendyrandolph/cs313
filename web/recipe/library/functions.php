@@ -173,3 +173,4 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 }catch(PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
 }
+}
