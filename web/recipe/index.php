@@ -174,7 +174,7 @@ switch ($action) {
 
         foreach ($newArray as $rows) {
             $ingredients = $rows;
-             echo $ingredients[0]; 
+             echo $ingredients; 
         }
        
 
