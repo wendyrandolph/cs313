@@ -169,8 +169,9 @@ switch ($action) {
 
         foreach ($ingredient_name as $rows) {
             $ingredients = $rows;
+            print_r ('$ingredients'); 
         }
-        echo $ingredients; 
+       
 
         foreach ($required_amount as $row) {
             $amounts = $row;
