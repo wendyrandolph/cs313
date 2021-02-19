@@ -205,6 +205,10 @@ switch ($action) {
 
         include '../recipe/view/registration.php';
         break;
+
+        case 'update_recipe': 
+            include '../recipe/view/recipe_update.php'; 
+            break; 
     default:
 
 
