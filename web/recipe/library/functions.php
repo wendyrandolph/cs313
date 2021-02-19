@@ -141,11 +141,14 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
            
 
          
-
-            
-        var_dump($ingredients. $amounts); 
-        exit; 
-
+        if(is_array($ingredients)){ 
+            var_dump($ingredients); 
+        }
+          
+        if(is_array($amounts)){
+        var_dump($amounts); 
+         
+        } 
         //var_dump($ingredient_name, $required_amount);
         $newArray = array($ingredients, $amounts);
 
