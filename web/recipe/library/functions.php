@@ -72,8 +72,9 @@ function getName($db, $recipe_id)
             $name .= " ";
         }
         $name .= "<ul>"; 
-        $name .= "<li> explode(',', $row[ingredients])</li>"; 
-
+        foreach(explode(',', $row['ingredients']) as $ingredient){ 
+        $name .= "<li> $ingredient </li>"; 
+        }
         $name .= "</ul>"; 
         $name .= "</table>";
     }
