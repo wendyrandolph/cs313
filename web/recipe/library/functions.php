@@ -78,27 +78,7 @@ function getName($db, $recipe_id)
 }
 
 
-function getIngredients($db, $recipe_id)
-{
-    $sql = ('SELECT  i.required_amount, i.ingredient_name,  r.recipe_name FROM ingredients i 
-    INNER JOIN recipe_ingredients ri
-    ON i.ingredients_id = ri.ingredients_id 
-    INNER JOIN recipes r
-    ON ri.recipe_id = r.recipe_id
-    WHERE r.recipe_id =:recipe_id');
-    $stmt = ($db->prepare($sql));
-    $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_INT);
-    $stmt->execute();
-    $name = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-    $amount = " ";
-    foreach ($name as $row) {
-        $amount .= "<tr><td>{$row['required_amount']} - </td> <td> {$row['ingredient_name']}</tr><br>";
-    }
-
-    return $amount;
-}
 
 function displayCategory($db, $category_id)
 {

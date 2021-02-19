@@ -138,7 +138,7 @@ switch ($action) {
 
         $name = getName($db, $recipe_id);
 
-        $amount = getIngredients($db, $recipe_id);
+       
         $recipe = directions($recipe_id, $db);
 
 
