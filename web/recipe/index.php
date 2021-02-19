@@ -163,15 +163,15 @@ switch ($action) {
 
 
         foreach ($ingredient_name as $name) {
-            $ingredient_name = $_POST['ingredient_name'];
+            $name = $_POST['ingredient_name'];
         }
 
         foreach ($required_amount as $amount) {
 
-            $required_amount = $_POST['required_amount'];
+            $amount= $_POST['required_amount'];
         }
 
-        $newArray = array(array($name['ingredient_name'], $name['required_amount'])); 
+        $newArray = array(array($name['ingredient_name'], $amount['required_amount'])); 
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
@@ -188,7 +188,7 @@ switch ($action) {
 
         $newRecipeID = $newingredientId = " ";
 
-        echo $recipe_name . $ingredient_name . $required_amount;
+        echo $recipe_name . $name . $amount;
         exit;
 
         // Send the data to the model
