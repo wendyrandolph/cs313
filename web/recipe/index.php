@@ -168,10 +168,11 @@ switch ($action) {
         // exit; 
 
      
+        $newArray = array($ingredients, $amounts);
 
-        foreach ($ingredient_name as $rows) {
+        foreach ($newArray as $rows) {
             $ingredients = $rows;
-             
+             echo $ingredients[0]; 
         }
        
 
@@ -179,7 +180,7 @@ switch ($action) {
             $amounts = $row;
             
         }
-        $newArray = array($ingredients, $amounts);
+        
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
