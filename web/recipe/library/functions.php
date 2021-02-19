@@ -124,6 +124,8 @@ function displayCategory($db, $category_id)
 
 function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray)
 {
+
+    try{ 
     //insert into recipes table 
     $stmt = $db->prepare('INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time)
             VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time)');
@@ -167,4 +169,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     //insert into the index 
     $stmt = $db->prepare('INSERT INTO recipe_index (recipe_id, recipe_name, category_id) VALUES ( :recipe_id, :recipe_name, :category_id)');
     $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
+
+}catch(PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
 }
