@@ -165,8 +165,8 @@ switch ($action) {
             $ingredient_name = $_POST['ingredient_name'];
             $required_amount = $_POST['required_amount'];
 
-            foreach($ingredient_name as $name){ 
-                $name = $ingredient_name[0]; 
+            foreach($ingredient_name as $name){
+                $name = $ingredient_name; 
             }
 
             $newArray = ['ingredient_name' => $name, 'required_amount' => $required_amount];
