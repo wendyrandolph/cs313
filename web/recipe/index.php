@@ -53,8 +53,8 @@ switch ($action) {
         //     break;
         // }
         // Send the data to the model
-        // $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
-        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $password);
+         $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
+        $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $hashed_password);
 
 
         // Check and report the result
