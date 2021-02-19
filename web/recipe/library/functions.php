@@ -129,12 +129,11 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
 
     $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
-    $_SESSION['newRecipeID'] = $newrecipeID; 
+  
 
    
     //Get last recipe id
-    $newrecipeID = $_SESSION['newRecipeID']; 
-    
+   
     foreach ($newArray as $row) {
 
         $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
@@ -151,7 +150,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
 
-    $newrecipeID = $_SESSION['newRecipeID'];
+    
     //insert into recipe_steps 
     $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
     $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));
