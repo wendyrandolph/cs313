@@ -167,6 +167,7 @@ switch ($action) {
 
         foreach($ingredient_name as $key => $name){ 
             $newArray = array_push($name); 
+            print_r($newArray); 
         }
 
 
