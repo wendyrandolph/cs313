@@ -163,17 +163,8 @@ switch ($action) {
         
         
         if ($_POST['submit']) {
-            $ingredient_name = $_POST['ingredient_name'];
-            $required_amount = $_POST['required_amount'];
+          
 
-            foreach ($ingredient_name as $name) {
-                $name = $ingredient_name;
-            }
-
-
-            foreach ($required_amount as $amount) {
-                $amount = $required_amount;
-            }
         
          
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
@@ -199,7 +190,7 @@ switch ($action) {
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
             print_r($updateResult); 
     
-    }
+    
 
         if ($updateResult = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
@@ -209,7 +200,7 @@ switch ($action) {
             $_SESSION['message'] = "You have not added this to the recipe index, please try again.";
             include '../recipe/view/add_recipe.php';
         }
-
+    }
 
     case 'login':
 
