@@ -36,6 +36,7 @@
            }
            echo $list; 
             ?>
+            <br><br> 
 
 
             <label>Recipe Name:</label><br>
