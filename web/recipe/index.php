@@ -170,6 +170,9 @@ switch ($action) {
      
         $newArray = array($ingredients, $amounts);
 
+        var_dump($newArray); 
+        exit; 
+        
         foreach ($newArray as $rows) {
             $ingredients = $rows;
              echo $ingredients[0]; 
@@ -202,7 +205,7 @@ switch ($action) {
 
 
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray, $ingredients, $amounts);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray);
 
 
         if ($addSteps = 1) {
