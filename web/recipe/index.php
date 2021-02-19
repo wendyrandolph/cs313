@@ -161,7 +161,7 @@ switch ($action) {
         break;
     case 'addRecipe':
         $ingredient_name = $_POST['ingredient_name'];
-        $required_amount = $_POST['ingredient_name'];
+        $required_amount = $_POST['required_amount'];
 
         var_dump ($ingredient_name[0] . $required_amount[0]); 
         exit; 
