@@ -168,11 +168,11 @@ switch ($action) {
         // exit; 
 
      
-        $newArray = array($ingredients, $amounts);
+        $newArray = array($ingredient_name, $required_amount);
 
         var_dump($newArray); 
         exit; 
-        
+
         foreach ($newArray as $rows) {
             $ingredients = $rows;
              echo $ingredients[0]; 
