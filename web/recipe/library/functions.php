@@ -127,8 +127,8 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
     try {
         //insert into recipes table 
-        $sql = 'INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time, ingredients) 
-        VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time, :ingredients)';
+        $sql = 'INSERT INTO recipes (recipe_name, recipe_desc, category_id, preheat_temp, cook_time, ingredients) 
+        VALUES (:recipe_name, :recipe_desc,  :category_id,  :preheat_temp, :cook_time, :ingredients)';
         $stmt = $db->prepare($sql);
 
         $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time, 'ingredients' => $ingredients));
