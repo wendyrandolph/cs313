@@ -163,15 +163,7 @@ switch ($action) {
 
         $ingredient_name = $_POST['ingredient_name'];
         $required_amount = $_POST['required_amount']; 
-
-        var_dump($ingredient_name); 
-        var_dump($required_amount); 
-        exit; 
-
-        $newArray = [$ingredient_name, $required_amount];
-        foreach($newArray as $rows){ 
-            $array = array($ingredient_name, $required_amount); 
-        }
+       
   
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
@@ -193,7 +185,7 @@ switch ($action) {
 
 
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $array);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
 
 
         if ($addSteps = 1) {
