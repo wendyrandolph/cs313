@@ -145,13 +145,13 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             $stmt = $db->prepare($sql);
 
             $stmt->execute(array(':ingredient_name' => $array['ingredient_name'], ':required_amount' => $array['required_amount']));
-        
+
             $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-        
-        //insert into recipe_ingredients 
-        $sql = 'INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)';
-        $stmt = $db->prepare($sql);
-        $stmt->execute(array(':ingredient_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
+
+            //insert into recipe_ingredients 
+            $sql = 'INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)';
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(':ingredient_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
         }
 
         //insert into recipe_steps 
@@ -161,8 +161,6 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         //insert into the recipe index 
         $stmt = $db->prepare('INSERT INTO recipe_index (recipe_id, recipe_name, category_id) VALUES ( :recipe_id, :recipe_name, :category_id)');
         $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
-
-      
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
         die();

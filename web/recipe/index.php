@@ -175,7 +175,8 @@ switch ($action) {
 
         $newRecipeID = $newingredientId = " "; 
 
-
+        echo $recipe_name . $ingredient_name . $required_amount; 
+        exit; 
 
         // Send the data to the model
         $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredient_name, $required_amount, $instructions); 
