@@ -135,20 +135,20 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
 
-        if (is_array($ingredients)) {
+      
 
 
             foreach ($ingredients as $key => $value) {
                 $ingredient_name = $key[$value];
             }
 
-            if (is_array($amounts)) {
+         
 
                 foreach ($amounts as $key => $value) {
                     $required_amount = $key[$value];
                 }
-            }
-        }
+            
+        
 
         //var_dump($ingredient_name, $required_amount);
         $newArray = array($ingredient_name, $required_amount);
