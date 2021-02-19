@@ -148,35 +148,29 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
                     $required_amount = $key[$value];
                 }
             }
-try{ 
-            //var_dump($ingredient_name, $required_amount);
-            $newArray = array($ingredient_name, $required_amount);
-            foreach ($newArray as $row) {
-                $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
-
-                $stmt = $db->prepare($sql);
-
-                $stmt->execute(array(':ingredient_name' => $row[$ingredient_name], ':required_amount' => $row[$required_amount]));
-                $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-            }
-
-            
-        } catch (PDOException $e) {
-            echo $sql . "<br>" . $e->getMessage();
-            die(); 
         }
 
-        try{ 
+        //var_dump($ingredient_name, $required_amount);
+        $newArray = array($ingredient_name, $required_amount);
+        foreach ($newArray as $row) {
+            $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
+
+            $stmt = $db->prepare($sql);
+
+            $stmt->execute(array(':ingredient_name' => $row[$ingredient_name], ':required_amount' => $row[$required_amount]));
+            $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
+        }
+
+
+
+
+
         //insert into recipe_ingredients 
         $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredients_id, :recipe_id, :category_id)');
         $stmt->execute(array(':ingredients_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
 
-    } catch (PDOException $e) {
-        echo $sql . "<br>" . $e->getMessage();
-        die(); 
-    }
 
-    try{ 
+
 
         //insert into recipe_steps 
         $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
@@ -187,6 +181,6 @@ try{
         $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
-        die(); 
+        die();
     }
 }
