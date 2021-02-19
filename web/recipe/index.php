@@ -162,7 +162,7 @@ switch ($action) {
     case 'addRecipe':
         
         
-        if ($_POST['submit']) {
+      
        $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_POST, 'recipe_name', FILTER_SANITIZE_STRING);
@@ -175,7 +175,7 @@ switch ($action) {
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
 
-        }
+        
 
 
 
