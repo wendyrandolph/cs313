@@ -135,8 +135,8 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
        
-        var_dump($row['$ingredient_name']);
-        var_dump($row['$required_amount']);
+        var_dump($row);
+    
 
 
         //var_dump($ingredient_name, $required_amount);
