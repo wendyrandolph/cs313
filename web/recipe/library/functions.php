@@ -146,10 +146,11 @@ function addIngredients($db, $newArray, $required_amount, $category_id)
 
         $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
         $stmt->execute(array(':ingredient_name' => "$row[ingredient_name]", ':required_amount' => "$row[required_amount]"));
-
-        
+        $newingredientId = $db->lastInsertId(' ingredients_ingredients_id_seq');
+       
+        $_SESSION['newingredientId'] = $newingredientId; 
     }
-    $newingredientId = $db->lastInsertId(' ingredients_ingredients_id_seq');
+     $newingredientId = $_SESSION['newingredientId']; 
     
     //insert into recipe_ingredients 
     $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)');
