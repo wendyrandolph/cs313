@@ -140,7 +140,22 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
         //var_dump($ingredient_name, $required_amount);
-       
+        if ($_POST) {
+            $ingredient_name = $_POST['ingredient_name'];
+            $required_amount = $_POST['required_amount'];
+
+            foreach($ingredient_name as $name){
+                $name = $ingredient_name; 
+                
+                print_r ($name); 
+            }
+
+            $newArray = ['ingredient_name' => $name, 'required_amount' => $required_amount];
+            foreach ($newArray as $row) {
+                $row = array($name,  $required_amount);
+            }
+        }
+
        
         foreach ($row as $newArray) {
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
