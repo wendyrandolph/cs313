@@ -165,9 +165,13 @@ switch ($action) {
             $ingredient_name = $_POST['ingredient_name'];
             $required_amount = $_POST['required_amount'];
 
-            $newArray = ['ingredient_name' => $ingredient_name, 'required_amount' => $required_amount];
+            foreach($ingredient_name as $name){ 
+                $name = $ingredient_name[0]; 
+            }
+
+            $newArray = ['ingredient_name' => $name, 'required_amount' => $required_amount];
             foreach ($newArray as $row) {
-                $row = serialize($ingredient_name,  $required_amount);
+                $row = array($name,  $required_amount);
             }
         }
 
