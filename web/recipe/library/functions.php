@@ -41,13 +41,14 @@ WHERE r.recipe_id = :recipe_id');
 }
 
 
-function getCategories($db){ 
-    $sql = ('SELECT * FROM category'); 
-    $stmt = ($db->prepare($sql)); 
-    $stmt ->execute(); 
-    $category = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+function getCategories($db)
+{
+    $sql = ('SELECT * FROM category');
+    $stmt = ($db->prepare($sql));
+    $stmt->execute();
+    $category = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    return $category; 
+    return $category;
 }
 
 
@@ -67,8 +68,8 @@ function getName($db, $recipe_id)
         $name .= "<table>";
         if (isset($row['preheat_temp'])) {
             $name .= "<div class='temp'> Bake at {$row['preheat_temp']}° for {$row['cook_time']} minutes </div>";
-        } else { 
-            $name .= " "; 
+        } else {
+            $name .= " ";
         }
         $name .= "</table>";
     }
@@ -129,39 +130,41 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
 
     $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
-  
 
-   
+
+
     //Get last recipe id
-   
-    if(is_array($ingredient_name)){ 
 
-        $dataArray = []; 
-        foreach($ingredient_name as $row){ 
+    if (is_array($ingredient_name)) {
+
+        $dataArray = [];
+        foreach ($ingredient_name as $row) {
             $fieldVal1 = ($ingredient_name[$row][0]);
-          
-            
-            $dataArray[] = "('$fieldVal1')"; 
         }
+        foreach ($required_amount as $row) {
+            $fieldVal2 = ($required_amount[$row[0]]);
+        }
+        $dataArray[] = "('$fieldVal1', '$fieldVal2')";
     }
-        $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)'; 
-        $sql .= json_encode($dataArray); 
-        $stmt = $db->prepare($sql); 
 
-        $stmt->execute(array(':ingredient_name' => $dataArray['fieldVal1'], ':required_amount' => $dataArray['$fieldVal2']));
-        
-        $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-    
-  
-       
-    
+    $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
+    $sql .= json_encode($dataArray);
+    $stmt = $db->prepare($sql);
+
+    $stmt->execute(array(':ingredient_name' => $dataArray['fieldVal1'], ':required_amount' => $dataArray['$fieldVal2']));
+
+    $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
+
+
+
+
     //insert into recipe_ingredients 
     $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)');
     $stmt->execute(array(':ingredient_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
 
 
 
-    
+
     //insert into recipe_steps 
     $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
     $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));
