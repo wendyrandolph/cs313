@@ -169,13 +169,13 @@ switch ($action) {
 
         foreach ($ingredient_name as $rows) {
             $ingredients = $rows;
-            print_r ($ingredients); 
+             
         }
        
 
         foreach ($required_amount as $row) {
             $amounts = $row;
-            print_r($amounts); 
+            
         }
 
         $required_amount = $_POST['required_amount'];
