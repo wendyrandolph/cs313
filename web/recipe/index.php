@@ -197,7 +197,9 @@ switch ($action) {
 
         // Send the data to the model
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
-        }
+            print_r($updateResult); 
+    
+    }
 
         if ($addSteps = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";

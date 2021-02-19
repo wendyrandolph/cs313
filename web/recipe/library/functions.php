@@ -116,7 +116,7 @@ function displayCategory($db, $category_id)
                         {$row['recipe_name']}</a></li>";
         }
         $results .= '</ul>';
-        $_SESSION['category_name'] = $rows['category_name'];
+        //$_SESSION['category_name'] = $rows['category_name'];
         return $results;
     }
 }
@@ -135,7 +135,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
        
-       
+       if(!empty($ingredient_name) && !empty($required_amount))
             $newArray = ['ingredient_name' => $ingredient_name, 'required_amount' => $required_amount]; 
                 foreach($newArray as $array){ 
                 $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
