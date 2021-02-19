@@ -165,18 +165,16 @@ switch ($action) {
 
         $required_amount = $_POST['required_amount'];
 
-        $newArray = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount); 
-
-        foreach($newArray as $row){ 
-           
-        $ingredient = $row; 
-echo $ingredient; 
+        $newArray = []; 
+        foreach ($newArray as $row) {
+            $newArray = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount);
+            var_dump($newArray);
         }
 
 
-        
 
-    
+
+
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
