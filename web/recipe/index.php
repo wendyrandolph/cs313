@@ -163,13 +163,14 @@ switch ($action) {
         $ingredient_name = $_POST['ingredient_name'];
         $required_amount = $_POST['required_amount'];
 
-        var_dump ($ingredient_name[0] . $required_amount[0]); 
-        var_dump($ingredient_name[1] . $required_amount[1]); 
-        exit; 
+        // var_dump($ingredient_name[0] . $required_amount[0]); 
+        // var_dump($ingredient_name[1] . $required_amount[1]); 
+        // exit; 
 
         foreach ($ingredient_name as $rows) {
             $ingredients = $rows;
         }
+        echo $ingredients; 
 
         foreach ($required_amount as $row) {
             $amounts = $row;
