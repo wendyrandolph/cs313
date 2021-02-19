@@ -186,11 +186,10 @@ switch ($action) {
         //Insert into the ingredients table 
         $results = addIngredients($db, $ingredient_name, $required_amount); 
 
-        $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
-        $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
+        
 
         //Insert into the recipes_steps, index, recipe_ingredients 
-        $steps = addInstructions($db, $instructions, $newrecipeID, $category_id, $recipe_name, $newingredientId); 
+        $steps = addInstructions($db, $instructions, $category_id, $recipe_name); 
     
     
 

@@ -132,11 +132,16 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         $stmt = $db->prepare($sql);
 
         $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
+       
+       
+    
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
         die();
     }
 }
+
+
 function addIngredients($db, $ingredient_name, $required_amount)
 {
     //insert into ingredients
@@ -163,14 +168,15 @@ function addIngredients($db, $ingredient_name, $required_amount)
 }
 
 
+        
 
-function addInstructions($db, $instructions, $newrecipeID, $category_id, $recipe_name, $newingredientId)
+function addInstructions($db, $instructions, $category_id, $recipe_name)
 {
-
-
+    $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
+    $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
     try {
         //Get last recipe id
-       
+        $_SESSION['newrecipeID'] = $newrecipeID; 
         //insert into recipe_ingredients 
 
         $sql = 'INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredients_id, :recipe_id, :category_id)'; 
