@@ -167,11 +167,11 @@ switch ($action) {
 
        $newArray = [$ingredient_name, $required_amount]; 
 
-       var_dump($newArray); 
-       exit; 
+      
         foreach ($newArray as $row) {
             $row = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount);
-           
+           var_dump($row); 
+           exit; 
         }
 
 
