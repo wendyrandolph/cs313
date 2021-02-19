@@ -139,7 +139,8 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         //insert into ingredients table 
         
         foreach ($newArray as $array) {
-            $array = array('ingredient_name' => $array['ingredient_name'], 'required_amount' => $array['required_amount']);
+           print_r($newArray); 
+           exit; 
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
 
             $stmt = $db->prepare($sql);
