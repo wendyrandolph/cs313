@@ -165,9 +165,12 @@ switch ($action) {
 
         $required_amount = $_POST['required_amount'];
 
+        foreach($ingredient_name as $key => $name){ 
+            $newArray = array_push($name); 
+        }
 
 
-        $required_amount = $_POST['required_amount'];
+        
 
     
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
