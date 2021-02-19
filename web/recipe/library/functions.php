@@ -122,7 +122,7 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $array)
 {
 
     try{ 
@@ -135,10 +135,10 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
 
-    if (is_array($newArray)) {
+    if (is_array($array)) {
 
 
-        foreach ($newArray as $key => $value) {
+        foreach ($array as $key => $value) {
             $ingredient_name = $key[$value][0]; 
             $required_amount = $key[$value][0];
 
