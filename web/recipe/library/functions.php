@@ -140,6 +140,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
             foreach ($ingredients as $key => $value) {
                 $ingredient_name = $key[$value];
+                
             }
 
          
@@ -148,7 +149,8 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
                     $required_amount = $key[$value];
                 }
             
-        
+        var_dump($ingredient_name . $required_amount); 
+        exit; 
 
         //var_dump($ingredient_name, $required_amount);
         $newArray = array($ingredient_name, $required_amount);
