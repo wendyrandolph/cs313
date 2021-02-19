@@ -169,7 +169,7 @@ switch ($action) {
 
         foreach ($ingredient_name as $rows) {
             $ingredients = $rows;
-            print_r ('$ingredients'); 
+            print_r ($ingredients); 
         }
        
 
