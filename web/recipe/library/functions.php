@@ -20,7 +20,7 @@ function checkPassword($member_password)
 
 function directions($recipe_id, $db)
 {
-    $stmt = $db->prepare('SELECT rs.instructions, r.recipe_name, r.preheat_temp, r.cook_time 
+    $stmt = $db->prepare('SELECT rs.instructions, r.recipe_name, r.preheat_temp, r.cook_time, r.ingredients
 FROM recipe_steps rs
 INNER JOIN recipes r
 ON rs.recipe_id = r.recipe_id 
