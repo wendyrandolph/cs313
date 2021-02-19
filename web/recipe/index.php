@@ -162,10 +162,10 @@ switch ($action) {
     case 'addRecipe':
         
 
-        $ingredient_name[] = " "; 
-        $required_amount[] = " "; 
+        $ingredient_name = [$_POST['ingredient_name']]; 
+        $required_amount = [$_POST['required_amount']]; 
 
-        
+
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_POST, 'recipe_name', FILTER_SANITIZE_STRING);
