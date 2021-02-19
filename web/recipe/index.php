@@ -53,7 +53,7 @@ switch ($action) {
         //     break;
         // }
         // Send the data to the model
-         $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
+        $hashed_password = password_hash($member_password, PASSWORD_DEFAULT);
         $regOutcome = regClient($db, $member_first_name, $member_last_name, $member_email, $hashed_password);
 
 
@@ -160,10 +160,18 @@ switch ($action) {
         include '../recipe/view/home.php';
         break;
     case 'addRecipe':
-        
 
-        $ingredient_name = [$_POST['ingredient_name']]; 
-        $required_amount = [$_POST['required_amount']]; 
+
+        foreach ($ingredient_name as $name) {
+            $ingredient_name = $_POST['ingredient_name'];
+        }
+
+        foreach ($required_amount as $amount) {
+
+            $required_amount = $_POST['required_amount'];
+        }
+
+        $newArray = array(array($name['ingredient_name'], $name['required_amount'])); 
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
@@ -178,14 +186,14 @@ switch ($action) {
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
 
-        $newRecipeID = $newingredientId = " "; 
+        $newRecipeID = $newingredientId = " ";
 
-        echo $recipe_name . $ingredient_name . $required_amount; 
-        exit; 
+        echo $recipe_name . $ingredient_name . $required_amount;
+        exit;
 
         // Send the data to the model
-        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredient_name, $required_amount, $instructions); 
-      
+        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredient_name, $required_amount, $instructions);
+
 
         if ($updateResult = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
@@ -195,7 +203,7 @@ switch ($action) {
             $_SESSION['message'] = "You have not added this to the recipe index, please try again.";
             include '../recipe/view/add_recipe.php';
         }
-    
+
 
     case 'login':
 
