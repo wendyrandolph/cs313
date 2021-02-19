@@ -165,7 +165,7 @@ switch ($action) {
 
         $required_amount = $_POST['required_amount'];
 
-        $newArray = []; 
+        $newArray = array($ingredient_name[0], $required_amount[0]); 
         foreach ($newArray as $row) {
             $newArray = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount);
             var_dump($newArray);
@@ -195,7 +195,7 @@ switch ($action) {
 
 
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $ingredient_name, $required_amount);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray);
     
 
         if ($addSteps = 1) {
