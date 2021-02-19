@@ -166,14 +166,7 @@ switch ($action) {
 
 
         $newArray = [$ingredient_name, $required_amount];
-        foreach ($newArray as $row) {
-            $row = array(':ingredient_amount' => $ingredient_name, ':required_amount' => $required_amount);
-        }
-
-
-
-
-
+  
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
 
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
@@ -194,7 +187,7 @@ switch ($action) {
 
 
         // Send the data to the model
-        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $row);
+        $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray);
 
 
         if ($addSteps = 1) {

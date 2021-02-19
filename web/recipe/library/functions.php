@@ -122,7 +122,7 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $row)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray)
 {
     //insert into recipes table 
     $stmt = $db->prepare('INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time)
@@ -133,24 +133,18 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
 
+    if (is_array($newArray)) {
 
 
-
-
-
-
-    if (is_array($row)) {
-
-
-        foreach ($row as $newArray) {
-            $ingredient_name = $newArray[0];
-            $required_amount = $newArray[0];
+        foreach ($newArray as $key => $value) {
+            $ingredient_name = $key[$value][0]; 
+            $required_amount = $key[$value][0];
 
             //var_dump($ingredient_name, $required_amount);
 
 
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
-            $sql = json_encode($newArray);
+           
             $stmt = $db->prepare($sql);
 
             $stmt->execute(array(':ingredient_name' => $ingredient_name, ':required_amount' => $required_amount));
