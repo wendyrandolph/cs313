@@ -167,32 +167,13 @@ switch ($action) {
 
             $newArray = ['ingredient_name' => $ingredient_name, 'required_amount' => $required_amount];
             foreach ($newArray as $row) {
-                $row = json_encode(array($ingredient_name, $required_amount));
+                $row = array($ingredient_name, $required_amount);
             }
         }
 
-
-
-
-        // var_dump($ingredient_name[0] . $required_amount[0]); 
-        // var_dump($ingredient_name[1] . $required_amount[1]); 
-        // exit; 
-
-
-
-
-
-
-        foreach ($newArray as $rows) {
-            $ingredients = ($rows[$ingredient_name]);
-            $amounts = ($rows[$required_amount]);
-            echo $ingredients[0];
-        }
-
-
-        foreach ($required_amount as $row) {
-            $amounts = $row;
-        }
+        var_dump($ingredient_name[0] . $required_amount[0]); 
+        var_dump($ingredient_name[1] . $required_amount[1]); 
+        exit; 
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
