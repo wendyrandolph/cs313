@@ -171,7 +171,7 @@ switch ($action) {
             $amount= $_POST['required_amount'];
         }
 
-        $newArray = array(array($name['ingredient_name'], $amount['required_amount'])); 
+        $newArray = array($name['ingredient_name'], $amount['required_amount']); 
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
