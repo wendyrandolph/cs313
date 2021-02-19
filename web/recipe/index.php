@@ -180,8 +180,7 @@ switch ($action) {
 
         $newRecipeID = $newingredientId = " ";
 
-        print_r($newArray);
-        exit;
+        
 
         // Send the data to the model
         $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $newArray, $instructions);
