@@ -167,7 +167,7 @@ switch ($action) {
 
         $newArray = [$ingredient_name, $required_amount];
         foreach ($newArray as $row) {
-            $row = array($ingredient_name, $required_amount); 
+            $row = array(':ingredient_amount' => $ingredient_name, ':required_amount' => $required_amount); 
             echo "<pre>"; 
             print_r( "{$row[$ingredient_name][$required_amount]}"); 
             echo "<pre>"; 
