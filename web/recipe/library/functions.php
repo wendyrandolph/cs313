@@ -146,7 +146,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
-            //$sql .= json_encode($dataArray);
+            $sql .= json_encode($dataArray);
             $stmt = $db->prepare($sql);
         
             $stmt->execute(array(':ingredient_name' => $dataArray[$fieldVal1], ':required_amount' => $dataArray[$fieldVal2]));
