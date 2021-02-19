@@ -42,8 +42,6 @@
             <input type="text" class="input" name="recipe_name" required> <br> <br>
             <label>Recipe Description:</label><br>
             <input type="text" name="recipe_desc" id="recipe_desc" required> <br><br>
-            <label>Today's Date </label><br>
-            <input type="date" name="date_added" id="date_added" required><br><br>
             <label>Preheat Temp:</label>
             <input type="text" name="preheat_temp" id="preheat_temp"> <br><br>
             <label>Cook Time: </label>
