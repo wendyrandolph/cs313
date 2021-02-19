@@ -135,23 +135,24 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
     //Get last recipe id
 
-    
 
-        
+
+
+    if (is_array($newArray)) {
+
+
         foreach ($newArray as $row) {
-             
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
+            $sql = json_encode($newArray); 
             $stmt = $db->prepare($sql);
-        
-            $stmt->execute(array(':ingredient_name' => $row['ingredient_name'], ':required_amount' => $row['required_amount']));
-      
-      
-        }
-      
-       
-    
 
-   
+            $stmt->execute(array(':ingredient_name' => $row['ingredient_name'], ':required_amount' => $row['required_amount']));
+        }
+    }
+
+
+
+
 
     $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
 
