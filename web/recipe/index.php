@@ -177,8 +177,7 @@ switch ($action) {
             }
         }
 
-        var_dump($row); 
-               exit; 
+     
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
