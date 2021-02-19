@@ -150,6 +150,12 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
                 print_r ($name); 
             }
 
+
+            foreach($required_amount as $amount){ 
+                $amount = $required_amount; 
+
+                print_r($amount); 
+            }
             $newArray = ['ingredient_name' => $name, 'required_amount' => $required_amount];
             foreach ($newArray as $row) {
                 $row = array($name,  $required_amount);
