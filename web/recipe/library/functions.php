@@ -122,7 +122,7 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $newArray)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $instructions, $row)
 {
 
     try {
@@ -135,8 +135,8 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
        
-        var_dump($newArray['$ingredients']);
-        var_dump($newArray['$amounts']);
+        var_dump(json_decode($row['$ingredient_name']));
+        var_dump(json_decode($row['$required_amount']));
 
 
         //var_dump($ingredient_name, $required_amount);
