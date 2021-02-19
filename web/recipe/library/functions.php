@@ -136,19 +136,19 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
 
-       
-            $newArray = [];
-            foreach ($newArray as $array) {
-                $array = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount);
-                $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
+        //insert into ingredients table 
+        $newArray = [];
+        foreach ($newArray as $array) {
+            $array = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount);
+            $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
 
-                $stmt = $db->prepare($sql);
+            $stmt = $db->prepare($sql);
 
-                $stmt->execute(array(':ingredient_name' => $array['ingredient_name'], ':required_amount' => $array['required_amount']));
-            } $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-     
+            $stmt->execute(array(':ingredient_name' => $array['ingredient_name'], ':required_amount' => $array['required_amount']));
+        
+        $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
+        }
         //insert into recipe_ingredients 
-
         $sql = 'INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredients_id, :recipe_id, :category_id)';
         $stmt = $db->prepare($sql);
         $stmt->execute(array(':ingredients_id' => $newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
@@ -162,8 +162,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         $stmt = $db->prepare('INSERT INTO recipe_index (recipe_id, recipe_name, category_id) VALUES ( :recipe_id, :recipe_name, :category_id)');
         $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
 
-        $results =  $stmt->rowCount();
-        return $results;
+      
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
         die();
