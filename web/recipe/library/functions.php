@@ -148,7 +148,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
                 $amount = $required_amount;
             }
         }
-            $length = mysqli_fetch_lengths($row); 
+           
             $newArray = ['ingredient_name' => $name, 'required_amount' => $amount];
             
                 while($newArray){ 
