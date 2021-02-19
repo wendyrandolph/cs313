@@ -68,7 +68,7 @@
             if ($_SESSION['loggedin'] == TRUE) {
 
                 echo '<p class="vehicles">Use this link to manage your account information.</p>';
-                echo '<p class="vehicles"><a  href="/recipe/accounts/?action=update" class="vehicles">Update Account</a></p>';
+                echo '<p class="vehicles"><a  href="/recipe/view/recipe_update.php" class="vehicles">Update Account</a></p>';
             }
             ?>
 
