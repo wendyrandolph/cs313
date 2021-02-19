@@ -122,37 +122,19 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $array_serialized, $instructions)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredients, $instructions)
 {
 
     try {
         //insert into recipes table 
-        $sql = 'INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time) 
-        VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time)';
+        $sql = 'INSERT INTO recipes (recipe_name, recipe_desc, category_id, date_added, preheat_temp, cook_time, ingredients) 
+        VALUES (:recipe_name, :recipe_desc,  :category_id,  :date_added, :preheat_temp, :cook_time, :ingredients)';
         $stmt = $db->prepare($sql);
 
-        $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time));
+        $stmt->execute(array(':recipe_name' => $recipe_name, ':recipe_desc' => $recipe_desc, ':category_id' => $category_id, ':date_added' => $date_added, ':preheat_temp' => $preheat_temp, ':cook_time' => $cook_time, 'ingredients' => $ingredients));
 
         $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
 
-
-        //insert into ingredients table 
-            $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
-
-            $stmt = $db->prepare($sql);
-            foreach($array_serialized as $array){ 
-            $stmt->execute(array(':ingredient_name' => $array['ingredient_name'], ':required_amount' => $array['required_amount']));
-            
-            $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-            echo $newingredientId; 
-            exit; 
-            }
-            //insert into recipe_ingredients 
-            $sql = 'INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredient_id, :recipe_id, :category_id)';
-            $stmt = $db->prepare($sql);
-            $stmt->execute(array(':ingredient_id' =>$newingredientId, ':recipe_id' => $newrecipeID, ':category_id' => $category_id));
-        
-      
         //insert into recipe_steps 
         $stmt = $db->prepare('INSERT INTO recipe_steps (instructions, recipe_id) VALUES (:instructions, :recipe_id)');
         $stmt->execute(array(':instructions' => $instructions, ':recipe_id' => $newrecipeID));

@@ -161,29 +161,23 @@ switch ($action) {
         break;
     case 'addRecipe':
 
-
-     
-        $newArray = array('ingredient_name' => $_POST['ingredient_name'], 'required_amount' => $_POST['required_amount']); 
-        $array_serialized = serialize($newArray); 
-
-        $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
+        $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added = $ingredients =  " ";
         $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_NUMBER_INT);
         $recipe_name = filter_input(INPUT_POST, 'recipe_name', FILTER_SANITIZE_STRING);
         $recipe_desc  = filter_input(INPUT_POST, 'recipe_desc', FILTER_SANITIZE_STRING);
         $preheat_temp = filter_input(INPUT_POST, 'preheat_temp', FILTER_SANITIZE_STRING);
         $cook_time = filter_input(INPUT_POST, 'cook_time', FILTER_SANITIZE_STRING);
-       // $ingredient_name = filter_input(INPUT_POST, 'ingredient_name', FILTER_SANITIZE_STRING);
-        //$required_amount = filter_input(INPUT_POST, 'required_amount', FILTER_SANITIZE_STRING);
+        $ingredients = filter_input(INPUT_POST, 'ingredients', FILTER_SANITIZE_STRING);
         $date_added = filter_input(INPUT_POST, 'date_added', FILTER_SANITIZE_STRING);
         $instructions = filter_input(INPUT_POST, 'instructions', FILTER_SANITIZE_STRING);
 
 
         $newRecipeID = $newingredientId = " ";
 
-        
+
 
         // Send the data to the model
-        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $array_serialized, $instructions);
+        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredients, $instructions);
 
 
         if ($updateResult = 1) {

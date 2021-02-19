@@ -49,39 +49,13 @@
             <label>Cook Time: </label>
             <input type="text" name="cook_time" id="cook_time"><br><br>
             <label> Ingredients : </label> <br><br>
-            <p> Please select each box needed to enter in each ingredient. </p> <br><br>
-            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
-                                            var input = document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
-            <input id="required_amount" name="required_amount[]" disabled="disabled" placeholder="required_amount" />
-            <input id="ingredient_name" name="ingredient_name[]" disabled="disabled" placeholder="ingredient" />
+            <p> Please enter your amount and ingredient separated by a comma </p> <br><br>
+            <!-- <textarea type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
+                                            var input = document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient... -->
+
+            <textarea name="ingredients" > </textarea>
             <br><br>
-            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name_2'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
-                                            var input = document.getElementById('required_amount_2');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
-             <input id="required_amount_2" name="required_amount[]" disabled="disabled" placeholder="required_amount" />
-            <input id="ingredient_name_2" name="ingredient_name[]" disabled="disabled" placeholder="ingredient" />
-           
-            
-           <br><br>
-            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name_3'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
-                                            var input = document.getElementById('required_amount_3');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
-             <input id="required_amount_3" name="required_amount[]" disabled="disabled" placeholder="required_amount" />
-            <input id="ingredient_name_3" name="ingredient_name[]" disabled="disabled" placeholder="ingredient" />
-            
-            <br><br>
-            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name_4'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
-                                            var input = document.getElementById('required_amount_4');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
-            <input id="required_amount_4" name="required_amount[]" disabled="disabled" placeholder="required_amount" />
-            <input id="ingredient_name_4" name="ingredient_name[]" disabled="disabled" placeholder="ingredient" />
-            <br><br>
-            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name_5'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
-                                            var input = document.getElementById('required_amount_5');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
-             <input id="required_amount_5" name="required_amount[]" disabled="disabled" placeholder="required_amount" />
-            <input id="ingredient_name_5" name="ingredient_name[]" disabled="disabled" placeholder="ingredient" />
-            <br><br>
-            <input type="checkbox" onclick="var input = document.getElementById('ingredient_name_6'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
-                                            var input = document.getElementById('required_amount_6');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient...
-          <input id="required_amount_6" name="required_amount[]" disabled="disabled" placeholder="required_amount" />
-            <input id="ingredient_name_6" name="ingredient_name[]" disabled="disabled" placeholder="ingredient" />
+          
             <br><br> 
             <label> Instructions : </label>
             <textarea name="instructions"></textarea>
