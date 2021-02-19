@@ -164,14 +164,13 @@ function addIngredients($db, $ingredient_name, $required_amount)
 
 
 
-function addInstructions($db, $instructions, $newrecipeID, $category_id, $recipe_name)
+function addInstructions($db, $instructions, $newrecipeID, $category_id, $recipe_name, $newingredientId)
 {
 
 
     try {
         //Get last recipe id
-        $newrecipeID = $db->lastInsertId('recipes_recipe_id_seq');
-        $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
+       
         //insert into recipe_ingredients 
 
         $sql = 'INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredients_id, :recipe_id, :category_id)'; 
