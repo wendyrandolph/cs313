@@ -163,7 +163,7 @@ switch ($action) {
 
 
      
-        $newArray = array($_POST['ingredient_name'], $_POST['required_amount']); 
+        $newArray = array('ingredient_name' => $_POST['ingredient_name'], 'required_amount' => $_POST['required_amount']); 
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
@@ -184,7 +184,7 @@ switch ($action) {
         exit;
 
         // Send the data to the model
-        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredient_name, $required_amount, $instructions);
+        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $newArray, $instructions);
 
 
         if ($updateResult = 1) {

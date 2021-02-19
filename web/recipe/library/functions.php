@@ -122,7 +122,7 @@ function displayCategory($db, $category_id)
 }
 
 
-function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredient_name, $required_amount, $instructions)
+function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $newArray, $instructions)
 {
 
     try {
@@ -137,9 +137,9 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
         //insert into ingredients table 
-        $newArray = [];
+        
         foreach ($newArray as $array) {
-            $array = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount);
+            $array = array('ingredient_name' => $array['ingredient_name'], 'required_amount' => $array['required_amount']);
             $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
 
             $stmt = $db->prepare($sql);
