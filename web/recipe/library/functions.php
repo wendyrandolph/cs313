@@ -135,14 +135,14 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 
 // Insert into ingredients; 
-function addIngredients($db, $ingredient_name, $required_amount, $category_id)
+function addIngredients($db, $newArray, $required_amount, $category_id) 
 {
 
     
     //Get last recipe id
     $newrecipeID = $_SESSION['newRecipeID']; 
-    $ingredients = array(':ingredient_name' => $ingredient_name, ':required_amount' => $required_amount);
-    foreach ($ingredients as $row) {
+    
+    foreach ($newArray as $row) {
 
         $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
         $stmt->execute(array(':ingredient_name' => "$row[ingredient_name]", ':required_amount' => "$row[required_amount]"));

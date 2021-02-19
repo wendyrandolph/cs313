@@ -165,9 +165,12 @@ switch ($action) {
 
         $required_amount = $_POST['required_amount'];
 
-        foreach($ingredient_name as $key => $name){ 
-            $newArray = array_push($name); 
-            print_r($newArray); 
+        $newArray = array('ingredient_name' => $ingredient_name, 'required_amount' => $required_amount); 
+
+        foreach($newArray as $row){ 
+           
+        $ingredient = $row; 
+echo $ingredient; 
         }
 
 
@@ -196,7 +199,7 @@ switch ($action) {
         // Send the data to the model
         $updateResult = addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added);
         //Update the ingredients table 
-        $addIngredient =  addIngredients($db, $ingredient_name, $required_amount, $category_id);
+        $addIngredient =  addIngredients($db, $newArray, $required_amount, $category_id);
         //update the recipe_steps table 
         $addSteps = addRecipeSteps($db, $instructions, $category_id, $recipe_name, $newrecipeID);
 
