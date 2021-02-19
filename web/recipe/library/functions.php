@@ -140,8 +140,8 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
       
 
        for($i = 0; $i > count($newArray); $i++){ 
-                $fieldVal1 = $newArray[0]; 
-                $fieldVal2 = $newArray[1];   
+                $fieldVal1 = $newArray[$i]['ingredient_name']; 
+                $fieldVal2 = $newArray[$i]['required_amount'];   
        } 
        print_r($fieldVal2, $fieldVal1);
        exit;  
