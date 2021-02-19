@@ -162,16 +162,8 @@ switch ($action) {
     case 'addRecipe':
 
 
-        foreach ($ingredient_name as $name) {
-            $name = $_POST['ingredient_name'];
-        }
-
-        foreach ($required_amount as $amount) {
-
-            $amount= $_POST['required_amount'];
-        }
-
-        $newArray = array($name, $amount); 
+     
+        $newArray = array($_POST['ingredient_name'], $_POST['required_amount']); 
 
 
         $recipe_name = $recipe_desc = $preheat_temp = $cook_time = $instructions = $date_added =  " ";
