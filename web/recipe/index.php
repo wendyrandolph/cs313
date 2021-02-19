@@ -177,7 +177,7 @@ switch ($action) {
 
 
         // Send the data to the model
-        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $date_added, $ingredients, $instructions);
+        $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $ingredients, $instructions);
 
 
         if ($updateResult = 1) {
