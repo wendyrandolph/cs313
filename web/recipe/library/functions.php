@@ -156,9 +156,9 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
                 $stmt = $db->prepare($sql);
 
-                $stmt->execute(array(':ingredient_name' => $name , ':required_amount' => $amount));
+                $stmt->execute(array(':ingredient_name' => $name[0] , ':required_amount' => $amount[0]));
                 $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
-            }} 
+            } 
 
             //insert into recipe_ingredients 
             $stmt = $db->prepare('INSERT INTO recipe_ingredients (ingredients_id, recipe_id, category_id) VALUES (:ingredients_id, :recipe_id, :category_id)');
@@ -172,8 +172,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
             //insert into the recipe index 
             $stmt = $db->prepare('INSERT INTO recipe_index (recipe_id, recipe_name, category_id) VALUES ( :recipe_id, :recipe_name, :category_id)');
             $stmt->execute(array(':recipe_id' => $newrecipeID, ':recipe_name' => $recipe_name, ':category_id' => $category_id));
-        }
-    } catch (PDOException $e) {
+        }catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
         die();
     }
