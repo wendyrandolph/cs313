@@ -145,7 +145,7 @@ function addIngredients($db, $newArray, $required_amount, $category_id)
     foreach ($newArray as $row) {
 
         $stmt = $db->prepare('INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)');
-        $stmt->execute(array(':ingredient_name' => "$row[ingredient_name]", ':required_amount' => "$row[required_amount]"));
+        $stmt->execute(array(':ingredient_name' => $row['ingredient_name'], ':required_amount' => $row['required_amount']));
         $newingredientId = $db->lastInsertId(' ingredients_ingredients_id_seq');
        
         
