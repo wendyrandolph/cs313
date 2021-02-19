@@ -167,7 +167,7 @@ switch ($action) {
 
             $newArray = ['ingredient_name' => $ingredient_name, 'required_amount' => $required_amount];
             foreach ($newArray as $row) {
-                $row = [$ingredient_name,  $required_amount];
+                $row = serialize($ingredient_name,  $required_amount);
             }
         }
 
