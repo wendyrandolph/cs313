@@ -141,16 +141,23 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
         foreach ($newArray as $row) {
             $fieldVal1 = ($newArray[$row][0]);
             $fieldVal2 = ($newArray[$row][1]); 
+      
+            $dataArray[] = "('$fieldVal1', '$fieldVal2')";
+
+            
+            $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
+            $sql .= json_encode($dataArray);
+            $stmt = $db->prepare($sql);
+        
+            $stmt->execute(array(':ingredient_name' => $fieldVal1, ':required_amount' => $fieldVal2));
+      
+      
         }
       
-        $dataArray[] = "('$fieldVal1', '$fieldVal2')";
+       
     }
 
-    $sql =  'INSERT INTO ingredients (ingredient_name, required_amount) VALUES (:ingredient_name, :required_amount)';
-    $sql .= json_encode($dataArray);
-    $stmt = $db->prepare($sql);
-
-    $stmt->execute(array(':ingredient_name' => $fieldVal1, ':required_amount' => $fieldVal2));
+   
 
     $newingredientId = $db->lastInsertId('ingredients_ingredients_id_seq');
 
