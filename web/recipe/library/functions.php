@@ -144,7 +144,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
         foreach ($row as $newArray) {
             $ingredient_name = $newArray[0];
-            $required_amount = $newArray[1];
+            $required_amount = $newArray[0];
 
             var_dump($ingredient_name, $required_amount);
 
