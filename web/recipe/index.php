@@ -187,7 +187,9 @@ switch ($action) {
             $_SESSION['message'] = "You have not added this to the recipe index, please try again.";
             include '../recipe/view/add_recipe.php';
         }
-
+case 'add': 
+    include '../recipe/view/add_recipe.php'; 
+    break; 
 
     case 'login':
 
