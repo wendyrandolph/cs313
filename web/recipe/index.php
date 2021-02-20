@@ -122,7 +122,7 @@ switch ($action) {
         // Store the array into the session
 
         $_SESSION['clientData'] = $clientData;
-
+        $display = showRecipes($db); 
 
         //$list = getCategories($db);
 

@@ -74,7 +74,13 @@
             ?>
 
             
+            <div class='edit'> 
 
+                <?php echo $display ?>  
+
+
+
+            </div>  
 
 
         </div>
