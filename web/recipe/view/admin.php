@@ -76,9 +76,17 @@
             
             <div class='edit'> 
 
-                <?php if(isset($display)){ 
-                    echo $display;
-                 } ?>  
+                <?php if(isset($display)){ ?>
+                    <ul> 
+                <?php  foreach($display as $display){ 
+                    echo "<li class=edit> $display </li>"  ?> 
+                    
+
+
+                     </ul> 
+
+
+               <?php   } ?>  
 
 
 
