@@ -127,7 +127,7 @@ switch ($action) {
         //$list = getCategories($db);
 
         // Send them to the admin view
-        include '../recipe/view/add_recipe.php';
+        include '../recipe/view/admin.php';
         break;
 
 

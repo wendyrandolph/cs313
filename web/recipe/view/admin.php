@@ -69,10 +69,11 @@
 
                 echo '<p class="vehicles">Use this link to manage your account information.</p>';
                 echo '<p class="vehicles"><a  href="/recipe/view/recipe_update.php" class="vehicles">Update Account</a></p>';
+                echo '<p class="vehicles"><a href="/recipe/view/add_recipe.php" class="vehicles">Add a Recipe</a></p>'; 
             }
             ?>
 
-
+            
 
 
 
