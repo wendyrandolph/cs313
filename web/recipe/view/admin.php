@@ -76,7 +76,9 @@
             
             <div class='edit'> 
 
-                <?php echo $display ?>  
+                <?php if(isset($display)){ 
+                    echo $display;
+                 } ?>  
 
 
 
