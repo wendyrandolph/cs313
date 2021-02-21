@@ -133,23 +133,30 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     }
 }
 
-function showRecipes($db)
+//Get index of recipes in the database 
+function getRecipes($db)
 {
 
-    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id');
+    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id WHERE r.recipe_id = :recipe_id');
     $stmt = ($db->prepare($sql));
     $stmt->execute();
     $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $display = " "; 
+    
+    return $list; 
+} 
+
+//build the recipe index display
+function indexDisplay($list){ 
+$recipe_id =  " "; 
+
+$display = " "; 
     $display = "<ul>";
     foreach ($list as $row) {
 
         $display .= "<li> $row[recipe_name] </li>";
+        $display .= "<a href='/recipe/?action=del&recipe_Id=$recipe_id' class='rev_delete info'>Delete</a>";
     }
     $display .= "</ul>";
-    return $display; 
-} 
-
-
+}
 ?>

@@ -194,6 +194,12 @@ switch ($action) {
         include '../recipe/view/add_recipe.php';
 
         break;
+    case 'del':
+
+
+
+        include '../recipe/view/delete_recipe.php';
+        break;
 
     case 'login':
 
@@ -215,8 +221,8 @@ switch ($action) {
     case 'update_recipe':
         $_SESSION['loggedin'] = true;
 
-
-        $display = showRecipes($db);
+        $results = getRecipes($db);
+        $display = indexDisplay($results);
 
         include '../recipe/view/recipe_update.php';
 

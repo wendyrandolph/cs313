@@ -24,20 +24,11 @@
         </nav>
     </header>
 
-
     <main>
 
-    <h2> Current Index of Recipes </h2> 
-        <div class='edit'>
+        Confirm Delete of <?php echo 
 
-            <?php 
-            
-             echo $display; ?>
-
- 
-        </div>
     </main>
-
 </body>
 
 </html>
