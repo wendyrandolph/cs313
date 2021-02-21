@@ -76,7 +76,7 @@ switch ($action) {
 
     case 'Login':
 
-        $results = displayCategory($db, $category_id);
+        //$results = displayCategory($db, $category_id);
 
         //echo "This is the Login case statement"; 
         //exit; 
