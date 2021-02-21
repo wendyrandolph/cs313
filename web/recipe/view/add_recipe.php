@@ -61,7 +61,7 @@ $_SESSION['loggedin'] = TRUE;
                     <textarea name="ingredients" rows=10 cols=50> </textarea>
                     <br><br>
 
-                    <label> Instructions : </label>
+                    <label> Instructions : </label><br><br>
                     <textarea name="instructions" rows=10 cols=50></textarea>
 
 
