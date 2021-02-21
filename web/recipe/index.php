@@ -11,7 +11,7 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
-$category_id = " "; 
+$category_id = " ";
 //grab php functions as needed *****************************************************
 require('../recipe/library/connections.php');
 require('../recipe/library/functions.php');
@@ -123,7 +123,7 @@ switch ($action) {
         // Store the array into the session
 
         $_SESSION['clientData'] = $clientData;
-      
+
 
         //$list = getCategories($db);
 
@@ -139,7 +139,7 @@ switch ($action) {
 
         $name = getName($db, $recipe_id);
 
-       
+
         $recipe = directions($recipe_id, $db);
 
 
@@ -188,9 +188,9 @@ switch ($action) {
             $_SESSION['message'] = "You have not added this to the recipe index, please try again.";
             include '../recipe/view/add_recipe.php';
         }
-case 'add': 
-    include '../recipe/view/add_recipe.php'; 
-    break; 
+    case 'add':
+        include '../recipe/view/add_recipe.php';
+        break;
 
     case 'login':
 
@@ -209,15 +209,15 @@ case 'add':
         include '../recipe/view/registration.php';
         break;
 
-        case 'update_recipe': 
-            $_SESSION['loggedin'] = TRUE;
-            $display = showRecipes($db); 
+    case 'update_recipe':
+        $_SESSION['loggedin'] = TRUE;
+        $display = showRecipes($db);
 
 
-            include '../recipe/view/recipe_update.php'; 
-            break; 
+        include '../recipe/view/recipe_update.php';
+        break;
 
-    
+
 
 
     default:
