@@ -37,14 +37,13 @@ $_SESSION['loggedin'] = TRUE;
         <div class="card">
             <div class="card-body">
                 <h2> Current Index of Recipes </h2>
-                <div class='edit'>
+                
 
                     <?php
 
                     echo $display; ?>
 
 
-                </div>
 
             </div>
         </div>
