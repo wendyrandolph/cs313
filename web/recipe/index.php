@@ -189,13 +189,10 @@ switch ($action) {
             include '../recipe/view/add_recipe.php';
         }
     case 'add':
-        if (isset($_POST['Login'])) {
-            $_SESSION['loggedin'] = true;
 
-            include '../recipe/view/add_recipe.php';
-        } else {
-            include '../recipe/view/home.php';
-        }
+
+        include '../recipe/view/add_recipe.php';
+
         break;
 
     case 'login':
@@ -218,7 +215,7 @@ switch ($action) {
     case 'update_recipe':
         $_SESSION['loggedin'] = true;
 
-            if(isset($_SESSION['loggedin'])){ 
+        if (isset($_SESSION['loggedin'])) {
 
             $display = showRecipes($db);
 
