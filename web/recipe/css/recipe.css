@@ -103,9 +103,9 @@ a.my_account {
   color: white;
 }
 
-img.salsa {
-  width: 200px;
-  height: 200px;
+img {
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=recipe.css.map */
