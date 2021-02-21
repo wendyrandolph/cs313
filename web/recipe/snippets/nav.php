@@ -1,6 +1,6 @@
 <div class="container-fluid p-2">
     <?php
-    
+    $navList = '<i class="fas fa-bars hidden"></i> '; 
     $navList = '<ul class="navbar-nav">';
     $navList .= "<li class='nav-item'><a href='/recipe/?action=default' class='nav-link' >Home</a></li>";
     foreach ($db->query('SELECT * FROM category') as $row) {
@@ -15,4 +15,3 @@
 
 </div>
 
-<img src='../images/3953157251572430749-32.png' class="menu_icon"> 
