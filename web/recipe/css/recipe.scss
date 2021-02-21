@@ -6,9 +6,9 @@ $secondary: #6F7D8C;
 
 
 // Small devices (landscape phones, 576px and up)
-@media (max-width: 576px) {
+@media (min-width: 375px) {
     body {
-        width: 100%;
+        width: 375px;
         margin: 5px; 
     }
 
@@ -17,7 +17,7 @@ $secondary: #6F7D8C;
     }
 
     .card {
-        width: 80%;
+        width: 350px;
     }
 }
 
