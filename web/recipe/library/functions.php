@@ -158,5 +158,5 @@ $display = " ";
         $display .= "<a href='/recipe/?action=del&recipe_Id=$recipe_id' class='rev_delete info'>Delete</a>";
     }
     $display .= "</ul>";
-}
+} return $display; 
 ?>
