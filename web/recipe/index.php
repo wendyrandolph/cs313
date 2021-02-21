@@ -195,6 +195,26 @@ switch ($action) {
 
         break;
     case 'del':
+        // Get review Id 
+        $recipe_id = filter_input(INPUT_GET, 'recipe_id', FILTER_SANITIZE_NUMBER_INT);
+        $del_recipe = deleteRecipe($db, $recipe_id); 
+        $del_index = deleteIndex($db, $recipe_id); 
+        $del_steps = deleteSteps($db, $recipe_id); 
+
+        if (($del_recipe == 1 && $del_index == 1 && $del_steps == 1)) {
+
+            $_SESSION['message_delete'] = "<p class='notice'>That recipe was successfully deleted.</p>";
+            $results = getRecipes($db);
+            $display = indexDisplay($results);
+            $_SESSION['userReview'] = $invReview;
+            include '../recipe/view/recipe_update.php';
+            exit;
+        } else {
+            $message = "<p class='notice'>Error. That recipe was not deleted.</p>";
+            $_SESSION['message_delete'] = $message;
+            header('location: /view/recipe_update.php');
+            exit;
+        }
 
 
 

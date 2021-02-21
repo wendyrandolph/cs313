@@ -154,10 +154,55 @@ $display = " ";
     $display = "<ul>";
     foreach ($list as $row) {
 
-        $display .= "<li> $row[recipe_name] </li>";
-        $display .= "<a href='/recipe/?action=del&recipe_Id=$recipe_id' class='rev_delete info'>Delete</a>";
+        $display .= "<li> $row[recipe_name] </li> <a href='/recipe/?action=del&recipe_id=$recipe_id' class='rev_delete info'>Delete</a> ";
+        
     }
     $display .= "</ul>";
  return $display; 
+}
+
+
+function deleteRecipe($db, $recipe_id){ 
+
+    $sql = ('DELETE FROM recipes WHERE recipe_id = :recipe_id;'); 
+    $stmt = ($db->prepare($sql));
+    
+    $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_STR);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
+}
+
+
+function deleteIndex($db, $recipe_id){ 
+    $sql = ('DELETE FROM recipe_index WHERE recipe_id = :recipe_id;'); 
+    $stmt = ($db->prepare($sql));
+    
+    $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_STR);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
+
+}
+
+function deleteSteps($db, $recipe_id){ 
+    $sql = ('DELETE FROM recipe_steps WHERE recipe_id = :recipe_id;'); 
+    $stmt = ($db->prepare($sql));
+    
+    $stmt->bindValue(':recipe_id', $recipe_id, PDO::PARAM_STR);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
+
+
 }
 ?>
