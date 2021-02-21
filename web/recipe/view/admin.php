@@ -70,27 +70,12 @@
                 echo '<p class="vehicles">Use this link to manage your account information.</p>';
                 echo '<p class="vehicles"><a  href="/recipe/view/recipe_update.php" class="vehicles">Update Account</a></p>';
                 echo '<p class="vehicles"><a href="/recipe/?action=add" class="vehicles">Add a Recipe</a></p>'; 
+                echo '<p class="vehicles"><a href="/recipe/?action=update_Recipe class="vehicles"> Update Recipes</p>'; 
             }
             ?>
 
             
-            <div class='edit'> 
-
-                <?php 
-               $display = showRecipes($db); 
-                
-                if(isset($display)){
-                   $list =  '<ul>';  
-                 foreach($display as $display){  
-                    $list .= "<li class=edit> $display </li>  " ;  
-                   // $list .= "<a href='/recipe/index.php?action=update_recipe&recipe_id=$recipe_id' class='rev_delete info'>Delete</a>";
-
-
-
-                    $list .= '</ul>';  
-
-
-                } ?>  
+           
 
 
 

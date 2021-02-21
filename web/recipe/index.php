@@ -123,7 +123,7 @@ switch ($action) {
         // Store the array into the session
 
         $_SESSION['clientData'] = $clientData;
-        $display = showRecipes($db); 
+      
 
         //$list = getCategories($db);
 
@@ -210,6 +210,10 @@ case 'add':
         break;
 
         case 'update_recipe': 
+            $_SESSION['loggedin'] = TRUE;
+            $display = showRecipes($db); 
+
+
             include '../recipe/view/recipe_update.php'; 
             break; 
 
