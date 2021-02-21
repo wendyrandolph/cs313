@@ -41,7 +41,7 @@
                 }?> 
 
                 <img src="../recipe/images/naan pizza.jpg"> 
-
+                <img src="../recipe/images/salsa.jpg"> 
             </div>
         </div>
 
