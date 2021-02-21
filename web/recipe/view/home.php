@@ -42,7 +42,7 @@
                     echo "<img src='../recipe/images/rsz_idaho_burrito.jpg' class='rounded .img-thumbnail'>";
                     echo "</div>";
                 } else {
-                    echo "<h5> These are the ".'$results[category_name]'." recipes.</h5>";
+                    echo "<h5> These are the .$results[category_name].  recipes.</h5>";
                     echo $results;
                 } ?>
 
