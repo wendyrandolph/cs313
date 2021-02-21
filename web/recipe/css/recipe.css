@@ -1,9 +1,14 @@
-/* Error: expected "{".
+/* Error: Undefined mixin.
  *     ,
- * 153 | @include media-breakpoint-up(md) { ... }
- *     |                                        ^
+ * 144 | / @include media-breakpoint-up(sm) { 
+ * 145 | | 
+ * 146 | | .menu_icon { 
+ * 147 | |     display: block; 
+ * 148 | | }
+ * 149 | | 
+ * 150 | \ }
  *     '
- *   recipe.scss 153:40  root stylesheet */
+ *   recipe.scss 144:1  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +18,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a     \2577 \a 153 \2502  @include media-breakpoint-up(md) { ... }\d\a     \2502                                         ^\a     \2575 \a   recipe.scss 153:40  root stylesheet';
+  content: "Error: Undefined mixin.\a     \2577 \a 144 \2502  \250c  @include media-breakpoint-up(sm) { \a 145 \2502  \2502  \a 146 \2502  \2502  .menu_icon { \a 147 \2502  \2502      display: block; \a 148 \2502  \2502  }\a 149 \2502  \2502  \a 150 \2502  \2514  }\a     \2575 \a   recipe.scss 144:1  root stylesheet";
 }
