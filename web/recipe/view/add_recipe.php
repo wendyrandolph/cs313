@@ -54,7 +54,8 @@ $_SESSION['loggedin'] = TRUE;
                 <label>Cook Time: </label>
                 <input type="text" name="cook_time" id="cook_time"><br><br>
                 <label> Ingredients : </label> <br><br>
-                <p> Please enter your amount and ingredient separated by a comma </p>
+                <p> Please enter your amount and ingredient separated by a comma <br>
+                    For example " 1 cup - Cheese (shredded), " </p>
                 <!-- <textarea type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
                                             var input = document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient... -->
 
