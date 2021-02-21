@@ -49,7 +49,7 @@
             <h3>
                 <?php
                 if ($_SESSION['loggedin']) {
-                    echo '<p class="text-danger"> You are now logged in. </p>';
+                    echo '<p class="text-danger"> You are now logged in and on the admin page </p>';
                 } ?>
             </h3>
 
