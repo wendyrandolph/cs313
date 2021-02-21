@@ -4,7 +4,7 @@
 // Create or access a Session
 session_start();
 
-
+$_SESSION['loggedin'] = false; 
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
