@@ -80,7 +80,7 @@
                    $list =  '<ul>';  
                  foreach($display as $display){  
                     $list .= "<li class=edit> $display </li>  " ;  
-                    $list .= "<a href='/recipe/index.php?action=update_recipe&recipe_id=$recipe_id' class='rev_delete info'>Delete</a>";
+                   // $list .= "<a href='/recipe/index.php?action=update_recipe&recipe_id=$recipe_id' class='rev_delete info'>Delete</a>";
 
 
 
