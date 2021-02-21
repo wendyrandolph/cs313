@@ -6,9 +6,9 @@
 
 
 if ($_SESSION['loggedin'] === TRUE) {
-    $myAccount = '<a id="my_account" href="/recipe/?action=admin"> Admin Page </a>'; 
+    $myAccount = '<a class"my_account" href="/recipe/?action=admin"> Admin Page </a>'; 
     //have logged in
-    $loginMessage =  '<a id="my_account" href="/recipe/?action=logout"> Logout </a>';
+    $loginMessage =  '<a class="my_account" href="/recipe/?action=logout"> Logout </a>';
     echo $loginMessage; 
     echo $myAccount; 
 } else {
