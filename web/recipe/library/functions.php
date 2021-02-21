@@ -106,6 +106,29 @@ function displayCategory($db, $category_id)
     }
 }
 
+function checkExistingRecipe($db, $recipe_name)
+{
+
+  // The SQL statement
+
+  $sql = "SELECT recipe_name FROM recipes WHERE recipe_name = '" . $_POST['recipe_name'] . "'";
+  // Create the prepared statement using the phpmotors connection
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':recipe_name', $recipe_name, PDO::PARAM_STR);
+  // Check the data
+  $stmt->execute();
+  $matchRecipe = $stmt->fetch(PDO::FETCH_NUM);
+
+  if (empty($matchRecipe)) {
+    return 0;
+    // echo 'Nothing found';
+  } else {
+    return 1;
+    //echo 'Match found';
+  }
+  $stmt->closeCursor();
+}
+
 
 function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $ingredients, $instructions)
 {

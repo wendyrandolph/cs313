@@ -177,8 +177,15 @@ switch ($action) {
 
 
         // Send the data to the model
+        $matchRecipe = checkExistingRecipe($db, $recipe_name); 
+        if ($matchRecipe === 1) {
+            $message = "<p>This recipe is already in the database. </p>";
+            include '../recipe/view/add_recipe.php';
+            break;
+        }
+        
         $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $ingredients, $instructions);
-
+       
 
         if ($updateResult = 1) {
             $_SESSION['message'] = "You have added $recipe_name to the recipe index.";
