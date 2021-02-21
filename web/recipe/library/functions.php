@@ -173,9 +173,9 @@ function getRecipes($db)
 function indexDisplay($list){ 
 
 
-$display = " "; 
+ 
     $display = '<table class=table table-striped align-middle>';
-    $display = "<thead> Recipe Name </thead><br />"; 
+    $display .= '<thead> Recipe Name </thead><br />'; 
     
     foreach ($list as $row) {
         
