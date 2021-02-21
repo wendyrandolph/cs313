@@ -1,6 +1,6 @@
-<?php 
-$_SESSION['loggedin'] = TRUE; 
-?> 
+<?php
+$_SESSION['loggedin'] = TRUE;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,18 +28,20 @@ $_SESSION['loggedin'] = TRUE;
     </header>
 
     <main>
-
+        <?php if (isset($message)) {
+            echo $message;
+        } ?>
         <form action="/recipe/?action=addRecipe" method="POST">
             <label>Which category does your recipe belong to : </label><br>
             <?php
-            $data = getCategories($db); 
-            $list = " "; 
-           foreach($data as $rows){ 
-               $list .= "<input type=radio class='input' name=category_id value='$rows[category_id]' required> $rows[category_name] " ; 
-           }
-           echo $list; 
+            $data = getCategories($db);
+            $list = " ";
+            foreach ($data as $rows) {
+                $list .= "<input type=radio class='input' name=category_id value='$rows[category_id]' required> $rows[category_name] ";
+            }
+            echo $list;
             ?>
-            <br><br> 
+            <br><br>
 
 
             <label>Recipe Name:</label>
@@ -55,9 +57,9 @@ $_SESSION['loggedin'] = TRUE;
 
             <textarea name="ingredients" rows=10 cols=50> </textarea>
             <br><br>
-          
+
             <label> Instructions : </label>
-            <textarea name="instructions"  rows=10 cols=50></textarea>
+            <textarea name="instructions" rows=10 cols=50></textarea>
 
 
 
