@@ -3,6 +3,10 @@
   .menu_icon {
     display: block;
   }
+
+  .card {
+    width: 80%;
+  }
 }
 html {
   background-size: contain;
