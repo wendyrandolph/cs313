@@ -193,6 +193,8 @@ switch ($action) {
             $_SESSION['loggedin'] = true; 
         
         include '../recipe/view/add_recipe.php';
+        }else { 
+            include '../recipe/view/home.php'; 
         }
         break;
 
