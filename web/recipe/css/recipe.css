@@ -9,6 +9,10 @@
   .menu_icon {
     display: block;
   }
+
+  img {
+    justify-content: center;
+  }
 }
 html {
   background-size: contain;
