@@ -127,6 +127,10 @@ img.salsa {
 }
 
 @media (min-width: 768px) {
+  body {
+    width: 100%;
+  }
+
   .navbar {
     display: flex;
   }
