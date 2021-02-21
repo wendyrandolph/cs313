@@ -18,6 +18,15 @@
     justify-content: center;
   }
 }
+@media (min-width: 768px) {
+  body {
+    width: 100%;
+  }
+
+  .navbar {
+    display: inline-block;
+  }
+}
 html {
   background-size: contain;
   box-sizing: border-box;
@@ -124,16 +133,6 @@ a.my_account {
 img.salsa {
   width: 200px;
   height: 200px;
-}
-
-@media (min-width: 768px) {
-  body {
-    width: 100%;
-  }
-
-  .navbar {
-    display: flex;
-  }
 }
 
 /*# sourceMappingURL=recipe.css.map */
