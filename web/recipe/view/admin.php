@@ -76,7 +76,10 @@
             
             <div class='edit'> 
 
-                <?php if(isset($display)){
+                <?php 
+               $display = showRecipes($db); 
+                
+                if(isset($display)){
                    $list =  '<ul>';  
                  foreach($display as $display){  
                     $list .= "<li class=edit> $display </li>  " ;  
