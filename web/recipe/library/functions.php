@@ -179,7 +179,7 @@ $display = " ";
     
     foreach ($list as $row) {
         
-        $display .= "<tr> <td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
+        $display .= "<tr> <td width='150'>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
         
     }
     $display .= '</table>';
