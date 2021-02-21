@@ -137,7 +137,7 @@ function showRecipes($db)
 {
     try {
         $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_index_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id;');
-        $stmt = $db->query($sql);
+        $stmt = $db->prepare($sql);
         $stmt->execute();
         $display = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

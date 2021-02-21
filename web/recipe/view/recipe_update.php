@@ -36,7 +36,7 @@
                 echo $display; 
             }?>
 
-            <?php echo $list ?>
+          
         </div>
     </main>
 
