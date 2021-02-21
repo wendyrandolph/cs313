@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@media (max-width: 375px) {
+@media (min-width: 576px) {
   body {
     background: none;
     width: 375px;
@@ -24,7 +24,7 @@
   }
 
   .navbar {
-    display: inline-block;
+    display: flex;
   }
 }
 html {
