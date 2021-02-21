@@ -17,12 +17,12 @@
         <?php include '../recipe/snippets/header.php';
         ?>
 
-        
+
     </header>
     <nav class="navbar navbar-expand-lg navbar=light bg-light" id="page_nav">
-    <?php include '../recipe/snippets/nav.php';
+        <?php include '../recipe/snippets/nav.php';
         ?>
-        </nav>
+    </nav>
 
     <main>
 
@@ -32,19 +32,19 @@
         <div class="card">
             <div class="card-body">
 
-                
+
                 <?php
                 if (isset($results)) {
-        echo "<h5> These are the $_SESSION[category_name] recipes.</h5>";
-                  
+                    echo "<h5> These are the $_SESSION[category_name] recipes.</h5>";
+
                     echo $results;
-                }?> 
-               
-                <img src="../recipe/images/naan pizza.jpg" class="rounded .img-thumbnail"> 
-                <img src="../recipe/images/rsz_salsa.jpg" class="rounded .img-thumbnail"> 
-                <img src="../recipe/images/rsz_idaho_burrito.jpg" class="rounded .img-thumbnail"> 
+                } ?>
+                <div class=mx-auto>
+                    <img src="../recipe/images/naan pizza.jpg" class="rounded .img-thumbnail">
+                    <img src="../recipe/images/rsz_salsa.jpg" class="rounded .img-thumbnail">
+                    <img src="../recipe/images/rsz_idaho_burrito.jpg" class="rounded .img-thumbnail">
+                </div>
             </div>
-        </div>
 
     </main>
 
