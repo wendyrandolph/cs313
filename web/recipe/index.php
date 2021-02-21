@@ -179,7 +179,7 @@ switch ($action) {
         // Send the data to the model
         $matchRecipe = checkExistingRecipe($db, $recipe_name);
         if ($matchRecipe === 1) {
-            $message = "<p>This recipe is already in the database. </p>";
+            $message = "<p class=text-danger>This recipe is already in the database. </p>";
             include '../recipe/view/add_recipe.php';
             break;
         }
