@@ -143,13 +143,12 @@ function showRecipes($db)
 
 
         $list =  '<ul>';
-        foreach ($display as $display) {
-            $list .= "<li class=edit> $display[recipe_name] </li> ";
+        foreach ($display  as $row) {
+            $list .= "<li class=edit> {$row['recipe_name']} </li> ";
             // $list .= "<a href='/recipe/index.php?action=update_recipe&recipe_id=$recipe_id' class='rev_delete info'>Delete</a>";
-            
+
         }
         $list .= '</ul>';
-        
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
         die();
