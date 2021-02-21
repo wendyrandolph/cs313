@@ -221,8 +221,8 @@ switch ($action) {
     case 'update_recipe':
         $_SESSION['loggedin'] = true;
 
-        $list = getRecipes($db);
-        $display = indexDisplay($list);
+        $results = getRecipes($db);
+        $display = indexDisplay($results);
 
         include '../recipe/view/recipe_update.php';
 
