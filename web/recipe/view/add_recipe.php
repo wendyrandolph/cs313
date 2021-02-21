@@ -1,3 +1,6 @@
+<?php 
+$_SESSION['loggedin'] = TRUE; 
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
