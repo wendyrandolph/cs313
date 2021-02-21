@@ -189,7 +189,11 @@ switch ($action) {
             include '../recipe/view/add_recipe.php';
         }
     case 'add':
+        if(isset($_POST['Login'])){
+            $_SESSION['loggedin'] = true; 
+        
         include '../recipe/view/add_recipe.php';
+        }
         break;
 
     case 'login':
