@@ -33,7 +33,8 @@
 
 
             if (isset($display)) {
-               ?>
+                echo $display; 
+            }?>
 
             <?php echo $list ?>
         </div>
