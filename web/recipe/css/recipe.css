@@ -6,6 +6,10 @@
     margin: none;
   }
 
+  nav-bar nav {
+    display: hidden;
+  }
+
   .menu_icon {
     display: block;
   }
