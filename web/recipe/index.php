@@ -219,7 +219,7 @@ switch ($action) {
         if (isset($_POST['Login'])) {
             $_SESSION['loggedin'] = true;
 
-            $list = showRecipes($db);
+            $display = showRecipes($db);
 
             include '../recipe/view/recipe_update.php';
         } else {

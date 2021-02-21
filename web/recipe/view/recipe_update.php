@@ -30,12 +30,7 @@
         <div class='edit'>
 
             <?php 
-                $display = "<ul>";
-                foreach ($list as $row) {
-
-                    $display .= "<li> $row[recipe_name] </li>";
-                }
-                $display .= "</ul>";
+            
              echo $display; ?>
 
  <h2>  HELL0 </h2>
