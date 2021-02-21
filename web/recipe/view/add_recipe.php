@@ -52,12 +52,12 @@
             <!-- <textarea type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
                                             var input = document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient... -->
 
-            <textarea name="ingredients" cols=100> </textarea>
+            <textarea name="ingredients" rows=10 cols=100> </textarea>
             <br><br>
           
             <br><br> 
             <label> Instructions : </label>
-            <textarea name="instructions"></textarea>
+            <textarea name="instructions"  rows=10 cols=100></textarea>
 
 
 
