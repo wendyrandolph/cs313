@@ -92,9 +92,10 @@ p.text-danger {
   font-size: 20px;
 }
 
-a.my-account {
+a {
   padding-left: 10px;
   text-decoration: none;
+  color: white;
 }
 
 img.salsa {
