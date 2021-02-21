@@ -27,7 +27,9 @@
     </header>
 
     <main>
-        <div class="add_1">
+        
+    <div class="card">
+            <div class="card-body">
           
 
             <?php
