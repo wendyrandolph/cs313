@@ -28,12 +28,7 @@
 
     <main>
         <div class="add_1">
-            <h1 class="title">
-
-                Welcome to PHP MOTORS
-
-            </h1>
-
+          
 
             <?php
             if (isset($_SESSION['message_1'])) {
