@@ -174,15 +174,15 @@ function indexDisplay($list){
 
 
 $display = " "; 
-    $display = "<table class=table table-striped align-middle>";
-    $display = "<tr><thead> Recipe Name </thead></tr><br />"; 
+    $display = '<table class=table table-striped align-middle>';
+    $display = "<thead> Recipe Name </thead><br />"; 
     
     foreach ($list as $row) {
         
         $display .= "<tr> <td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
         
     }
-    $display .= "</table>";
+    $display .= '</table>';
  return $display; 
 }
 
