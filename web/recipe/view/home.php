@@ -41,7 +41,7 @@
                 }?> 
 
                 <img src="../recipe/images/naan pizza.jpg" class="rounded"> 
-                <img src="../recipe/images/salsa.jpg" class="rounded .img-thumbnail"> 
+                <img src="../recipe/images/salsa.jpg" class="rounded .img-thumbnail salsa"> 
             </div>
         </div>
 
