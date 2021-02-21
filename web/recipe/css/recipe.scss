@@ -8,8 +8,10 @@ $secondary: #6F7D8C;
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 375px) {
     body {
+        background: none; 
         width: 375px;
         margin: none; 
+        max-width: 
     }
 
     .menu_icon {
@@ -39,7 +41,6 @@ body {
     border: 5px solid #006666;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
-    max-width: 45%;
     margin: 0 auto;
     box-sizing: border-box;
 
