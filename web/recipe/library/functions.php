@@ -137,7 +137,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 function getRecipes($db)
 {
 
-    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id WHERE r.recipe_id = :recipe_id');
+    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id');
     $stmt = ($db->prepare($sql));
     $stmt->execute();
     $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
