@@ -32,8 +32,8 @@
             <?php
 
 
-            if (isset($display)) {
-                echo $display; 
+            if (isset($list)) {
+                echo $list; 
             }?>
 
           
