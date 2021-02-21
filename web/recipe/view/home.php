@@ -39,9 +39,9 @@
                   
                     echo $results;
                 }?> 
-
-                <img src="../recipe/images/naan pizza.jpg" class="rounded .img-thumbnail salsa"> 
-                <img src="../recipe/images/salsa.jpg" class="rounded .img-thumbnail salsa"> 
+                <img src="../recipe/images/quote.jpg" class="rounded .img-thumgnail"> 
+                <img src="../recipe/images/naan pizza.jpg" class="rounded .img-thumbnail"> 
+                <img src="../recipe/images/salsa.jpg" class="rounded .img-thumbnail"> 
             </div>
         </div>
 
