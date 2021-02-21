@@ -111,7 +111,7 @@ function checkExistingRecipe($db, $recipe_name)
 
   // The SQL statement
 
-  $sql = "SELECT recipe_name FROM recipes WHERE recipe_name = '" . $_POST['recipe_name'] . "'";
+  $sql = "SELECT recipe_name FROM recipes WHERE recipe_name = :recipe_name";
   // Create the prepared statement using the phpmotors connection
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':recipe_name', $recipe_name, PDO::PARAM_STR);
