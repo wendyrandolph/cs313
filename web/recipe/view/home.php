@@ -41,9 +41,9 @@
                     echo "<img src='../recipe/images/rsz_salsa.jpg' class='rounded .img-thumbnail'>";
                     echo "<img src='../recipe/images/rsz_idaho_burrito.jpg' class='rounded .img-thumbnail'>";
                     echo "</div>";
-                } else {
-                    echo "<h5> These are the $category_name  recipes.</h5>";
-                    echo $results;
+                } else { ?>
+                    <h5> These are the <?php $category_name ?> recipes.</h5>
+                <?php echo $results;
                 } ?>
 
 
