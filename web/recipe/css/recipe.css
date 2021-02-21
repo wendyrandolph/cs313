@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@media (min-width: 375px) {
+@media (max-width: 375px) {
   body {
     background: none;
     width: 375px;
