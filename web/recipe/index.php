@@ -124,7 +124,7 @@ switch ($action) {
 
         $_SESSION['clientData'] = $clientData;
 
-
+        $_SESSION['member_first_name'] = $member_first_name; 
         //$list = getCategories($db);
 
         // Send them to the admin view
