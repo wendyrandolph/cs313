@@ -6,10 +6,10 @@
 
 
 if ($_SESSION['loggedin'] === TRUE) {
-    $myAccount = '<a class"my_account" href="/recipe/?action=admin"> Admin Page </a>'; 
+    $myAccount = '<a class="my_account" href="/recipe/?action=admin"> Admin Page </a>'; 
     //have logged in
     $loginMessage =  '<a class="my_account" href="/recipe/?action=logout"> Logout </a>';
-    echo "<h3 class=> Welcome ".$_SESSION['clientData']['member_first_name']. "</h3>"; 
+    echo "<h3> Welcome ".$_SESSION['clientData']['member_first_name']. "</h3>"; 
     echo $loginMessage; 
     echo $myAccount; 
 } else {
