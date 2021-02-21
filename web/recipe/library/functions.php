@@ -160,7 +160,7 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 function getRecipes($db)
 {
 
-    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id ORDER BY r.recipe_name ASC');
+    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_index_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id ORDER BY r.recipe_name ASC');
     $stmt = ($db->prepare($sql));
     $stmt->execute();
     $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -178,7 +178,7 @@ $display = " ";
     $display = "<tr><td> Recipe Name <td></tr><br />"; 
     foreach ($list as $row) {
 
-        $display .= "<tr><td> $row[recipe_id] </td><td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
+        $display .= "<tr><td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
         
     }
     $display .= "</table>";
