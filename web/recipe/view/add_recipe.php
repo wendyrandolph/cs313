@@ -30,7 +30,7 @@ $_SESSION['loggedin'] = TRUE;
     <main>
 
         <div class="card">
-            <div class="card-body">
+           
                 <?php if (isset($message)) {
                     echo $message;
                 } ?>
@@ -75,7 +75,7 @@ $_SESSION['loggedin'] = TRUE;
 
                 </form>
             </div>
-        </div>
+        
 
     </main>
 </body>
