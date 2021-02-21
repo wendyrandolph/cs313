@@ -78,8 +78,8 @@
 
                 <?php if(isset($display)){ ?>
                     <ul> 
-                <?php  foreach($display as $display){ 
-                    echo "<li class=edit> $display </li>"  ?> 
+                <?php  foreach($display as $display){  
+                    echo "<li class=edit> $display </li>" ;   ?> 
                     
 
 
@@ -102,4 +102,4 @@
 </html>
 <?php unset($_SESSION['message']); ?>
 <?php unset($_SESSION['message_1']); ?>
-<?php unset($_SESSION['message_delete']) ?>
+<?php unset($_SESSION['message_delete']); ?>

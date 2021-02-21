@@ -11,6 +11,7 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
+$category_id = " "; 
 //grab php functions as needed *****************************************************
 require('../recipe/library/connections.php');
 require('../recipe/library/functions.php');
