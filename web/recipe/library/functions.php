@@ -148,13 +148,13 @@ function getRecipes($db)
 
 //build the recipe index display
 function indexDisplay($list){ 
-$recipe_id =  " "; 
+
 
 $display = " "; 
     $display = "<ul>";
     foreach ($list as $row) {
 
-        $display .= "<li> $row[recipe_name] </li> <a href='/recipe/?action=del&recipe_id=$recipe_id' class='rev_delete info'>Delete</a> ";
+        $display .= "<li> $row[recipe_name] </li> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'>Delete</a> ";
         
     }
     $display .= "</ul>";
