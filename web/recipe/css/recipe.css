@@ -1,32 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@media (min-width: 576px) {
-  body {
-    background: none;
-    width: 375px;
-    margin: none;
-  }
-
-  .navbar-nav {
-    display: hidden;
-  }
-
-  .menu_icon {
-    display: block;
-  }
-
-  img {
-    justify-content: center;
-  }
-}
-@media (min-width: 768px) {
-  body {
-    width: 100%;
-  }
-
-  .navbar {
-    display: flex;
-  }
-}
 html {
   background-size: contain;
   box-sizing: border-box;
