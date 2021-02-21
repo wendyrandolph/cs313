@@ -39,9 +39,9 @@
             <br><br> 
 
 
-            <label>Recipe Name:</label><br>
+            <label>Recipe Name:</label>
             <input type="text" class="input" name="recipe_name" required> <br> <br>
-            <label>Recipe Description:</label><br>
+            <label>Recipe Description:</label>
             <input type="text" name="recipe_desc" id="recipe_desc" required> <br><br>
             <label>Preheat Temp:</label>
             <input type="text" name="preheat_temp" id="preheat_temp"> <br><br>
