@@ -6,7 +6,7 @@
     margin: none;
   }
 
-  .nav-bar nav {
+  .container-fluid p-2 {
     display: hidden;
   }
 
