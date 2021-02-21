@@ -175,7 +175,7 @@ function indexDisplay($list){
 
 $display = " "; 
     $display = "<table>";
-    $display = "<tr><td> Recipe Name <td></tr>"; 
+    $display = "<tr><td> Recipe Name <td></tr><br />"; 
     foreach ($list as $row) {
 
         $display .= "<tr><td> $row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
