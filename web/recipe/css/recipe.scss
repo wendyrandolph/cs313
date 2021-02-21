@@ -15,9 +15,8 @@ $secondary: #6F7D8C;
         margin: none;
 
     }
-
-    .navbar {
-        display: hidden;
+    .navbar { 
+        display: hidden; 
     }
 
     .menu_icon {
@@ -171,8 +170,15 @@ $grid-breakpoints: (xs: 0,
 
 
 
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) { ... }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+    .navbar { 
+        display: flex; 
+    }
+
+
+ }
 
 // // Large devices (desktops, 992px and up)
 // @media (min-width: 992px) { ... }

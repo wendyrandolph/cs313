@@ -126,4 +126,10 @@ img.salsa {
   height: 200px;
 }
 
+@media (min-width: 768px) {
+  .navbar {
+    display: flex;
+  }
+}
+
 /*# sourceMappingURL=recipe.css.map */
