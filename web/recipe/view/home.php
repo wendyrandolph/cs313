@@ -29,7 +29,7 @@
 
 
 
-        <div class="card">
+        <div class="card sm med lg xl">
             <div class="card-body">
 
 
