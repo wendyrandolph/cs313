@@ -4,6 +4,17 @@
 $primary: #32021F;
 $secondary: #6F7D8C;
 
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+
+    .menu_icon { 
+        display: block; 
+    }
+ }
+
+
+ 
 html {
     //background-image: url("/phpmotors/images/site/checkerboard.jpg");
     background-size: contain;
@@ -141,13 +152,7 @@ $grid-breakpoints: (
 // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
 
-    .menu_icon { 
-        display: block; 
-    }
- }
 
 // // Medium devices (tablets, 768px and up)
 // @media (min-width: 768px) { ... }

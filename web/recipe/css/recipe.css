@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@media (min-width: 576px) {
+  .menu_icon {
+    display: block;
+  }
+}
 html {
   background-size: contain;
   box-sizing: border-box;
@@ -105,12 +110,6 @@ a.my_account {
 img.salsa {
   width: 200px;
   height: 200px;
-}
-
-@media (min-width: 576px) {
-  .menu_icon {
-    display: block;
-  }
 }
 
 /*# sourceMappingURL=recipe.css.map */
