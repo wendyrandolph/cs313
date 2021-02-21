@@ -71,11 +71,11 @@ function getName($db, $recipe_id)
         } else {
             $name .= " ";
         }
-        $name .= "<ul>"; 
-        foreach(explode(',', $row['ingredients']) as $ingredient){ 
-        $name .= "<li> $ingredient </li>"; 
+        $name .= "<ul>";
+        foreach (explode(',', $row['ingredients']) as $ingredient) {
+            $name .= "<li> $ingredient </li>";
         }
-        $name .= "</ul>"; 
+        $name .= "</ul>";
         $name .= "</table>";
     }
 
@@ -133,24 +133,17 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
     }
 }
 
-function showRecipes($db){ 
+function showRecipes($db)
+{
+    try {
+        $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_index_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id;');
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $display = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_index_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id;'); 
-    $stmt = $db->prepare($sql); 
-    $stmt->execute();
-    $display = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    return $display; 
-
+        return $display;
+    } catch (PDOException $e) {
+        echo $sql . "<br>" . $e->getMessage();
+        die();
+    }
 }
-
-
-
-
-
-
-
-
-
-
-?> 
