@@ -4,7 +4,7 @@
 // Create or access a Session
 session_start();
 
-$_SESSION['loggedin'] = false; 
+$_SESSION['loggedin'] = false;
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -189,12 +189,12 @@ switch ($action) {
             include '../recipe/view/add_recipe.php';
         }
     case 'add':
-        if(isset($_POST['Login'])){
-            $_SESSION['loggedin'] = true; 
-        
-        include '../recipe/view/add_recipe.php';
-        }else { 
-            include '../recipe/view/home.php'; 
+        if (isset($_POST['Login'])) {
+            $_SESSION['loggedin'] = true;
+
+            include '../recipe/view/add_recipe.php';
+        } else {
+            include '../recipe/view/home.php';
         }
         break;
 
@@ -216,11 +216,15 @@ switch ($action) {
         break;
 
     case 'update_recipe':
-        $_SESSION['loggedin'] = TRUE;
-        $list = showRecipes($db);
+        if (isset($_POST['Login'])) {
+            $_SESSION['loggedin'] = true;
 
+            $list = showRecipes($db);
 
-        include '../recipe/view/recipe_update.php';
+            include '../recipe/view/recipe_update.php';
+        } else {
+            include '../recipe/view/home.php';
+        }
         break;
 
 

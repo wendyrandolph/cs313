@@ -29,12 +29,16 @@
 
         <div class='edit'>
 
-           <?php if(isset($list)){ 
-               echo $list; 
+            <?php if (isset($list)) {
+                $display = "<ul>";
+                foreach ($list as $row) {
 
-           }?> 
+                    $display .= "<li> $row[recipe_name] </li>";
+                }
+                $display .= "</ul>";
+            } echo $display; ?>
 
-          
+
         </div>
     </main>
 
