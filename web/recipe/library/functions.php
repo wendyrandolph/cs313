@@ -177,7 +177,7 @@ $display = " ";
     $display = "<ul>";
     foreach ($list as $row) {
 
-        $display .= "<li> $row[recipe_name] <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'>Delete</a> </li>";
+        $display .= "<li> $row[recipe_name] <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </li>";
         
     }
     $display .= "</ul>";
