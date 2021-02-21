@@ -76,17 +76,18 @@
             
             <div class='edit'> 
 
-                <?php if(isset($display)){ ?>
-                    <ul> 
-                <?php  foreach($display as $display){  
-                    echo "<li class=edit> $display </li>" ;   ?> 
-                    
+                <?php if(isset($display)){
+                   $list =  '<ul>';  
+                 foreach($display as $display){  
+                    $list .= "<li class=edit> $display </li>  " ;  
+                    $list .= "<a href='/recipe/index.php?action=update_recipe&recipe_id=$recipe_id' class='rev_delete info'>Delete</a>";
 
 
-                     </ul> 
+
+                    $list .= '</ul>';  
 
 
-               <?php   } ?>  
+                } ?>  
 
 
 
