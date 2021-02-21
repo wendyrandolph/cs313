@@ -40,7 +40,7 @@
                     echo $results;
                 }?> 
 
-                <img src="../images/naan pizza.jpg"> 
+                <img src="../recipe/images/naan pizza.jpg"> 
 
             </div>
         </div>
