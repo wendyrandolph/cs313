@@ -176,14 +176,10 @@ function indexDisplay($list){
 $display = " "; 
     $display = "<table class=table>";
     $display = "<tr><thead> Recipe Name </thead></tr><br />"; 
-    $count = count($list);
+    
     foreach ($list as $row) {
-        $i = 1; 
-        while($i < $count){ 
-            $new_count = $i++; 
-
-        }
-        $display .= "<tr><th scope=row> $new_count </th> <td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
+        
+        $display .= "<tr> <td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
         
     }
     $display .= "</table>";
