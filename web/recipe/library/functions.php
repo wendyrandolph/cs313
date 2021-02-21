@@ -153,5 +153,5 @@ function showRecipes($db)
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
         die();
-    } return $display;
+    }
 }
