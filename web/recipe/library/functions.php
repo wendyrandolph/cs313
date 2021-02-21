@@ -141,6 +141,14 @@ function showRecipes($db)
         $stmt->execute();
         $display = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+        $list =  '<ul>';
+        foreach ($display as $display) {
+            $list .= "<li class=edit> $display </li> ";
+            // $list .= "<a href='/recipe/index.php?action=update_recipe&recipe_id=$recipe_id' class='rev_delete info'>Delete</a>";
+            
+        }
+        $list .= '</ul>';
         
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
