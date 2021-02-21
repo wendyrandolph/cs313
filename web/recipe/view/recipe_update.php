@@ -34,8 +34,8 @@ $_SESSION['loggedin'] = TRUE;
     <main>
 
 
-        <div class="card">
-            <div class="card-body">
+       <!-- <div class="card">
+            <div class="card-body"> -->
                 <h2> Current Index of Recipes </h2>
                 
 
@@ -45,8 +45,8 @@ $_SESSION['loggedin'] = TRUE;
 
 
 
-            </div>
-        </div>
+          <!--  </div>
+        </div> -->
     </main>
 
 </body>
