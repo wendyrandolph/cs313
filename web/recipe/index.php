@@ -216,8 +216,9 @@ switch ($action) {
         break;
 
     case 'update_recipe':
-        if (isset($_POST['Login'])) {
-            $_SESSION['loggedin'] = true;
+        $_SESSION['loggedin'] = true;
+
+            if(isset($_SESSION['loggedin'])){ 
 
             $display = showRecipes($db);
 
