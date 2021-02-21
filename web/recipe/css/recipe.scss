@@ -15,9 +15,10 @@ $secondary: #6F7D8C;
         margin: none;
 
     }
-.container-fluid p-2 { 
-    display: hidden; 
-}
+
+    .navbar {
+        display: hidden;
+    }
 
     .menu_icon {
         display: block;
@@ -27,7 +28,7 @@ $secondary: #6F7D8C;
         justify-content: center;
     }
 
- 
+
 }
 
 html {
