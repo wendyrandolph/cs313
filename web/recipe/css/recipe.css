@@ -1,17 +1,125 @@
-/* Error: Expected expression.
- *    ,
- * 14 |         max-width: 
- *    |                    ^
- *    '
- *   recipe.scss 14:20  root stylesheet */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@media (min-width: 375px) {
+  body {
+    background: none;
+    width: 375px;
+    margin: none;
+  }
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected expression.\a    \2577 \a 14 \2502          max-width: \d\a    \2502                     ^\a    \2575 \a   recipe.scss 14:20  root stylesheet";
+  .menu_icon {
+    display: block;
+  }
+
+  .card {
+    width: 350px;
+  }
 }
+html {
+  background-size: contain;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+body {
+  background-image: url(../images/recipe_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 5px solid #006666;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+header {
+  background: #6F7D8C;
+}
+
+nav#page_nav {
+  background-color: #3a3a3a;
+}
+
+nav ul {
+  padding-left: 5px;
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+nav a {
+  color: #6F7D8C;
+  text-decoration: none;
+  padding-right: 8px;
+  text-align: center;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+nav a:hover {
+  background-color: #32021F;
+}
+
+.menu_icon {
+  display: none;
+}
+
+form-control {
+  width: 0;
+}
+
+td {
+  width: 200px;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: White;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+}
+
+.card-body {
+  margin-top: 10px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.temp {
+  text-align: center;
+  border-bottom: 1px solid #6F7D8C;
+}
+
+.directions {
+  border-top: 1px solid #6F7D8C;
+}
+
+form,
+div.add_1 {
+  margin-left: 10px;
+}
+
+p.text-danger {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+a.my_account {
+  padding-left: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+img.salsa {
+  width: 200px;
+  height: 200px;
+}
+
+/*# sourceMappingURL=recipe.css.map */
