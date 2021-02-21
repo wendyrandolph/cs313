@@ -35,19 +35,21 @@
 
                 <?php
                 if (!isset($results)) {
-                    echo "<h5> Welcome to your collection of Family Recipe Favorites. Login and add new recipes, or delete those you don't love anymore. </h5>"; 
+                    echo " <div class=mx-auto>";
+                    echo "<h5> Welcome to your collection of Family Recipe Favorites. Login and add new recipes, or delete those you don't love anymore. </h5>";
                     echo  "<img src='../recipe/images/naan pizza.jpg' class='rounded .img-thumbnail'>";
                     echo "<img src='../recipe/images/rsz_salsa.jpg' class='rounded .img-thumbnail'>";
                     echo "<img src='../recipe/images/rsz_idaho_burrito.jpg' class='rounded .img-thumbnail'>";
+                    echo "</div>";
                 } else {
                     echo "<h5> These are the $_SESSION[category_name] recipes.</h5>";
                     echo $results;
                 } ?>
-                <div class=mx-auto>
 
 
 
-                </div>
+
+
             </div>
 
     </main>
