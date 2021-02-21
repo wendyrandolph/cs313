@@ -180,10 +180,10 @@ $display = " ";
     foreach ($list as $row) {
         
         for($i = 1; $i < $count; $i++){ 
-
-        
-        $display .= "<tr><th scope=row> $i </th> <td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
+            $new_count = 1; 
         }
+        $display .= "<tr><th scope=row> $new_count </th> <td>$row[recipe_name] </td> <td> <a href='/recipe/?action=del&recipe_id=$row[recipe_id]' class='rev_delete info'> Delete </a> </td></tr><br />";
+        
     }
     $display .= "</table>";
  return $display; 
