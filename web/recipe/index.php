@@ -181,7 +181,7 @@ switch ($action) {
 
 
         if ($updateResult = 1) {
-            $_SESSION['message'] = "You have added this to the recipe index.";
+            $_SESSION['message'] = "You have added $recipe_name to the recipe index.";
             $_SESSION['loggedin'] = TRUE; 
              include '../recipe/view/admin.php';
             break;
