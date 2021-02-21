@@ -29,12 +29,10 @@
 
         <div class='edit'>
 
-            <?php
+           <?php if(isset($list)){ 
+               echo $list; 
 
-
-            if (isset($list)) {
-                echo $list; 
-            }?>
+           }?> 
 
           
         </div>

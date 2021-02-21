@@ -135,22 +135,12 @@ function addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_t
 
 function showRecipes($db)
 {
-    try {
-        $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_index_id FROM recipes r JOIN recipe_index ri ON r.recipe_id = ri.recipe_id;');
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $display = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    $sql = ('SELECT r.recipe_name, r.recipe_id, ri.recipe_id FROM recipes JOIN recipe_index ON r.recipe_id = ri.recipe_id');
+    $stmt = ($db->prepare($sql));
+    $stmt->execute();
+    $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $list =  '<ul>';
-        foreach ($display  as $row) {
-            $list .= "<li class=edit> {$row['recipe_name']} </li> ";
-            // $list .= "<a href='/recipe/index.php?action=update_recipe&recipe_id=$recipe_id' class='rev_delete info'>Delete</a>";
-
-        }
-        $list .= '</ul>';
-    } catch (PDOException $e) {
-        echo $sql . "<br>" . $e->getMessage();
-        die();
-    }
+    return $list;
 }
+
