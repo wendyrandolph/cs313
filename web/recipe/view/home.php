@@ -37,7 +37,7 @@
                 if (!isset($results)) {
                     echo " <div class=mx-auto>";
                     echo "<h5> Welcome to your collection of Family Recipe Favorites. Click on a category above to view existing recipes, or login to add new recipes, and delete those you don't love anymore. </h5>";
-                    echo  "<img src='../recipe/images/naan pizza.jpg' class='rounded .img-thumbnail sm med lg xl'>";
+                
                     echo "<img src='../recipe/images/rsz_salsa.jpg' class='rounded .img-thumbnail sm med lg xl'>";
                     echo "<img src='../recipe/images/rsz_idaho_burrito.jpg' class='rounded .img-thumbnail sm med lg xl'>";
                     echo "</div>";
