@@ -26,7 +26,7 @@
 
     <main>
 
-        Confirm Delete of <?php echo 
+        Confirm Delete of 
 
     </main>
 </body>
