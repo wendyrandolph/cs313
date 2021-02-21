@@ -175,7 +175,7 @@ function indexDisplay($list){
 
  
     $display = '<table class=table table-striped align-middle>';
-    $display .= '<thead> Recipe Name </thead><br />'; 
+    $display .= '<thead> Recipe Name </thead>'; 
     
     foreach ($list as $row) {
         
