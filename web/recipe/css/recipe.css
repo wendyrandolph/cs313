@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @media (min-width: 576px) {
+  body {
+    width: 100%;
+  }
+
   .menu_icon {
     display: block;
   }
@@ -96,7 +100,8 @@ h3 {
   border-top: 1px solid #6F7D8C;
 }
 
-form, div.add_1 {
+form,
+div.add_1 {
   margin-left: 10px;
 }
 

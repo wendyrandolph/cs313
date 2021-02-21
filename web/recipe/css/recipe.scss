@@ -6,21 +6,24 @@ $secondary: #6F7D8C;
 
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
-
-    .menu_icon { 
-        display: block; 
+@media (min-width: 576px) {
+    body {
+        width: 100%;
     }
 
-    .card { 
-        width: 80%; 
+    .menu_icon {
+        display: block;
     }
- }
+
+    .card {
+        width: 80%;
+    }
+}
 
 
 
 html {
-   
+
     background-size: contain;
     box-sizing: border-box;
     margin-top: 50px;
@@ -82,8 +85,8 @@ nav a:hover {
 
 }
 
-.menu_icon { 
-    display: none 
+.menu_icon {
+    display: none
 }
 
 form-control {
@@ -102,7 +105,7 @@ h1 {
 
 h3 {
     text-align: center;
-    color: white; 
+    color: white;
 }
 
 .card-body {
@@ -116,42 +119,44 @@ h3 {
 
 
 }
-.temp { 
+
+.temp {
     text-align: center;
-    border-bottom: 1px solid $secondary; 
+    border-bottom: 1px solid $secondary;
 }
 
-.directions{ 
-    border-top: 1px solid $secondary; 
+.directions {
+    border-top: 1px solid $secondary;
 }
 
 
-form, div.add_1 {
-    margin-left: 10px; 
+form,
+div.add_1 {
+    margin-left: 10px;
 }
 
 p.text-danger {
-    margin-left: 10px; 
+    margin-left: 10px;
     font-size: 20px;
 }
-a.my_account{ 
+
+a.my_account {
     padding-left: 10px;
     text-decoration: none;
-    color: white; 
-}
-img.salsa{ 
-    width: 200px; 
-    height: 200px; 
+    color: white;
 }
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
+img.salsa {
+    width: 200px;
+    height: 200px;
+}
+
+$grid-breakpoints: (xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px);
 
 // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
@@ -169,6 +174,3 @@ $grid-breakpoints: (
 
 // // XX-Large devices (larger desktops, 1400px and up)
 // @media (min-width: 1400px) { ... }
-
-
-
