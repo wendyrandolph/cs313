@@ -82,7 +82,7 @@ h3 {
   border-top: 1px solid #6F7D8C;
 }
 
-form {
+form, div.add_1 {
   margin-left: 10px;
 }
 
