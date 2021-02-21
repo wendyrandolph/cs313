@@ -141,14 +141,15 @@ function showRecipes($db)
     $stmt->execute();
     $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    $display = " "; 
     $display = "<ul>";
     foreach ($list as $row) {
 
         $display .= "<li> $row[recipe_name] </li>";
     }
     $display .= "</ul>";
-
-} return $display; 
+    return $display; 
+} 
 
 
 ?>
