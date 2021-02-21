@@ -183,7 +183,7 @@ switch ($action) {
         if ($updateResult = 1) {
             $_SESSION['message'] = "You have added this to the recipe index.";
             $_SESSION['loggedin'] = TRUE; 
-             include '../recipe/view/display_recipe.php';
+             include '../recipe/view/admin.php';
             break;
         } else {
             $_SESSION['message'] = "You have not added this to the recipe index, please try again.";
