@@ -177,20 +177,20 @@ switch ($action) {
 
 
         // Send the data to the model
-        $matchRecipe = checkExistingRecipe($db, $recipe_name); 
+        $matchRecipe = checkExistingRecipe($db, $recipe_name);
         if ($matchRecipe === 1) {
             $message = "<p>This recipe is already in the database. </p>";
             include '../recipe/view/add_recipe.php';
             break;
         }
-        
+
         $updateResult =  addRecipeName($db, $recipe_name, $recipe_desc, $category_id, $preheat_temp, $cook_time, $ingredients, $instructions);
-       
+
 
         if ($updateResult = 1) {
             $_SESSION['message'] = "You have added $recipe_name to the recipe index.";
-            $_SESSION['loggedin'] = TRUE; 
-             include '../recipe/view/admin.php';
+            $_SESSION['loggedin'] = TRUE;
+            include '../recipe/view/admin.php';
             break;
         } else {
             $_SESSION['message'] = "You have not added this to the recipe index, please try again.";
@@ -205,9 +205,9 @@ switch ($action) {
     case 'del':
         // Get review Id 
         $recipe_id = filter_input(INPUT_GET, 'recipe_id', FILTER_SANITIZE_NUMBER_INT);
-        $del_recipe = deleteRecipe($db, $recipe_id); 
-        $del_index = deleteIndex($db, $recipe_id); 
-        $del_steps = deleteSteps($db, $recipe_id); 
+        $del_recipe = deleteRecipe($db, $recipe_id);
+        $del_index = deleteIndex($db, $recipe_id);
+        $del_steps = deleteSteps($db, $recipe_id);
 
         if (($del_recipe == 1 && $del_index == 1 && $del_steps == 1)) {
 
@@ -245,6 +245,11 @@ switch ($action) {
 
         include '../recipe/view/registration.php';
         break;
+    case 'admin':
+        $_SESSION['loggedin'] = TRUE; 
+        include '../recipe/view/admin.php';
+        break;
+
 
     case 'update_recipe':
         $_SESSION['loggedin'] = true;
