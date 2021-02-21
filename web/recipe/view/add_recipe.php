@@ -30,52 +30,46 @@ $_SESSION['loggedin'] = TRUE;
     <main>
 
         <div class="card">
-           
-                <?php if (isset($message)) {
-                    echo $message;
-                } ?>
-                <form action="/recipe/?action=addRecipe" method="POST">
-                    <label>Which category does your recipe belong to : </label><br>
-                    <?php
-                    $data = getCategories($db);
-                    $list = " ";
-                    foreach ($data as $rows) {
-                        $list .= "<input type=radio class='input' name=category_id value='$rows[category_id]' required> $rows[category_name] ";
-                    }
-                    echo $list;
-                    ?>
-                    <br><br>
+
+            <?php if (isset($message)) {
+                echo $message;
+            } ?>
+            <form action="/recipe/?action=addRecipe" method="POST">
+                <label>Which category does your recipe belong to : </label><br>
+                <?php
+                $data = getCategories($db);
+                $list = " ";
+                foreach ($data as $rows) {
+                    $list .= "<input type=radio class='input' name=category_id value='$rows[category_id]' required> $rows[category_name] ";
+                }
+                echo $list;
+                ?>
+                <br><br>
 
 
-                    <label>Recipe Name:</label>
-                    <input type="text" class="input" name="recipe_name" required> <br> <br>
-                    <label>Preheat Temp:</label>
-                    <input type="text" name="preheat_temp" id="preheat_temp"> <br><br>
-                    <label>Cook Time: </label>
-                    <input type="text" name="cook_time" id="cook_time"><br><br>
-                    <label> Ingredients : </label> <br><br>
-                    <p> Please enter your amount and ingredient separated by a comma </p>
-                    <!-- <textarea type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
+                <label>Recipe Name:</label>
+                <input type="text" class="input" name="recipe_name" required> <br> <br>
+                <label>Preheat Temp:</label>
+                <input type="text" name="preheat_temp" id="preheat_temp"> <br><br>
+                <label>Cook Time: </label>
+                <input type="text" name="cook_time" id="cook_time"><br><br>
+                <label> Ingredients : </label> <br><br>
+                <p> Please enter your amount and ingredient separated by a comma </p>
+                <!-- <textarea type="checkbox" onclick="var input = document.getElementById('ingredient_name'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;} 
                                             var input = document.getElementById('required_amount');  if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Ingredient... -->
 
-                    <textarea name="ingredients" rows=10 cols=50> </textarea>
-                    <br><br>
+                <textarea name="ingredients" rows=10 cols=50> </textarea>
+                <br><br>
 
-                    <label> Instructions : </label><br><br>
-                    <textarea name="instructions" rows=10 cols=50></textarea>
+                <label> Instructions : </label><br><br>
+                <textarea name="instructions" rows=10 cols=50></textarea><br><br>
+                <input type="submit" value="Add Recipe" class="add_vehicle"><br><br>
+                <!--Add the action name - value pair -->
+                <input type="hidden" name="action" value="addRecipe">
 
+            </form>
+        </div>
 
-
-
-
-
-                    <input type="submit" value="Add Recipe" class="add_vehicle"><br><br>
-                    <!--Add the action name - value pair -->
-                    <input type="hidden" name="action" value="addRecipe">
-
-                </form>
-            </div>
-        
 
     </main>
 </body>
