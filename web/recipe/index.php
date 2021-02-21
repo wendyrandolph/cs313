@@ -89,7 +89,7 @@ switch ($action) {
 
         //Check for empty fields 
         if (empty($member_email) || empty($member_password)) {
-            $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
+            $_SESSION['message'] = '<p class="text-danger">Please provide information for all empty form fields.</p>';
             include '../recipe/view/login.php';
             break;
         }
