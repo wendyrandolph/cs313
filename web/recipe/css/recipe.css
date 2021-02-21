@@ -9,10 +9,6 @@
   .menu_icon {
     display: block;
   }
-
-  .card {
-    width: 350px;
-  }
 }
 html {
   background-size: contain;
