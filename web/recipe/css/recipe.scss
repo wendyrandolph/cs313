@@ -67,6 +67,10 @@ nav a:hover {
 
 }
 
+.menu_icon { 
+    display: none 
+}
+
 form-control {
     width: 0;
 }
@@ -123,4 +127,42 @@ a.my_account{
 img.salsa{ 
     width: 200px; 
     height: 200px; 
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Source mixins
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) { 
+
+.menu_icon { 
+    display: block; 
+}
+
+
+
+}
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+@include media-breakpoint-up(xxl) { ... }
+
+// Usage
+
+// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+.custom-class {
+  display: none;
+}
+@include media-breakpoint-up(sm) {
+  .custom-class {
+    display: block;
+  }
 }
