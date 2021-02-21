@@ -34,15 +34,19 @@
 
 
                 <?php
-                if (isset($results)) {
-                    echo "<h5> These are the $_SESSION[category_name] recipes.</h5>";
+                if (!isset($results)) {
 
+                    echo  "<img src='../recipe/images/naan pizza.jpg' class='rounded .img-thumbnail'>";
+                    echo "<img src='../recipe/images/rsz_salsa.jpg' class='rounded .img-thumbnail'>";
+                    echo "<img src='../recipe/images/rsz_idaho_burrito.jpg' class='rounded .img-thumbnail'>";
+                } else {
+                    echo "<h5> These are the $_SESSION[category_name] recipes.</h5>";
                     echo $results;
                 } ?>
                 <div class=mx-auto>
-                    <img src="../recipe/images/naan pizza.jpg" class="rounded .img-thumbnail">
-                    <img src="../recipe/images/rsz_salsa.jpg" class="rounded .img-thumbnail">
-                    <img src="../recipe/images/rsz_idaho_burrito.jpg" class="rounded .img-thumbnail">
+
+
+
                 </div>
             </div>
 
