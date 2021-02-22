@@ -34,7 +34,7 @@ WHERE r.recipe_id = :recipe_id');
     foreach ($rows as $row) {
 
 
-        $recipe .= "<tr><td>{$row['instructions']}</td></tr>";
+        $recipe .= "<tr>{$row['instructions']}</tr>";
     }
     $recipe .= "</div>";
     return $recipe;
