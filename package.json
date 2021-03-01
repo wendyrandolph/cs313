@@ -4,13 +4,16 @@
   "description": "CS 313 PHP Base Code",
   "main": "index.js",
   "dependencies": {
+    "bl": "^4.1.0",
     "bootstrap": "^4.6.0",
     "git": "^0.1.5",
     "github": "^14.0.0",
     "heroku": "^7.47.12",
     "jquery": "^3.5.1",
     "json": "^10.0.0",
-    "popper.js": "^1.16.1"
+    "mathjs": "^9.2.0",
+    "popper.js": "^1.16.1",
+    "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
